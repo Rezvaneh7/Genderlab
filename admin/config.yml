@@ -108,19 +108,47 @@ collections:
 
     fields:
 
+      # ----------------------------------------------
+      # MAIN CONTENT
+      # ----------------------------------------------
+
       - label: "عنوان مطلب"
         name: "title"
         widget: "string"
+        hint: "عنوان اصلی مطلب"
+
+      - label: "متن مطلب"
+        name: "body"
+        widget: "richtext"
+        hint: "متن کامل مطلب را اینجا بنویسید."
+
+      - label: "خلاصه"
+        name: "excerpt"
+        widget: "text"
+        hint: "یک معرفی کوتاه برای نمایش در صفحه اصلی، صفحه شماره و فهرست مطالب."
+
+      - label: "تصویر اصلی"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "تصویر شاخص مطلب برای نمایش در سایت."
+
+
+      # ----------------------------------------------
+      # PUBLICATION INFORMATION
+      # ----------------------------------------------
 
       - label: "نویسنده"
         name: "author"
         widget: "string"
+        hint: "نام نویسنده یا نویسندگان مطلب"
 
       - label: "شماره مجله"
         name: "issue"
         widget: "relation"
 
         collection: "issues"
+
         search_fields:
           - "title"
           - "number"
@@ -131,13 +159,7 @@ collections:
           - "number"
           - "title"
 
-        hint: "شماره‌ای که این مطلب در آن منتشر شده است."
-
-      - label: "تاریخ انتشار"
-        name: "date"
-        widget: "datetime"
-        date_format: "YYYY-MM-DD"
-        time_format: false
+        hint: "این مطلب متعلق به کدام شماره مجله است؟"
 
       - label: "نوع مطلب"
         name: "category"
@@ -151,16 +173,11 @@ collections:
           - "یادداشت"
           - "نقد"
 
-      - label: "تصویر اصلی"
-        name: "image"
-        widget: "image"
-        required: false
+        hint: "نوع محتوای منتشرشده را انتخاب کنید."
 
-      - label: "خلاصه"
-        name: "excerpt"
-        widget: "text"
-        hint: "یک معرفی کوتاه برای نمایش در صفحه اصلی و فهرست مطالب."
-
-      - label: "متن کامل مطلب"
-        name: "body"
-        widget: "richtext"
+      - label: "تاریخ انتشار"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        hint: "تاریخی که مطلب در آن منتشر می‌شود."
