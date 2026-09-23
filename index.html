@@ -7,6 +7,11 @@
 
   <title>GenderLab | جندرلب</title>
 
+  <!-- Persian Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
 
     /* ==============================
@@ -26,7 +31,7 @@
     body {
       background: #F8F7F3;
       color: #172B36;
-      font-family: Tahoma, Arial, sans-serif;
+      font-family: "Vazirmatn", Tahoma, Arial, sans-serif;
     }
 
     a {
@@ -84,6 +89,7 @@
       direction: rtl;
       text-align: left;
 
+      font-family: "Vazirmatn", Tahoma, sans-serif;
       font-size: 24px;
       line-height: 1;
       font-weight: 700;
@@ -98,7 +104,6 @@
       letter-spacing: 1.1px;
 
       color: #777C7E;
-
       text-transform: uppercase;
     }
 
@@ -121,11 +126,11 @@
 
     .main-nav a {
       position: relative;
-
       display: block;
 
       padding: 13px 30px 22px;
 
+      font-family: "Vazirmatn", Tahoma, sans-serif;
       font-size: 14px;
       line-height: 1;
 
@@ -146,7 +151,6 @@
       content: "";
 
       position: absolute;
-
       right: 20px;
       left: 20px;
       bottom: -1px;
@@ -175,7 +179,6 @@
       align-items: flex-start;
 
       gap: 27px;
-
       padding-top: 10px;
     }
 
@@ -221,7 +224,6 @@
 
     .search-icon {
       position: relative;
-
       display: block;
 
       width: 14px;
@@ -259,6 +261,7 @@
       direction: rtl;
       text-align: right;
 
+      font-family: "Vazirmatn", Tahoma, sans-serif;
       font-size: 15px;
       line-height: 1.75;
       font-weight: 700;
@@ -268,12 +271,11 @@
 
 
     /* ==============================
-       FULL DIVIDER
+       DIVIDER
     ============================== */
 
     .header-divider {
       max-width: 1400px;
-
       height: 1px;
 
       margin: 28px auto 0;
@@ -283,262 +285,233 @@
 
 
     /* ==============================
-       TEMPORARY EMPTY SPACE
-       مرحله بعد Hero اینجا می‌آید
+       LATEST ISSUE HERO
     ============================== */
 
-    .homepage-placeholder {
+    .issue-hero {
       max-width: 1400px;
-      min-height: 500px;
-
       margin: 0 auto;
+      padding: 75px 55px 85px;
+
+      display: grid;
+      grid-template-columns: 1fr 0.72fr;
+      gap: 100px;
+      align-items: center;
+
+      direction: rtl;
     }
 
-/* ==============================
-   LATEST ISSUE HERO
-============================== */
 
-.issue-hero {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 75px 55px 85px;
+    /* ISSUE INFORMATION */
 
-  display: grid;
-  grid-template-columns: 1fr 0.72fr;
-  gap: 100px;
-  align-items: center;
+    .issue-info {
+      max-width: 650px;
+    }
 
-  direction: rtl;
-}
+    .issue-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
 
+      margin-bottom: 32px;
 
-/* ISSUE INFORMATION */
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
 
-.issue-info {
-  max-width: 650px;
-}
+    .issue-label .line {
+      display: block;
 
-.issue-label {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+      width: 45px;
+      height: 1px;
 
-  margin-bottom: 32px;
+      background: #A34D45;
+    }
 
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .3px;
-}
+    .issue-info h2 {
+      margin: 0 0 28px;
 
-.issue-label .line {
-  display: block;
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      font-size: clamp(55px, 6.3vw, 100px);
+      line-height: 1.15;
+      letter-spacing: -2px;
+      font-weight: 700;
 
-  width: 45px;
-  height: 1px;
+      color: #172B36;
+    }
 
-  background: #A34D45;
-}
+    .issue-info p {
+      max-width: 520px;
 
-.issue-info h2 {
-  margin: 0 0 28px;
+      margin: 0 0 38px;
 
-  font-size: clamp(55px, 6.3vw, 100px);
-  line-height: 1.05;
-  letter-spacing: -3px;
-  font-weight: 700;
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      font-size: 17px;
+      line-height: 2;
+      font-weight: 400;
 
-  color: #172B36;
-}
+      color: #536168;
+    }
 
-.issue-info p {
-  max-width: 520px;
 
-  margin: 0 0 38px;
+    /* ==============================
+       BUTTON
+    ============================== */
 
-  font-size: 17px;
-  line-height: 2;
+    .read-issue {
+      display: inline-flex;
+      align-items: center;
+      gap: 25px;
 
-  color: #536168;
-}
+      padding: 14px 0;
 
+      border-bottom: 1px solid #172B36;
 
-/* BUTTON */
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
 
-.read-issue {
-  display: inline-flex;
-  align-items: center;
-  gap: 25px;
+      transition: gap .25s ease;
+    }
 
-  padding: 14px 0;
+    .read-issue:hover {
+      gap: 35px;
+    }
 
-  border-bottom: 1px solid #172B36;
 
-  font-size: 14px;
-  font-weight: 700;
+    /* ==============================
+       MAGAZINE COVER
+    ============================== */
 
-  transition: gap .25s ease;
-}
+    .issue-cover {
+      width: min(100%, 430px);
+      aspect-ratio: 0.72;
 
-.read-issue:hover {
-  gap: 35px;
-}
+      justify-self: end;
 
+      padding: 27px 30px 25px;
 
-/* ==============================
-   MAGAZINE COVER
-============================== */
+      display: flex;
+      flex-direction: column;
 
-.issue-cover {
-  width: min(100%, 430px);
-  aspect-ratio: 0.72;
+      background: #172B36;
+      color: #F8F7F3;
 
-  justify-self: end;
+      box-shadow:
+        0 30px 60px rgba(23, 43, 54, .16);
+    }
 
-  padding: 27px 30px 25px;
 
-  display: flex;
-  flex-direction: column;
+    /* COVER HEADER */
 
-  background: #172B36;
-  color: #F8F7F3;
+    .cover-header {
+      display: flex;
+      justify-content: space-between;
 
-  box-shadow:
-    0 30px 60px rgba(23, 43, 54, .16);
-}
+      direction: ltr;
 
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 16px;
+      letter-spacing: .5px;
+    }
 
-/* COVER HEADER */
 
-.cover-header {
-  display: flex;
-  justify-content: space-between;
+    /* COVER CENTER */
 
-  direction: ltr;
+    .cover-center {
+      position: relative;
 
-  font-family: Georgia, serif;
-  font-size: 16px;
-  letter-spacing: .5px;
-}
+      flex: 1;
 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-/* COVER CENTER */
+    .cover-circle {
+      position: absolute;
 
-.cover-center {
-  position: relative;
+      width: 72%;
+      aspect-ratio: 1;
 
-  flex: 1;
+      border: 1px solid rgba(248, 247, 243, .45);
+      border-radius: 50%;
+    }
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .cover-circle::before {
+      content: "";
 
-.cover-circle {
-  position: absolute;
+      position: absolute;
 
-  width: 72%;
-  aspect-ratio: 1;
+      width: 65%;
+      height: 65%;
 
-  border: 1px solid rgba(248, 247, 243, .45);
-  border-radius: 50%;
-}
+      top: 17.5%;
+      left: 17.5%;
 
-.cover-circle::before {
-  content: "";
+      border: 1px solid #A34D45;
+      border-radius: 50%;
+    }
 
-  position: absolute;
+    .cover-circle::after {
+      content: "";
 
-  width: 65%;
-  height: 65%;
+      position: absolute;
 
-  top: 17.5%;
-  left: 17.5%;
+      width: 1px;
+      height: 130%;
 
-  border: 1px solid #A34D45;
-  border-radius: 50%;
-}
+      top: -15%;
+      left: 50%;
 
-.cover-circle::after {
-  content: "";
+      background: rgba(248, 247, 243, .25);
 
-  position: absolute;
+      transform: rotate(38deg);
+    }
 
-  width: 1px;
-  height: 130%;
+    .cover-text {
+      position: relative;
+      z-index: 2;
 
-  top: -15%;
-  left: 50%;
+      text-align: center;
 
-  background: rgba(248, 247, 243, .25);
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      font-size: clamp(28px, 3vw, 43px);
+      line-height: 1.45;
+      font-weight: 700;
+    }
 
-  transform: rotate(38deg);
-}
 
-.cover-text {
-  position: relative;
-  z-index: 2;
+    /* COVER FOOTER */
 
-  text-align: center;
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
 
-  font-size: clamp(28px, 3vw, 43px);
-  line-height: 1.35;
-  font-weight: 700;
-}
+      direction: rtl;
 
+      padding-top: 20px;
 
-/* COVER FOOTER */
+      border-top: 1px solid rgba(248, 247, 243, .25);
 
-.cover-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+      font-size: 10px;
+      letter-spacing: .7px;
+    }
 
-  direction: rtl;
+    .cover-footer span:first-child {
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      letter-spacing: 0;
+    }
 
-  padding-top: 20px;
+    .cover-footer span:last-child {
+      font-family: Arial, sans-serif;
+      direction: ltr;
+    }
 
-  border-top: 1px solid rgba(248, 247, 243, .25);
 
-  font-size: 10px;
-  letter-spacing: .7px;
-}
-
-
-/* ==============================
-   HERO MOBILE
-============================== */
-
-@media (max-width: 760px) {
-
-  .issue-hero {
-    padding: 50px 20px 70px;
-
-    grid-template-columns: 1fr;
-    gap: 55px;
-  }
-
-  .issue-info {
-    order: 1;
-  }
-
-  .issue-cover {
-    order: 2;
-
-    width: min(90%, 390px);
-
-    justify-self: center;
-  }
-
-  .issue-info h2 {
-    font-size: clamp(48px, 15vw, 75px);
-    letter-spacing: -2px;
-  }
-
-  .issue-info p {
-    font-size: 15px;
-  }
-
-}
     /* ==============================
        TABLET
     ============================== */
@@ -566,6 +539,12 @@
       .main-nav a {
         padding-left: 17px;
         padding-right: 17px;
+      }
+
+      .issue-hero {
+        gap: 55px;
+        padding-left: 30px;
+        padding-right: 30px;
       }
 
     }
@@ -631,6 +610,37 @@
         margin-top: 0;
       }
 
+
+      /* HERO */
+
+      .issue-hero {
+        padding: 50px 20px 70px;
+
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .issue-info {
+        order: 1;
+      }
+
+      .issue-cover {
+        order: 2;
+
+        width: min(90%, 390px);
+
+        justify-self: center;
+      }
+
+      .issue-info h2 {
+        font-size: clamp(48px, 15vw, 75px);
+        letter-spacing: -1.5px;
+      }
+
+      .issue-info p {
+        font-size: 15px;
+      }
+
     }
 
   </style>
@@ -640,14 +650,16 @@
 <body>
 
 
+  <!-- ==============================
+       HEADER
+  =============================== -->
+
   <header class="site-header">
 
     <div class="header-inner">
 
 
-      <!-- ==========================
-           LOGO
-      =========================== -->
+      <!-- LOGO -->
 
       <div class="brand">
 
@@ -668,10 +680,7 @@
       </div>
 
 
-
-      <!-- ==========================
-           MENU
-      =========================== -->
+      <!-- MENU -->
 
       <nav class="main-nav">
 
@@ -694,10 +703,7 @@
       </nav>
 
 
-
-      <!-- ==========================
-           LANGUAGE + SEARCH
-      =========================== -->
+      <!-- LANGUAGE + SEARCH -->
 
       <div class="header-side">
 
@@ -742,80 +748,114 @@
 
     </div>
 
-
     <div class="header-divider"></div>
-
 
   </header>
 
 
 
-  <!--
-    مرحله بعد:
-    Latest Issue / Hero
-  -->
+  <!-- ==============================
+       LATEST ISSUE
+  =============================== -->
 
- <main>
+  <main>
 
-  <section class="issue-hero">
+    <section class="issue-hero">
 
-    <!-- متن شماره -->
-    <div class="issue-info">
 
-      <div class="issue-label">
-        <span>شماره ۰۱</span>
-        <span class="line"></span>
-        <span>پاییز ۱۴۰۵</span>
+      <!-- ISSUE TEXT -->
+
+      <div class="issue-info">
+
+        <div class="issue-label">
+
+          <span>
+            شماره ۰۱
+          </span>
+
+          <span class="line"></span>
+
+          <span>
+            پاییز ۱۴۰۵
+          </span>
+
+        </div>
+
+
+        <h2>
+          بدن، جنسیت<br>
+          و جامعه
+        </h2>
+
+
+        <p>
+          جستارهایی درباره بدن، جنسیت، قدرت و تجربه زیسته؛
+          و نسبت میان آنچه هستیم و آنچه جامعه از ما انتظار دارد.
+        </p>
+
+
+        <a href="#" class="read-issue">
+
+          مشاهده شماره
+
+          <span>
+            ←
+          </span>
+
+        </a>
+
       </div>
 
-      <h2>
-        بدن، جنسیت<br>
-        و جامعه
-      </h2>
-
-      <p>
-        جستارهایی درباره بدن، جنسیت، قدرت و تجربه زیسته؛
-        و نسبت میان آنچه هستیم و آنچه جامعه از ما انتظار دارد.
-      </p>
-
-      <a href="#" class="read-issue">
-        مشاهده شماره
-        <span>←</span>
-      </a>
-
-    </div>
 
 
-    <!-- جلد شماره -->
-    <div class="issue-cover">
+      <!-- MAGAZINE COVER -->
 
-      <div class="cover-header">
-        <span>GENDERLAB</span>
-        <span>01</span>
-      </div>
+      <div class="issue-cover">
 
-      <div class="cover-center">
+        <div class="cover-header">
 
-        <div class="cover-circle"></div>
+          <span>
+            GENDERLAB
+          </span>
 
-        <div class="cover-text">
-          بدن<br>
-          جنسیت<br>
-          جامعه
+          <span>
+            01
+          </span>
+
+        </div>
+
+
+        <div class="cover-center">
+
+          <div class="cover-circle"></div>
+
+          <div class="cover-text">
+            بدن<br>
+            جنسیت<br>
+            جامعه
+          </div>
+
+        </div>
+
+
+        <div class="cover-footer">
+
+          <span>
+            جندرلب
+          </span>
+
+          <span>
+            AUTUMN 2026
+          </span>
+
         </div>
 
       </div>
 
-      <div class="cover-footer">
-        <span>جندرلب</span>
-        <span>AUTUMN 2026</span>
-      </div>
 
-    </div>
+    </section>
 
-  </section>
-
-</main>
+  </main>
 
 
 </body>
