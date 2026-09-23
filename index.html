@@ -552,7 +552,276 @@
       direction: ltr;
     }
 
+/* ==============================
+   ISSUES ARCHIVE
+============================== */
 
+.issues-section {
+  width: 100%;
+  background: #EEECE5;
+  border-top: 1px solid #D9D8D3;
+  border-bottom: 1px solid #D9D8D3;
+}
+
+.issues-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 72px 55px 82px;
+
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+}
+
+
+/* SECTION HEADER */
+
+.issues-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+
+  margin-bottom: 42px;
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid #BFC2BE;
+}
+
+.issues-heading h2 {
+  margin: 0;
+
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  font-size: clamp(30px, 3vw, 44px);
+  line-height: 1.2;
+  font-weight: 700;
+
+  color: #172B36;
+}
+
+.issues-heading-en {
+  direction: ltr;
+
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+
+  color: #777C7E;
+}
+
+
+/* ISSUE GRID */
+
+.issues-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+}
+
+
+/* ISSUE CARD */
+
+.issue-card {
+  display: block;
+
+  padding-top: 18px;
+
+  border-top: 3px solid #172B36;
+
+  transition:
+    transform .25s ease,
+    opacity .25s ease;
+}
+
+.issue-card:hover {
+  transform: translateY(-5px);
+}
+
+.issue-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 18px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #68747A;
+}
+
+.issue-card-number {
+  direction: rtl;
+}
+
+.issue-card-date {
+  direction: rtl;
+}
+
+
+/* COVER */
+
+.issue-card-cover {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 1.45;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background: #172B36;
+  color: #F8F7F3;
+}
+
+.issue-card-cover::before {
+  content: "";
+
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  border: 1px solid rgba(248, 247, 243, .42);
+  border-radius: 50%;
+}
+
+.issue-card-cover::after {
+  content: "";
+
+  position: absolute;
+
+  width: 125px;
+  height: 125px;
+
+  border: 1px solid #A34D45;
+  border-radius: 50%;
+}
+
+.issue-card-cover-title {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  font-size: clamp(24px, 2.2vw, 34px);
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+
+/* CARD TEXT */
+
+.issue-card-content {
+  padding-top: 22px;
+}
+
+.issue-card-content h3 {
+  margin: 0 0 10px;
+
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: 700;
+
+  color: #172B36;
+}
+
+.issue-card-content p {
+  margin: 0;
+
+  max-width: 420px;
+
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  font-size: 13px;
+  line-height: 1.9;
+  font-weight: 400;
+
+  color: #647078;
+}
+
+
+/* CARD LINK */
+
+.issue-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 20px;
+  padding-bottom: 5px;
+
+  border-bottom: 1px solid #172B36;
+
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+
+  color: #172B36;
+
+  transition: gap .2s ease;
+}
+
+.issue-card:hover .issue-card-link {
+  gap: 18px;
+}
+
+
+/* ==============================
+   ISSUES TABLET
+============================== */
+
+@media (max-width: 1000px) {
+
+  .issues-inner {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .issues-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* ==============================
+   ISSUES MOBILE
+============================== */
+
+@media (max-width: 760px) {
+
+  .issues-inner {
+    padding: 55px 20px 65px;
+  }
+
+  .issues-heading {
+    margin-bottom: 32px;
+  }
+
+  .issues-heading h2 {
+    font-size: 30px;
+  }
+
+  .issues-heading-en {
+    display: none;
+  }
+
+  .issues-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .issue-card-cover {
+    aspect-ratio: 1.35;
+  }
+
+}
     /* ==============================
        TABLET
     ============================== */
@@ -913,7 +1182,84 @@
 
 
     </section>
+<!-- ==============================
+     ISSUES
+=============================== -->
 
+<section class="issues-section">
+
+  <div class="issues-inner">
+
+
+    <div class="issues-heading">
+
+      <h2>
+        شماره‌های مجله
+      </h2>
+
+      <div class="issues-heading-en">
+        GENDERLAB / ISSUES
+      </div>
+
+    </div>
+
+
+    <div class="issues-grid">
+
+
+      <!-- ISSUE 01 -->
+
+      <a href="issues/01/" class="issue-card">
+
+        <div class="issue-card-top">
+
+          <span class="issue-card-number">
+            شماره ۰۱
+          </span>
+
+          <span class="issue-card-date">
+            پاییز ۱۴۰۵
+          </span>
+
+        </div>
+
+
+        <div class="issue-card-cover">
+
+          <div class="issue-card-cover-title">
+            بدن، جنسیت<br>
+            و جامعه
+          </div>
+
+        </div>
+
+
+        <div class="issue-card-content">
+
+          <h3>
+            بدن، جنسیت و جامعه
+          </h3>
+
+          <p>
+            جستارهایی درباره بدن، جنسیت، قدرت و تجربه زیسته؛
+            و نسبت میان آنچه هستیم و آنچه جامعه از ما انتظار دارد.
+          </p>
+
+          <div class="issue-card-link">
+            مشاهده شماره
+            <span>←</span>
+          </div>
+
+        </div>
+
+      </a>
+
+
+    </div>
+
+  </div>
+
+</section>
   </main>
 
 
