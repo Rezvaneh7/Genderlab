@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -1080,112 +1083,122 @@
          LATEST ISSUE HERO
     ======================================================== -->
 
+    {% assign sorted_issues = site.issues | sort: "date" | reverse %}
+    {% assign latest_issue = sorted_issues | first %}
+
+    <!-- =======================================================
+         LATEST ISSUE HERO
+    ======================================================== -->
+
+    {% if latest_issue %}
+
     <section class="issue-hero">
 
-
-      <!-- ISSUE INFORMATION -->
-
       <div class="issue-info">
-
 
         <div class="hero-heading">
           شماره تازه
         </div>
 
-
         <div class="issue-label">
 
           <span>
-            شماره
+            شماره {{ latest_issue.numberFa }}
           </span>
 
           <span class="line"></span>
 
           <span>
+            {{ latest_issue.season }}
           </span>
 
         </div>
 
-
         <h1>
-          جندرلب
+          {{ latest_issue.title }}
         </h1>
 
-
         <p>
-          در حال بارگذاری شماره تازه...
+          {{ latest_issue.description }}
         </p>
 
-
-        <a href="#" class="read-issue">
-
+        <a href="{{ latest_issue.url | relative_url }}" class="read-issue">
           مشاهده شماره
-
-          <span>
-            ←
-          </span>
-
+          <span>←</span>
         </a>
 
       </div>
 
 
-
       <!-- HERO COVER -->
 
-      <a href="#" class="issue-cover">
+      <a href="{{ latest_issue.url | relative_url }}" class="issue-cover">
 
-        <div class="cover-header">
+        {% if latest_issue.cover %}
 
-          <span>
-            GENDERLAB
-          </span>
+          <img
+            src="{{ latest_issue.cover | relative_url }}"
+            alt="جلد {{ latest_issue.title }}"
+            style="width:100%;height:100%;object-fit:cover;display:block;"
+          >
 
-          <span>
-          </span>
+        {% else %}
 
-        </div>
-
-
-        <div class="cover-center">
-
-          <div class="cover-circle"></div>
-
-          <div class="cover-text">
-            جندرلب
+          <div class="cover-header">
+            <span>GENDERLAB</span>
+            <span>{{ latest_issue.number }}</span>
           </div>
 
-        </div>
+          <div class="cover-center">
+            <div class="cover-circle"></div>
+            <div class="cover-text">
+              {{ latest_issue.title }}
+            </div>
+          </div>
 
+          <div class="cover-footer">
+            <span>جندرلب</span>
+            <span>{{ latest_issue.seasonEn }}</span>
+          </div>
 
-        <div class="cover-footer">
-
-          <span>
-            جندرلب
-          </span>
-
-          <span>
-          </span>
-
-        </div>
+        {% endif %}
 
       </a>
 
+    </section>
+
+    {% else %}
+
+    <section class="issue-hero">
+
+      <div class="issue-info">
+
+        <div class="hero-heading">
+          شماره تازه
+        </div>
+
+        <h1>جندرلب</h1>
+
+        <p>
+          هنوز شماره‌ای منتشر نشده است.
+        </p>
+
+      </div>
 
     </section>
 
+    {% endif %}
 
 
     <!-- =======================================================
          PREVIOUS MAGAZINE ISSUES
     ======================================================== -->
 
-    <section class="issues-section">
+    {% if sorted_issues.size > 1 %}
+
+    <section class="issues-section" style="display:block;">
 
       <div class="issues-inner">
-
-
-        <!-- SECTION HEADER -->
 
         <div class="issues-heading">
 
@@ -1200,320 +1213,23 @@
         </div>
 
 
-        <!-- DYNAMIC ISSUE GRID -->
+        <div class="issues-grid">
 
-        <div
-          class="issues-grid"
-          id="issues-grid"
-        ></div>
+          {% for issue in sorted_issues offset:1 %}
 
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-
-  <!-- =========================================================
-       DYNAMIC MAGAZINE SYSTEM
-  ========================================================== -->
-
-  <script>
-
-    async function loadIssues() {
-
-      try {
-
-        /* -----------------------------------------
-           LOAD DATA
-        ----------------------------------------- */
-
-        const response =
-          await fetch('./data/issues.json');
-
-
-        if (!response.ok) {
-
-          throw new Error(
-            'Could not load issues.json'
-          );
-
-        }
-
-
-        const issues =
-          await response.json();
-
-
-        if (
-          !Array.isArray(issues) ||
-          issues.length === 0
-        ) {
-
-          throw new Error(
-            'No magazine issues found'
-          );
-
-        }
-
-
-
-        /* =========================================
-           LATEST ISSUE
-        ========================================= */
-
-        const latestIssue =
-          issues[issues.length - 1];
-
-
-
-        /* NUMBER */
-
-        const heroNumber =
-          document.querySelector(
-            '.issue-label span:first-child'
-          );
-
-
-        if (heroNumber) {
-
-          heroNumber.textContent =
-            `شماره ${latestIssue.numberFa}`;
-
-        }
-
-
-
-        /* SEASON */
-
-        const heroSeason =
-          document.querySelector(
-            '.issue-label span:last-child'
-          );
-
-
-        if (heroSeason) {
-
-          heroSeason.textContent =
-            latestIssue.season;
-
-        }
-
-
-
-        /* TITLE */
-
-        const heroTitle =
-          document.querySelector(
-            '.issue-info h1'
-          );
-
-
-        if (heroTitle) {
-
-          heroTitle.textContent =
-            latestIssue.title;
-
-        }
-
-
-
-        /* DESCRIPTION */
-
-        const heroDescription =
-          document.querySelector(
-            '.issue-info p'
-          );
-
-
-        if (heroDescription) {
-
-          heroDescription.textContent =
-            latestIssue.description;
-
-        }
-
-
-
-        /* HERO LINK */
-
-        const heroLink =
-          document.querySelector(
-            '.read-issue'
-          );
-
-
-        if (heroLink) {
-
-          heroLink.href =
-            latestIssue.url;
-
-        }
-
-
-
-        /* HERO COVER LINK */
-
-        const heroCover =
-          document.querySelector(
-            '.issue-cover'
-          );
-
-
-        if (heroCover) {
-
-          heroCover.href =
-            latestIssue.url;
-
-        }
-
-
-
-        /* COVER TITLE */
-
-        const heroCoverTitle =
-          document.querySelector(
-            '.cover-text'
-          );
-
-
-        if (heroCoverTitle) {
-
-          heroCoverTitle.textContent =
-            latestIssue.title;
-
-        }
-
-
-
-        /* COVER NUMBER */
-
-        const heroCoverNumber =
-          document.querySelector(
-            '.cover-header span:last-child'
-          );
-
-
-        if (heroCoverNumber) {
-
-          heroCoverNumber.textContent =
-            latestIssue.number;
-
-        }
-
-
-
-        /* COVER SEASON */
-
-        const heroCoverSeason =
-          document.querySelector(
-            '.cover-footer span:last-child'
-          );
-
-
-        if (heroCoverSeason) {
-
-          heroCoverSeason.textContent =
-            latestIssue.seasonEn;
-
-        }
-
-
-
-        /* =========================================
-           PREVIOUS ISSUES
-        ========================================= */
-
-        const previousIssues =
-          issues
-            .slice(0, -1)
-            .reverse();
-
-
-        const issuesGrid =
-          document.getElementById(
-            'issues-grid'
-          );
-
-
-        const issuesSection =
-          document.querySelector(
-            '.issues-section'
-          );
-
-
-        if (!issuesGrid) {
-          return;
-        }
-
-
-        issuesGrid.innerHTML = '';
-
-
-
-        /* -----------------------------------------
-           NO PREVIOUS ISSUES YET
-        ----------------------------------------- */
-
-        if (previousIssues.length === 0) {
-
-          if (issuesSection) {
-            issuesSection.style.display =
-              'none';
-          }
-
-          return;
-
-        }
-
-
-
-        /* -----------------------------------------
-           SHOW SECTION
-        ----------------------------------------- */
-
-        if (issuesSection) {
-
-          issuesSection.style.display =
-            'block';
-
-        }
-
-
-
-        /* -----------------------------------------
-           CREATE EACH ISSUE CARD
-        ----------------------------------------- */
-
-        previousIssues.forEach(issue => {
-
-
-          const card =
-            document.createElement('a');
-
-
-          card.className =
-            'issue-card';
-
-
-          card.href =
-            issue.url;
-
-
-
-          card.innerHTML = `
+          <a
+            href="{{ issue.url | relative_url }}"
+            class="issue-card"
+          >
 
             <div class="issue-card-top">
 
               <span>
-                شماره ${issue.numberFa}
+                شماره {{ issue.numberFa }}
               </span>
 
               <span>
-                ${issue.season}
+                {{ issue.season }}
               </span>
 
             </div>
@@ -1521,125 +1237,60 @@
 
             <div class="issue-card-cover">
 
-
               <div class="issue-card-cover-fallback">
 
                 <div class="issue-card-cover-title">
-                  ${issue.title}
+                  {{ issue.title }}
                 </div>
 
               </div>
 
+              {% if issue.cover %}
 
               <img
-                src="${issue.cover}"
-                alt="جلد ${issue.title}"
+                src="{{ issue.cover | relative_url }}"
+                alt="جلد {{ issue.title }}"
                 class="issue-cover-image"
+                onload="this.previousElementSibling.style.display='none';"
+                onerror="this.style.display='none';"
               >
 
+              {% endif %}
 
             </div>
 
 
             <div class="issue-card-content">
 
-
               <h3>
-                ${issue.title}
+                {{ issue.title }}
               </h3>
 
-
               <p>
-                ${issue.description}
+                {{ issue.description }}
               </p>
 
-
               <div class="issue-card-link">
-
                 مشاهده شماره
-
-                <span>
-                  ←
-                </span>
-
+                <span>←</span>
               </div>
-
 
             </div>
 
-          `;
+          </a>
 
+          {% endfor %}
 
+        </div>
 
-          /* ---------------------------------------
-             COVER FALLBACK
-          --------------------------------------- */
+      </div>
 
-          const image =
-            card.querySelector(
-              '.issue-cover-image'
-            );
+    </section>
 
+    {% endif %}
 
-          const fallback =
-            card.querySelector(
-              '.issue-card-cover-fallback'
-            );
+  </main>
 
-
-          image.addEventListener(
-            'load',
-            () => {
-
-              image.style.display =
-                'block';
-
-              fallback.style.display =
-                'none';
-
-            }
-          );
-
-
-          image.addEventListener(
-            'error',
-            () => {
-
-              image.style.display =
-                'none';
-
-              fallback.style.display =
-                'flex';
-
-            }
-          );
-
-
-
-          issuesGrid.appendChild(card);
-
-
-        });
-
-
-      } catch (error) {
-
-        console.error(
-          'GenderLab issues error:',
-          error
-        );
-
-      }
-
-    }
-
-
-
-    /* START */
-
-    loadIssues();
-
-  </script>
 
 
 </body>
