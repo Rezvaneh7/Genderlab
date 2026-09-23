@@ -6,274 +6,433 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
 
-  <title>GenderLab | پنل تحریریه</title>
+  <title>GenderLab | Editorial CMS</title>
 
   <!-- Vazirmatn -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <!-- IMPORTANT: Decap config -->
+  <!-- IMPORTANT: keep Decap config -->
   <link href="config.yml" type="text/yaml" rel="cms-config-url">
 
   <style>
 
-    /* ==========================================
-       GENDERLAB — DECAP ADMIN THEME
-       ========================================== */
+    /* =====================================================
+       GENDERLAB CMS
+       ===================================================== */
 
     :root {
-      --gl-navy: #172B36;
+      --gl-petroleum: #172B36;
+      --gl-petroleum-light: #223D4B;
       --gl-red: #A34D45;
-      --gl-paper: #F8F7F3;
-      --gl-paper-dark: #EEECE5;
-      --gl-white: #FFFFFF;
+      --gl-red-dark: #8C403A;
+
+      --gl-cream: #F8F7F3;
+      --gl-paper: #FFFFFF;
+      --gl-soft: #EEECE5;
+
+      --gl-border: #DDDAD2;
       --gl-text: #172B36;
-      --gl-muted: #6E777B;
-      --gl-border: #DEDCD5;
+      --gl-muted: #758087;
     }
 
 
-    /* ---------- GLOBAL ---------- */
+    /* =====================================================
+       GLOBAL
+       ===================================================== */
 
     html,
-    body,
-    #nc-root {
+    body {
       margin: 0 !important;
       min-height: 100% !important;
-      background: var(--gl-paper) !important;
+
+      background: var(--gl-cream) !important;
+
       font-family: "Vazirmatn", sans-serif !important;
     }
 
-    body * {
+
+    body *,
+    button,
+    input,
+    textarea,
+    select {
       font-family: "Vazirmatn", sans-serif !important;
-      box-sizing: border-box;
     }
 
 
-    /* ---------- CMS BACKGROUND ---------- */
-
-    #nc-root {
-      background:
-        linear-gradient(
-          to bottom,
-          var(--gl-navy) 0,
-          var(--gl-navy) 6px,
-          var(--gl-paper) 6px,
-          var(--gl-paper) 100%
-        ) !important;
+    body {
+      color: var(--gl-text);
     }
 
 
-    /* ---------- GENERAL DECAP SURFACES ---------- */
+    /* thin GenderLab line */
 
-    #nc-root main,
-    #nc-root [role="main"] {
-      background-color: var(--gl-paper) !important;
+    body::before {
+      content: "";
+      position: fixed;
+
+      top: 0;
+      left: 0;
+      right: 0;
+
+      height: 5px;
+
+      background: var(--gl-red);
+
+      z-index: 999999;
     }
 
 
-    /* ---------- HEADERS / NAVIGATION ---------- */
+    /* =====================================================
+       DECAP COLLECTION SIDEBAR
+       REAL SELECTOR FROM CURRENT CMS
+       ===================================================== */
 
-    #nc-root header {
-      background: var(--gl-navy) !important;
-      color: white !important;
-      border: 0 !important;
+    aside.css-1ff92bv-SidebarContainer-card-card {
+
+      background: var(--gl-petroleum) !important;
+
+      border: none !important;
+      border-radius: 8px !important;
+
+      box-shadow:
+        0 8px 24px rgba(23, 43, 54, 0.12) !important;
+
+      overflow: hidden !important;
+
+      padding: 0 !important;
+
+      min-width: 260px !important;
+    }
+
+
+    /* =====================================================
+       SIDEBAR TITLE
+       ===================================================== */
+
+    .css-148ci7f-SidebarHeading-cardTopHeading {
+
+      background: var(--gl-petroleum) !important;
+
+      color: #FFFFFF !important;
+
+      font-size: 12px !important;
+      font-weight: 600 !important;
+
+      letter-spacing: .04em !important;
+
+      padding: 24px 22px 13px !important;
+
+      margin: 0 !important;
+
+      border: none !important;
+    }
+
+
+    /* Add editorial label */
+
+    .css-148ci7f-SidebarHeading-cardTopHeading::before {
+
+      content: "GENDERLAB";
+
+      display: block;
+
+      color: #FFFFFF;
+
+      font-family: "Vazirmatn", sans-serif;
+
+      font-size: 18px;
+      font-weight: 700;
+
+      letter-spacing: .12em;
+
+      margin-bottom: 4px;
+    }
+
+
+    .css-148ci7f-SidebarHeading-cardTopHeading::after {
+
+      content: "EDITORIAL CMS";
+
+      display: block;
+
+      color: rgba(255,255,255,.48);
+
+      font-size: 9px;
+      font-weight: 500;
+
+      letter-spacing: .18em;
+
+      direction: ltr;
+      text-align: right;
+
+      margin-top: 2px;
+      margin-bottom: 14px;
+    }
+
+
+    /* =====================================================
+       SEARCH
+       ===================================================== */
+
+    .css-lk98m2-SearchContainer {
+
+      background: var(--gl-petroleum) !important;
+
+      padding: 5px 16px 17px !important;
+
+      border: none !important;
+    }
+
+
+    .css-1mpi08-InputContainer {
+
+      background: rgba(255,255,255,.08) !important;
+
+      border: 1px solid rgba(255,255,255,.14) !important;
+
+      border-radius: 6px !important;
+
       box-shadow: none !important;
     }
 
-    #nc-root header *,
-    #nc-root header a,
-    #nc-root header button {
-      color: white !important;
+
+    .css-1fhcqx0-SearchInput {
+
+      background: transparent !important;
+
+      color: #FFFFFF !important;
+
+      border: none !important;
+
+      direction: rtl !important;
+      text-align: right !important;
+
+      font-size: 12px !important;
     }
 
 
-    /* ---------- LINKS ---------- */
-
-    #nc-root a {
-      text-decoration: none;
+    .css-1fhcqx0-SearchInput::placeholder {
+      color: rgba(255,255,255,.48) !important;
     }
 
 
-    /* ---------- PANELS / CARDS ---------- */
-
-    #nc-root section,
-    #nc-root article {
-      border-color: var(--gl-border);
+    .css-1mpi08-InputContainer svg {
+      fill: rgba(255,255,255,.6) !important;
     }
 
 
-    /* ---------- INPUTS ---------- */
+    /* =====================================================
+       COLLECTION NAVIGATION
+       ===================================================== */
 
-    #nc-root input,
-    #nc-root textarea,
-    #nc-root select {
-      font-family: "Vazirmatn", sans-serif !important;
+    .css-kxvohc-SidebarNavList {
 
-      background: #fff !important;
-      color: var(--gl-text) !important;
+      background: var(--gl-petroleum) !important;
 
-      border-color: var(--gl-border) !important;
-      border-radius: 6px !important;
+      margin: 0 !important;
 
-      direction: rtl;
-      text-align: right;
+      padding: 8px 10px 18px !important;
 
-      line-height: 1.8 !important;
+      list-style: none !important;
     }
 
 
-    #nc-root input:focus,
-    #nc-root textarea:focus,
-    #nc-root select:focus {
-      border-color: var(--gl-red) !important;
-      outline-color: var(--gl-red) !important;
+    .css-kxvohc-SidebarNavList li {
+
+      margin: 3px 0 !important;
+      padding: 0 !important;
     }
 
 
-    /* ---------- TEXTAREA ---------- */
+    /* Collection links */
 
-    #nc-root textarea {
-      min-height: 130px;
+    a[data-testid="issues"],
+    a[data-testid="articles"] {
+
+      display: flex !important;
+
+      align-items: center !important;
+
+      gap: 10px !important;
+
+      padding: 11px 12px !important;
+
+      border-radius: 5px !important;
+
+      color: rgba(255,255,255,.78) !important;
+
+      background: transparent !important;
+
+      font-size: 13px !important;
+      font-weight: 500 !important;
+
+      text-decoration: none !important;
+
+      transition:
+        background .15s ease,
+        color .15s ease !important;
     }
 
 
-    /* ---------- LABELS ---------- */
+    a[data-testid="issues"]:hover,
+    a[data-testid="articles"]:hover {
 
-    #nc-root label {
-      color: var(--gl-text) !important;
+      background: rgba(255,255,255,.08) !important;
+
+      color: #FFFFFF !important;
+    }
+
+
+    /* active collection */
+
+    a[data-testid="issues"].sidebar-active,
+    a[data-testid="articles"].sidebar-active,
+    a[data-testid="issues"][aria-current="page"],
+    a[data-testid="articles"][aria-current="page"] {
+
+      background: var(--gl-red) !important;
+
+      color: #FFFFFF !important;
+
       font-weight: 600 !important;
     }
 
 
-    /* ---------- BUTTONS ---------- */
+    /* icons */
 
-    #nc-root button {
+    a[data-testid="issues"] svg,
+    a[data-testid="articles"] svg {
+
+      fill: currentColor !important;
+
+      width: 17px !important;
+      height: 17px !important;
+
+      opacity: .8;
+    }
+
+
+    /* =====================================================
+       INPUTS / EDITOR
+       ===================================================== */
+
+    input,
+    textarea,
+    select {
+
       font-family: "Vazirmatn", sans-serif !important;
+
       border-radius: 5px !important;
     }
 
 
-    /* Primary-looking buttons */
+    textarea {
 
-    #nc-root button[class*="Button"],
-    #nc-root a[class*="Button"] {
+      line-height: 1.9 !important;
+
+      direction: rtl !important;
+      text-align: right !important;
+    }
+
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+
+      outline-color: var(--gl-red) !important;
+    }
+
+
+    /* =====================================================
+       BUTTONS
+       ===================================================== */
+
+    button {
+
+      font-family: "Vazirmatn", sans-serif !important;
+
       border-radius: 5px !important;
     }
 
 
-    /* ---------- LISTS ---------- */
+    /* =====================================================
+       TYPOGRAPHY
+       ===================================================== */
 
-    #nc-root ul,
-    #nc-root ol {
-      direction: rtl;
-    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
 
-
-    /* ---------- COLLECTION AREA ---------- */
-
-    #nc-root [class*="Collection"] {
       font-family: "Vazirmatn", sans-serif !important;
-    }
 
-
-    /* ---------- EDITOR ---------- */
-
-    #nc-root [class*="Editor"] {
-      font-family: "Vazirmatn", sans-serif !important;
-    }
-
-
-    /* ---------- ENTRY CARDS ---------- */
-
-    #nc-root [class*="Card"] {
-      border-radius: 7px !important;
-      border-color: var(--gl-border) !important;
-      box-shadow: none !important;
-    }
-
-
-    /* ---------- DROPDOWNS ---------- */
-
-    #nc-root [role="listbox"],
-    #nc-root [role="menu"] {
-      font-family: "Vazirmatn", sans-serif !important;
-    }
-
-
-    /* ---------- HEADINGS ---------- */
-
-    #nc-root h1,
-    #nc-root h2,
-    #nc-root h3,
-    #nc-root h4 {
-      font-family: "Vazirmatn", sans-serif !important;
-      color: var(--gl-text);
       letter-spacing: 0 !important;
     }
 
 
-    /* ---------- RTL ---------- */
-
-    #nc-root {
-      direction: rtl;
-      text-align: right;
-    }
-
-
-    /* Don't reverse icons/images */
-
-    #nc-root img,
-    #nc-root svg {
-      direction: ltr;
-    }
-
-
-    /* ---------- SELECTION ---------- */
-
-    ::selection {
-      background: var(--gl-red);
-      color: white;
-    }
-
-
-    /* ---------- SCROLLBAR ---------- */
+    /* =====================================================
+       SCROLLBAR
+       ===================================================== */
 
     ::-webkit-scrollbar {
-      width: 9px;
-      height: 9px;
+
+      width: 8px;
+      height: 8px;
     }
+
 
     ::-webkit-scrollbar-track {
-      background: var(--gl-paper-dark);
+
+      background: var(--gl-soft);
     }
 
+
     ::-webkit-scrollbar-thumb {
-      background: #AAA9A4;
+
+      background: #AAA7A0;
+
       border-radius: 20px;
     }
 
+
     ::-webkit-scrollbar-thumb:hover {
+
       background: var(--gl-red);
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 800px) {
+
+      aside.css-1ff92bv-SidebarContainer-card-card {
+
+        min-width: unset !important;
+
+        width: 100% !important;
+      }
+
     }
 
   </style>
 
 </head>
 
+
 <body>
 
-  <!--
-    Decap will mount here.
-    This is officially supported by Decap CMS.
-  -->
-  <div id="nc-root"></div>
+  <!-- Decap CMS -->
 
   <script
-    defer
     src="https://cdn.jsdelivr.net/npm/decap-cms@3.17.0-beta.0/dist/decap-cms.js">
   </script>
 
