@@ -1,0 +1,21 @@
+collections:
+  issues:
+    output: true
+    permalink: /issues/:name/
+
+  articles:
+    output: true
+    permalink: /articles/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "issues"
+    values:
+      layout: "issue"
+
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: "article"
