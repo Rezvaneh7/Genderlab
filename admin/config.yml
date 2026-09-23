@@ -3,26 +3,43 @@ backend:
   turbo_site_id: 20aff52d-5b0e-497c-bb0b-feef5e3194c7
   branch: main
 
+
+# ==================================================
+# MEDIA
+# ==================================================
+
 media_folder: "assets/uploads"
 public_folder: "/Genderlab/assets/uploads"
 
-locale: "fa"
+
+# ==================================================
+# CMS LANGUAGE
+# Technical interface will be English.
+# Content fields remain Persian.
+# ==================================================
+
+locale: "en"
+
+
+# ==================================================
+# COLLECTIONS
+# ==================================================
 
 collections:
+
 
   # ==================================================
   # MAGAZINE ISSUES
   # ==================================================
 
   - name: "issues"
-    label: "📚 شماره‌های مجله"
+    label: "شماره‌های مجله"
     label_singular: "شماره مجله"
 
     folder: "_issues"
     create: true
 
     slug: "{{fields.number}}"
-
     identifier_field: "title"
 
     summary: "شماره {{number}} — {{title}}"
@@ -37,15 +54,18 @@ collections:
         widget: "string"
         hint: "عنوان اصلی این شماره از مجله"
 
+
       - label: "شماره مجله"
         name: "number"
         widget: "string"
         hint: "مثلاً 01"
 
+
       - label: "شماره فارسی"
         name: "numberFa"
         widget: "string"
         hint: "مثلاً ۰۱"
+
 
       - label: "تاریخ انتشار"
         name: "date"
@@ -53,37 +73,43 @@ collections:
         date_format: "YYYY-MM-DD"
         time_format: false
 
+
       - label: "فصل / تاریخ فارسی"
         name: "season"
         widget: "string"
         hint: "مثلاً پاییز ۱۴۰۵"
+
 
       - label: "فصل / تاریخ انگلیسی"
         name: "seasonEn"
         widget: "string"
         hint: "مثلاً AUTUMN 2026"
 
+
       - label: "معرفی کوتاه"
         name: "description"
         widget: "text"
-        hint: "متن کوتاهی که در صفحه اصلی و آرشیو شماره‌ها نمایش داده می‌شود."
+        hint: "معرفی کوتاه شماره برای صفحه اصلی و آرشیو."
+
 
       - label: "جلد شماره"
         name: "cover"
         widget: "image"
         hint: "تصویر اصلی جلد این شماره"
 
+
       - label: "نسخه PDF"
         name: "pdf"
         widget: "file"
         required: false
-        hint: "در صورت وجود، فایل کامل PDF این شماره را بارگذاری کنید."
+        hint: "فایل کامل PDF شماره، در صورت وجود."
+
 
       - label: "درباره این شماره"
         name: "body"
-        widget: "markdown"
+        widget: "richtext"
         required: false
-        hint: "متن معرفی کامل شماره که در صفحه اختصاصی آن نمایش داده می‌شود."
+        hint: "معرفی کامل این شماره."
 
 
   # ==================================================
@@ -91,14 +117,13 @@ collections:
   # ==================================================
 
   - name: "articles"
-    label: "✍️ مطالب مجله"
+    label: "مطالب مجله"
     label_singular: "مطلب"
 
     folder: "_articles"
     create: true
 
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-
     identifier_field: "title"
 
     summary: "{{title}} — {{author}}"
@@ -108,40 +133,49 @@ collections:
 
     fields:
 
-      # ----------------------------------------------
-      # MAIN CONTENT
-      # ----------------------------------------------
+
+      # ==================================================
+      # 1. ARTICLE
+      # ==================================================
 
       - label: "عنوان مطلب"
         name: "title"
         widget: "string"
         hint: "عنوان اصلی مطلب"
 
+
       - label: "متن مطلب"
         name: "body"
         widget: "richtext"
-        hint: "متن کامل مطلب را اینجا بنویسید."
+        hint: "متن کامل مقاله را اینجا بنویسید."
+
+
+      # ==================================================
+      # 2. PRESENTATION
+      # ==================================================
 
       - label: "خلاصه"
         name: "excerpt"
         widget: "text"
-        hint: "یک معرفی کوتاه برای نمایش در صفحه اصلی، صفحه شماره و فهرست مطالب."
+        hint: "معرفی کوتاه مطلب برای صفحه اصلی و فهرست مطالب."
+
 
       - label: "تصویر اصلی"
         name: "image"
         widget: "image"
         required: false
-        hint: "تصویر شاخص مطلب برای نمایش در سایت."
+        hint: "تصویر شاخص مطلب"
 
 
-      # ----------------------------------------------
-      # PUBLICATION INFORMATION
-      # ----------------------------------------------
+      # ==================================================
+      # 3. PUBLICATION DETAILS
+      # ==================================================
 
       - label: "نویسنده"
         name: "author"
         widget: "string"
-        hint: "نام نویسنده یا نویسندگان مطلب"
+        hint: "نام نویسنده یا نویسندگان"
+
 
       - label: "شماره مجله"
         name: "issue"
@@ -159,7 +193,8 @@ collections:
           - "number"
           - "title"
 
-        hint: "این مطلب متعلق به کدام شماره مجله است؟"
+        hint: "شماره‌ای که این مطلب در آن منتشر شده است."
+
 
       - label: "نوع مطلب"
         name: "category"
@@ -173,11 +208,12 @@ collections:
           - "یادداشت"
           - "نقد"
 
-        hint: "نوع محتوای منتشرشده را انتخاب کنید."
+        hint: "نوع محتوای مطلب"
+
 
       - label: "تاریخ انتشار"
         name: "date"
         widget: "datetime"
         date_format: "YYYY-MM-DD"
         time_format: false
-        hint: "تاریخی که مطلب در آن منتشر می‌شود."
+        hint: "تاریخ انتشار مطلب"
