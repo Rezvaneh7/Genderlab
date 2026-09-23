@@ -4,114 +4,279 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
 
   <title>GenderLab | پنل تحریریه</title>
 
-  <!-- GenderLab Font -->
+  <!-- Vazirmatn -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
-  <!-- Explicit Decap config -->
+  <!-- IMPORTANT: Decap config -->
   <link href="config.yml" type="text/yaml" rel="cms-config-url">
 
   <style>
+
+    /* ==========================================
+       GENDERLAB — DECAP ADMIN THEME
+       ========================================== */
+
     :root {
-      --gl-ink: #172B36;
+      --gl-navy: #172B36;
       --gl-red: #A34D45;
       --gl-paper: #F8F7F3;
-      --gl-border: #E4E1D9;
+      --gl-paper-dark: #EEECE5;
+      --gl-white: #FFFFFF;
+      --gl-text: #172B36;
+      --gl-muted: #6E777B;
+      --gl-border: #DEDCD5;
     }
+
+
+    /* ---------- GLOBAL ---------- */
 
     html,
     body,
-    button,
-    input,
-    textarea,
-    select {
+    #nc-root {
+      margin: 0 !important;
+      min-height: 100% !important;
+      background: var(--gl-paper) !important;
       font-family: "Vazirmatn", sans-serif !important;
     }
 
-    body {
-      background: var(--gl-paper);
-    }
-
-    /* General text */
-    body,
-    input,
-    textarea,
-    select,
-    button {
-      color: var(--gl-ink);
-    }
-
-    /* Inputs */
-    input,
-    textarea,
-    select {
-      border-radius: 4px !important;
-    }
-
-    /* Buttons */
-    button {
+    body * {
       font-family: "Vazirmatn", sans-serif !important;
+      box-sizing: border-box;
     }
 
-    /* Make forms more comfortable */
-    input,
-    textarea {
+
+    /* ---------- CMS BACKGROUND ---------- */
+
+    #nc-root {
+      background:
+        linear-gradient(
+          to bottom,
+          var(--gl-navy) 0,
+          var(--gl-navy) 6px,
+          var(--gl-paper) 6px,
+          var(--gl-paper) 100%
+        ) !important;
+    }
+
+
+    /* ---------- GENERAL DECAP SURFACES ---------- */
+
+    #nc-root main,
+    #nc-root [role="main"] {
+      background-color: var(--gl-paper) !important;
+    }
+
+
+    /* ---------- HEADERS / NAVIGATION ---------- */
+
+    #nc-root header {
+      background: var(--gl-navy) !important;
+      color: white !important;
+      border: 0 !important;
+      box-shadow: none !important;
+    }
+
+    #nc-root header *,
+    #nc-root header a,
+    #nc-root header button {
+      color: white !important;
+    }
+
+
+    /* ---------- LINKS ---------- */
+
+    #nc-root a {
+      text-decoration: none;
+    }
+
+
+    /* ---------- PANELS / CARDS ---------- */
+
+    #nc-root section,
+    #nc-root article {
+      border-color: var(--gl-border);
+    }
+
+
+    /* ---------- INPUTS ---------- */
+
+    #nc-root input,
+    #nc-root textarea,
+    #nc-root select {
+      font-family: "Vazirmatn", sans-serif !important;
+
+      background: #fff !important;
+      color: var(--gl-text) !important;
+
+      border-color: var(--gl-border) !important;
+      border-radius: 6px !important;
+
+      direction: rtl;
+      text-align: right;
+
       line-height: 1.8 !important;
     }
 
-    textarea {
+
+    #nc-root input:focus,
+    #nc-root textarea:focus,
+    #nc-root select:focus {
+      border-color: var(--gl-red) !important;
+      outline-color: var(--gl-red) !important;
+    }
+
+
+    /* ---------- TEXTAREA ---------- */
+
+    #nc-root textarea {
       min-height: 130px;
     }
 
-    /* Persian content */
-    input,
-    textarea {
+
+    /* ---------- LABELS ---------- */
+
+    #nc-root label {
+      color: var(--gl-text) !important;
+      font-weight: 600 !important;
+    }
+
+
+    /* ---------- BUTTONS ---------- */
+
+    #nc-root button {
+      font-family: "Vazirmatn", sans-serif !important;
+      border-radius: 5px !important;
+    }
+
+
+    /* Primary-looking buttons */
+
+    #nc-root button[class*="Button"],
+    #nc-root a[class*="Button"] {
+      border-radius: 5px !important;
+    }
+
+
+    /* ---------- LISTS ---------- */
+
+    #nc-root ul,
+    #nc-root ol {
+      direction: rtl;
+    }
+
+
+    /* ---------- COLLECTION AREA ---------- */
+
+    #nc-root [class*="Collection"] {
+      font-family: "Vazirmatn", sans-serif !important;
+    }
+
+
+    /* ---------- EDITOR ---------- */
+
+    #nc-root [class*="Editor"] {
+      font-family: "Vazirmatn", sans-serif !important;
+    }
+
+
+    /* ---------- ENTRY CARDS ---------- */
+
+    #nc-root [class*="Card"] {
+      border-radius: 7px !important;
+      border-color: var(--gl-border) !important;
+      box-shadow: none !important;
+    }
+
+
+    /* ---------- DROPDOWNS ---------- */
+
+    #nc-root [role="listbox"],
+    #nc-root [role="menu"] {
+      font-family: "Vazirmatn", sans-serif !important;
+    }
+
+
+    /* ---------- HEADINGS ---------- */
+
+    #nc-root h1,
+    #nc-root h2,
+    #nc-root h3,
+    #nc-root h4 {
+      font-family: "Vazirmatn", sans-serif !important;
+      color: var(--gl-text);
+      letter-spacing: 0 !important;
+    }
+
+
+    /* ---------- RTL ---------- */
+
+    #nc-root {
       direction: rtl;
       text-align: right;
     }
 
-    /* Scrollbar */
+
+    /* Don't reverse icons/images */
+
+    #nc-root img,
+    #nc-root svg {
+      direction: ltr;
+    }
+
+
+    /* ---------- SELECTION ---------- */
+
+    ::selection {
+      background: var(--gl-red);
+      color: white;
+    }
+
+
+    /* ---------- SCROLLBAR ---------- */
+
     ::-webkit-scrollbar {
       width: 9px;
       height: 9px;
     }
 
     ::-webkit-scrollbar-track {
-      background: #EEECE5;
+      background: var(--gl-paper-dark);
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #B7B1A7;
-      border-radius: 10px;
+      background: #AAA9A4;
+      border-radius: 20px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
       background: var(--gl-red);
     }
+
   </style>
 
 </head>
 
 <body>
 
-  <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.17.0-beta.0/dist/decap-cms.js"></script>
+  <!--
+    Decap will mount here.
+    This is officially supported by Decap CMS.
+  -->
+  <div id="nc-root"></div>
 
-  <script>
-    /*
-      GenderLab CMS
-      Keep Decap initialization automatic.
-      config.yml is explicitly defined in <head>.
-    */
-
-    window.addEventListener("load", function () {
-      document.documentElement.lang = "fa";
-      document.documentElement.dir = "rtl";
-    });
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/decap-cms@3.17.0-beta.0/dist/decap-cms.js">
   </script>
 
 </body>
+
 </html>
