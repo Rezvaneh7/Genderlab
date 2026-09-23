@@ -163,4 +163,4 @@ collections:
 
       - label: "متن کامل مطلب"
         name: "body"
-        widget: "markdown"
+        widget: "richtext"
