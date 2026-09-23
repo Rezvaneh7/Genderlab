@@ -1,17 +1,117 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>GenderLab CMS</title>
+  <title>GenderLab | پنل تحریریه</title>
 
+  <!-- GenderLab Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Explicit Decap config -->
   <link href="config.yml" type="text/yaml" rel="cms-config-url">
+
+  <style>
+    :root {
+      --gl-ink: #172B36;
+      --gl-red: #A34D45;
+      --gl-paper: #F8F7F3;
+      --gl-border: #E4E1D9;
+    }
+
+    html,
+    body,
+    button,
+    input,
+    textarea,
+    select {
+      font-family: "Vazirmatn", sans-serif !important;
+    }
+
+    body {
+      background: var(--gl-paper);
+    }
+
+    /* General text */
+    body,
+    input,
+    textarea,
+    select,
+    button {
+      color: var(--gl-ink);
+    }
+
+    /* Inputs */
+    input,
+    textarea,
+    select {
+      border-radius: 4px !important;
+    }
+
+    /* Buttons */
+    button {
+      font-family: "Vazirmatn", sans-serif !important;
+    }
+
+    /* Make forms more comfortable */
+    input,
+    textarea {
+      line-height: 1.8 !important;
+    }
+
+    textarea {
+      min-height: 130px;
+    }
+
+    /* Persian content */
+    input,
+    textarea {
+      direction: rtl;
+      text-align: right;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 9px;
+      height: 9px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #EEECE5;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #B7B1A7;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--gl-red);
+    }
+  </style>
+
 </head>
 
 <body>
 
   <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.17.0-beta.0/dist/decap-cms.js"></script>
+
+  <script>
+    /*
+      GenderLab CMS
+      Keep Decap initialization automatic.
+      config.yml is explicitly defined in <head>.
+    */
+
+    window.addEventListener("load", function () {
+      document.documentElement.lang = "fa";
+      document.documentElement.dir = "rtl";
+    });
+  </script>
 
 </body>
 </html>
