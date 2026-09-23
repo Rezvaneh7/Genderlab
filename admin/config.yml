@@ -1,0 +1,71 @@
+backend:
+  name: github
+  repo: Rezvaneh7/Genderlab
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/Genderlab/assets/uploads"
+
+locale: "fa"
+
+collections:
+
+  - name: "issues"
+    label: "شماره‌های مجله"
+    label_singular: "شماره مجله"
+
+    folder: "_issues"
+    create: true
+
+    slug: "{{fields.number}}"
+
+    editor:
+      preview: false
+
+    fields:
+
+      - label: "شماره"
+        name: "number"
+        widget: "string"
+        hint: "مثلاً 01"
+
+      - label: "شماره فارسی"
+        name: "numberFa"
+        widget: "string"
+        hint: "مثلاً ۰۱"
+
+      - label: "عنوان شماره"
+        name: "title"
+        widget: "string"
+
+      - label: "تاریخ انتشار"
+        name: "date"
+        widget: "datetime"
+
+      - label: "فصل / تاریخ فارسی"
+        name: "season"
+        widget: "string"
+        hint: "مثلاً پاییز ۱۴۰۵"
+
+      - label: "تاریخ انگلیسی"
+        name: "seasonEn"
+        widget: "string"
+        hint: "مثلاً AUTUMN 2026"
+
+      - label: "توضیح کوتاه"
+        name: "description"
+        widget: "text"
+
+      - label: "جلد شماره"
+        name: "cover"
+        widget: "image"
+
+      - label: "فایل PDF شماره"
+        name: "pdf"
+        widget: "file"
+        required: false
+
+      - label: "متن معرفی شماره"
+        name: "body"
+        widget: "markdown"
+        required: false
