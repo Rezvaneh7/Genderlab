@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,112 +11,92 @@
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     :root {
       --petroleum: #172B36;
       --petroleum-light: #213B49;
       --red: #A34D45;
-      --red-dark: #8D403A;
+      --red-dark: #8C403A;
       --cream: #F7F5F0;
       --paper: #FFFFFF;
-      --border: #E3E0D8;
+      --border: #E2DFD7;
       --text: #172B36;
-      --muted: #788187;
-      --draft: #B28B45;
+      --muted: #7B858A;
+      --draft: #B18443;
+      --published: #557364;
     }
 
-    html,
-    body {
+    html, body {
       margin: 0;
       min-height: 100%;
       background: var(--cream);
-      font-family: "Vazirmatn", sans-serif;
       color: var(--text);
+      font-family: "Vazirmatn", sans-serif;
     }
 
-    body {
-      direction: rtl;
-    }
-
-    button,
-    input,
-    textarea,
-    select {
+    button, input {
       font-family: inherit;
-    }
-
-    .app {
-      min-height: 100vh;
-      display: flex;
     }
 
     /* SIDEBAR */
 
     .sidebar {
-      width: 250px;
-      min-height: 100vh;
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 245px;
       background: var(--petroleum);
       color: white;
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
       display: flex;
       flex-direction: column;
-      z-index: 20;
     }
 
     .brand {
-      padding: 34px 28px 28px;
-      border-bottom: 1px solid rgba(255,255,255,.09);
+      padding: 34px 27px 27px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
-    .brand-name {
+    .brand-title {
       direction: ltr;
       text-align: right;
       font-size: 20px;
       font-weight: 700;
-      letter-spacing: .12em;
+      letter-spacing: .13em;
     }
 
-    .brand-subtitle {
+    .brand-sub {
       direction: ltr;
       text-align: right;
-      margin-top: 5px;
-      color: rgba(255,255,255,.42);
       font-size: 9px;
-      letter-spacing: .2em;
+      letter-spacing: .19em;
+      color: rgba(255,255,255,.4);
+      margin-top: 4px;
     }
 
-    .nav {
-      padding: 20px 14px;
+    nav {
+      padding: 20px 13px;
       flex: 1;
     }
 
-    .nav-label {
+    .nav-title {
       padding: 0 14px 10px;
       color: rgba(255,255,255,.35);
       font-size: 10px;
-      letter-spacing: .08em;
     }
 
     .nav-item {
       width: 100%;
       border: 0;
-      background: transparent;
-      color: rgba(255,255,255,.72);
       padding: 12px 14px;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      gap: 11px;
+      margin-bottom: 3px;
+      border-radius: 5px;
+      background: transparent;
+      color: rgba(255,255,255,.7);
+      text-align: right;
       cursor: pointer;
       font-size: 13px;
-      text-align: right;
-      margin-bottom: 4px;
     }
 
     .nav-item:hover {
@@ -131,107 +110,106 @@
       font-weight: 600;
     }
 
-    .nav-icon {
-      width: 20px;
-      text-align: center;
-      opacity: .9;
-    }
-
-    .sidebar-footer {
-      padding: 20px 28px;
-      border-top: 1px solid rgba(255,255,255,.09);
-      color: rgba(255,255,255,.4);
-      font-size: 10px;
+    .sidebar-bottom {
+      padding: 20px 27px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: rgba(255,255,255,.35);
+      font-size: 9px;
       direction: ltr;
-      text-align: right;
     }
 
     /* MAIN */
 
     .main {
-      width: calc(100% - 250px);
-      margin-right: 250px;
+      margin-right: 245px;
       min-height: 100vh;
     }
 
     .topbar {
-      height: 72px;
-      background: rgba(255,255,255,.82);
+      height: 68px;
+      background: rgba(255,255,255,.88);
       border-bottom: 1px solid var(--border);
+      padding: 0 45px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 42px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(12px);
     }
 
-    .topbar-title {
-      font-size: 13px;
+    .topbar-name {
+      font-size: 12px;
       font-weight: 600;
     }
 
-    .view-site {
-      color: var(--muted);
+    .site-link {
+      font-size: 11px;
       text-decoration: none;
-      font-size: 12px;
+      color: var(--muted);
     }
 
-    .view-site:hover {
+    .site-link:hover {
       color: var(--red);
     }
 
     .content {
-      padding: 48px 52px 70px;
-      max-width: 1450px;
-      margin: 0 auto;
+      max-width: 1400px;
+      margin: auto;
+      padding: 46px 50px 80px;
     }
 
-    /* HEADER */
+    /* PAGE HEADER */
 
-    .page-header {
+    .page-head {
       display: flex;
-      justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 42px;
+      justify-content: space-between;
+      margin-bottom: 32px;
     }
 
     .eyebrow {
       direction: ltr;
       text-align: right;
       color: var(--red);
-      font-size: 10px;
+      font-size: 9px;
+      letter-spacing: .2em;
       font-weight: 700;
-      letter-spacing: .18em;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
     h1 {
-      font-size: 30px;
       margin: 0;
+      font-size: 28px;
       font-weight: 600;
     }
 
-    .intro {
-      margin: 8px 0 0;
+    .description {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
+      margin-top: 7px;
     }
 
-    .primary-button {
-      border: 0;
-      background: var(--red);
-      color: white;
-      padding: 11px 18px;
+    .actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--text);
+      padding: 10px 15px;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
     }
 
-    .primary-button:hover {
+    .btn.primary {
+      border-color: var(--red);
+      background: var(--red);
+      color: white;
+    }
+
+    .btn.primary:hover {
       background: var(--red-dark);
     }
 
@@ -240,13 +218,13 @@
     .stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      background: white;
       border: 1px solid var(--border);
-      background: var(--paper);
-      margin-bottom: 34px;
+      margin-bottom: 26px;
     }
 
     .stat {
-      padding: 24px 26px;
+      padding: 20px 22px;
       border-left: 1px solid var(--border);
     }
 
@@ -255,85 +233,122 @@
     }
 
     .stat-number {
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 600;
-      direction: ltr;
-      text-align: right;
     }
 
     .stat-label {
-      margin-top: 4px;
       color: var(--muted);
-      font-size: 11px;
+      font-size: 10px;
+      margin-top: 3px;
     }
 
-    /* PANELS */
+    /* LIBRARY */
 
-    .grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(300px, .7fr);
-      gap: 24px;
-    }
-
-    .panel {
-      background: var(--paper);
+    .library {
+      background: white;
       border: 1px solid var(--border);
     }
 
-    .panel-header {
-      padding: 19px 22px;
+    .library-top {
+      padding: 18px 20px;
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
-    .panel-title {
-      font-size: 13px;
+    .filters {
+      display: flex;
+      gap: 4px;
+    }
+
+    .filter {
+      border: 0;
+      background: transparent;
+      padding: 7px 11px;
+      color: var(--muted);
+      font-size: 11px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .filter.active {
+      background: #F0EEE8;
+      color: var(--text);
       font-weight: 600;
     }
 
-    .panel-link {
-      border: 0;
-      background: transparent;
-      color: var(--red);
+    .search {
+      width: 260px;
+      border: 1px solid var(--border);
+      background: #FAF9F6;
+      border-radius: 4px;
+      padding: 8px 11px;
+      outline: none;
+      direction: rtl;
       font-size: 11px;
-      cursor: pointer;
     }
 
-    /* CONTENT ROWS */
+    .search:focus {
+      border-color: var(--red);
+    }
 
-    .content-row {
-      padding: 17px 22px;
+    /* TABLE */
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      padding: 12px 18px;
+      text-align: right;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 500;
+      background: #FAF9F6;
       border-bottom: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 20px;
-      align-items: center;
     }
 
-    .content-row:last-child {
+    td {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+      font-size: 11px;
+      vertical-align: middle;
+    }
+
+    tr:last-child td {
       border-bottom: 0;
     }
 
-    .content-title {
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 5px;
+    tbody tr:hover {
+      background: #FCFBF8;
     }
 
-    .content-meta {
+    .item-title {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .item-meta {
       color: var(--muted);
-      font-size: 10px;
+      font-size: 9px;
+    }
+
+    .type {
+      color: var(--muted);
     }
 
     .status {
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      direction: ltr;
       font-size: 10px;
       font-weight: 600;
-      direction: ltr;
     }
 
     .status::before {
@@ -341,90 +356,43 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      display: block;
     }
 
-    .published {
-      color: var(--petroleum);
-    }
-
-    .published::before {
-      background: var(--petroleum);
-    }
-
-    .draft {
+    .status.draft {
       color: var(--draft);
     }
 
-    .draft::before {
+    .status.draft::before {
       background: var(--draft);
     }
 
-    /* QUICK ACTIONS */
-
-    .quick-actions {
-      padding: 12px;
+    .status.published {
+      color: var(--published);
     }
 
-    .quick-action {
-      display: block;
-      width: 100%;
-      border: 0;
-      background: transparent;
-      padding: 16px 14px;
-      border-bottom: 1px solid var(--border);
-      text-align: right;
-      cursor: pointer;
-      color: var(--text);
+    .status.published::before {
+      background: var(--published);
     }
 
-    .quick-action:last-child {
-      border-bottom: 0;
-    }
-
-    .quick-action:hover {
-      background: #FAF9F6;
-    }
-
-    .quick-title {
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .quick-description {
-      color: var(--muted);
+    .edit {
+      color: var(--red);
+      text-decoration: none;
       font-size: 10px;
-      margin-top: 3px;
     }
 
-    /* MOBILE */
-
-    @media (max-width: 900px) {
-      .sidebar {
-        width: 210px;
-      }
-
-      .main {
-        width: calc(100% - 210px);
-        margin-right: 210px;
-      }
-
-      .stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
+    .empty {
+      padding: 55px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 800px) {
       .sidebar {
         display: none;
       }
 
       .main {
-        width: 100%;
         margin-right: 0;
       }
 
@@ -432,14 +400,23 @@
         padding: 30px 20px;
       }
 
-      .topbar {
-        padding: 0 20px;
+      .stats {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .page-header {
+      .page-head {
         align-items: flex-start;
-        gap: 20px;
         flex-direction: column;
+        gap: 20px;
+      }
+
+      .library-top {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .search {
+        width: 100%;
       }
     }
   </style>
@@ -447,182 +424,161 @@
 
 <body>
 
-<div class="app">
-
   <aside class="sidebar">
 
     <div class="brand">
-      <div class="brand-name">GENDERLAB</div>
-      <div class="brand-subtitle">EDITORIAL CMS</div>
+      <div class="brand-title">GENDERLAB</div>
+      <div class="brand-sub">EDITORIAL CMS</div>
     </div>
 
-    <nav class="nav">
-
-      <div class="nav-label">مدیریت محتوا</div>
+    <nav>
+      <div class="nav-title">مدیریت محتوا</div>
 
       <button class="nav-item active">
-        <span class="nav-icon">⌂</span>
-        داشبورد
+        همه محتوا
       </button>
 
       <button class="nav-item">
-        <span class="nav-icon">✎</span>
         مطالب
       </button>
 
       <button class="nav-item">
-        <span class="nav-icon">▣</span>
         شماره‌های مجله
       </button>
 
       <button class="nav-item">
-        <span class="nav-icon">▧</span>
         رسانه‌ها
       </button>
-
     </nav>
 
-    <div class="sidebar-footer">
-      GENDERLAB / EDITORIAL SYSTEM
+    <div class="sidebar-bottom">
+      GENDERLAB / EDITORIAL
     </div>
 
   </aside>
+
 
   <main class="main">
 
     <header class="topbar">
 
-      <div class="topbar-title">
+      <div class="topbar-name">
         تحریریه جندرلب
       </div>
 
-      <a
-        class="view-site"
-        href="/Genderlab/"
-        target="_blank">
+      <a href="/Genderlab/" target="_blank" class="site-link">
         مشاهده سایت ↗
       </a>
 
     </header>
 
+
     <div class="content">
 
-      <div class="page-header">
+      <section class="page-head">
 
         <div>
-          <div class="eyebrow">EDITORIAL DASHBOARD</div>
+          <div class="eyebrow">CONTENT LIBRARY</div>
 
-          <h1>داشبورد</h1>
+          <h1>محتوا</h1>
 
-          <p class="intro">
-            مدیریت مطالب و شماره‌های مجله جندرلب
-          </p>
+          <div class="description">
+            مطالب و شماره‌های منتشرشده و پیش‌نویس‌ها
+          </div>
         </div>
 
-        <button class="primary-button">
-          + مطلب جدید
-        </button>
+        <div class="actions">
 
-      </div>
+          <button class="btn">
+            + شماره جدید
+          </button>
 
-      <section class="stats">
+          <button class="btn primary">
+            + مطلب جدید
+          </button>
 
-        <div class="stat">
-          <div class="stat-number">—</div>
-          <div class="stat-label">مطالب منتشرشده</div>
-        </div>
-
-        <div class="stat">
-          <div class="stat-number">—</div>
-          <div class="stat-label">پیش‌نویس مطالب</div>
-        </div>
-
-        <div class="stat">
-          <div class="stat-number">—</div>
-          <div class="stat-label">شماره‌های منتشرشده</div>
-        </div>
-
-        <div class="stat">
-          <div class="stat-number">—</div>
-          <div class="stat-label">پیش‌نویس شماره‌ها</div>
         </div>
 
       </section>
 
-      <div class="grid">
 
-        <section class="panel">
+      <section class="stats">
 
-          <div class="panel-header">
-            <div class="panel-title">آخرین محتوا</div>
+        <div class="stat">
+          <div class="stat-number" id="allCount">—</div>
+          <div class="stat-label">همه محتوا</div>
+        </div>
 
-            <button class="panel-link">
-              مشاهده همه
-            </button>
+        <div class="stat">
+          <div class="stat-number" id="draftCount">—</div>
+          <div class="stat-label">پیش‌نویس</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number" id="publishedCount">—</div>
+          <div class="stat-label">منتشرشده</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number" id="issueCount">—</div>
+          <div class="stat-label">شماره‌های مجله</div>
+        </div>
+
+      </section>
+
+
+      <section class="library">
+
+        <div class="library-top">
+
+          <div class="filters">
+            <button class="filter active">همه</button>
+            <button class="filter">پیش‌نویس‌ها</button>
+            <button class="filter">منتشرشده</button>
+            <button class="filter">مطالب</button>
+            <button class="filter">شماره‌ها</button>
           </div>
 
-          <div class="content-row">
+          <input
+            class="search"
+            type="search"
+            placeholder="جستجو در محتوا..."
+          >
 
-            <div>
-              <div class="content-title">
-                هنوز مطلبی از GitHub بارگذاری نشده
-              </div>
+        </div>
 
-              <div class="content-meta">
-                در مرحله بعد این بخش به محتوای واقعی متصل می‌شود.
-              </div>
-            </div>
 
-            <div class="status draft">
-              Draft
-            </div>
+        <table>
 
-          </div>
+          <thead>
+            <tr>
+              <th>عنوان</th>
+              <th>نوع</th>
+              <th>وضعیت</th>
+              <th>تاریخ</th>
+              <th></th>
+            </tr>
+          </thead>
 
-        </section>
+          <tbody id="contentList">
 
-        <section class="panel">
+            <tr>
+              <td colspan="5">
+                <div class="empty">
+                  در حال حاضر محتوای GitHub به این پنل متصل نشده است.
+                </div>
+              </td>
+            </tr>
 
-          <div class="panel-header">
-            <div class="panel-title">
-              دسترسی سریع
-            </div>
-          </div>
+          </tbody>
 
-          <div class="quick-actions">
+        </table>
 
-            <button class="quick-action">
-              <div class="quick-title">مطلب جدید</div>
-              <div class="quick-description">
-                ایجاد مقاله، جستار، گزارش یا گفت‌وگو
-              </div>
-            </button>
-
-            <button class="quick-action">
-              <div class="quick-title">شماره جدید</div>
-              <div class="quick-description">
-                ایجاد شماره جدید مجله
-              </div>
-            </button>
-
-            <button class="quick-action">
-              <div class="quick-title">پیش‌نویس‌ها</div>
-              <div class="quick-description">
-                ادامه ویرایش محتوای منتشرنشده
-              </div>
-            </button>
-
-          </div>
-
-        </section>
-
-      </div>
+      </section>
 
     </div>
 
   </main>
-
-</div>
 
 </body>
 </html>
