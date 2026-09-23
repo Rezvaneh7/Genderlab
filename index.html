@@ -1233,7 +1233,35 @@
 
 
   </main>
+<script>
+  async function loadIssues() {
+    try {
+      const response = await fetch('./data/issues.json');
 
+      if (!response.ok) {
+        throw new Error('Could not load issues.json');
+      }
+
+      const issues = await response.json();
+
+      if (!issues.length) return;
+
+      // شماره آخر در JSON = شماره تازه
+      const latestIssue = issues[issues.length - 1];
+
+      // شماره‌های قبلی
+      const previousIssues = issues.slice(0, -1).reverse();
+
+      console.log('Latest issue:', latestIssue);
+      console.log('Previous issues:', previousIssues);
+
+    } catch (error) {
+      console.error('GenderLab issues error:', error);
+    }
+  }
+
+  loadIssues();
+</script>
 
 </body>
 
