@@ -8,57 +8,511 @@
   <title>GenderLab | جندرلب</title>
 
   <style>
+
+    /* ==============================
+       GENERAL
+    ============================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
     body {
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       background: #F8F7F3;
       color: #172B36;
-      font-family: Arial, Tahoma, sans-serif;
+      font-family: Tahoma, Arial, sans-serif;
     }
 
-    main {
-      min-height: 100vh;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    /* ==============================
+       HEADER
+    ============================== */
+
+    .site-header {
+      width: 100%;
+      padding: 34px 55px 0;
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: 280px 1fr 260px;
+      gap: 45px;
+
+      direction: ltr;
+      align-items: start;
+    }
+
+
+    /* ==============================
+       LOGO
+    ============================== */
+
+    .brand {
+      direction: ltr;
+      text-align: left;
+    }
+
+    .brand-name {
+      margin: 0;
+
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      line-height: 0.9;
+      font-weight: 500;
+      letter-spacing: -2px;
+
+      color: #172B36;
+    }
+
+    .brand-fa {
+      margin-top: 9px;
+
+      direction: rtl;
+      text-align: left;
+
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .brand-description {
+      margin-top: 22px;
+
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      line-height: 1.55;
+      letter-spacing: 1.1px;
+
+      color: #777C7E;
+
+      text-transform: uppercase;
+    }
+
+
+    /* ==============================
+       MENU
+    ============================== */
+
+    .main-nav {
+      direction: rtl;
+
       display: flex;
       justify-content: center;
-      align-items: center;
-      text-align: center;
+      align-items: flex-start;
+
+      min-height: 58px;
+
+      border-bottom: 1px solid #D9D8D3;
     }
 
-    h1 {
-      margin: 0;
-      font-family: Georgia, serif;
-      font-size: clamp(48px, 9vw, 100px);
-      letter-spacing: -3px;
-      direction: ltr;
-    }
+    .main-nav a {
+      position: relative;
 
-    .fa {
-      margin-top: 15px;
-      font-size: 22px;
-    }
+      display: block;
 
-    .status {
-      margin-top: 30px;
+      padding: 13px 30px 22px;
+
       font-size: 14px;
-      opacity: .65;
+      line-height: 1;
+
+      white-space: nowrap;
+
+      transition: opacity 0.2s ease;
     }
+
+    .main-nav a:hover {
+      opacity: 0.55;
+    }
+
+    .main-nav a.active {
+      font-weight: 700;
+    }
+
+    .main-nav a.active::after {
+      content: "";
+
+      position: absolute;
+
+      right: 20px;
+      left: 20px;
+      bottom: -1px;
+
+      height: 2px;
+
+      background: #172B36;
+    }
+
+
+    /* ==============================
+       RIGHT SIDE
+    ============================== */
+
+    .header-side {
+      direction: rtl;
+    }
+
+    .header-tools {
+      min-height: 58px;
+
+      display: flex;
+      direction: ltr;
+
+      justify-content: flex-end;
+      align-items: flex-start;
+
+      gap: 27px;
+
+      padding-top: 10px;
+    }
+
+
+    /* LANGUAGE */
+
+    .language-switcher {
+      direction: ltr;
+
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .language-switcher a {
+      transition: opacity 0.2s ease;
+    }
+
+    .language-switcher a:hover {
+      opacity: 0.5;
+    }
+
+    .language-switcher .separator {
+      margin: 0 7px;
+      opacity: 0.3;
+    }
+
+
+    /* ==============================
+       SEARCH ICON
+    ============================== */
+
+    .search-button {
+      width: 20px;
+      height: 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+    }
+
+    .search-icon {
+      position: relative;
+
+      display: block;
+
+      width: 14px;
+      height: 14px;
+
+      border: 1.5px solid #172B36;
+      border-radius: 50%;
+    }
+
+    .search-icon::after {
+      content: "";
+
+      position: absolute;
+
+      width: 6px;
+      height: 1.5px;
+
+      right: -5px;
+      bottom: -3px;
+
+      background: #172B36;
+
+      transform: rotate(45deg);
+      transform-origin: center;
+    }
+
+
+    /* ==============================
+       INTRO TEXT
+    ============================== */
+
+    .header-intro {
+      margin-top: 17px;
+
+      direction: rtl;
+      text-align: right;
+
+      font-size: 15px;
+      line-height: 1.75;
+      font-weight: 700;
+
+      color: #172B36;
+    }
+
+
+    /* ==============================
+       FULL DIVIDER
+    ============================== */
+
+    .header-divider {
+      max-width: 1400px;
+
+      height: 1px;
+
+      margin: 28px auto 0;
+
+      background: #D9D8D3;
+    }
+
+
+    /* ==============================
+       TEMPORARY EMPTY SPACE
+       مرحله بعد Hero اینجا می‌آید
+    ============================== */
+
+    .homepage-placeholder {
+      max-width: 1400px;
+      min-height: 500px;
+
+      margin: 0 auto;
+    }
+
+
+    /* ==============================
+       TABLET
+    ============================== */
+
+    @media (max-width: 1000px) {
+
+      .site-header {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+      .header-inner {
+        grid-template-columns: 220px 1fr 190px;
+        gap: 25px;
+      }
+
+      .brand-name {
+        font-size: 34px;
+      }
+
+      .brand-fa {
+        font-size: 21px;
+      }
+
+      .main-nav a {
+        padding-left: 17px;
+        padding-right: 17px;
+      }
+
+    }
+
+
+    /* ==============================
+       MOBILE
+    ============================== */
+
+    @media (max-width: 760px) {
+
+      .site-header {
+        padding: 24px 20px 0;
+      }
+
+      .header-inner {
+        display: grid;
+
+        grid-template-columns: 1fr auto;
+        gap: 20px;
+      }
+
+      .brand {
+        grid-column: 1;
+      }
+
+      .brand-name {
+        font-size: 32px;
+      }
+
+      .brand-fa {
+        font-size: 20px;
+      }
+
+      .brand-description {
+        display: none;
+      }
+
+      .header-side {
+        grid-column: 2;
+      }
+
+      .header-intro {
+        display: none;
+      }
+
+      .main-nav {
+        grid-column: 1 / -1;
+        grid-row: 2;
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        margin-top: 10px;
+      }
+
+      .main-nav a {
+        padding: 15px 18px 18px;
+      }
+
+      .header-divider {
+        margin-top: 0;
+      }
+
+    }
+
   </style>
 </head>
 
+
 <body>
 
-  <main>
-    <div>
-      <h1>GENDERLAB</h1>
 
-      <div class="fa">
-        مجله جندرلب
+  <header class="site-header">
+
+    <div class="header-inner">
+
+
+      <!-- ==========================
+           LOGO
+      =========================== -->
+
+      <div class="brand">
+
+        <div class="brand-name">
+          GENDERLAB
+        </div>
+
+        <div class="brand-fa">
+          جندرلب
+        </div>
+
+        <div class="brand-description">
+          A DIGITAL MAGAZINE<br>
+          ON GENDER, SOCIETY<br>
+          AND CULTURE
+        </div>
+
       </div>
 
-      <div class="status">
-        سایت در حال ساخت است.
+
+
+      <!-- ==========================
+           MENU
+      =========================== -->
+
+      <nav class="main-nav">
+
+        <a href="#" class="active">
+          خانه
+        </a>
+
+        <a href="#">
+          مقالات
+        </a>
+
+        <a href="#">
+          درباره ما
+        </a>
+
+        <a href="#">
+          تماس
+        </a>
+
+      </nav>
+
+
+
+      <!-- ==========================
+           LANGUAGE + SEARCH
+      =========================== -->
+
+      <div class="header-side">
+
+        <div class="header-tools">
+
+          <div class="language-switcher">
+
+            <a href="#">
+              FA
+            </a>
+
+            <span class="separator">
+              |
+            </span>
+
+            <a href="#">
+              EN
+            </a>
+
+          </div>
+
+
+          <a
+            href="#"
+            class="search-button"
+            aria-label="جستجو"
+          >
+            <span class="search-icon"></span>
+          </a>
+
+        </div>
+
+
+        <div class="header-intro">
+          مجله‌ای برای<br>
+          گفت‌وگو، پژوهش<br>
+          و تغییر
+        </div>
+
       </div>
+
+
     </div>
-  </main>
+
+
+    <div class="header-divider"></div>
+
+
+  </header>
+
+
+
+  <!--
+    مرحله بعد:
+    Latest Issue / Hero
+  -->
+
+  <main class="homepage-placeholder"></main>
+
 
 </body>
 </html>
