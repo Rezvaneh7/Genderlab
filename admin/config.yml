@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: Rezvaneh7/Genderlab
+  name: turbo-github
+  turbo_site_id: 20aff52d-5b0e-497c-bb0b-feef5e3194c7
   branch: main
 
 media_folder: "assets/uploads"
