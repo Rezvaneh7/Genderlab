@@ -1,0 +1,351 @@
+---
+---
+
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ page.title }} | GenderLab</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --petroleum: #172B36;
+      --red: #A34D45;
+      --cream: #F7F5F0;
+      --paper: #FFFFFF;
+      --border: #DEDAD1;
+      --muted: #747D82;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--petroleum);
+      font-family: "Vazirmatn", sans-serif;
+      line-height: 2;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      height: 72px;
+      padding: 0 38px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(247,245,240,.95);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      text-decoration: none;
+      direction: ltr;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: .13em;
+    }
+
+    .back-home {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 11px;
+    }
+
+    .back-home:hover {
+      color: var(--red);
+    }
+
+    /* ARTICLE */
+
+    .article {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 75px 30px 110px;
+    }
+
+    .article-header {
+      max-width: 800px;
+      margin-bottom: 48px;
+    }
+
+    .category {
+      color: var(--red);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    .excerpt {
+      margin-top: 24px;
+      color: #4F5D64;
+      font-size: 16px;
+      line-height: 2;
+      max-width: 720px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .meta strong {
+      color: var(--petroleum);
+      font-weight: 600;
+    }
+
+    /* FEATURED IMAGE */
+
+    .featured-image {
+      margin: 50px 0 55px;
+    }
+
+    .featured-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* BODY */
+
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 15px;
+      line-height: 2.2;
+
+      /* همان Justify که برای متن مطلب می‌خواستیم */
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    .article-body p {
+      margin: 0 0 25px;
+    }
+
+    .article-body h2 {
+      margin: 55px 0 18px;
+      font-size: 25px;
+      line-height: 1.6;
+    }
+
+    .article-body h3 {
+      margin: 42px 0 15px;
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    .article-body blockquote {
+      margin: 38px 0;
+      padding: 5px 24px 5px 0;
+      border-right: 3px solid var(--red);
+      color: #4F5D64;
+    }
+
+    .article-body img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .article-body a {
+      color: var(--red);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    /* ISSUE LINK */
+
+    .issue-box {
+      max-width: 760px;
+      margin: 75px auto 0;
+      padding-top: 25px;
+      border-top: 1px solid var(--border);
+    }
+
+    .issue-label {
+      color: var(--muted);
+      font-size: 10px;
+      margin-bottom: 5px;
+    }
+
+    .issue-link {
+      color: var(--red);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .issue-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+
+      .site-header {
+        padding: 0 20px;
+      }
+
+      .article {
+        padding: 45px 20px 75px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .excerpt {
+        font-size: 14px;
+      }
+
+      .article-body {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+<header class="site-header">
+
+  <a href="{{ '/' | relative_url }}" class="logo">
+    GENDERLAB
+  </a>
+
+  <a href="{{ '/' | relative_url }}" class="back-home">
+    بازگشت به مجله
+  </a>
+
+</header>
+
+
+<article class="article">
+
+  <header class="article-header">
+
+    {% if page.category %}
+    <div class="category">
+      {{ page.category }}
+    </div>
+    {% endif %}
+
+
+    <h1>
+      {{ page.title }}
+    </h1>
+
+
+    {% if page.excerpt %}
+    <div class="excerpt">
+      {{ page.excerpt }}
+    </div>
+    {% endif %}
+
+
+    <div class="meta">
+
+      {% if page.author %}
+      <span>
+        نویسنده:
+        <strong>{{ page.author }}</strong>
+      </span>
+      {% endif %}
+
+      {% if page.date %}
+      <span>
+        {{ page.date | date: "%Y-%m-%d" }}
+      </span>
+      {% endif %}
+
+      {% if page.issue %}
+      <span>
+        شماره {{ page.issue }}
+      </span>
+      {% endif %}
+
+    </div>
+
+  </header>
+
+
+  {% if page.image %}
+  <figure class="featured-image">
+    <img
+      src="{{ page.image | relative_url }}"
+      alt="{{ page.title }}"
+    >
+  </figure>
+  {% endif %}
+
+
+  <div class="article-body">
+    {{ content }}
+  </div>
+
+
+  {% if page.issue %}
+
+    {% assign related_issue = site.issues
+      | where: "number", page.issue
+      | first
+    %}
+
+    {% if related_issue %}
+
+    <div class="issue-box">
+
+      <div class="issue-label">
+        منتشرشده در
+      </div>
+
+      <a
+        href="{{ related_issue.url | relative_url }}"
+        class="issue-link">
+        شماره {{ related_issue.numberFa }} —
+        {{ related_issue.title }}
+      </a>
+
+    </div>
+
+    {% endif %}
+
+  {% endif %}
+
+</article>
+
+</body>
+</html>
