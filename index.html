@@ -31,7 +31,7 @@
     body {
       background: #F8F7F3;
       color: #172B36;
-      font-family: "Vazirmatn", Tahoma, sans-serif;
+      font-family: "Vazirmatn", sans-serif;
     }
 
     a {
@@ -103,7 +103,6 @@
       letter-spacing: 1px;
 
       color: #777C7E;
-
       text-transform: uppercase;
     }
 
@@ -207,7 +206,9 @@
     }
 
 
-    /* SEARCH */
+    /* ==============================
+       SEARCH
+    ============================== */
 
     .search-button {
       width: 20px;
@@ -249,7 +250,9 @@
     }
 
 
-    /* HEADER INTRO */
+    /* ==============================
+       HEADER INTRO
+    ============================== */
 
     .header-intro {
       margin-top: 17px;
@@ -266,7 +269,9 @@
     }
 
 
-    /* HEADER DIVIDER */
+    /* ==============================
+       HEADER DIVIDER
+    ============================== */
 
     .header-divider {
       max-width: 1400px;
@@ -531,6 +536,8 @@
     ========================================================= */
 
     .issues-section {
+      display: none;
+
       width: 100%;
 
       background: #EEECE5;
@@ -635,7 +642,9 @@
     }
 
 
-    /* ISSUE CARD COVER */
+    /* ==============================
+       ISSUE CARD COVER
+    ============================== */
 
     .issue-card-cover {
       position: relative;
@@ -649,13 +658,44 @@
       align-items: center;
       justify-content: center;
 
-      padding: 30px;
-
       background: #172B36;
       color: #F8F7F3;
     }
 
-    .issue-card-cover::before {
+
+    /* REAL COVER IMAGE */
+
+    .issue-cover-image {
+      position: absolute;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      z-index: 3;
+    }
+
+
+    /* FALLBACK COVER */
+
+    .issue-card-cover-fallback {
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px;
+
+      background: #172B36;
+
+      z-index: 2;
+    }
+
+    .issue-card-cover-fallback::before {
       content: "";
 
       position: absolute;
@@ -667,7 +707,7 @@
       border-radius: 50%;
     }
 
-    .issue-card-cover::after {
+    .issue-card-cover-fallback::after {
       content: "";
 
       position: absolute;
@@ -681,7 +721,7 @@
 
     .issue-card-cover-title {
       position: relative;
-      z-index: 2;
+      z-index: 3;
 
       text-align: center;
 
@@ -689,10 +729,14 @@
       font-size: clamp(24px, 2.2vw, 34px);
       line-height: 1.45;
       font-weight: 700;
+
+      color: #F8F7F3;
     }
 
 
-    /* ISSUE CARD CONTENT */
+    /* ==============================
+       ISSUE CARD CONTENT
+    ============================== */
 
     .issue-card-content {
       padding-top: 22px;
@@ -1052,31 +1096,28 @@
         <div class="issue-label">
 
           <span>
-            شماره ۰۱
+            شماره
           </span>
 
           <span class="line"></span>
 
           <span>
-            پاییز ۱۴۰۵
           </span>
 
         </div>
 
 
         <h1>
-          بدن، جنسیت<br>
-          و جامعه
+          جندرلب
         </h1>
 
 
         <p>
-          جستارهایی درباره بدن، جنسیت، قدرت و تجربه زیسته؛
-          و نسبت میان آنچه هستیم و آنچه جامعه از ما انتظار دارد.
+          در حال بارگذاری شماره تازه...
         </p>
 
 
-        <a href="issues/01/" class="read-issue">
+        <a href="#" class="read-issue">
 
           مشاهده شماره
 
@@ -1092,7 +1133,7 @@
 
       <!-- HERO COVER -->
 
-      <a href="issues/01/" class="issue-cover">
+      <a href="#" class="issue-cover">
 
         <div class="cover-header">
 
@@ -1101,7 +1142,6 @@
           </span>
 
           <span>
-            01
           </span>
 
         </div>
@@ -1112,9 +1152,7 @@
           <div class="cover-circle"></div>
 
           <div class="cover-text">
-            بدن<br>
-            جنسیت<br>
-            جامعه
+            جندرلب
           </div>
 
         </div>
@@ -1127,7 +1165,6 @@
           </span>
 
           <span>
-            AUTUMN 2026
           </span>
 
         </div>
@@ -1140,7 +1177,7 @@
 
 
     <!-- =======================================================
-         MAGAZINE ISSUES
+         PREVIOUS MAGAZINE ISSUES
     ======================================================== -->
 
     <section class="issues-section">
@@ -1163,25 +1200,320 @@
         </div>
 
 
+        <!-- DYNAMIC ISSUE GRID -->
 
-        <!-- ISSUE GRID -->
+        <div
+          class="issues-grid"
+          id="issues-grid"
+        ></div>
 
-        <div class="issues-grid">
+
+      </div>
+
+    </section>
 
 
-          <!-- ISSUE 01 -->
+  </main>
 
-          <a href="issues/01/" class="issue-card">
 
+
+  <!-- =========================================================
+       DYNAMIC MAGAZINE SYSTEM
+  ========================================================== -->
+
+  <script>
+
+    async function loadIssues() {
+
+      try {
+
+        /* -----------------------------------------
+           LOAD DATA
+        ----------------------------------------- */
+
+        const response =
+          await fetch('./data/issues.json');
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            'Could not load issues.json'
+          );
+
+        }
+
+
+        const issues =
+          await response.json();
+
+
+        if (
+          !Array.isArray(issues) ||
+          issues.length === 0
+        ) {
+
+          throw new Error(
+            'No magazine issues found'
+          );
+
+        }
+
+
+
+        /* =========================================
+           LATEST ISSUE
+        ========================================= */
+
+        const latestIssue =
+          issues[issues.length - 1];
+
+
+
+        /* NUMBER */
+
+        const heroNumber =
+          document.querySelector(
+            '.issue-label span:first-child'
+          );
+
+
+        if (heroNumber) {
+
+          heroNumber.textContent =
+            `شماره ${latestIssue.numberFa}`;
+
+        }
+
+
+
+        /* SEASON */
+
+        const heroSeason =
+          document.querySelector(
+            '.issue-label span:last-child'
+          );
+
+
+        if (heroSeason) {
+
+          heroSeason.textContent =
+            latestIssue.season;
+
+        }
+
+
+
+        /* TITLE */
+
+        const heroTitle =
+          document.querySelector(
+            '.issue-info h1'
+          );
+
+
+        if (heroTitle) {
+
+          heroTitle.textContent =
+            latestIssue.title;
+
+        }
+
+
+
+        /* DESCRIPTION */
+
+        const heroDescription =
+          document.querySelector(
+            '.issue-info p'
+          );
+
+
+        if (heroDescription) {
+
+          heroDescription.textContent =
+            latestIssue.description;
+
+        }
+
+
+
+        /* HERO LINK */
+
+        const heroLink =
+          document.querySelector(
+            '.read-issue'
+          );
+
+
+        if (heroLink) {
+
+          heroLink.href =
+            latestIssue.url;
+
+        }
+
+
+
+        /* HERO COVER LINK */
+
+        const heroCover =
+          document.querySelector(
+            '.issue-cover'
+          );
+
+
+        if (heroCover) {
+
+          heroCover.href =
+            latestIssue.url;
+
+        }
+
+
+
+        /* COVER TITLE */
+
+        const heroCoverTitle =
+          document.querySelector(
+            '.cover-text'
+          );
+
+
+        if (heroCoverTitle) {
+
+          heroCoverTitle.textContent =
+            latestIssue.title;
+
+        }
+
+
+
+        /* COVER NUMBER */
+
+        const heroCoverNumber =
+          document.querySelector(
+            '.cover-header span:last-child'
+          );
+
+
+        if (heroCoverNumber) {
+
+          heroCoverNumber.textContent =
+            latestIssue.number;
+
+        }
+
+
+
+        /* COVER SEASON */
+
+        const heroCoverSeason =
+          document.querySelector(
+            '.cover-footer span:last-child'
+          );
+
+
+        if (heroCoverSeason) {
+
+          heroCoverSeason.textContent =
+            latestIssue.seasonEn;
+
+        }
+
+
+
+        /* =========================================
+           PREVIOUS ISSUES
+        ========================================= */
+
+        const previousIssues =
+          issues
+            .slice(0, -1)
+            .reverse();
+
+
+        const issuesGrid =
+          document.getElementById(
+            'issues-grid'
+          );
+
+
+        const issuesSection =
+          document.querySelector(
+            '.issues-section'
+          );
+
+
+        if (!issuesGrid) {
+          return;
+        }
+
+
+        issuesGrid.innerHTML = '';
+
+
+
+        /* -----------------------------------------
+           NO PREVIOUS ISSUES YET
+        ----------------------------------------- */
+
+        if (previousIssues.length === 0) {
+
+          if (issuesSection) {
+            issuesSection.style.display =
+              'none';
+          }
+
+          return;
+
+        }
+
+
+
+        /* -----------------------------------------
+           SHOW SECTION
+        ----------------------------------------- */
+
+        if (issuesSection) {
+
+          issuesSection.style.display =
+            'block';
+
+        }
+
+
+
+        /* -----------------------------------------
+           CREATE EACH ISSUE CARD
+        ----------------------------------------- */
+
+        previousIssues.forEach(issue => {
+
+
+          const card =
+            document.createElement('a');
+
+
+          card.className =
+            'issue-card';
+
+
+          card.href =
+            issue.url;
+
+
+
+          card.innerHTML = `
 
             <div class="issue-card-top">
 
               <span>
-                شماره ۰۱
+                شماره ${issue.numberFa}
               </span>
 
               <span>
-                پاییز ۱۴۰۵
+                ${issue.season}
               </span>
 
             </div>
@@ -1189,23 +1521,36 @@
 
             <div class="issue-card-cover">
 
-              <div class="issue-card-cover-title">
-                بدن، جنسیت<br>
-                و جامعه
+
+              <div class="issue-card-cover-fallback">
+
+                <div class="issue-card-cover-title">
+                  ${issue.title}
+                </div>
+
               </div>
+
+
+              <img
+                src="${issue.cover}"
+                alt="جلد ${issue.title}"
+                class="issue-cover-image"
+              >
+
 
             </div>
 
 
             <div class="issue-card-content">
 
+
               <h3>
-                بدن، جنسیت و جامعه
+                ${issue.title}
               </h3>
 
+
               <p>
-                جستارهایی درباره بدن، جنسیت، قدرت و تجربه زیسته؛
-                و نسبت میان آنچه هستیم و آنچه جامعه از ما انتظار دارد.
+                ${issue.description}
               </p>
 
 
@@ -1219,49 +1564,83 @@
 
               </div>
 
+
             </div>
 
-
-          </a>
-
-
-        </div>
-
-      </div>
-
-    </section>
+          `;
 
 
-  </main>
-<script>
-  async function loadIssues() {
-    try {
-      const response = await fetch('./data/issues.json');
 
-      if (!response.ok) {
-        throw new Error('Could not load issues.json');
+          /* ---------------------------------------
+             COVER FALLBACK
+          --------------------------------------- */
+
+          const image =
+            card.querySelector(
+              '.issue-cover-image'
+            );
+
+
+          const fallback =
+            card.querySelector(
+              '.issue-card-cover-fallback'
+            );
+
+
+          image.addEventListener(
+            'load',
+            () => {
+
+              image.style.display =
+                'block';
+
+              fallback.style.display =
+                'none';
+
+            }
+          );
+
+
+          image.addEventListener(
+            'error',
+            () => {
+
+              image.style.display =
+                'none';
+
+              fallback.style.display =
+                'flex';
+
+            }
+          );
+
+
+
+          issuesGrid.appendChild(card);
+
+
+        });
+
+
+      } catch (error) {
+
+        console.error(
+          'GenderLab issues error:',
+          error
+        );
+
       }
 
-      const issues = await response.json();
-
-      if (!issues.length) return;
-
-      // شماره آخر در JSON = شماره تازه
-      const latestIssue = issues[issues.length - 1];
-
-      // شماره‌های قبلی
-      const previousIssues = issues.slice(0, -1).reverse();
-
-      console.log('Latest issue:', latestIssue);
-      console.log('Previous issues:', previousIssues);
-
-    } catch (error) {
-      console.error('GenderLab issues error:', error);
     }
-  }
 
-  loadIssues();
-</script>
+
+
+    /* START */
+
+    loadIssues();
+
+  </script>
+
 
 </body>
 
