@@ -1194,8 +1194,6 @@ layout: null
          PREVIOUS MAGAZINE ISSUES
     ======================================================== -->
 
-    {% if sorted_issues.size > 1 %}
-
     <section class="issues-section" style="display:block;">
 
       <div class="issues-inner">
@@ -1215,79 +1213,93 @@ layout: null
 
         <div class="issues-grid">
 
-          {% for issue in sorted_issues offset:1 %}
+          {% if sorted_issues.size > 1 %}
 
-          <a
-            href="{{ issue.url | relative_url }}"
-            class="issue-card"
-          >
+            {% for issue in sorted_issues offset:1 %}
 
-            <div class="issue-card-top">
+            <a
+              href="{{ issue.url | relative_url }}"
+              class="issue-card"
+            >
 
-              <span>
-                شماره {{ issue.numberFa }}
-              </span>
+              <div class="issue-card-top">
 
-              <span>
-                {{ issue.season }}
-              </span>
+                <span>
+                  شماره {{ issue.numberFa }}
+                </span>
 
-            </div>
+                <span>
+                  {{ issue.season }}
+                </span>
+
+              </div>
 
 
-            <div class="issue-card-cover">
+              <div class="issue-card-cover">
 
-              <div class="issue-card-cover-fallback">
+                <div class="issue-card-cover-fallback">
 
-                <div class="issue-card-cover-title">
+                  <div class="issue-card-cover-title">
+                    {{ issue.title }}
+                  </div>
+
+                </div>
+
+                {% if issue.cover %}
+
+                <img
+                  src="{{ issue.cover | relative_url }}"
+                  alt="جلد {{ issue.title }}"
+                  class="issue-cover-image"
+                  onload="this.previousElementSibling.style.display='none';"
+                  onerror="this.style.display='none';"
+                >
+
+                {% endif %}
+
+              </div>
+
+
+              <div class="issue-card-content">
+
+                <h3>
                   {{ issue.title }}
+                </h3>
+
+                <p>
+                  {{ issue.description }}
+                </p>
+
+                <div class="issue-card-link">
+                  مشاهده شماره
+                  <span>←</span>
                 </div>
 
               </div>
 
-              {% if issue.cover %}
+            </a>
 
-              <img
-                src="{{ issue.cover | relative_url }}"
-                alt="جلد {{ issue.title }}"
-                class="issue-cover-image"
-                onload="this.previousElementSibling.style.display='none';"
-                onerror="this.style.display='none';"
-              >
+            {% endfor %}
 
-              {% endif %}
+          {% else %}
 
+            <div style="
+              grid-column: 1 / -1;
+              padding: 42px 0 20px;
+              color: #777C7E;
+              font-family: 'Vazirmatn', sans-serif;
+              font-size: 14px;
+            ">
+              هنوز شماره دیگری منتشر نشده است.
             </div>
 
-
-            <div class="issue-card-content">
-
-              <h3>
-                {{ issue.title }}
-              </h3>
-
-              <p>
-                {{ issue.description }}
-              </p>
-
-              <div class="issue-card-link">
-                مشاهده شماره
-                <span>←</span>
-              </div>
-
-            </div>
-
-          </a>
-
-          {% endfor %}
+          {% endif %}
 
         </div>
 
       </div>
 
     </section>
-
-    {% endif %}
 
   </main>
 
