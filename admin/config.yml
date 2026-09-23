@@ -10,8 +10,12 @@ locale: "fa"
 
 collections:
 
+  # ==================================================
+  # MAGAZINE ISSUES
+  # ==================================================
+
   - name: "issues"
-    label: "شماره‌های مجله"
+    label: "📚 شماره‌های مجله"
     label_singular: "شماره مجله"
 
     folder: "_issues"
@@ -19,12 +23,21 @@ collections:
 
     slug: "{{fields.number}}"
 
+    identifier_field: "title"
+
+    summary: "شماره {{number}} — {{title}}"
+
     editor:
       preview: false
 
     fields:
 
-      - label: "شماره"
+      - label: "عنوان شماره"
+        name: "title"
+        widget: "string"
+        hint: "عنوان اصلی این شماره از مجله"
+
+      - label: "شماره مجله"
         name: "number"
         widget: "string"
         hint: "مثلاً 01"
@@ -34,38 +47,120 @@ collections:
         widget: "string"
         hint: "مثلاً ۰۱"
 
-      - label: "عنوان شماره"
-        name: "title"
-        widget: "string"
-
       - label: "تاریخ انتشار"
         name: "date"
         widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
 
       - label: "فصل / تاریخ فارسی"
         name: "season"
         widget: "string"
         hint: "مثلاً پاییز ۱۴۰۵"
 
-      - label: "تاریخ انگلیسی"
+      - label: "فصل / تاریخ انگلیسی"
         name: "seasonEn"
         widget: "string"
         hint: "مثلاً AUTUMN 2026"
 
-      - label: "توضیح کوتاه"
+      - label: "معرفی کوتاه"
         name: "description"
         widget: "text"
+        hint: "متن کوتاهی که در صفحه اصلی و آرشیو شماره‌ها نمایش داده می‌شود."
 
       - label: "جلد شماره"
         name: "cover"
         widget: "image"
+        hint: "تصویر اصلی جلد این شماره"
 
-      - label: "فایل PDF شماره"
+      - label: "نسخه PDF"
         name: "pdf"
         widget: "file"
         required: false
+        hint: "در صورت وجود، فایل کامل PDF این شماره را بارگذاری کنید."
 
-      - label: "متن معرفی شماره"
+      - label: "درباره این شماره"
         name: "body"
         widget: "markdown"
         required: false
+        hint: "متن معرفی کامل شماره که در صفحه اختصاصی آن نمایش داده می‌شود."
+
+
+  # ==================================================
+  # ARTICLES
+  # ==================================================
+
+  - name: "articles"
+    label: "✍️ مطالب مجله"
+    label_singular: "مطلب"
+
+    folder: "_articles"
+    create: true
+
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+
+    identifier_field: "title"
+
+    summary: "{{title}} — {{author}}"
+
+    editor:
+      preview: false
+
+    fields:
+
+      - label: "عنوان مطلب"
+        name: "title"
+        widget: "string"
+
+      - label: "نویسنده"
+        name: "author"
+        widget: "string"
+
+      - label: "شماره مجله"
+        name: "issue"
+        widget: "relation"
+
+        collection: "issues"
+        search_fields:
+          - "title"
+          - "number"
+
+        value_field: "number"
+
+        display_fields:
+          - "number"
+          - "title"
+
+        hint: "شماره‌ای که این مطلب در آن منتشر شده است."
+
+      - label: "تاریخ انتشار"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+
+      - label: "نوع مطلب"
+        name: "category"
+        widget: "select"
+
+        options:
+          - "مقاله"
+          - "جستار"
+          - "گفت‌وگو"
+          - "گزارش"
+          - "یادداشت"
+          - "نقد"
+
+      - label: "تصویر اصلی"
+        name: "image"
+        widget: "image"
+        required: false
+
+      - label: "خلاصه"
+        name: "excerpt"
+        widget: "text"
+        hint: "یک معرفی کوتاه برای نمایش در صفحه اصلی و فهرست مطالب."
+
+      - label: "متن کامل مطلب"
+        name: "body"
+        widget: "markdown"
