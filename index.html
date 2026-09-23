@@ -7,7 +7,7 @@
 
   <title>GenderLab | جندرلب</title>
 
-  <!-- Persian Font -->
+  <!-- VAZIRMATN -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -130,7 +130,6 @@
 
       padding: 13px 30px 22px;
 
-      font-family: "Vazirmatn", Tahoma, sans-serif;
       font-size: 14px;
       line-height: 1;
 
@@ -151,6 +150,7 @@
       content: "";
 
       position: absolute;
+
       right: 20px;
       left: 20px;
       bottom: -1px;
@@ -179,6 +179,7 @@
       align-items: flex-start;
 
       gap: 27px;
+
       padding-top: 10px;
     }
 
@@ -208,7 +209,7 @@
 
 
     /* ==============================
-       SEARCH ICON
+       SEARCH
     ============================== */
 
     .search-button {
@@ -252,7 +253,7 @@
 
 
     /* ==============================
-       INTRO TEXT
+       HEADER INTRO
     ============================== */
 
     .header-intro {
@@ -261,7 +262,6 @@
       direction: rtl;
       text-align: right;
 
-      font-family: "Vazirmatn", Tahoma, sans-serif;
       font-size: 15px;
       line-height: 1.75;
       font-weight: 700;
@@ -271,7 +271,7 @@
 
 
     /* ==============================
-       DIVIDER
+       HEADER DIVIDER
     ============================== */
 
     .header-divider {
@@ -291,63 +291,104 @@
     .issue-hero {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 75px 55px 85px;
+
+      padding: 60px 55px 85px;
 
       display: grid;
       grid-template-columns: 1fr 0.72fr;
       gap: 100px;
+
       align-items: center;
 
       direction: rtl;
     }
 
 
-    /* ISSUE INFORMATION */
+    /* ==============================
+       HERO INFORMATION
+    ============================== */
 
     .issue-info {
       max-width: 650px;
     }
+
+
+    /* HERO SECTION TITLE */
+
+    .hero-heading {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      margin-bottom: 25px;
+
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 700;
+
+      color: #A34D45;
+    }
+
+    .hero-heading::after {
+      content: "";
+
+      display: block;
+
+      width: 55px;
+      height: 1px;
+
+      background: #A34D45;
+    }
+
+
+    /* ISSUE META */
 
     .issue-label {
       display: flex;
       align-items: center;
       gap: 14px;
 
-      margin-bottom: 32px;
+      margin-bottom: 28px;
 
-      font-family: "Vazirmatn", Tahoma, sans-serif;
       font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0;
+      font-weight: 600;
+
+      color: #667279;
     }
 
     .issue-label .line {
       display: block;
 
-      width: 45px;
+      width: 32px;
       height: 1px;
 
-      background: #A34D45;
+      background: #AEB4B5;
     }
+
+
+    /* ISSUE TITLE */
 
     .issue-info h2 {
       margin: 0 0 28px;
 
       font-family: "Vazirmatn", Tahoma, sans-serif;
+
       font-size: clamp(55px, 6.3vw, 100px);
-      line-height: 1.15;
+      line-height: 1.12;
       letter-spacing: -2px;
       font-weight: 700;
 
       color: #172B36;
     }
 
+
+    /* ISSUE DESCRIPTION */
+
     .issue-info p {
       max-width: 520px;
 
       margin: 0 0 38px;
 
-      font-family: "Vazirmatn", Tahoma, sans-serif;
       font-size: 17px;
       line-height: 2;
       font-weight: 400;
@@ -357,7 +398,7 @@
 
 
     /* ==============================
-       BUTTON
+       READ ISSUE
     ============================== */
 
     .read-issue {
@@ -369,7 +410,6 @@
 
       border-bottom: 1px solid #172B36;
 
-      font-family: "Vazirmatn", Tahoma, sans-serif;
       font-size: 14px;
       font-weight: 700;
 
@@ -478,6 +518,7 @@
       text-align: center;
 
       font-family: "Vazirmatn", Tahoma, sans-serif;
+
       font-size: clamp(28px, 3vw, 43px);
       line-height: 1.45;
       font-weight: 700;
@@ -614,7 +655,7 @@
       /* HERO */
 
       .issue-hero {
-        padding: 50px 20px 70px;
+        padding: 45px 20px 70px;
 
         grid-template-columns: 1fr;
         gap: 55px;
@@ -755,7 +796,7 @@
 
 
   <!-- ==============================
-       LATEST ISSUE
+       LATEST ISSUE HERO
   =============================== -->
 
   <main>
@@ -763,9 +804,19 @@
     <section class="issue-hero">
 
 
-      <!-- ISSUE TEXT -->
+      <!-- ISSUE INFORMATION -->
 
       <div class="issue-info">
+
+
+        <!-- HERO TITLE -->
+
+        <div class="hero-heading">
+          شماره تازه
+        </div>
+
+
+        <!-- ISSUE META -->
 
         <div class="issue-label">
 
@@ -782,17 +833,23 @@
         </div>
 
 
+        <!-- ISSUE TITLE -->
+
         <h2>
           بدن، جنسیت<br>
           و جامعه
         </h2>
 
 
+        <!-- ISSUE DESCRIPTION -->
+
         <p>
           جستارهایی درباره بدن، جنسیت، قدرت و تجربه زیسته؛
           و نسبت میان آنچه هستیم و آنچه جامعه از ما انتظار دارد.
         </p>
 
+
+        <!-- BUTTON -->
 
         <a href="#" class="read-issue">
 
@@ -808,7 +865,9 @@
 
 
 
-      <!-- MAGAZINE COVER -->
+      <!-- ==============================
+           MAGAZINE COVER
+      =============================== -->
 
       <div class="issue-cover">
 
@@ -859,4 +918,5 @@
 
 
 </body>
+
 </html>
