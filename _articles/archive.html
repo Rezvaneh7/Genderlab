@@ -1,6 +1,6 @@
 ---
 layout: null
-permalink: /archive/
+permalink: /articles/
 ---
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ permalink: /archive/
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>آرشیو مجلات | GenderLab</title>
+  <title>مقالات | GenderLab</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +51,7 @@ permalink: /archive/
 
     /* =====================================================
        HEADER
-    ===================================================== */
+    ====================================================== */
 
     .site-header {
       width: 100%;
@@ -211,31 +211,31 @@ permalink: /archive/
 
 
     /* =====================================================
-       ARCHIVE INTRO
-    ===================================================== */
+       INTRO
+    ====================================================== */
 
-    .archive-hero {
+    .articles-hero {
       max-width: 1400px;
 
       margin: 0 auto;
-      padding: 75px 55px 60px;
+      padding: 75px 55px 55px;
     }
 
-    .archive-eyebrow {
+    .articles-eyebrow {
       display: flex;
       align-items: center;
       gap: 15px;
 
       margin-bottom: 25px;
 
+      color: #A34D45;
+
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 2px;
-
-      color: #A34D45;
     }
 
-    .archive-eyebrow::after {
+    .articles-eyebrow::after {
       content: "";
 
       width: 75px;
@@ -244,7 +244,7 @@ permalink: /archive/
       background: #A34D45;
     }
 
-    .archive-hero h1 {
+    .articles-hero h1 {
       margin: 0 0 22px;
 
       font-size: clamp(45px, 6vw, 78px);
@@ -254,29 +254,29 @@ permalink: /archive/
       letter-spacing: -2px;
     }
 
-    .archive-intro {
+    .articles-intro {
       max-width: 650px;
 
       margin: 0;
 
+      color: #46575E;
+
       font-size: 15px;
       line-height: 2.1;
-
-      color: #46575E;
     }
 
 
     /* =====================================================
-       ARCHIVE AREA
-    ===================================================== */
+       ARTICLES AREA
+    ====================================================== */
 
-    .archive-section {
+    .articles-section {
       width: 100%;
 
-      padding: 20px 0 95px;
+      padding: 20px 0 100px;
     }
 
-    .archive-inner {
+    .articles-inner {
       max-width: 1400px;
 
       margin: 0 auto;
@@ -284,206 +284,271 @@ permalink: /archive/
     }
 
 
-    /* TOP LINE */
+    /* TOP */
 
-    .archive-heading {
+    .articles-heading {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+
       gap: 30px;
 
-      margin-bottom: 42px;
+      margin-bottom: 24px;
       padding-bottom: 15px;
 
       border-bottom: 1px solid rgba(16,30,40,.28);
     }
 
-    .archive-heading-fa {
+    .articles-heading-fa {
       font-size: 13px;
       font-weight: 700;
     }
 
-    .archive-heading-en {
+    .articles-heading-en {
       direction: ltr;
+
+      color: #69767C;
 
       font-size: 9px;
       letter-spacing: 2.5px;
-
-      color: #69767C;
     }
 
 
     /* =====================================================
-       ISSUES GRID
-    ===================================================== */
+       FILTERS
+    ====================================================== */
 
-    .issues-grid {
+    .article-filters {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-bottom: 42px;
+    }
+
+    .filter-button {
+      appearance: none;
+
+      padding: 8px 17px;
+
+      border: 1px solid rgba(16,30,40,.18);
+      border-radius: 0;
+
+      background: transparent;
+
+      color: #526168;
+
+      font-family: "Vazirmatn", sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+
+      cursor: pointer;
+
+      transition:
+        background .15s ease,
+        color .15s ease,
+        border-color .15s ease;
+    }
+
+    .filter-button:hover {
+      border-color: #102C3A;
+      color: #102C3A;
+    }
+
+    .filter-button.active {
+      background: #102C3A;
+      border-color: #102C3A;
+      color: #F7F4EE;
+    }
+
+
+    /* =====================================================
+       GRID
+    ====================================================== */
+
+    .articles-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
 
       gap: 65px 38px;
     }
 
-    .issue-card {
-      display: block;
-
+    .article-card {
       min-width: 0;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-card.hidden {
+      display: none;
     }
 
 
-    /* COVER */
+    /* IMAGE */
 
-    .issue-cover {
+    .article-image {
       position: relative;
 
       width: 100%;
-      aspect-ratio: .74;
+      aspect-ratio: 1.48;
 
       overflow: hidden;
 
-      background: #102C3A;
-
-      box-shadow: 0 15px 30px rgba(16,30,40,.08);
-
-      transition:
-        transform .3s ease,
-        box-shadow .3s ease;
+      background: #E8F0F3;
     }
 
-    .issue-card:hover .issue-cover {
-      transform: translateY(-5px);
-
-      box-shadow: 0 23px 40px rgba(16,30,40,.14);
-    }
-
-    .issue-cover img {
+    .article-image img {
       width: 100%;
       height: 100%;
 
       object-fit: cover;
+
+      transition: transform .45s ease;
+    }
+
+    .article-card:hover .article-image img {
+      transform: scale(1.025);
     }
 
 
-    /* FALLBACK COVER */
+    /* FALLBACK */
 
-    .cover-fallback {
+    .article-image-fallback {
       position: absolute;
       inset: 0;
 
-      padding: 28px;
-
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px;
 
       background: #102C3A;
       color: #F7F4EE;
-    }
-
-    .cover-fallback-top {
-      display: flex;
-      justify-content: space-between;
 
       direction: ltr;
 
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .cover-fallback-title {
-      text-align: center;
-
-      font-size: 30px;
-      line-height: 1.55;
+      font-size: 20px;
       font-weight: 700;
-    }
-
-    .cover-fallback-bottom {
-      direction: ltr;
-
-      font-size: 9px;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
     }
 
 
-    /* CARD INFO */
+    /* INFO */
 
-    .issue-info {
-      padding-top: 20px;
-    }
+    .article-info {
+      flex: 1;
 
-    .issue-meta {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
+      flex-direction: column;
 
-      margin-bottom: 8px;
+      padding-top: 18px;
+    }
+
+    .article-category {
+      margin-bottom: 10px;
+
+      color: #A34D45;
 
       font-size: 10px;
-      font-weight: 600;
-
-      color: #69767C;
-    }
-
-    .issue-info h2 {
-      margin: 0 0 9px;
-
-      font-size: 23px;
-      line-height: 1.55;
       font-weight: 700;
     }
 
-    .issue-description {
-      margin: 0;
+    .article-title {
+      margin: 0 0 11px;
 
-      font-size: 12px;
-      line-height: 1.95;
+      color: #101E28;
 
-      color: #526168;
+      font-size: 22px;
+      line-height: 1.65;
+      font-weight: 700;
     }
 
-    .issue-link {
+    .article-excerpt {
+      margin: 0;
+
+      color: #526168;
+
+      font-size: 12px;
+      line-height: 2;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+
+      overflow: hidden;
+    }
+
+
+    /* META */
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      gap: 6px 13px;
+
+      margin-top: 18px;
+      padding-top: 13px;
+
+      border-top: 1px solid rgba(16,30,40,.11);
+
+      color: #788389;
+
+      font-size: 9px;
+    }
+
+    .article-meta-divider {
+      opacity: .35;
+    }
+
+    .article-read {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
 
-      margin-top: 15px;
+      gap: 9px;
 
-      font-size: 11px;
+      margin-top: 17px;
+
+      color: #101E28;
+
+      font-size: 10px;
       font-weight: 700;
 
       transition: gap .2s ease;
     }
 
-    .issue-card:hover .issue-link {
-      gap: 16px;
+    .article-card:hover .article-read {
+      gap: 15px;
     }
 
 
     /* =====================================================
        EMPTY
-    ===================================================== */
+    ====================================================== */
 
-    .archive-empty {
+    .articles-empty {
       grid-column: 1 / -1;
 
       padding: 80px 0;
 
-      text-align: center;
-
       border-top: 1px solid rgba(16,30,40,.12);
       border-bottom: 1px solid rgba(16,30,40,.12);
 
+      color: #69767C;
+
       font-size: 14px;
 
-      color: #69767C;
+      text-align: center;
     }
 
 
     /* =====================================================
        FOOTER
-    ===================================================== */
+    ====================================================== */
 
     .site-footer {
       width: 100%;
@@ -502,6 +567,7 @@ permalink: /archive/
     .footer-main {
       display: grid;
       grid-template-columns: 1fr 1.5fr;
+
       gap: 70px;
 
       align-items: center;
@@ -573,7 +639,7 @@ permalink: /archive/
 
     /* =====================================================
        TABLET
-    ===================================================== */
+    ====================================================== */
 
     @media (max-width: 1000px) {
 
@@ -587,18 +653,18 @@ permalink: /archive/
         gap: 20px;
       }
 
-      .archive-hero {
+      .articles-hero {
         padding-left: 30px;
         padding-right: 30px;
       }
 
-      .archive-inner {
+      .articles-inner {
         padding-left: 30px;
         padding-right: 30px;
       }
 
-      .issues-grid {
-        grid-template-columns: repeat(2, minmax(0,1fr));
+      .articles-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
     }
@@ -606,7 +672,7 @@ permalink: /archive/
 
     /* =====================================================
        MOBILE
-    ===================================================== */
+    ====================================================== */
 
     @media (max-width: 760px) {
 
@@ -643,50 +709,46 @@ permalink: /archive/
         padding: 15px 18px;
       }
 
-
-      /* INTRO */
-
-      .archive-hero {
+      .articles-hero {
         padding: 48px 20px 45px;
       }
 
-      .archive-hero h1 {
+      .articles-hero h1 {
         font-size: 43px;
       }
 
-      .archive-intro {
+      .articles-intro {
         font-size: 14px;
       }
 
-
-      /* GRID */
-
-      .archive-section {
+      .articles-section {
         padding-bottom: 65px;
       }
 
-      .archive-inner {
+      .articles-inner {
         padding: 0 20px;
       }
 
-      .archive-heading-en {
+      .articles-heading-en {
         display: none;
       }
 
-      .issues-grid {
+      .article-filters {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+
+        padding-bottom: 5px;
+      }
+
+      .filter-button {
+        flex: 0 0 auto;
+      }
+
+      .articles-grid {
         grid-template-columns: 1fr;
 
-        gap: 55px;
+        gap: 52px;
       }
-
-      .issue-cover {
-        max-width: 420px;
-
-        margin: 0 auto;
-      }
-
-
-      /* FOOTER */
 
       .footer-inner {
         padding: 32px 20px 22px;
@@ -708,6 +770,7 @@ permalink: /archive/
     }
 
   </style>
+
 </head>
 
 
@@ -741,18 +804,20 @@ permalink: /archive/
       </a>
 
 
-
       <nav class="main-nav">
 
         <a href="{{ '/' | relative_url }}">
           خانه
         </a>
 
-        <a href="#">
+        <a
+          href="{{ '/articles/' | relative_url }}"
+          class="active"
+        >
           مقالات
         </a>
 
-        <a href="{{ '/archive/' | relative_url }}" class="active">
+        <a href="{{ '/archive/' | relative_url }}">
           آرشیو مجلات
         </a>
 
@@ -767,14 +832,17 @@ permalink: /archive/
       </nav>
 
 
-
       <div class="header-tools">
 
         <div class="language">
           FA <span>|</span> EN
         </div>
 
-        <a href="#" class="search" aria-label="جستجو"></a>
+        <a
+          href="#"
+          class="search"
+          aria-label="جستجو"
+        ></a>
 
       </div>
 
@@ -788,25 +856,24 @@ permalink: /archive/
 
 
   <!-- =====================================================
-       ARCHIVE INTRO
+       INTRO
   ====================================================== -->
 
   <main>
 
+    <section class="articles-hero">
 
-    <section class="archive-hero">
-
-      <div class="archive-eyebrow">
-        GENDERLAB / ARCHIVE
+      <div class="articles-eyebrow">
+        GENDERLAB / ARTICLES
       </div>
 
       <h1>
-        آرشیو مجلات
+        مقالات
       </h1>
 
-      <p class="archive-intro">
-        همه شماره‌های جندرلب؛ مجموعه‌ای از پژوهش‌ها، جستارها،
-        گفت‌وگوها و روایت‌ها درباره جنسیت، جامعه و فرهنگ.
+      <p class="articles-intro">
+        مجموعه مقالات، جستارها، گفت‌وگوها، گزارش‌ها و
+        یادداشت‌های جندرلب درباره جنسیت، جامعه و فرهنگ.
       </p>
 
     </section>
@@ -814,143 +881,234 @@ permalink: /archive/
 
 
     <!-- =====================================================
-         GET ALL ISSUES
+         GET ARTICLES
     ====================================================== -->
 
-    {% assign archive_issues = site.issues | sort: "date" | reverse %}
+    {% assign all_articles = site.articles | sort: "date" | reverse %}
 
 
 
     <!-- =====================================================
-         ISSUES
+         ARTICLES
     ====================================================== -->
 
-    <section class="archive-section">
+    <section class="articles-section">
 
-      <div class="archive-inner">
+      <div class="articles-inner">
 
 
-        <div class="archive-heading">
+        <div class="articles-heading">
 
-          <div class="archive-heading-fa">
-            همه شماره‌ها
+          <div class="articles-heading-fa">
+            همه مطالب
           </div>
 
-          <div class="archive-heading-en">
-            ALL ISSUES
+          <div class="articles-heading-en">
+            ALL ARTICLES
           </div>
 
         </div>
 
 
+        <!-- FILTERS -->
 
-        <div class="issues-grid">
+        <div class="article-filters">
+
+          <button
+            class="filter-button active"
+            data-filter="all"
+            type="button"
+          >
+            همه
+          </button>
+
+          <button
+            class="filter-button"
+            data-filter="مقاله"
+            type="button"
+          >
+            مقاله
+          </button>
+
+          <button
+            class="filter-button"
+            data-filter="جستار"
+            type="button"
+          >
+            جستار
+          </button>
+
+          <button
+            class="filter-button"
+            data-filter="گفت‌وگو"
+            type="button"
+          >
+            گفت‌وگو
+          </button>
+
+          <button
+            class="filter-button"
+            data-filter="گزارش"
+            type="button"
+          >
+            گزارش
+          </button>
+
+          <button
+            class="filter-button"
+            data-filter="یادداشت"
+            type="button"
+          >
+            یادداشت
+          </button>
+
+          <button
+            class="filter-button"
+            data-filter="نقد"
+            type="button"
+          >
+            نقد
+          </button>
+
+        </div>
 
 
-          {% if archive_issues.size > 0 %}
+
+        <div class="articles-grid">
 
 
-            {% for issue in archive_issues %}
+          {% if all_articles.size > 0 %}
 
 
-              <a
-                href="{{ issue.url | relative_url }}"
-                class="issue-card"
+            {% for article in all_articles %}
+
+
+              {% assign article_issue = site.issues
+                | where: "number", article.issue
+                | first
+              %}
+
+
+              <article
+                class="article-card"
+                data-category="{{ article.category | escape }}"
               >
 
 
-                <!-- COVER -->
+                <a
+                  href="{{ article.url | relative_url }}"
+                  class="article-image"
+                >
 
-                <div class="issue-cover">
-
-
-                  {% if issue.cover %}
+                  {% if article.image %}
 
                     <img
-                      src="{{ issue.cover | relative_url }}"
-                      alt="جلد {{ issue.title }}"
+                      src="{{ article.image | relative_url }}"
+                      alt="{{ article.title }}"
                     >
-
 
                   {% else %}
 
-
-                    <div class="cover-fallback">
-
-                      <div class="cover-fallback-top">
-
-                        <span>
-                          GENDERLAB
-                        </span>
-
-                        <span>
-                          {{ issue.number }}
-                        </span>
-
-                      </div>
-
-
-                      <div class="cover-fallback-title">
-                        {{ issue.title }}
-                      </div>
-
-
-                      <div class="cover-fallback-bottom">
-                        {{ issue.seasonEn }}
-                      </div>
-
+                    <div class="article-image-fallback">
+                      GENDERLAB
                     </div>
 
+                  {% endif %}
+
+                </a>
+
+
+
+                <div class="article-info">
+
+
+                  {% if article.category %}
+
+                    <div class="article-category">
+                      {{ article.category }}
+                    </div>
 
                   {% endif %}
 
 
-                </div>
+                  <h2 class="article-title">
 
+                    <a href="{{ article.url | relative_url }}">
+                      {{ article.title }}
+                    </a>
 
-
-                <!-- INFORMATION -->
-
-                <div class="issue-info">
-
-
-                  <div class="issue-meta">
-
-                    <span>
-                      شماره {{ issue.numberFa }}
-                    </span>
-
-                    <span>
-                      {{ issue.season }}
-                    </span>
-
-                  </div>
-
-
-                  <h2>
-                    {{ issue.title }}
                   </h2>
 
 
-                  {% if issue.description %}
+                  {% if article.excerpt %}
 
-                    <p class="issue-description">
-                      {{ issue.description }}
+                    <p class="article-excerpt">
+                      {{ article.excerpt }}
                     </p>
 
                   {% endif %}
 
 
-                  <div class="issue-link">
-                    مشاهده شماره
-                    <span>←</span>
+
+                  <div class="article-meta">
+
+
+                    {% if article.author %}
+
+                      <span>
+                        {{ article.author }}
+                      </span>
+
+                    {% endif %}
+
+
+                    {% if article.author and article_issue %}
+
+                      <span class="article-meta-divider">
+                        /
+                      </span>
+
+                    {% endif %}
+
+
+                    {% if article_issue %}
+
+                      <span>
+                        شماره {{ article_issue.numberFa }}
+                      </span>
+
+                    {% endif %}
+
+
+                    {% if article.date %}
+
+                      <span class="article-meta-divider">
+                        /
+                      </span>
+
+                      <span>
+                        {{ article.date | date: "%Y/%m/%d" }}
+                      </span>
+
+                    {% endif %}
+
+
                   </div>
+
+
+                  <a
+                    href="{{ article.url | relative_url }}"
+                    class="article-read"
+                  >
+                    مطالعه مطلب
+                    <span>←</span>
+                  </a>
 
 
                 </div>
 
 
-              </a>
+              </article>
 
 
             {% endfor %}
@@ -959,8 +1117,8 @@ permalink: /archive/
           {% else %}
 
 
-            <div class="archive-empty">
-              هنوز شماره‌ای منتشر نشده است.
+            <div class="articles-empty">
+              هنوز مطلبی منتشر نشده است.
             </div>
 
 
@@ -1008,14 +1166,13 @@ permalink: /archive/
         </div>
 
 
-
         <nav class="footer-nav">
 
           <a href="{{ '/' | relative_url }}">
             خانه
           </a>
 
-          <a href="#">
+          <a href="{{ '/articles/' | relative_url }}">
             مقالات
           </a>
 
@@ -1037,7 +1194,6 @@ permalink: /archive/
       </div>
 
 
-
       <div class="footer-bottom">
 
         <span>
@@ -1054,6 +1210,71 @@ permalink: /archive/
     </div>
 
   </footer>
+
+
+
+  <!-- =====================================================
+       FILTER SCRIPT
+  ====================================================== -->
+
+  <script>
+
+    const filterButtons =
+      document.querySelectorAll(
+        ".filter-button"
+      );
+
+    const articleCards =
+      document.querySelectorAll(
+        ".article-card"
+      );
+
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener(
+        "click",
+        function () {
+
+          const selected =
+            this.dataset.filter;
+
+
+          filterButtons.forEach(item => {
+            item.classList.remove("active");
+          });
+
+
+          this.classList.add("active");
+
+
+          articleCards.forEach(card => {
+
+            const category =
+              card.dataset.category;
+
+
+            if (
+              selected === "all" ||
+              category === selected
+            ) {
+
+              card.classList.remove("hidden");
+
+            } else {
+
+              card.classList.add("hidden");
+
+            }
+
+          });
+
+        }
+      );
+
+    });
+
+  </script>
 
 
 </body>
