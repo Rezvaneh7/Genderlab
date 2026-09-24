@@ -22,7 +22,7 @@ collections:
     summary: "شماره {{number}} — {{title}}"
 
     editor:
-      preview: true
+      preview: false
 
     fields:
       - label: "عنوان شماره"
@@ -89,7 +89,7 @@ collections:
     summary: "{{title}} — {{author}}"
 
     editor:
-      preview: true
+      preview: false
 
     fields:
       - label: "عنوان مطلب"
