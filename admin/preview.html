@@ -1,0 +1,1036 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>پیش‌نمایش | GenderLab</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #F7F4EE;
+      color: #172B36;
+      font-family: "Vazirmatn", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+
+    /* =========================
+       PREVIEW BAR
+    ========================= */
+
+    .preview-bar {
+      min-height: 38px;
+      padding: 8px 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #A34D45;
+      color: #FFFFFF;
+
+      font-size: 11px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .site-header {
+      min-height: 82px;
+
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+
+      gap: 30px;
+
+      padding: 0 48px;
+
+      border-bottom: 1px solid #D8D5CE;
+
+      background: #F7F4EE;
+    }
+
+    .brand {
+      justify-self: start;
+
+      direction: ltr;
+
+      font-size: 23px;
+      font-weight: 700;
+
+      letter-spacing: .055em;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+
+      gap: 27px;
+
+      font-size: 12px;
+    }
+
+    .main-nav span {
+      color: #33454E;
+    }
+
+    .header-tools {
+      justify-self: end;
+
+      direction: ltr;
+
+      color: #68767D;
+
+      font-size: 10px;
+    }
+
+
+    /* =========================
+       ARTICLE
+    ========================= */
+
+    #article-page {
+      display: none;
+    }
+
+    .article-header {
+      max-width: 1000px;
+
+      margin: 0 auto;
+
+      padding: 75px 45px 50px;
+    }
+
+    .article-meta {
+      margin-bottom: 20px;
+
+      color: #A34D45;
+
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .article-title {
+      max-width: 850px;
+
+      margin: 0;
+
+      color: #172B36;
+
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    .article-excerpt {
+      max-width: 720px;
+
+      margin: 25px 0 0;
+
+      color: #5C6A71;
+
+      font-size: 18px;
+      line-height: 2;
+    }
+
+    .article-byline {
+      display: flex;
+      gap: 15px;
+
+      margin-top: 28px;
+      padding-top: 18px;
+
+      border-top: 1px solid #D8D5CE;
+
+      color: #7B858A;
+
+      font-size: 11px;
+    }
+
+    .article-image-wrap {
+      max-width: 1180px;
+
+      margin: 0 auto 65px;
+
+      padding: 0 45px;
+    }
+
+    .article-image {
+      width: 100%;
+      max-height: 650px;
+
+      object-fit: cover;
+    }
+
+    .article-content {
+      max-width: 700px;
+
+      margin: 0 auto;
+
+      padding: 0 30px 100px;
+
+      color: #263B45;
+
+      font-size: 17px;
+      line-height: 2.25;
+
+      text-align: justify;
+    }
+
+    .article-content p {
+      margin: 0 0 1.6em;
+    }
+
+    .article-content h2 {
+      margin: 2.2em 0 .8em;
+
+      color: #172B36;
+
+      font-size: 27px;
+      line-height: 1.6;
+    }
+
+    .article-content h3 {
+      margin: 2em 0 .7em;
+
+      color: #172B36;
+
+      font-size: 21px;
+      line-height: 1.6;
+    }
+
+    .article-content blockquote {
+      margin: 2.2em 0;
+
+      padding: 8px 25px 8px 0;
+
+      border-right: 3px solid #A34D45;
+
+      color: #586970;
+    }
+
+    .article-content a {
+      color: #A34D45;
+    }
+
+
+    /* =========================
+       ISSUE
+    ========================= */
+
+    #issue-page {
+      display: none;
+    }
+
+    .issue-hero {
+      max-width: 1160px;
+
+      margin: 0 auto;
+
+      padding: 70px 45px 85px;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(260px, 410px)
+        1fr;
+
+      gap: 80px;
+
+      align-items: center;
+    }
+
+    .issue-cover-wrap {
+      width: 100%;
+    }
+
+    .issue-cover {
+      width: 100%;
+
+      box-shadow:
+        0 20px 55px rgba(16,44,58,.14);
+    }
+
+    .issue-cover-placeholder {
+      width: 100%;
+
+      aspect-ratio: 3 / 4;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #102C3A;
+
+      color: #FFFFFF;
+
+      font-size: 27px;
+      font-weight: 600;
+    }
+
+    .issue-number {
+      margin-bottom: 14px;
+
+      color: #A34D45;
+
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .issue-season {
+      margin-bottom: 14px;
+
+      color: #778188;
+
+      font-size: 11px;
+    }
+
+    .issue-title {
+      margin: 0;
+
+      color: #172B36;
+
+      font-size: clamp(40px, 5vw, 66px);
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .issue-description {
+      max-width: 580px;
+
+      margin-top: 25px;
+
+      color: #5C6A71;
+
+      font-size: 17px;
+      line-height: 2;
+    }
+
+    .issue-about {
+      background: #FBF9F5;
+
+      border-top: 1px solid #E2DFD8;
+      border-bottom: 1px solid #E2DFD8;
+    }
+
+    .issue-about-inner {
+      max-width: 760px;
+
+      margin: 0 auto;
+
+      padding: 70px 30px 85px;
+
+      color: #263B45;
+
+      font-size: 17px;
+      line-height: 2.2;
+    }
+
+    .issue-about-title {
+      margin: 0 0 30px;
+
+      color: #172B36;
+
+      font-size: 28px;
+    }
+
+
+    /* =========================
+       EMPTY
+    ========================= */
+
+    #preview-empty {
+      display: none;
+
+      max-width: 650px;
+
+      margin: 100px auto;
+
+      padding: 50px;
+
+      background: #FFFFFF;
+
+      border: 1px solid #DEDCD5;
+
+      text-align: center;
+    }
+
+    #preview-empty h1 {
+      margin-top: 0;
+
+      font-size: 24px;
+    }
+
+    #preview-empty p {
+      color: #778188;
+
+      line-height: 2;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .site-footer {
+      padding: 55px 45px;
+
+      background: #102C3A;
+
+      color: #FFFFFF;
+    }
+
+    .footer-inner {
+      max-width: 1160px;
+
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      gap: 30px;
+    }
+
+    .footer-brand {
+      direction: ltr;
+
+      font-size: 24px;
+      font-weight: 700;
+
+      letter-spacing: .05em;
+    }
+
+    .footer-copy {
+      color: rgba(255,255,255,.55);
+
+      font-size: 10px;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .site-header {
+        min-height: 70px;
+
+        grid-template-columns: 1fr auto;
+
+        padding: 0 20px;
+      }
+
+      .main-nav {
+        display: none;
+      }
+
+      .article-header {
+        padding: 50px 22px 35px;
+      }
+
+      .article-image-wrap {
+        padding: 0 22px;
+
+        margin-bottom: 45px;
+      }
+
+      .article-content {
+        padding: 0 22px 70px;
+      }
+
+      .issue-hero {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 50px 22px 65px;
+      }
+
+      .issue-cover-wrap {
+        max-width: 420px;
+
+        margin: 0 auto;
+      }
+
+      .footer-inner {
+        display: block;
+      }
+
+      .footer-copy {
+        margin-top: 15px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="preview-bar">
+    پیش‌نمایش پیش‌نویس — این صفحه هنوز در سایت منتشر نشده است.
+  </div>
+
+
+  <header class="site-header">
+
+    <div class="brand">
+      GENDERLAB
+    </div>
+
+    <nav class="main-nav">
+      <span>خانه</span>
+      <span>مقالات</span>
+      <span>آرشیو مجلات</span>
+      <span>درباره ما</span>
+      <span>تماس</span>
+    </nav>
+
+    <div class="header-tools">
+      FA / EN
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       ARTICLE
+  ========================== -->
+
+  <main id="article-page">
+
+    <header class="article-header">
+
+      <div
+        id="article-meta"
+        class="article-meta">
+      </div>
+
+      <h1
+        id="article-title"
+        class="article-title">
+      </h1>
+
+      <p
+        id="article-excerpt"
+        class="article-excerpt">
+      </p>
+
+      <div class="article-byline">
+
+        <span id="article-author"></span>
+
+        <span id="article-date"></span>
+
+      </div>
+
+    </header>
+
+
+    <div
+      id="article-image-wrap"
+      class="article-image-wrap">
+
+      <img
+        id="article-image"
+        class="article-image"
+        alt="">
+
+    </div>
+
+
+    <article
+      id="article-content"
+      class="article-content">
+    </article>
+
+  </main>
+
+
+  <!-- =========================
+       ISSUE
+  ========================== -->
+
+  <main id="issue-page">
+
+    <section class="issue-hero">
+
+      <div class="issue-cover-wrap">
+
+        <img
+          id="issue-cover"
+          class="issue-cover"
+          alt="">
+
+        <div
+          id="issue-cover-placeholder"
+          class="issue-cover-placeholder">
+
+          GENDERLAB
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <div
+          id="issue-number"
+          class="issue-number">
+        </div>
+
+        <div
+          id="issue-season"
+          class="issue-season">
+        </div>
+
+        <h1
+          id="issue-title"
+          class="issue-title">
+        </h1>
+
+        <p
+          id="issue-description"
+          class="issue-description">
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="issue-about">
+
+      <div class="issue-about-inner">
+
+        <h2 class="issue-about-title">
+          درباره این شماره
+        </h2>
+
+        <div id="issue-content"></div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       EMPTY
+  ========================== -->
+
+  <div id="preview-empty">
+
+    <h1>
+      پیش‌نمایشی پیدا نشد
+    </h1>
+
+    <p>
+      به پنل مدیریت برگردید، یک مطلب یا شماره مجله را باز کنید و دکمه «پیش‌نمایش» را بزنید.
+    </p>
+
+  </div>
+
+
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        GENDERLAB
+      </div>
+
+      <div class="footer-copy">
+        مجله مستقل برای پژوهش، گفت‌وگو و روایت درباره جنسیت، جامعه و فرهنگ
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    const STORAGE_KEY = "genderlab_live_preview";
+
+
+    function escapeHTML(value) {
+
+      const div = document.createElement("div");
+
+      div.textContent = value || "";
+
+      return div.innerHTML;
+
+    }
+
+
+    function bodyToHTML(value) {
+
+      if (!value) {
+        return "";
+      }
+
+
+      /* HTML from rich-text editor */
+
+      if (
+        value.includes("<p") ||
+        value.includes("<h1") ||
+        value.includes("<h2") ||
+        value.includes("<h3") ||
+        value.includes("<blockquote") ||
+        value.includes("<ul") ||
+        value.includes("<ol")
+      ) {
+
+        return value;
+
+      }
+
+
+      /* Plain text */
+
+      return value
+        .split(/\n\s*\n/)
+        .map(function(paragraph) {
+
+          const text = paragraph.trim();
+
+          if (!text) {
+            return "";
+          }
+
+          return (
+            "<p>" +
+            escapeHTML(text).replace(/\n/g, "<br>") +
+            "</p>"
+          );
+
+        })
+        .join("");
+
+    }
+
+
+    function renderArticle(data) {
+
+      document.getElementById(
+        "article-page"
+      ).style.display = "block";
+
+
+      const meta = [];
+
+
+      if (data.category) {
+        meta.push(data.category);
+      }
+
+
+      if (data.issue) {
+        meta.push("شماره " + data.issue);
+      }
+
+
+      document.getElementById(
+        "article-meta"
+      ).textContent = meta.join(" / ");
+
+
+      document.getElementById(
+        "article-title"
+      ).textContent =
+        data.title || "عنوان مطلب";
+
+
+      const excerpt =
+        document.getElementById(
+          "article-excerpt"
+        );
+
+
+      excerpt.textContent =
+        data.excerpt || "";
+
+
+      excerpt.style.display =
+        data.excerpt
+          ? "block"
+          : "none";
+
+
+      const author =
+        document.getElementById(
+          "article-author"
+        );
+
+
+      author.textContent =
+        data.author
+          ? "نویسنده: " + data.author
+          : "";
+
+
+      document.getElementById(
+        "article-date"
+      ).textContent =
+        data.date || "";
+
+
+      const imageWrap =
+        document.getElementById(
+          "article-image-wrap"
+        );
+
+
+      const image =
+        document.getElementById(
+          "article-image"
+        );
+
+
+      if (data.image) {
+
+        image.src = data.image;
+
+        imageWrap.style.display =
+          "block";
+
+      } else {
+
+        imageWrap.style.display =
+          "none";
+
+      }
+
+
+      document.getElementById(
+        "article-content"
+      ).innerHTML =
+        bodyToHTML(data.body);
+
+
+      document.title =
+        (data.title || "پیش‌نمایش") +
+        " | GenderLab";
+
+    }
+
+
+    function renderIssue(data) {
+
+      document.getElementById(
+        "issue-page"
+      ).style.display =
+        "block";
+
+
+      const number =
+        data.numberFa ||
+        data.number ||
+        "";
+
+
+      document.getElementById(
+        "issue-number"
+      ).textContent =
+        number
+          ? "شماره " + number
+          : "";
+
+
+      document.getElementById(
+        "issue-season"
+      ).textContent =
+        data.season || "";
+
+
+      document.getElementById(
+        "issue-title"
+      ).textContent =
+        data.title || "عنوان شماره";
+
+
+      const description =
+        document.getElementById(
+          "issue-description"
+        );
+
+
+      description.textContent =
+        data.description || "";
+
+
+      description.style.display =
+        data.description
+          ? "block"
+          : "none";
+
+
+      const cover =
+        document.getElementById(
+          "issue-cover"
+        );
+
+
+      const placeholder =
+        document.getElementById(
+          "issue-cover-placeholder"
+        );
+
+
+      if (data.cover) {
+
+        cover.src =
+          data.cover;
+
+        cover.style.display =
+          "block";
+
+        placeholder.style.display =
+          "none";
+
+      } else {
+
+        cover.style.display =
+          "none";
+
+        placeholder.style.display =
+          "flex";
+
+      }
+
+
+      document.getElementById(
+        "issue-content"
+      ).innerHTML =
+        bodyToHTML(data.body);
+
+
+      document.title =
+        (data.title || "پیش‌نمایش") +
+        " | GenderLab";
+
+    }
+
+
+    function showEmpty() {
+
+      document.getElementById(
+        "preview-empty"
+      ).style.display =
+        "block";
+
+    }
+
+
+    function renderPreview() {
+
+      let data = null;
+
+
+      try {
+
+        const raw =
+          localStorage.getItem(
+            STORAGE_KEY
+          );
+
+
+        if (raw) {
+
+          data =
+            JSON.parse(raw);
+
+        }
+
+      } catch (error) {
+
+        console.error(
+          "GenderLab preview error:",
+          error
+        );
+
+      }
+
+
+      if (!data) {
+
+        showEmpty();
+
+        return;
+
+      }
+
+
+      if (data.type === "article") {
+
+        renderArticle(data);
+
+        return;
+
+      }
+
+
+      if (data.type === "issue") {
+
+        renderIssue(data);
+
+        return;
+
+      }
+
+
+      showEmpty();
+
+    }
+
+
+    renderPreview();
+
+  </script>
+
+</body>
+</html>
