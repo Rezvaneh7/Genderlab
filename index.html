@@ -791,9 +791,157 @@ layout: null
     }
 
 
-
     /* FEATURED ARTICLES CAROUSEL */
-    .featured-section{width:100%;padding:92px 0 96px;background:#F8F7F3}.featured-inner{max-width:1400px;margin:0 auto;padding:0 55px}.featured-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:42px;padding-bottom:18px;border-bottom:1px solid #D9D8D3}.featured-heading h2{margin:0;font-size:clamp(30px,3vw,44px);line-height:1.2;font-weight:700}.featured-heading-en{direction:ltr;font-size:11px;font-weight:600;letter-spacing:1.3px;color:#777C7E}.featured-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 56px)/3);gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;direction:rtl}.featured-track::-webkit-scrollbar{display:none}.featured-card{min-width:0;scroll-snap-align:start;display:block;border-top:3px solid #172B36;padding-top:16px}.featured-image{width:100%;aspect-ratio:1.45;overflow:hidden;background:#EEECE5;display:flex;align-items:center;justify-content:center}.featured-image img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .35s ease}.featured-card:hover .featured-image img{transform:scale(1.025)}.featured-image-placeholder{padding:28px;text-align:center;font-size:13px;color:#777C7E}.featured-meta{display:flex;justify-content:space-between;gap:18px;margin-top:18px;font-size:11px;font-weight:600;color:#A34D45}.featured-card h3{margin:10px 0 9px;font-size:22px;line-height:1.55;font-weight:700}.featured-card p{margin:0;font-size:13px;line-height:1.9;color:#647078}.featured-author{margin-top:16px;font-size:11px;color:#777C7E}.featured-controls{display:flex;direction:ltr;gap:8px;margin-top:32px}.featured-arrow{width:44px;height:44px;border:1px solid #BFC2BE;background:transparent;color:#172B36;font-size:19px;cursor:pointer}.featured-arrow:hover{background:#172B36;color:#F8F7F3}.featured-empty{width:100%;padding:42px 0 20px;font-size:14px;color:#777C7E}
+
+    .featured-section {
+      width: 100%;
+      padding: 92px 0 96px;
+      background: #F8F7F3;
+    }
+
+    .featured-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 55px;
+    }
+
+    .featured-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 42px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #D9D8D3;
+    }
+
+    .featured-heading h2 {
+      margin: 0;
+      font-size: clamp(30px,3vw,44px);
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .featured-heading-en {
+      direction: ltr;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.3px;
+      color: #777C7E;
+    }
+
+    .featured-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc((100% - 56px)/3);
+      gap: 28px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      direction: rtl;
+    }
+
+    .featured-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .featured-card {
+      min-width: 0;
+      scroll-snap-align: start;
+      display: block;
+      border-top: 3px solid #172B36;
+      padding-top: 16px;
+    }
+
+    .featured-image {
+      width: 100%;
+      aspect-ratio: 1.45;
+      overflow: hidden;
+      background: #EEECE5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+
+    .featured-card:hover .featured-image img {
+      transform: scale(1.025);
+    }
+
+    .featured-image-placeholder {
+      padding: 28px;
+      text-align: center;
+      font-size: 13px;
+      color: #777C7E;
+    }
+
+    .featured-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 18px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #A34D45;
+    }
+
+    .featured-card h3 {
+      margin: 10px 0 9px;
+      font-size: 22px;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .featured-card p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.9;
+      color: #647078;
+    }
+
+    .featured-author {
+      margin-top: 16px;
+      font-size: 11px;
+      color: #777C7E;
+    }
+
+    .featured-controls {
+      display: flex;
+      direction: ltr;
+      gap: 8px;
+      margin-top: 32px;
+    }
+
+    .featured-arrow {
+      width: 44px;
+      height: 44px;
+      border: 1px solid #BFC2BE;
+      background: transparent;
+      color: #172B36;
+      font-size: 19px;
+      cursor: pointer;
+    }
+
+    .featured-arrow:hover {
+      background: #172B36;
+      color: #F8F7F3;
+    }
+
+    .featured-empty {
+      width: 100%;
+      padding: 42px 0 20px;
+      font-size: 14px;
+      color: #777C7E;
+    }
+
 
     /* =========================================================
        TABLET
@@ -839,7 +987,15 @@ layout: null
       .issues-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-      .featured-inner{padding-left:30px;padding-right:30px}.featured-track{grid-auto-columns:calc((100% - 28px)/2)}
+
+      .featured-inner {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+      .featured-track {
+        grid-auto-columns: calc((100% - 28px)/2);
+      }
 
     }
 
@@ -963,11 +1119,35 @@ layout: null
       .issue-card-cover {
         aspect-ratio: 1.35;
       }
-      .featured-section{padding:70px 0 72px}.featured-inner{padding-left:20px;padding-right:20px}.featured-heading{margin-bottom:32px}.featured-heading h2{font-size:30px}.featured-heading-en{display:none}.featured-track{grid-auto-columns:100%}
+
+      .featured-section {
+        padding: 70px 0 72px;
+      }
+
+      .featured-inner {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .featured-heading {
+        margin-bottom: 32px;
+      }
+
+      .featured-heading h2 {
+        font-size: 30px;
+      }
+
+      .featured-heading-en {
+        display: none;
+      }
+
+      .featured-track {
+        grid-auto-columns: 100%;
+      }
 
     }
 
-  
+
     /* =========================================================
        FEATURED — DARK VERSION
     ========================================================= */
@@ -1149,10 +1329,9 @@ layout: null
       }
     }
 
-  
+
     /* =========================================================
        GENDERLAB — EDITORIAL REDESIGN
-       Visual override matching the approved mockup
     ========================================================= */
 
     body {
@@ -1227,7 +1406,9 @@ layout: null
       background: rgba(16,30,40,.12);
     }
 
+
     /* HERO: text + cover + issues rail */
+
     .issue-hero {
       max-width: 1400px;
       padding: 54px 55px 62px;
@@ -1292,7 +1473,9 @@ layout: null
       box-shadow: 0 20px 38px rgba(23,43,54,.13);
     }
 
-    /* side rail of older issues */
+
+    /* SIDE RAIL OF OLDER ISSUES */
+
     .hero-issues-rail {
       align-self: stretch;
       padding-right: 30px;
@@ -1364,12 +1547,13 @@ layout: null
       font-weight: 600;
     }
 
-    /* Old large issue grid is replaced by the compact hero rail */
     .issues-section {
       display: none !important;
     }
 
+
     /* FEATURED */
+
     .featured-section {
       padding: 42px 0 54px;
       background: #102C3A;
@@ -1478,7 +1662,9 @@ layout: null
       color: #102C3A;
     }
 
+
     /* ABOUT */
+
     .about-section {
       background: #F7F4EE;
       color: #101E28;
@@ -1562,7 +1748,9 @@ layout: null
       font-weight: 700;
     }
 
+
     /* FOOTER */
+
     .site-footer {
       background: #EEEAE3;
       border-top: 0;
@@ -1609,9 +1797,11 @@ layout: null
     }
 
     @media (max-width: 1050px) {
+
       .issue-hero {
         grid-template-columns: 1fr .9fr;
       }
+
       .hero-issues-rail {
         grid-column: 1 / -1;
         border-right: 0;
@@ -1621,18 +1811,22 @@ layout: null
         grid-template-columns: repeat(3,1fr);
         gap: 18px;
       }
+
       .hero-issues-title,
       .hero-all-issues {
         grid-column: 1 / -1;
       }
+
       .about-inner {
         padding-left: 30px;
         padding-right: 30px;
         gap: 45px;
       }
+
     }
 
     @media (max-width: 760px) {
+
       .site-header {
         padding: 22px 20px 0;
       }
@@ -1706,10 +1900,11 @@ layout: null
         grid-template-columns: 1fr;
         gap: 30px;
       }
+
     }
 
-
   </style>
+
 </head>
 
 
@@ -1750,11 +1945,11 @@ layout: null
 
       <nav class="main-nav">
 
-        <a href="#" class="active">
+        <a href="{{ '/' | relative_url }}" class="active">
           خانه
         </a>
 
-        <a href="#">
+        <a href="{{ '/articles/' | relative_url }}">
           مقالات
         </a>
 
@@ -1819,7 +2014,6 @@ layout: null
   </header>
 
 
-
   <!-- =========================================================
        MAIN
   ========================================================== -->
@@ -1834,9 +2028,6 @@ layout: null
     {% assign sorted_issues = site.issues | sort: "date" | reverse %}
     {% assign latest_issue = sorted_issues | first %}
 
-    <!-- =======================================================
-         LATEST ISSUE HERO
-    ======================================================== -->
 
     {% if latest_issue %}
 
@@ -1913,30 +2104,60 @@ layout: null
 
       </a>
 
+
       <aside class="hero-issues-rail">
-        <div class="hero-issues-title">شماره‌های مجله</div>
+
+        <div class="hero-issues-title">
+          شماره‌های مجله
+        </div>
 
         {% for issue in sorted_issues offset:1 limit:3 %}
+
         <a href="{{ issue.url | relative_url }}" class="hero-issue-mini">
+
           <div class="hero-issue-mini-cover">
+
             {% if issue.cover %}
-              <img src="{{ issue.cover | relative_url }}" alt="جلد {{ issue.title }}">
+
+              <img
+                src="{{ issue.cover | relative_url }}"
+                alt="جلد {{ issue.title }}"
+              >
+
             {% else %}
-              <span>{{ issue.number }}</span>
+
+              <span>
+                {{ issue.number }}
+              </span>
+
             {% endif %}
+
           </div>
-          <div class="hero-issue-mini-title">{{ issue.title }}</div>
+
+          <div class="hero-issue-mini-title">
+            {{ issue.title }}
+          </div>
+
         </a>
+
         {% endfor %}
 
-        <a href="#all-issues" class="hero-all-issues">
-          مشاهده همه شماره‌ها <span>←</span>
+
+        <a
+          href="{{ '/archive/' | relative_url }}"
+          class="hero-all-issues"
+        >
+          مشاهده همه شماره‌ها
+          <span>←</span>
         </a>
+
       </aside>
 
     </section>
 
+
     {% else %}
+
 
     <section class="issue-hero">
 
@@ -1946,7 +2167,9 @@ layout: null
           شماره تازه
         </div>
 
-        <h1>جندرلب</h1>
+        <h1>
+          جندرلب
+        </h1>
 
         <p>
           هنوز شماره‌ای منتشر نشده است.
@@ -1956,6 +2179,7 @@ layout: null
 
     </section>
 
+
     {% endif %}
 
 
@@ -1963,7 +2187,11 @@ layout: null
          PREVIOUS MAGAZINE ISSUES
     ======================================================== -->
 
-    <section class="issues-section" id="all-issues" style="display:block;">
+    <section
+      class="issues-section"
+      id="all-issues"
+      style="display:block;"
+    >
 
       <div class="issues-inner">
 
@@ -2070,48 +2298,208 @@ layout: null
 
     </section>
 
-    <!-- FEATURED ARTICLES -->
+
+    <!-- =======================================================
+         FEATURED ARTICLES
+    ======================================================== -->
+
     {% assign featured_articles = site.articles | where: "featured", true | sort: "date" | reverse %}
-    <section class="featured-section"><div class="featured-inner"><div class="featured-heading"><h2>مطالب منتخب</h2><div class="featured-heading-en">GENDERLAB / FEATURED</div></div>
-    {% if featured_articles.size > 0 %}<div class="featured-carousel"><div class="featured-track" id="featuredTrack">
-    {% for article in featured_articles limit:6 %}<a href="{{ article.url | relative_url }}" class="featured-card"><div class="featured-image">{% if article.image %}<img src="{{ article.image | relative_url }}" alt="{{ article.title }}">{% else %}<div class="featured-image-placeholder">GENDERLAB</div>{% endif %}</div><div class="featured-meta"><span>{{ article.category }}</span><span>شماره {{ article.issue }}</span></div><h3>{{ article.title }}</h3>{% if article.excerpt %}<p>{{ article.excerpt }}</p>{% endif %}{% if article.author %}<div class="featured-author">نویسنده: {{ article.author }}</div>{% endif %}</a>{% endfor %}
-    </div>{% if featured_articles.size > 3 %}<div class="featured-controls"><button class="featured-arrow" type="button" id="featuredPrev" aria-label="مطالب قبلی">←</button><button class="featured-arrow" type="button" id="featuredNext" aria-label="مطالب بعدی">→</button></div>{% endif %}</div>{% else %}<div class="featured-empty">هنوز مطلبی برای این بخش انتخاب نشده است.</div>{% endif %}</div></section>
+
+    <section class="featured-section">
+
+      <div class="featured-inner">
+
+        <div class="featured-heading">
+
+          <h2>
+            مطالب منتخب
+          </h2>
+
+          <div class="featured-heading-en">
+            GENDERLAB / FEATURED
+          </div>
+
+        </div>
+
+
+        {% if featured_articles.size > 0 %}
+
+        <div class="featured-carousel">
+
+          <div class="featured-track" id="featuredTrack">
+
+            {% for article in featured_articles limit:6 %}
+
+            <a
+              href="{{ article.url | relative_url }}"
+              class="featured-card"
+            >
+
+              <div class="featured-image">
+
+                {% if article.image %}
+
+                  <img
+                    src="{{ article.image | relative_url }}"
+                    alt="{{ article.title }}"
+                  >
+
+                {% else %}
+
+                  <div class="featured-image-placeholder">
+                    GENDERLAB
+                  </div>
+
+                {% endif %}
+
+              </div>
+
+
+              <div class="featured-meta">
+
+                <span>
+                  {{ article.category }}
+                </span>
+
+                <span>
+                  شماره {{ article.issue }}
+                </span>
+
+              </div>
+
+
+              <h3>
+                {{ article.title }}
+              </h3>
+
+
+              {% if article.excerpt %}
+
+              <p>
+                {{ article.excerpt }}
+              </p>
+
+              {% endif %}
+
+
+              {% if article.author %}
+
+              <div class="featured-author">
+                نویسنده: {{ article.author }}
+              </div>
+
+              {% endif %}
+
+            </a>
+
+            {% endfor %}
+
+          </div>
+
+
+          {% if featured_articles.size > 3 %}
+
+          <div class="featured-controls">
+
+            <button
+              class="featured-arrow"
+              type="button"
+              id="featuredPrev"
+              aria-label="مطالب قبلی"
+            >
+              ←
+            </button>
+
+            <button
+              class="featured-arrow"
+              type="button"
+              id="featuredNext"
+              aria-label="مطالب بعدی"
+            >
+              →
+            </button>
+
+          </div>
+
+          {% endif %}
+
+        </div>
+
+
+        {% else %}
+
+
+        <div class="featured-empty">
+          هنوز مطلبی برای این بخش انتخاب نشده است.
+        </div>
+
+
+        {% endif %}
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         ABOUT
+    ======================================================== -->
 
     <section class="about-section">
+
       <div class="about-inner">
 
-        <div class="about-visual" aria-hidden="true"></div>
+        <div
+          class="about-visual"
+          aria-hidden="true"
+        ></div>
+
 
         <div class="about-copy">
-          <div class="about-kicker">جندرلب چیست؟</div>
 
-        <h2 style="font-size: 20px;">
-  جندرلب مجله مستقل<br>
-  برای پژوهش، گفت‌وگو و روایت<br>
-  درباره جنسیت، جامعه و فرهنگ است.
-</h2>
+          <div class="about-kicker">
+            جندرلب چیست؟
+          </div>
+
+
+          <h2 style="font-size: 20px;">
+            جندرلب مجله مستقل<br>
+            برای پژوهش، گفت‌وگو و روایت<br>
+            درباره جنسیت، جامعه و فرهنگ است.
+          </h2>
+
 
           <p>
             فضایی برای نگاه دقیق‌تر به ساختارهایی که تجربه‌های ما از جنسیت، بدن،
             هویت و قدرت را شکل می‌دهند؛ جایی میان پژوهش، روزنامه‌نگاری و روایت.
           </p>
 
+
           <a href="#" class="about-link">
-            درباره جندرلب <span>←</span>
+            درباره جندرلب
+            <span>←</span>
           </a>
+
         </div>
 
       </div>
+
     </section>
+
 
   </main>
 
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
 
   <footer class="site-footer">
 
     <div class="footer-inner">
 
       <div class="footer-main">
+
 
         <div class="footer-brand">
 
@@ -2120,24 +2508,27 @@ layout: null
           </div>
 
           <div class="footer-brand-fa">
-        
+            جندرلب
+          </div>
+
           <div class="footer-description">
             مجله مستقل برای پژوهش، گفت‌وگو و روایت درباره جنسیت، جامعه و فرهنگ.
           </div>
 
         </div>
 
+
         <nav class="footer-nav">
 
-          <a href="/">
+          <a href="{{ '/' | relative_url }}">
             خانه
           </a>
 
-          <a href="#">
+          <a href="{{ '/articles/' | relative_url }}">
             مقالات
           </a>
 
-          <a href="#">
+          <a href="{{ '/archive/' | relative_url }}">
             آرشیو مجلات
           </a>
 
@@ -2153,6 +2544,7 @@ layout: null
 
       </div>
 
+
       <div class="footer-bottom">
 
         <span>
@@ -2160,7 +2552,6 @@ layout: null
         </span>
 
         <span class="footer-bottom-fa">
-        
         </span>
 
       </div>
@@ -2170,13 +2561,65 @@ layout: null
   </footer>
 
 
-
-
-
   <script>
-  (function(){const track=document.getElementById("featuredTrack"),prev=document.getElementById("featuredPrev"),next=document.getElementById("featuredNext");if(!track||!prev||!next)return;function step(){const c=track.querySelector(".featured-card");if(!c)return track.clientWidth;return c.getBoundingClientRect().width+(parseFloat(getComputedStyle(track).gap)||0)}prev.addEventListener("click",()=>track.scrollBy({left:step(),behavior:"smooth"}));next.addEventListener("click",()=>track.scrollBy({left:-step(),behavior:"smooth"}))})();
+
+    (function () {
+
+      const track =
+        document.getElementById("featuredTrack");
+
+      const prev =
+        document.getElementById("featuredPrev");
+
+      const next =
+        document.getElementById("featuredNext");
+
+
+      if (!track || !prev || !next) {
+        return;
+      }
+
+
+      function step() {
+
+        const card =
+          track.querySelector(".featured-card");
+
+        if (!card) {
+          return track.clientWidth;
+        }
+
+        return (
+          card.getBoundingClientRect().width +
+          (parseFloat(getComputedStyle(track).gap) || 0)
+        );
+
+      }
+
+
+      prev.addEventListener(
+        "click",
+        () =>
+          track.scrollBy({
+            left: step(),
+            behavior: "smooth"
+          })
+      );
+
+
+      next.addEventListener(
+        "click",
+        () =>
+          track.scrollBy({
+            left: -step(),
+            behavior: "smooth"
+          })
+      );
+
+    })();
+
   </script>
 
-</body>
 
+</body>
 </html>
