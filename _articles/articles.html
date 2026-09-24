@@ -51,7 +51,7 @@ permalink: /articles/
 
     /* =====================================================
        HEADER
-    ===================================================== */
+    ====================================================== */
 
     .site-header {
       width: 100%;
@@ -150,7 +150,7 @@ permalink: /articles/
     }
 
 
-    /* HEADER TOOLS */
+    /* TOOLS */
 
     .header-tools {
       display: flex;
@@ -211,24 +211,22 @@ permalink: /articles/
 
 
     /* =====================================================
-       PAGE HERO
-    ===================================================== */
+       INTRO
+    ====================================================== */
 
     .articles-hero {
       max-width: 1400px;
 
       margin: 0 auto;
-      padding: 75px 55px 58px;
+      padding: 75px 55px 55px;
     }
 
-    .hero-eyebrow {
+    .articles-eyebrow {
       display: flex;
       align-items: center;
       gap: 15px;
 
       margin-bottom: 25px;
-
-      direction: ltr;
 
       font-size: 11px;
       font-weight: 600;
@@ -237,7 +235,7 @@ permalink: /articles/
       color: #A34D45;
     }
 
-    .hero-eyebrow::after {
+    .articles-eyebrow::after {
       content: "";
 
       width: 75px;
@@ -256,8 +254,8 @@ permalink: /articles/
       letter-spacing: -2px;
     }
 
-    .hero-description {
-      max-width: 670px;
+    .articles-intro {
+      max-width: 650px;
 
       margin: 0;
 
@@ -269,67 +267,13 @@ permalink: /articles/
 
 
     /* =====================================================
-       FILTERS
-    ===================================================== */
-
-    .filters-wrap {
-      max-width: 1400px;
-
-      margin: 0 auto;
-      padding: 0 55px 45px;
-    }
-
-    .filters {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-
-      gap: 9px;
-
-      padding-top: 20px;
-
-      border-top: 1px solid rgba(16,30,40,.25);
-    }
-
-    .filter-button {
-      appearance: none;
-
-      padding: 8px 16px;
-
-      border: 1px solid rgba(16,30,40,.22);
-      border-radius: 0;
-
-      background: transparent;
-      color: #101E28;
-
-      font-family: "Vazirmatn", sans-serif;
-      font-size: 11px;
-
-      cursor: pointer;
-
-      transition:
-        background .2s ease,
-        color .2s ease,
-        border-color .2s ease;
-    }
-
-    .filter-button:hover,
-    .filter-button.active {
-      background: #102C3A;
-      color: #F7F4EE;
-
-      border-color: #102C3A;
-    }
-
-
-    /* =====================================================
-       ARTICLES
-    ===================================================== */
+       ARTICLES AREA
+    ====================================================== */
 
     .articles-section {
       width: 100%;
 
-      padding: 0 0 95px;
+      padding: 20px 0 100px;
     }
 
     .articles-inner {
@@ -339,16 +283,14 @@ permalink: /articles/
       padding: 0 55px;
     }
 
-
-    /* HEADING */
-
     .articles-heading {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+
       gap: 30px;
 
-      margin-bottom: 35px;
+      margin-bottom: 24px;
       padding-bottom: 15px;
 
       border-bottom: 1px solid rgba(16,30,40,.28);
@@ -369,19 +311,75 @@ permalink: /articles/
     }
 
 
-    /* GRID */
+    /* =====================================================
+       FILTERS
+    ====================================================== */
+
+    .article-filters {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-bottom: 42px;
+    }
+
+    .filter-button {
+      appearance: none;
+
+      padding: 8px 17px;
+
+      border: 1px solid rgba(16,30,40,.18);
+      border-radius: 0;
+
+      background: transparent;
+
+      color: #526168;
+
+      font-family: "Vazirmatn", sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+
+      cursor: pointer;
+
+      transition:
+        background .15s ease,
+        color .15s ease,
+        border-color .15s ease;
+    }
+
+    .filter-button:hover {
+      border-color: #102C3A;
+      color: #102C3A;
+    }
+
+    .filter-button.active {
+      background: #102C3A;
+      border-color: #102C3A;
+      color: #F7F4EE;
+    }
+
+
+    /* =====================================================
+       ARTICLES GRID
+    ====================================================== */
 
     .articles-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
 
-      gap: 58px 32px;
+      gap: 65px 38px;
     }
 
     .article-card {
-      display: block;
-
       min-width: 0;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-card.hidden {
+      display: none;
     }
 
 
@@ -391,11 +389,11 @@ permalink: /articles/
       position: relative;
 
       width: 100%;
-      aspect-ratio: 1.55;
+      aspect-ratio: 1.48;
 
       overflow: hidden;
 
-      background: #E4E1DA;
+      background: #E8F0F3;
     }
 
     .article-image img {
@@ -404,77 +402,80 @@ permalink: /articles/
 
       object-fit: cover;
 
-      transition: transform .35s ease;
+      transition: transform .45s ease;
     }
 
     .article-card:hover .article-image img {
       transform: scale(1.025);
     }
 
-    .article-placeholder {
-      width: 100%;
-      height: 100%;
+
+    /* FALLBACK IMAGE */
+
+    .article-image-fallback {
+      position: absolute;
+      inset: 0;
 
       display: flex;
       align-items: center;
       justify-content: center;
+
+      padding: 30px;
 
       background: #102C3A;
       color: #F7F4EE;
 
       direction: ltr;
 
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 3px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 2px;
     }
 
 
-    /* CATEGORY */
+    /* ARTICLE INFO */
+
+    .article-info {
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+
+      padding-top: 18px;
+    }
 
     .article-category {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-
-      margin-top: 15px;
-
-      font-size: 10px;
-      font-weight: 600;
+      margin-bottom: 10px;
 
       color: #A34D45;
+
+      font-size: 10px;
+      font-weight: 700;
     }
 
-    .article-category::before {
-      content: "";
+    .article-title {
+      margin: 0 0 11px;
 
-      width: 18px;
-      height: 1px;
+      color: #101E28;
 
-      background: #A34D45;
-    }
-
-
-    /* TITLE */
-
-    .article-card h2 {
-      margin: 8px 0 8px;
-
-      font-size: 21px;
+      font-size: 22px;
       line-height: 1.65;
       font-weight: 700;
     }
 
-
-    /* EXCERPT */
-
     .article-excerpt {
       margin: 0;
 
-      font-size: 12px;
-      line-height: 1.95;
-
       color: #526168;
+
+      font-size: 12px;
+      line-height: 2;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+
+      overflow: hidden;
     }
 
 
@@ -482,36 +483,34 @@ permalink: /articles/
 
     .article-meta {
       display: flex;
-      align-items: center;
       flex-wrap: wrap;
+      align-items: center;
 
-      gap: 7px 10px;
+      gap: 6px 13px;
 
-      margin-top: 13px;
+      margin-top: 18px;
+      padding-top: 13px;
+
+      border-top: 1px solid rgba(16,30,40,.11);
+
+      color: #788389;
 
       font-size: 9px;
-
-      color: #788287;
     }
 
-    .article-meta-dot {
-      width: 3px;
-      height: 3px;
-
-      border-radius: 50%;
-
-      background: #9CA4A7;
+    .article-meta-divider {
+      opacity: .35;
     }
 
-
-    /* READ LINK */
-
-    .read-link {
+    .article-read {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
 
-      margin-top: 15px;
+      gap: 9px;
+
+      margin-top: 17px;
+
+      color: #101E28;
 
       font-size: 10px;
       font-weight: 700;
@@ -519,16 +518,16 @@ permalink: /articles/
       transition: gap .2s ease;
     }
 
-    .article-card:hover .read-link {
-      gap: 14px;
+    .article-card:hover .article-read {
+      gap: 15px;
     }
 
 
     /* =====================================================
        EMPTY
-    ===================================================== */
+    ====================================================== */
 
-    .no-articles {
+    .articles-empty {
       grid-column: 1 / -1;
 
       padding: 80px 0;
@@ -546,7 +545,7 @@ permalink: /articles/
 
     /* =====================================================
        FOOTER
-    ===================================================== */
+    ====================================================== */
 
     .site-footer {
       width: 100%;
@@ -565,6 +564,7 @@ permalink: /articles/
     .footer-main {
       display: grid;
       grid-template-columns: 1fr 1.5fr;
+
       gap: 70px;
 
       align-items: center;
@@ -635,17 +635,8 @@ permalink: /articles/
 
 
     /* =====================================================
-       FILTER HIDING
-    ===================================================== */
-
-    .article-card.hidden {
-      display: none;
-    }
-
-
-    /* =====================================================
        TABLET
-    ===================================================== */
+    ====================================================== */
 
     @media (max-width: 1000px) {
 
@@ -659,15 +650,18 @@ permalink: /articles/
         gap: 20px;
       }
 
-      .articles-hero,
-      .filters-wrap,
+      .articles-hero {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
       .articles-inner {
         padding-left: 30px;
         padding-right: 30px;
       }
 
       .articles-grid {
-        grid-template-columns: repeat(2, minmax(0,1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
     }
@@ -675,7 +669,7 @@ permalink: /articles/
 
     /* =====================================================
        MOBILE
-    ===================================================== */
+    ====================================================== */
 
     @media (max-width: 760px) {
 
@@ -712,42 +706,17 @@ permalink: /articles/
         padding: 15px 18px;
       }
 
-
-      /* HERO */
-
       .articles-hero {
-        padding: 48px 20px 40px;
+        padding: 48px 20px 45px;
       }
 
       .articles-hero h1 {
         font-size: 43px;
       }
 
-      .hero-description {
+      .articles-intro {
         font-size: 14px;
       }
-
-
-      /* FILTERS */
-
-      .filters-wrap {
-        padding: 0 20px 38px;
-      }
-
-      .filters {
-        flex-wrap: nowrap;
-
-        overflow-x: auto;
-
-        padding-bottom: 5px;
-      }
-
-      .filter-button {
-        flex: 0 0 auto;
-      }
-
-
-      /* ARTICLES */
 
       .articles-section {
         padding-bottom: 65px;
@@ -761,14 +730,22 @@ permalink: /articles/
         display: none;
       }
 
+      .article-filters {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+
+        padding-bottom: 5px;
+      }
+
+      .filter-button {
+        flex: 0 0 auto;
+      }
+
       .articles-grid {
         grid-template-columns: 1fr;
 
-        gap: 48px;
+        gap: 52px;
       }
-
-
-      /* FOOTER */
 
       .footer-inner {
         padding: 32px 20px 22px;
@@ -790,6 +767,7 @@ permalink: /articles/
     }
 
   </style>
+
 </head>
 
 
@@ -823,14 +801,16 @@ permalink: /articles/
       </a>
 
 
-
       <nav class="main-nav">
 
         <a href="{{ '/' | relative_url }}">
           خانه
         </a>
 
-        <a href="{{ '/articles/' | relative_url }}" class="active">
+        <a
+          href="{{ '/articles/' | relative_url }}"
+          class="active"
+        >
           مقالات
         </a>
 
@@ -849,14 +829,17 @@ permalink: /articles/
       </nav>
 
 
-
       <div class="header-tools">
 
         <div class="language">
           FA <span>|</span> EN
         </div>
 
-        <a href="#" class="search" aria-label="جستجو"></a>
+        <a
+          href="#"
+          class="search"
+          aria-label="جستجو"
+        ></a>
 
       </div>
 
@@ -870,7 +853,7 @@ permalink: /articles/
 
 
   <!-- =====================================================
-       HERO
+       INTRO
   ====================================================== -->
 
   <main>
@@ -878,7 +861,7 @@ permalink: /articles/
 
     <section class="articles-hero">
 
-      <div class="hero-eyebrow">
+      <div class="articles-eyebrow">
         GENDERLAB / ARTICLES
       </div>
 
@@ -886,9 +869,9 @@ permalink: /articles/
         مقالات
       </h1>
 
-      <p class="hero-description">
-        پژوهش‌ها، جستارها، گفت‌وگوها، گزارش‌ها و روایت‌های جندرلب
-        درباره جنسیت، جامعه و فرهنگ.
+      <p class="articles-intro">
+        مجموعه مقالات، جستارها، گفت‌وگوها، گزارش‌ها و
+        یادداشت‌های جندرلب درباره جنسیت، جامعه و فرهنگ.
       </p>
 
     </section>
@@ -896,86 +879,12 @@ permalink: /articles/
 
 
     <!-- =====================================================
-         FILTERS
-    ====================================================== -->
-
-    <section class="filters-wrap">
-
-      <div class="filters">
-
-        <button
-          class="filter-button active"
-          type="button"
-          data-filter="all"
-        >
-          همه
-        </button>
-
-        <button
-          class="filter-button"
-          type="button"
-          data-filter="مقاله"
-        >
-          مقاله
-        </button>
-
-        <button
-          class="filter-button"
-          type="button"
-          data-filter="جستار"
-        >
-          جستار
-        </button>
-
-        <button
-          class="filter-button"
-          type="button"
-          data-filter="گفت‌وگو"
-        >
-          گفت‌وگو
-        </button>
-
-        <button
-          class="filter-button"
-          type="button"
-          data-filter="گزارش"
-        >
-          گزارش
-        </button>
-
-        <button
-          class="filter-button"
-          type="button"
-          data-filter="یادداشت"
-        >
-          یادداشت
-        </button>
-
-        <button
-          class="filter-button"
-          type="button"
-          data-filter="نقد"
-        >
-          نقد
-        </button>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         GET ARTICLES
+         ALL PUBLISHED ARTICLES
     ====================================================== -->
 
     {% assign all_articles = site.articles | sort: "date" | reverse %}
 
 
-
-    <!-- =====================================================
-         ARTICLES GRID
-    ====================================================== -->
 
     <section class="articles-section">
 
@@ -996,6 +905,72 @@ permalink: /articles/
 
 
 
+        <!-- FILTERS -->
+
+        <div class="article-filters">
+
+          <button
+            type="button"
+            class="filter-button active"
+            data-filter="all"
+          >
+            همه
+          </button>
+
+          <button
+            type="button"
+            class="filter-button"
+            data-filter="مقاله"
+          >
+            مقاله
+          </button>
+
+          <button
+            type="button"
+            class="filter-button"
+            data-filter="جستار"
+          >
+            جستار
+          </button>
+
+          <button
+            type="button"
+            class="filter-button"
+            data-filter="گفت‌وگو"
+          >
+            گفت‌وگو
+          </button>
+
+          <button
+            type="button"
+            class="filter-button"
+            data-filter="گزارش"
+          >
+            گزارش
+          </button>
+
+          <button
+            type="button"
+            class="filter-button"
+            data-filter="یادداشت"
+          >
+            یادداشت
+          </button>
+
+          <button
+            type="button"
+            class="filter-button"
+            data-filter="نقد"
+          >
+            نقد
+          </button>
+
+        </div>
+
+
+
+        <!-- ARTICLES GRID -->
+
         <div class="articles-grid">
 
 
@@ -1011,17 +986,16 @@ permalink: /articles/
               %}
 
 
-              <a
-                href="{{ article.url | relative_url }}"
+              <article
                 class="article-card"
-                data-category="{{ article.category }}"
+                data-category="{{ article.category | escape }}"
               >
 
 
-                <!-- IMAGE -->
-
-                <div class="article-image">
-
+                <a
+                  href="{{ article.url | relative_url }}"
+                  class="article-image"
+                >
 
                   {% if article.image %}
 
@@ -1032,101 +1006,109 @@ permalink: /articles/
 
                   {% else %}
 
-                    <div class="article-placeholder">
+                    <div class="article-image-fallback">
                       GENDERLAB
                     </div>
 
                   {% endif %}
 
-
-                </div>
-
+                </a>
 
 
-                <!-- CATEGORY -->
 
-                {% if article.category %}
+                <div class="article-info">
 
-                  <div class="article-category">
-                    {{ article.category }}
+
+                  {% if article.category %}
+
+                    <div class="article-category">
+                      {{ article.category }}
+                    </div>
+
+                  {% endif %}
+
+
+
+                  <h2 class="article-title">
+
+                    <a href="{{ article.url | relative_url }}">
+                      {{ article.title }}
+                    </a>
+
+                  </h2>
+
+
+
+                  {% if article.excerpt %}
+
+                    <p class="article-excerpt">
+                      {{ article.excerpt }}
+                    </p>
+
+                  {% endif %}
+
+
+
+                  <div class="article-meta">
+
+
+                    {% if article.author %}
+
+                      <span>
+                        {{ article.author }}
+                      </span>
+
+                    {% endif %}
+
+
+                    {% if article.author and article_issue %}
+
+                      <span class="article-meta-divider">
+                        /
+                      </span>
+
+                    {% endif %}
+
+
+                    {% if article_issue %}
+
+                      <span>
+                        شماره {{ article_issue.numberFa }}
+                      </span>
+
+                    {% endif %}
+
+
+                    {% if article.date %}
+
+                      <span class="article-meta-divider">
+                        /
+                      </span>
+
+                      <span>
+                        {{ article.date | date: "%Y/%m/%d" }}
+                      </span>
+
+                    {% endif %}
+
+
                   </div>
 
-                {% endif %}
 
 
-
-                <!-- TITLE -->
-
-                <h2>
-                  {{ article.title }}
-                </h2>
-
-
-
-                <!-- EXCERPT -->
-
-                {% if article.excerpt %}
-
-                  <p class="article-excerpt">
-                    {{ article.excerpt }}
-                  </p>
-
-                {% endif %}
-
-
-
-                <!-- META -->
-
-                <div class="article-meta">
-
-
-                  {% if article.author %}
-
-                    <span>
-                      {{ article.author }}
-                    </span>
-
-                  {% endif %}
-
-
-                  {% if article.author and article_issue %}
-
-                    <span class="article-meta-dot"></span>
-
-                  {% endif %}
-
-
-                  {% if article_issue %}
-
-                    <span>
-                      شماره {{ article_issue.numberFa }}
-                    </span>
-
-                  {% endif %}
-
-
-                  {% if article.date %}
-
-                    <span class="article-meta-dot"></span>
-
-                    <span>
-                      {{ article.date | date: "%Y/%m/%d" }}
-                    </span>
-
-                  {% endif %}
+                  <a
+                    href="{{ article.url | relative_url }}"
+                    class="article-read"
+                  >
+                    مطالعه مطلب
+                    <span>←</span>
+                  </a>
 
 
                 </div>
 
 
-
-                <div class="read-link">
-                  خواندن مطلب
-                  <span>←</span>
-                </div>
-
-
-              </a>
+              </article>
 
 
             {% endfor %}
@@ -1135,7 +1117,7 @@ permalink: /articles/
           {% else %}
 
 
-            <div class="no-articles">
+            <div class="articles-empty">
               هنوز مطلبی منتشر نشده است.
             </div>
 
@@ -1239,42 +1221,58 @@ permalink: /articles/
 
   <script>
 
-    const filterButtons = document.querySelectorAll(".filter-button");
-    const articleCards = document.querySelectorAll(".article-card");
+    const filterButtons =
+      document.querySelectorAll(
+        ".filter-button"
+      );
+
+    const articleCards =
+      document.querySelectorAll(
+        ".article-card"
+      );
+
 
     filterButtons.forEach(button => {
 
-      button.addEventListener("click", () => {
+      button.addEventListener(
+        "click",
+        function () {
 
-        const selectedCategory = button.dataset.filter;
-
-        filterButtons.forEach(item => {
-          item.classList.remove("active");
-        });
-
-        button.classList.add("active");
+          const selected =
+            this.dataset.filter;
 
 
-        articleCards.forEach(card => {
+          filterButtons.forEach(item => {
+            item.classList.remove("active");
+          });
 
-          const cardCategory = card.dataset.category;
 
-          if (
-            selectedCategory === "all" ||
-            cardCategory === selectedCategory
-          ) {
+          this.classList.add("active");
 
-            card.classList.remove("hidden");
 
-          } else {
+          articleCards.forEach(card => {
 
-            card.classList.add("hidden");
+            const category =
+              card.dataset.category;
 
-          }
 
-        });
+            if (
+              selected === "all" ||
+              category === selected
+            ) {
 
-      });
+              card.classList.remove("hidden");
+
+            } else {
+
+              card.classList.add("hidden");
+
+            }
+
+          });
+
+        }
+      );
 
     });
 
