@@ -22,8 +22,7 @@
 
 
   <!-- =====================================================
-       DECAP CONFIG
-       IMPORTANT — DO NOT REMOVE
+       DECAP CONFIG — DO NOT REMOVE
   ====================================================== -->
 
   <link
@@ -36,40 +35,31 @@
   <style>
 
     /* =====================================================
-       GENDERLAB — WORDPRESS-STYLE CMS
+       GENDERLAB CMS
     ====================================================== */
 
     :root {
+      --sidebar-width: 258px;
 
-      --gl-sidebar: #102C3A;
-      --gl-sidebar-light: #173B4A;
+      --petroleum: #102C3A;
+      --petroleum-deep: #0D2632;
+      --petroleum-hover: #173946;
 
-      --gl-red: #A34D45;
-      --gl-red-dark: #8C403A;
+      --red: #A34D45;
+      --red-hover: #93443E;
 
-      --gl-bg: #F5F4F0;
-      --gl-paper: #FFFFFF;
-      --gl-soft: #EEECE5;
+      --cream: #F6F5F1;
+      --paper: #FFFFFF;
 
-      --gl-border: #D9D8D3;
+      --text: #172B36;
+      --muted: #778188;
 
-      --gl-text: #172B36;
-      --gl-muted: #6F7B81;
-
-      --gl-green: #DDEFE6;
-      --gl-green-text: #286B50;
-
-      --gl-yellow: #FFF0CC;
-      --gl-yellow-text: #956A16;
-
-      --gl-blue: #E3F0FB;
-      --gl-blue-text: #286C9D;
-
+      --border: #DEDDD8;
     }
 
 
     /* =====================================================
-       RESET
+       GLOBAL
     ====================================================== */
 
     html,
@@ -79,9 +69,9 @@
 
       min-height: 100% !important;
 
-      background: var(--gl-bg) !important;
+      background: var(--cream) !important;
 
-      color: var(--gl-text) !important;
+      color: var(--text);
 
       font-family: "Vazirmatn", sans-serif !important;
     }
@@ -92,8 +82,14 @@
     input,
     textarea,
     select {
-      font-family: "Vazirmatn", sans-serif !important;
       box-sizing: border-box;
+
+      font-family: "Vazirmatn", sans-serif !important;
+    }
+
+
+    body {
+      padding-right: var(--sidebar-width) !important;
     }
 
 
@@ -103,176 +99,86 @@
 
 
     /* =====================================================
-       TOP ACCENT
+       CUSTOM WORDPRESS-STYLE SIDEBAR
     ====================================================== */
 
-    body::before {
-      content: "";
-
+    #genderlab-admin-sidebar {
       position: fixed;
+
       z-index: 999999;
 
       top: 0;
       right: 0;
-      left: 0;
+      bottom: 0;
 
-      height: 4px;
+      width: var(--sidebar-width);
 
-      background: var(--gl-red);
+      display: flex;
+      flex-direction: column;
+
+      background:
+        linear-gradient(
+          180deg,
+          var(--petroleum-deep) 0%,
+          var(--petroleum) 100%
+        );
+
+      color: #FFFFFF;
+
+      direction: rtl;
+
+      box-shadow:
+        -1px 0 0 rgba(0,0,0,.05);
     }
 
 
     /* =====================================================
-       MAIN DECAP PAGE
+       BRAND
     ====================================================== */
 
-    #nc-root {
-      min-height: 100vh !important;
+    .gl-admin-brand {
+      padding: 27px 24px 24px;
 
-      background: var(--gl-bg) !important;
+      border-bottom: 1px solid rgba(255,255,255,.10);
     }
 
 
-    /*
-      Main Decap application background
-    */
-
-    #nc-root > div {
-      background: var(--gl-bg) !important;
-    }
-
-
-    /* =====================================================
-       SIDEBAR
-       WordPress-style full-height panel
-    ====================================================== */
-
-    aside.css-1ff92bv-SidebarContainer-card-card {
-      position: relative !important;
-
-      width: 270px !important;
-      min-width: 270px !important;
-
-      min-height: calc(100vh - 40px) !important;
-
-      margin: 0 !important;
-      padding: 0 !important;
-
-      background: var(--gl-sidebar) !important;
-
-      border: 0 !important;
-      border-radius: 0 !important;
-
-      box-shadow: none !important;
-
-      overflow: hidden !important;
-    }
-
-
-    /* =====================================================
-       SIDEBAR BRAND
-    ====================================================== */
-
-    .css-148ci7f-SidebarHeading-cardTopHeading {
-      position: relative;
-
-      margin: 0 !important;
-      padding: 30px 25px 22px !important;
-
-      background: var(--gl-sidebar) !important;
-
-      color: rgba(255,255,255,.55) !important;
-
-      border: 0 !important;
-      border-bottom: 1px solid rgba(255,255,255,.09) !important;
-
-      font-size: 0 !important;
-    }
-
-
-    .css-148ci7f-SidebarHeading-cardTopHeading::before {
-      content: "GENDERLAB";
-
-      display: block;
-
+    .gl-admin-brand-en {
       direction: ltr;
       text-align: right;
 
       color: #FFFFFF;
 
-      font-size: 23px;
+      font-size: 25px;
       line-height: 1;
       font-weight: 700;
 
-      letter-spacing: .06em;
+      letter-spacing: .045em;
     }
 
 
-    .css-148ci7f-SidebarHeading-cardTopHeading::after {
-      content: "جندرلب  ·  مدیریت محتوا";
-
-      display: block;
-
+    .gl-admin-brand-fa {
       margin-top: 9px;
 
-      direction: rtl;
+      color: rgba(255,255,255,.90);
+
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+
+    .gl-admin-brand-small {
+      margin-top: 6px;
+
+      color: rgba(255,255,255,.38);
+
+      direction: ltr;
       text-align: right;
 
-      color: rgba(255,255,255,.58);
+      font-size: 8px;
+      font-weight: 500;
 
-      font-size: 11px;
-      font-weight: 400;
-
-      letter-spacing: 0;
-    }
-
-
-    /* =====================================================
-       SEARCH IN SIDEBAR
-    ====================================================== */
-
-    .css-lk98m2-SearchContainer {
-      padding: 18px 15px 10px !important;
-
-      background: var(--gl-sidebar) !important;
-
-      border: 0 !important;
-    }
-
-
-    .css-1mpi08-InputContainer {
-      height: 39px !important;
-
-      background: rgba(255,255,255,.07) !important;
-
-      border: 1px solid rgba(255,255,255,.13) !important;
-      border-radius: 3px !important;
-
-      box-shadow: none !important;
-    }
-
-
-    .css-1fhcqx0-SearchInput {
-      background: transparent !important;
-
-      border: 0 !important;
-
-      color: #FFFFFF !important;
-
-      direction: rtl !important;
-      text-align: right !important;
-
-      font-size: 11px !important;
-    }
-
-
-    .css-1fhcqx0-SearchInput::placeholder {
-      color: rgba(255,255,255,.45) !important;
-    }
-
-
-    .css-1mpi08-InputContainer svg {
-      fill: rgba(255,255,255,.55) !important;
+      letter-spacing: .16em;
     }
 
 
@@ -280,88 +186,74 @@
        SIDEBAR NAVIGATION
     ====================================================== */
 
-    .css-kxvohc-SidebarNavList {
-      margin: 0 !important;
+    .gl-admin-nav {
+      flex: 1;
 
-      padding: 12px 0 25px !important;
+      padding: 19px 0;
 
-      background: var(--gl-sidebar) !important;
-
-      list-style: none !important;
+      overflow-y: auto;
     }
 
 
-    .css-kxvohc-SidebarNavList li {
-      margin: 0 !important;
-      padding: 0 !important;
+    .gl-nav-section {
+      margin-bottom: 11px;
     }
 
 
-    /*
-      Collection links
-    */
+    .gl-nav-label {
+      padding: 11px 24px 7px;
 
-    a[data-testid="issues"],
-    a[data-testid="articles"] {
+      color: rgba(255,255,255,.34);
+
+      font-size: 9px;
+      font-weight: 500;
+
+      letter-spacing: .05em;
+    }
+
+
+    .gl-nav-item {
       position: relative;
 
-      display: flex !important;
-      align-items: center !important;
+      min-height: 48px;
 
-      width: 100% !important;
+      display: flex;
+      align-items: center;
 
-      gap: 12px !important;
+      gap: 13px;
 
-      margin: 0 !important;
-      padding: 14px 22px !important;
+      padding: 0 22px;
 
-      background: transparent !important;
+      color: rgba(255,255,255,.78);
 
-      color: rgba(255,255,255,.78) !important;
+      font-size: 13px;
+      font-weight: 500;
 
-      border-radius: 0 !important;
-
-      font-size: 13px !important;
-      font-weight: 500 !important;
+      cursor: pointer;
 
       transition:
         background .15s ease,
-        color .15s ease !important;
+        color .15s ease;
     }
 
 
-    a[data-testid="issues"]:hover,
-    a[data-testid="articles"]:hover {
-      background: rgba(255,255,255,.06) !important;
+    .gl-nav-item:hover {
+      background: var(--petroleum-hover);
 
-      color: #FFFFFF !important;
+      color: #FFFFFF;
     }
 
 
-    /*
-      Active
-    */
+    .gl-nav-item.active {
+      background: var(--red);
 
-    a[data-testid="issues"].sidebar-active,
-    a[data-testid="articles"].sidebar-active,
-    a[data-testid="issues"][aria-current="page"],
-    a[data-testid="articles"][aria-current="page"] {
-      background: var(--gl-red) !important;
+      color: #FFFFFF;
 
-      color: #FFFFFF !important;
-
-      font-weight: 600 !important;
+      font-weight: 600;
     }
 
 
-    /*
-      WordPress-style active stripe
-    */
-
-    a[data-testid="issues"].sidebar-active::before,
-    a[data-testid="articles"].sidebar-active::before,
-    a[data-testid="issues"][aria-current="page"]::before,
-    a[data-testid="articles"][aria-current="page"]::before {
+    .gl-nav-item.active::before {
       content: "";
 
       position: absolute;
@@ -372,124 +264,237 @@
 
       width: 4px;
 
-      background: #FFFFFF;
-    }
-
-
-    a[data-testid="issues"] svg,
-    a[data-testid="articles"] svg {
-      width: 18px !important;
-      height: 18px !important;
-
-      fill: currentColor !important;
-
-      opacity: .8;
+      background: #F7F4EE;
     }
 
 
     /* =====================================================
-       WORKFLOW / DRAFT NAVIGATION
-
-       Decap's real editorial workflow remains intact.
+       ICONS
     ====================================================== */
 
-    a[href*="/workflow"] {
-      position: relative;
+    .gl-icon {
+      width: 21px;
+      height: 21px;
 
-      color: rgba(255,255,255,.80) !important;
+      flex: 0 0 21px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: currentColor;
+
+      opacity: .88;
     }
 
 
-    a[href*="/workflow"]:hover {
-      color: #FFFFFF !important;
+    .gl-icon svg {
+      width: 20px;
+      height: 20px;
+
+      fill: none;
+
+      stroke: currentColor;
+
+      stroke-width: 1.8;
+
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
 
-    /*
-      Give workflow/drafts a small red indicator
-    */
+    /* =====================================================
+       SUB MENU
+    ====================================================== */
 
-    a[href*="/workflow"]::after {
-      content: "پیش‌نویس‌ها";
+    .gl-submenu {
+      display: none;
 
-      display: inline-block;
+      padding: 5px 0 8px;
 
-      margin-right: 8px;
-      padding: 2px 7px;
+      background: rgba(0,0,0,.10);
+    }
 
-      background: rgba(163,77,69,.28);
+
+    .gl-menu-group.open .gl-submenu,
+    .gl-menu-group.current .gl-submenu {
+      display: block;
+    }
+
+
+    .gl-submenu a {
+      display: block;
+
+      padding: 8px 55px 8px 20px;
+
+      color: rgba(255,255,255,.57);
+
+      font-size: 11px;
+
+      transition:
+        color .15s ease,
+        background .15s ease;
+    }
+
+
+    .gl-submenu a:hover {
+      background: rgba(255,255,255,.035);
 
       color: #FFFFFF;
+    }
+
+
+    .gl-submenu a.current {
+      color: #FFFFFF;
+
+      font-weight: 600;
+    }
+
+
+    /* =====================================================
+       SMALL COUNTER
+    ====================================================== */
+
+    .gl-count {
+      min-width: 20px;
+      height: 20px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-right: auto;
+
+      padding: 0 6px;
+
+      background: rgba(255,255,255,.12);
 
       border-radius: 20px;
 
+      color: rgba(255,255,255,.82);
+
+      direction: ltr;
+
       font-size: 8px;
-      font-weight: 500;
     }
 
 
     /* =====================================================
-       MAIN CONTENT AREA
+       DIVIDER
     ====================================================== */
+
+    .gl-nav-divider {
+      height: 1px;
+
+      margin: 15px 20px;
+
+      background: rgba(255,255,255,.10);
+    }
+
+
+    /* =====================================================
+       SIDEBAR BOTTOM
+    ====================================================== */
+
+    .gl-admin-bottom {
+      padding: 11px 0 16px;
+
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+
+
+    .gl-admin-bottom .gl-nav-item {
+      min-height: 43px;
+
+      font-size: 11px;
+    }
+
+
+    /* =====================================================
+       HIDE DECAP'S ORIGINAL COLLECTION SIDEBAR
+    ====================================================== */
+
+    aside.css-1ff92bv-SidebarContainer-card-card {
+      display: none !important;
+    }
+
+
+    /*
+      Fallback for generated Decap sidebar class changes.
+      Only hides elements that identify themselves as sidebar.
+    */
+
+    #nc-root aside[class*="SidebarContainer"] {
+      display: none !important;
+    }
+
+
+    /* =====================================================
+       DECAP MAIN AREA
+    ====================================================== */
+
+    #nc-root {
+      min-height: 100vh !important;
+
+      background: var(--cream) !important;
+    }
+
+
+    #nc-root > div {
+      background: var(--cream) !important;
+    }
+
 
     main {
-      background: var(--gl-bg) !important;
-    }
+      width: 100% !important;
 
-
-    /*
-      Generic Decap cards
-    */
-
-    [class*="Card"] {
-      border-color: var(--gl-border) !important;
-
-      box-shadow:
-        0 1px 2px rgba(23,43,54,.035) !important;
+      background: var(--cream) !important;
     }
 
 
     /* =====================================================
-       PAGE HEADINGS
+       DECAP TYPOGRAPHY
     ====================================================== */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--text) !important;
+
+      font-family: "Vazirmatn", sans-serif !important;
+
+      letter-spacing: 0 !important;
+    }
+
 
     h1 {
-      color: var(--gl-text) !important;
-
-      font-size: 29px !important;
-      line-height: 1.4 !important;
-
+      font-size: 28px !important;
       font-weight: 700 !important;
-
-      letter-spacing: 0 !important;
-    }
-
-
-    h2 {
-      color: var(--gl-text) !important;
-
-      letter-spacing: 0 !important;
     }
 
 
     /* =====================================================
-       COLLECTION / ENTRY LIST
-       Flatten cards to WordPress-style rows
+       DECAP CARDS
+       Make it flatter / more WordPress-like
     ====================================================== */
 
-    [class*="EntriesCollection"] {
-      background: var(--gl-paper) !important;
+    [class*="card"],
+    [class*="Card"] {
+      border-color: var(--border) !important;
 
-      border: 1px solid var(--gl-border) !important;
       border-radius: 2px !important;
 
-      box-shadow: none !important;
+      box-shadow:
+        0 1px 2px rgba(16,44,58,.04) !important;
     }
 
 
-    /*
-      Entry cards
-    */
+    /* =====================================================
+       ENTRY LIST
+    ====================================================== */
 
     [class*="EntryCard"] {
       margin: 0 !important;
@@ -497,12 +502,10 @@
       background: #FFFFFF !important;
 
       border: 0 !important;
-      border-bottom: 1px solid #E7E5E0 !important;
+      border-bottom: 1px solid #E7E6E1 !important;
       border-radius: 0 !important;
 
       box-shadow: none !important;
-
-      transition: background .12s ease !important;
     }
 
 
@@ -511,88 +514,32 @@
     }
 
 
-    /*
-      Entry titles
-    */
-
-    [class*="EntryCard"] h2,
-    [class*="EntryCard"] h3,
-    [class*="EntryCard"] strong {
-      color: var(--gl-text) !important;
-
-      font-weight: 600 !important;
-    }
-
-
     /* =====================================================
        BUTTONS
     ====================================================== */
 
-    button {
-      min-height: 36px;
-
-      border-radius: 3px !important;
-
-      font-size: 12px !important;
-
-      box-shadow: none !important;
-    }
-
-
-    /*
-      Primary / publish / new-entry buttons
-    */
-
-    button[class*="Button"],
+    button,
     a[class*="Button"] {
       border-radius: 3px !important;
 
+      font-family: "Vazirmatn", sans-serif !important;
+
       box-shadow: none !important;
-    }
-
-
-    /*
-      Make red buttons feel like WordPress Add New
-    */
-
-    button[style*="background"],
-    a[style*="background"] {
-      transition:
-        opacity .15s ease,
-        transform .15s ease !important;
-    }
-
-
-    button:hover,
-    a[class*="Button"]:hover {
-      opacity: .92;
     }
 
 
     /* =====================================================
-       FORM / EDITOR
+       INPUTS
     ====================================================== */
 
     input,
     textarea,
     select {
-      color: var(--gl-text) !important;
-
-      background: #FFFFFF;
-
       border-radius: 3px !important;
     }
 
 
-    input,
-    select {
-      min-height: 38px;
-    }
-
-
     textarea {
-      min-height: 120px;
-
       direction: rtl !important;
       text-align: right !important;
 
@@ -605,132 +552,30 @@
     select:focus {
       outline: none !important;
 
-      border-color: var(--gl-red) !important;
+      border-color: var(--red) !important;
 
       box-shadow:
-        0 0 0 1px var(--gl-red) !important;
+        0 0 0 1px var(--red) !important;
     }
 
 
     /* =====================================================
-       EDITOR CARDS / PANELS
+       MODALS / DROPDOWNS
     ====================================================== */
 
-    [class*="ControlPane"] {
-      background: var(--gl-bg) !important;
-    }
+    [role="dialog"],
+    [role="menu"] {
+      border-radius: 3px !important;
 
-
-    [class*="ControlPane"] > div {
-      border-radius: 2px !important;
-    }
-
-
-    /*
-      Field labels
-    */
-
-    label {
-      color: var(--gl-text) !important;
-
-      font-size: 12px !important;
-      font-weight: 600 !important;
-    }
-
-
-    /* =====================================================
-       WORKFLOW
-       Drafts remain visible in Decap editorial workflow
-    ====================================================== */
-
-    [class*="Workflow"] {
       font-family: "Vazirmatn", sans-serif !important;
     }
 
-
-    /*
-      Workflow cards
-    */
-
-    [class*="Workflow"] [class*="Card"] {
-      background: #FFFFFF !important;
-
-      border: 1px solid var(--gl-border) !important;
-      border-radius: 3px !important;
-
-      box-shadow: none !important;
-    }
-
-
-    /* =====================================================
-       STATUS VISUAL LANGUAGE
-    ====================================================== */
-
-    /*
-      These are deliberately broad because Decap generates
-      hashed class names.
-    */
-
-    [class*="published"],
-    [class*="Published"] {
-      color: var(--gl-green-text) !important;
-    }
-
-
-    [class*="draft"],
-    [class*="Draft"] {
-      color: var(--gl-yellow-text) !important;
-    }
-
-
-    [class*="review"],
-    [class*="Review"] {
-      color: var(--gl-blue-text) !important;
-    }
-
-
-    /* =====================================================
-       DROPDOWNS / MENUS
-    ====================================================== */
 
     [role="menu"] {
-      background: #FFFFFF !important;
-
-      border: 1px solid var(--gl-border) !important;
-      border-radius: 3px !important;
+      border: 1px solid var(--border) !important;
 
       box-shadow:
-        0 8px 25px rgba(23,43,54,.12) !important;
-    }
-
-
-    [role="menuitem"] {
-      font-size: 12px !important;
-    }
-
-
-    [role="menuitem"]:hover {
-      background: #F4F3EF !important;
-    }
-
-
-    /* =====================================================
-       MODALS
-    ====================================================== */
-
-    [role="dialog"] {
-      border-radius: 4px !important;
-
-      font-family: "Vazirmatn", sans-serif !important;
-    }
-
-
-    /* =====================================================
-       CHECKBOXES
-    ====================================================== */
-
-    input[type="checkbox"] {
-      accent-color: var(--gl-red);
+        0 8px 28px rgba(16,44,58,.12) !important;
     }
 
 
@@ -757,7 +602,7 @@
 
 
     ::-webkit-scrollbar-thumb:hover {
-      background: var(--gl-red);
+      background: var(--red);
     }
 
 
@@ -767,21 +612,59 @@
 
     @media (max-width: 800px) {
 
-      aside.css-1ff92bv-SidebarContainer-card-card {
-        width: 100% !important;
-        min-width: 0 !important;
-
-        min-height: auto !important;
+      :root {
+        --sidebar-width: 0px;
       }
 
 
-      .css-148ci7f-SidebarHeading-cardTopHeading {
-        padding: 20px !important;
+      body {
+        padding-right: 0 !important;
       }
 
 
-      .css-148ci7f-SidebarHeading-cardTopHeading::before {
-        font-size: 20px;
+      #genderlab-admin-sidebar {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+
+        bottom: auto;
+      }
+
+
+      .gl-admin-brand {
+        padding: 20px;
+      }
+
+
+      .gl-admin-nav {
+        display: flex;
+
+        padding: 0;
+
+        overflow-x: auto;
+      }
+
+
+      .gl-nav-section {
+        display: flex;
+
+        margin: 0;
+      }
+
+
+      .gl-nav-label,
+      .gl-submenu,
+      .gl-nav-divider,
+      .gl-admin-bottom {
+        display: none !important;
+      }
+
+
+      .gl-nav-item {
+        min-width: max-content;
+
+        padding: 0 18px;
       }
 
     }
@@ -795,15 +678,459 @@
 
 
   <!-- =====================================================
+       CUSTOM GENDERLAB SIDEBAR
+  ====================================================== -->
+
+  <aside id="genderlab-admin-sidebar">
+
+
+    <!-- BRAND -->
+
+    <div class="gl-admin-brand">
+
+      <div class="gl-admin-brand-en">
+        GENDERLAB
+      </div>
+
+      <div class="gl-admin-brand-fa">
+        جندرلب
+      </div>
+
+      <div class="gl-admin-brand-small">
+        EDITORIAL CMS
+      </div>
+
+    </div>
+
+
+
+    <!-- NAV -->
+
+    <nav class="gl-admin-nav">
+
+
+      <!-- DASHBOARD -->
+
+      <div class="gl-nav-section">
+
+        <a
+          href="#/"
+          class="gl-nav-item"
+          data-route="dashboard"
+        >
+
+          <span class="gl-icon">
+
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+            </svg>
+
+          </span>
+
+          <span>
+            پیشخوان
+          </span>
+
+        </a>
+
+      </div>
+
+
+
+      <!-- CONTENT -->
+
+      <div class="gl-nav-label">
+        محتوا
+      </div>
+
+
+
+      <!-- ARTICLES -->
+
+      <div
+        class="gl-menu-group"
+        data-group="articles"
+      >
+
+        <a
+          href="#/collections/articles"
+          class="gl-nav-item"
+          data-route="articles"
+        >
+
+          <span class="gl-icon">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M5 3h10l4 4v14H5z"></path>
+              <path d="M15 3v5h5"></path>
+              <path d="M8 12h8"></path>
+              <path d="M8 16h8"></path>
+            </svg>
+
+          </span>
+
+          <span>
+            مطالب مجله
+          </span>
+
+        </a>
+
+
+        <div class="gl-submenu">
+
+          <a href="#/collections/articles">
+            همه مطالب
+          </a>
+
+          <a href="#/collections/articles/new">
+            افزودن مطلب
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ISSUES -->
+
+      <div
+        class="gl-menu-group"
+        data-group="issues"
+      >
+
+        <a
+          href="#/collections/issues"
+          class="gl-nav-item"
+          data-route="issues"
+        >
+
+          <span class="gl-icon">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v17H6.5A2.5 2.5 0 0 0 4 22z"></path>
+              <path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v17h4.5A2.5 2.5 0 0 1 20 22z"></path>
+            </svg>
+
+          </span>
+
+          <span>
+            شماره‌های مجله
+          </span>
+
+        </a>
+
+
+        <div class="gl-submenu">
+
+          <a href="#/collections/issues">
+            همه شماره‌ها
+          </a>
+
+          <a href="#/collections/issues/new">
+            افزودن شماره
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- WORKFLOW / REAL DRAFTS -->
+
+      <div
+        class="gl-menu-group"
+        data-group="workflow"
+      >
+
+        <a
+          href="#/workflow"
+          class="gl-nav-item"
+          data-route="workflow"
+        >
+
+          <span class="gl-icon">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M3 12a9 9 0 1 0 3-6.7"></path>
+              <path d="M3 4v6h6"></path>
+              <path d="M12 7v5l3 2"></path>
+            </svg>
+
+          </span>
+
+          <span>
+            پیش‌نویس‌ها
+          </span>
+
+        </a>
+
+      </div>
+
+
+
+      <div class="gl-nav-divider"></div>
+
+
+
+      <!-- WEBSITE -->
+
+      <div class="gl-nav-section">
+
+        <a
+          href="/Genderlab/"
+          target="_blank"
+          class="gl-nav-item"
+        >
+
+          <span class="gl-icon">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M14 4h6v6"></path>
+              <path d="M10 14L20 4"></path>
+              <path d="M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"></path>
+            </svg>
+
+          </span>
+
+          <span>
+            نمایش سایت
+          </span>
+
+        </a>
+
+      </div>
+
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         BOTTOM
+    ====================================================== -->
+
+    <div class="gl-admin-bottom">
+
+      <a
+        href="https://github.com/Rezvaneh7/Genderlab"
+        target="_blank"
+        class="gl-nav-item"
+      >
+
+        <span class="gl-icon">
+
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.4.3.8.5 1.3.6h.3v4h-.3c-.5.1-.9.3-1.3.6z"></path>
+          </svg>
+
+        </span>
+
+        <span>
+          مخزن سایت
+        </span>
+
+      </a>
+
+    </div>
+
+
+  </aside>
+
+
+
+  <!-- =====================================================
        DECAP CMS
 
-       IMPORTANT:
-       This exact beta version is intentional.
-       It is the version currently working with turbo-github.
+       Keep this version.
+       turbo-github currently depends on it.
   ====================================================== -->
 
   <script
     src="https://cdn.jsdelivr.net/npm/decap-cms@3.17.0-beta.0/dist/decap-cms.js">
+  </script>
+
+
+
+  <!-- =====================================================
+       SIDEBAR ROUTE STATE
+  ====================================================== -->
+
+  <script>
+
+    /*
+     * GenderLab Admin Navigation
+     *
+     * Decap is a hash-based application.
+     * This watches its URL and highlights the correct
+     * custom sidebar section.
+     */
+
+    function updateGenderLabSidebar() {
+
+      const hash = window.location.hash || "#/";
+
+      const items =
+        document.querySelectorAll(
+          "#genderlab-admin-sidebar [data-route]"
+        );
+
+      const groups =
+        document.querySelectorAll(
+          "#genderlab-admin-sidebar .gl-menu-group"
+        );
+
+
+      /* reset */
+
+      items.forEach(item => {
+        item.classList.remove("active");
+      });
+
+      groups.forEach(group => {
+        group.classList.remove("current");
+      });
+
+
+      /* workflow */
+
+      if (hash.includes("/workflow")) {
+
+        const item =
+          document.querySelector(
+            '[data-route="workflow"]'
+          );
+
+        if (item) {
+          item.classList.add("active");
+        }
+
+        const group =
+          document.querySelector(
+            '[data-group="workflow"]'
+          );
+
+        if (group) {
+          group.classList.add("current");
+        }
+
+        return;
+      }
+
+
+      /* articles */
+
+      if (hash.includes("/collections/articles")) {
+
+        const item =
+          document.querySelector(
+            '[data-route="articles"]'
+          );
+
+        if (item) {
+          item.classList.add("active");
+        }
+
+        const group =
+          document.querySelector(
+            '[data-group="articles"]'
+          );
+
+        if (group) {
+          group.classList.add("current");
+        }
+
+        return;
+      }
+
+
+      /* issues */
+
+      if (hash.includes("/collections/issues")) {
+
+        const item =
+          document.querySelector(
+            '[data-route="issues"]'
+          );
+
+        if (item) {
+          item.classList.add("active");
+        }
+
+        const group =
+          document.querySelector(
+            '[data-group="issues"]'
+          );
+
+        if (group) {
+          group.classList.add("current");
+        }
+
+        return;
+      }
+
+
+      /* dashboard */
+
+      const dashboard =
+        document.querySelector(
+          '[data-route="dashboard"]'
+        );
+
+      if (dashboard) {
+        dashboard.classList.add("active");
+      }
+
+    }
+
+
+
+    /* =====================================================
+       COLLAPSIBLE GROUPS
+    ====================================================== */
+
+    document
+      .querySelectorAll(".gl-menu-group > .gl-nav-item")
+      .forEach(item => {
+
+        item.addEventListener("click", function () {
+
+          const group =
+            this.closest(".gl-menu-group");
+
+          if (!group) return;
+
+          group.classList.add("open");
+
+        });
+
+      });
+
+
+
+    /* =====================================================
+       RUN
+    ====================================================== */
+
+    window.addEventListener(
+      "hashchange",
+      updateGenderLabSidebar
+    );
+
+
+    window.addEventListener(
+      "load",
+      updateGenderLabSidebar
+    );
+
+
+    updateGenderLabSidebar();
+
   </script>
 
 
