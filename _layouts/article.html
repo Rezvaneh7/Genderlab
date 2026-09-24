@@ -48,6 +48,22 @@
     }
 
 
+
+    /* =====================================================
+       READING PROGRESS
+    ===================================================== */
+
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 3px;
+      background: #A34D45;
+      z-index: 9999;
+      pointer-events: none;
+    }
+
     /* =====================================================
        HEADER
     ===================================================== */
@@ -1002,6 +1018,8 @@
 
 <body>
 
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
 
   <!-- =====================================================
        HEADER
@@ -1084,6 +1102,12 @@
 
 
 
+  {% assign article_words = content | strip_html | strip_newlines | split: ' ' | size %}
+  {% assign reading_minutes = article_words | divided_by: 190 %}
+  {% if reading_minutes < 1 %}
+    {% assign reading_minutes = 1 %}
+  {% endif %}
+
   <!-- =====================================================
        ARTICLE HEADER
   ====================================================== -->
@@ -1106,6 +1130,12 @@
         {% if page.issue %}
           <span>شماره {{ page.issue }}</span>
         {% endif %}
+
+        {% if page.category or page.issue %}
+          <span class="meta-dot"></span>
+        {% endif %}
+
+        <span>{{ reading_minutes }} دقیقه مطالعه</span>
 
       </div>
 
@@ -1500,6 +1530,31 @@
 
   </footer>
 
+
+
+
+  <script>
+    (function () {
+      const bar = document.getElementById('reading-progress');
+      const article = document.querySelector('.article-body');
+      if (!bar || !article) return;
+
+      function updateReadingProgress() {
+        const start = article.getBoundingClientRect().top + window.scrollY;
+        const end = start + article.offsetHeight - window.innerHeight;
+        const distance = end - start;
+        const progress = distance <= 0
+          ? (window.scrollY >= start ? 100 : 0)
+          : ((window.scrollY - start) / distance) * 100;
+
+        bar.style.width = Math.max(0, Math.min(100, progress)) + '%';
+      }
+
+      updateReadingProgress();
+      window.addEventListener('scroll', updateReadingProgress, { passive: true });
+      window.addEventListener('resize', updateReadingProgress);
+    })();
+  </script>
 
 </body>
 </html>
