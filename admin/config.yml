@@ -143,6 +143,13 @@ collections:
           - "نقد"
         hint: "نوع محتوای مطلب"
 
+      - label: "نمایش در کاروسل صفحه اصلی"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "برای نمایش این مطلب در کاروسل منتخب صفحه اصلی فعال کنید."
+
       - label: "تاریخ انتشار"
         name: "date"
         widget: "datetime"
