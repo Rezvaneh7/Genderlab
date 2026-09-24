@@ -1,0 +1,1060 @@
+---
+layout: null
+permalink: /archive/
+---
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>آرشیو مجلات | GenderLab</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #F7F4EE;
+      color: #101E28;
+      font-family: "Vazirmatn", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .site-header {
+      width: 100%;
+      padding: 28px 55px 0;
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: 285px 1fr 180px;
+      gap: 38px;
+
+      direction: ltr;
+      align-items: start;
+    }
+
+    .brand {
+      text-align: left;
+      direction: ltr;
+    }
+
+    .brand-en {
+      font-size: 38px;
+      line-height: .9;
+      font-weight: 700;
+      letter-spacing: -2px;
+    }
+
+    .brand-fa {
+      margin-top: 8px;
+
+      direction: rtl;
+      text-align: left;
+
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .brand-description {
+      margin-top: 17px;
+
+      font-size: 8px;
+      line-height: 1.55;
+      font-weight: 500;
+      letter-spacing: 2.6px;
+
+      color: #667077;
+    }
+
+
+    /* NAV */
+
+    .main-nav {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      direction: rtl;
+
+      min-height: 50px;
+    }
+
+    .main-nav a {
+      position: relative;
+
+      padding: 11px 25px 17px;
+
+      font-size: 12px;
+
+      white-space: nowrap;
+    }
+
+    .main-nav a:hover {
+      opacity: .55;
+    }
+
+    .main-nav .active {
+      font-weight: 700;
+    }
+
+    .main-nav .active::after {
+      content: "";
+
+      position: absolute;
+
+      right: 14px;
+      left: 14px;
+      bottom: 0;
+
+      height: 1px;
+
+      background: #101E28;
+    }
+
+
+    /* TOOLS */
+
+    .header-tools {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      direction: ltr;
+
+      gap: 24px;
+
+      padding-top: 8px;
+    }
+
+    .language {
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .language span {
+      margin: 0 7px;
+      opacity: .35;
+    }
+
+    .search {
+      position: relative;
+
+      width: 18px;
+      height: 18px;
+
+      border: 1.5px solid #101E28;
+      border-radius: 50%;
+    }
+
+    .search::after {
+      content: "";
+
+      position: absolute;
+
+      width: 7px;
+      height: 1.5px;
+
+      left: -5px;
+      bottom: -3px;
+
+      background: #101E28;
+
+      transform: rotate(-45deg);
+    }
+
+    .header-line {
+      max-width: 1400px;
+      height: 1px;
+
+      margin: 20px auto 0;
+
+      background: rgba(16,30,40,.12);
+    }
+
+
+    /* =====================================================
+       ARCHIVE INTRO
+    ===================================================== */
+
+    .archive-hero {
+      max-width: 1400px;
+
+      margin: 0 auto;
+      padding: 75px 55px 60px;
+    }
+
+    .archive-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      margin-bottom: 25px;
+
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+
+      color: #A34D45;
+    }
+
+    .archive-eyebrow::after {
+      content: "";
+
+      width: 75px;
+      height: 1px;
+
+      background: #A34D45;
+    }
+
+    .archive-hero h1 {
+      margin: 0 0 22px;
+
+      font-size: clamp(45px, 6vw, 78px);
+      line-height: 1.25;
+      font-weight: 700;
+
+      letter-spacing: -2px;
+    }
+
+    .archive-intro {
+      max-width: 650px;
+
+      margin: 0;
+
+      font-size: 15px;
+      line-height: 2.1;
+
+      color: #46575E;
+    }
+
+
+    /* =====================================================
+       ARCHIVE AREA
+    ===================================================== */
+
+    .archive-section {
+      width: 100%;
+
+      padding: 20px 0 95px;
+    }
+
+    .archive-inner {
+      max-width: 1400px;
+
+      margin: 0 auto;
+      padding: 0 55px;
+    }
+
+
+    /* TOP LINE */
+
+    .archive-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+
+      margin-bottom: 42px;
+      padding-bottom: 15px;
+
+      border-bottom: 1px solid rgba(16,30,40,.28);
+    }
+
+    .archive-heading-fa {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .archive-heading-en {
+      direction: ltr;
+
+      font-size: 9px;
+      letter-spacing: 2.5px;
+
+      color: #69767C;
+    }
+
+
+    /* =====================================================
+       ISSUES GRID
+    ===================================================== */
+
+    .issues-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+
+      gap: 65px 38px;
+    }
+
+    .issue-card {
+      display: block;
+
+      min-width: 0;
+    }
+
+
+    /* COVER */
+
+    .issue-cover {
+      position: relative;
+
+      width: 100%;
+      aspect-ratio: .74;
+
+      overflow: hidden;
+
+      background: #102C3A;
+
+      box-shadow: 0 15px 30px rgba(16,30,40,.08);
+
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+    }
+
+    .issue-card:hover .issue-cover {
+      transform: translateY(-5px);
+
+      box-shadow: 0 23px 40px rgba(16,30,40,.14);
+    }
+
+    .issue-cover img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+
+    /* FALLBACK COVER */
+
+    .cover-fallback {
+      position: absolute;
+      inset: 0;
+
+      padding: 28px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      background: #102C3A;
+      color: #F7F4EE;
+    }
+
+    .cover-fallback-top {
+      display: flex;
+      justify-content: space-between;
+
+      direction: ltr;
+
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .cover-fallback-title {
+      text-align: center;
+
+      font-size: 30px;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .cover-fallback-bottom {
+      direction: ltr;
+
+      font-size: 9px;
+      letter-spacing: 1px;
+    }
+
+
+    /* CARD INFO */
+
+    .issue-info {
+      padding-top: 20px;
+    }
+
+    .issue-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      margin-bottom: 8px;
+
+      font-size: 10px;
+      font-weight: 600;
+
+      color: #69767C;
+    }
+
+    .issue-info h2 {
+      margin: 0 0 9px;
+
+      font-size: 23px;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .issue-description {
+      margin: 0;
+
+      font-size: 12px;
+      line-height: 1.95;
+
+      color: #526168;
+    }
+
+    .issue-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      margin-top: 15px;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      transition: gap .2s ease;
+    }
+
+    .issue-card:hover .issue-link {
+      gap: 16px;
+    }
+
+
+    /* =====================================================
+       EMPTY
+    ===================================================== */
+
+    .archive-empty {
+      grid-column: 1 / -1;
+
+      padding: 80px 0;
+
+      text-align: center;
+
+      border-top: 1px solid rgba(16,30,40,.12);
+      border-bottom: 1px solid rgba(16,30,40,.12);
+
+      font-size: 14px;
+
+      color: #69767C;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .site-footer {
+      width: 100%;
+
+      background: #102C3A;
+      color: #F7F4EE;
+    }
+
+    .footer-inner {
+      max-width: 1400px;
+
+      margin: 0 auto;
+      padding: 35px 55px 25px;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 70px;
+
+      align-items: center;
+
+      padding-bottom: 28px;
+    }
+
+    .footer-brand {
+      direction: ltr;
+      text-align: left;
+    }
+
+    .footer-brand-en {
+      font-size: 31px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .footer-brand-fa {
+      margin-top: 6px;
+
+      direction: rtl;
+      text-align: left;
+
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .footer-tagline {
+      margin-top: 9px;
+
+      font-size: 7px;
+      letter-spacing: 2px;
+
+      opacity: .65;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+
+      gap: 15px 45px;
+
+      direction: rtl;
+    }
+
+    .footer-nav a {
+      font-size: 11px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding-top: 18px;
+
+      border-top: 1px solid rgba(247,244,238,.35);
+
+      direction: ltr;
+
+      font-size: 9px;
+      letter-spacing: 1px;
+
+      opacity: .75;
+    }
+
+
+    /* =====================================================
+       TABLET
+    ===================================================== */
+
+    @media (max-width: 1000px) {
+
+      .site-header {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+      .header-inner {
+        grid-template-columns: 220px 1fr 140px;
+        gap: 20px;
+      }
+
+      .archive-hero {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+      .archive-inner {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+      .issues-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 760px) {
+
+      .site-header {
+        padding: 22px 20px 0;
+      }
+
+      .header-inner {
+        grid-template-columns: 1fr auto;
+      }
+
+      .brand-en {
+        font-size: 30px;
+      }
+
+      .brand-fa {
+        font-size: 21px;
+      }
+
+      .brand-description {
+        display: none;
+      }
+
+      .main-nav {
+        grid-column: 1 / -1;
+        grid-row: 2;
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+      }
+
+      .main-nav a {
+        padding: 15px 18px;
+      }
+
+
+      /* INTRO */
+
+      .archive-hero {
+        padding: 48px 20px 45px;
+      }
+
+      .archive-hero h1 {
+        font-size: 43px;
+      }
+
+      .archive-intro {
+        font-size: 14px;
+      }
+
+
+      /* GRID */
+
+      .archive-section {
+        padding-bottom: 65px;
+      }
+
+      .archive-inner {
+        padding: 0 20px;
+      }
+
+      .archive-heading-en {
+        display: none;
+      }
+
+      .issues-grid {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+      }
+
+      .issue-cover {
+        max-width: 420px;
+
+        margin: 0 auto;
+      }
+
+
+      /* FOOTER */
+
+      .footer-inner {
+        padding: 32px 20px 22px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 8px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <div class="header-inner">
+
+
+      <a href="{{ '/' | relative_url }}" class="brand">
+
+        <div class="brand-en">
+          GENDERLAB
+        </div>
+
+        <div class="brand-fa">
+          جندرلب
+        </div>
+
+        <div class="brand-description">
+          INDEPENDENT MAGAZINE<br>
+          ON GENDER, SOCIETY AND CULTURE
+        </div>
+
+      </a>
+
+
+
+      <nav class="main-nav">
+
+        <a href="{{ '/' | relative_url }}">
+          خانه
+        </a>
+
+        <a href="#">
+          مقالات
+        </a>
+
+        <a href="{{ '/archive/' | relative_url }}" class="active">
+          آرشیو مجلات
+        </a>
+
+        <a href="#">
+          درباره ما
+        </a>
+
+        <a href="#">
+          تماس
+        </a>
+
+      </nav>
+
+
+
+      <div class="header-tools">
+
+        <div class="language">
+          FA <span>|</span> EN
+        </div>
+
+        <a href="#" class="search" aria-label="جستجو"></a>
+
+      </div>
+
+
+    </div>
+
+    <div class="header-line"></div>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       ARCHIVE INTRO
+  ====================================================== -->
+
+  <main>
+
+
+    <section class="archive-hero">
+
+      <div class="archive-eyebrow">
+        GENDERLAB / ARCHIVE
+      </div>
+
+      <h1>
+        آرشیو مجلات
+      </h1>
+
+      <p class="archive-intro">
+        همه شماره‌های جندرلب؛ مجموعه‌ای از پژوهش‌ها، جستارها،
+        گفت‌وگوها و روایت‌ها درباره جنسیت، جامعه و فرهنگ.
+      </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         GET ALL ISSUES
+    ====================================================== -->
+
+    {% assign archive_issues = site.issues | sort: "date" | reverse %}
+
+
+
+    <!-- =====================================================
+         ISSUES
+    ====================================================== -->
+
+    <section class="archive-section">
+
+      <div class="archive-inner">
+
+
+        <div class="archive-heading">
+
+          <div class="archive-heading-fa">
+            همه شماره‌ها
+          </div>
+
+          <div class="archive-heading-en">
+            ALL ISSUES
+          </div>
+
+        </div>
+
+
+
+        <div class="issues-grid">
+
+
+          {% if archive_issues.size > 0 %}
+
+
+            {% for issue in archive_issues %}
+
+
+              <a
+                href="{{ issue.url | relative_url }}"
+                class="issue-card"
+              >
+
+
+                <!-- COVER -->
+
+                <div class="issue-cover">
+
+
+                  {% if issue.cover %}
+
+                    <img
+                      src="{{ issue.cover | relative_url }}"
+                      alt="جلد {{ issue.title }}"
+                    >
+
+
+                  {% else %}
+
+
+                    <div class="cover-fallback">
+
+                      <div class="cover-fallback-top">
+
+                        <span>
+                          GENDERLAB
+                        </span>
+
+                        <span>
+                          {{ issue.number }}
+                        </span>
+
+                      </div>
+
+
+                      <div class="cover-fallback-title">
+                        {{ issue.title }}
+                      </div>
+
+
+                      <div class="cover-fallback-bottom">
+                        {{ issue.seasonEn }}
+                      </div>
+
+                    </div>
+
+
+                  {% endif %}
+
+
+                </div>
+
+
+
+                <!-- INFORMATION -->
+
+                <div class="issue-info">
+
+
+                  <div class="issue-meta">
+
+                    <span>
+                      شماره {{ issue.numberFa }}
+                    </span>
+
+                    <span>
+                      {{ issue.season }}
+                    </span>
+
+                  </div>
+
+
+                  <h2>
+                    {{ issue.title }}
+                  </h2>
+
+
+                  {% if issue.description %}
+
+                    <p class="issue-description">
+                      {{ issue.description }}
+                    </p>
+
+                  {% endif %}
+
+
+                  <div class="issue-link">
+                    مشاهده شماره
+                    <span>←</span>
+                  </div>
+
+
+                </div>
+
+
+              </a>
+
+
+            {% endfor %}
+
+
+          {% else %}
+
+
+            <div class="archive-empty">
+              هنوز شماره‌ای منتشر نشده است.
+            </div>
+
+
+          {% endif %}
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+
+      <div class="footer-main">
+
+
+        <div class="footer-brand">
+
+          <div class="footer-brand-en">
+            GENDERLAB
+          </div>
+
+          <div class="footer-brand-fa">
+            جندرلب
+          </div>
+
+          <div class="footer-tagline">
+            INDEPENDENT MAGAZINE ON GENDER, SOCIETY AND CULTURE
+          </div>
+
+        </div>
+
+
+
+        <nav class="footer-nav">
+
+          <a href="{{ '/' | relative_url }}">
+            خانه
+          </a>
+
+          <a href="#">
+            مقالات
+          </a>
+
+          <a href="{{ '/archive/' | relative_url }}">
+            آرشیو مجلات
+          </a>
+
+          <a href="#">
+            درباره ما
+          </a>
+
+          <a href="#">
+            تماس
+          </a>
+
+        </nav>
+
+
+      </div>
+
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © GENDERLAB
+        </span>
+
+        <span dir="rtl">
+          مجله مستقل جنسیت، جامعه و فرهنگ
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
