@@ -8,7 +8,6 @@
 
   <title>GenderLab | مدیریت محتوا</title>
 
-  <!-- FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -46,21 +45,13 @@
     }
 
 
-    /* =====================================================
-       GLOBAL
-    ====================================================== */
-
     html,
     body {
       margin: 0 !important;
       padding: 0 !important;
-
       min-height: 100% !important;
-
       background: var(--cream) !important;
-
       color: var(--text);
-
       font-family: "Vazirmatn", sans-serif !important;
     }
 
@@ -91,7 +82,6 @@
 
     #genderlab-admin-sidebar {
       position: fixed;
-
       z-index: 999999;
 
       top: 0;
@@ -111,20 +101,14 @@
         );
 
       color: #FFFFFF;
-
       direction: rtl;
 
       box-shadow: -1px 0 0 rgba(0,0,0,.05);
     }
 
 
-    /* =====================================================
-       BRAND
-    ====================================================== */
-
     .gl-admin-brand {
       padding: 27px 24px 24px;
-
       border-bottom: 1px solid rgba(255,255,255,.10);
     }
 
@@ -174,9 +158,7 @@
 
     .gl-admin-nav {
       flex: 1;
-
       padding: 19px 0;
-
       overflow-y: auto;
     }
 
@@ -232,7 +214,6 @@
     .gl-nav-item.active {
       background: var(--red);
       color: #FFFFFF;
-
       font-weight: 600;
     }
 
@@ -252,10 +233,6 @@
     }
 
 
-    /* =====================================================
-       ICONS
-    ====================================================== */
-
     .gl-icon {
       width: 21px;
       height: 21px;
@@ -267,7 +244,6 @@
       justify-content: center;
 
       color: currentColor;
-
       opacity: .88;
     }
 
@@ -279,17 +255,12 @@
       fill: none;
 
       stroke: currentColor;
-
       stroke-width: 1.8;
 
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
-
-    /* =====================================================
-       SUB MENU
-    ====================================================== */
 
     .gl-submenu {
       display: none;
@@ -314,28 +285,14 @@
       color: rgba(255,255,255,.57);
 
       font-size: 11px;
-
-      transition:
-        color .15s ease,
-        background .15s ease;
     }
 
 
     .gl-submenu a:hover {
+      color: #FFFFFF;
       background: rgba(255,255,255,.035);
-      color: #FFFFFF;
     }
 
-
-    .gl-submenu a.current {
-      color: #FFFFFF;
-      font-weight: 600;
-    }
-
-
-    /* =====================================================
-       DIVIDER
-    ====================================================== */
 
     .gl-nav-divider {
       height: 1px;
@@ -346,10 +303,6 @@
     }
 
 
-    /* =====================================================
-       SIDEBAR BOTTOM
-    ====================================================== */
-
     .gl-admin-bottom {
       padding: 11px 0 16px;
 
@@ -359,7 +312,6 @@
 
     .gl-admin-bottom .gl-nav-item {
       min-height: 43px;
-
       font-size: 11px;
     }
 
@@ -379,12 +331,11 @@
 
 
     /* =====================================================
-       DECAP MAIN AREA
+       DECAP
     ====================================================== */
 
     #nc-root {
       min-height: 100vh !important;
-
       background: var(--cream) !important;
     }
 
@@ -396,14 +347,9 @@
 
     main {
       width: 100% !important;
-
       background: var(--cream) !important;
     }
 
-
-    /* =====================================================
-       TYPOGRAPHY
-    ====================================================== */
 
     h1,
     h2,
@@ -412,9 +358,7 @@
     h5,
     h6 {
       color: var(--text) !important;
-
       font-family: "Vazirmatn", sans-serif !important;
-
       letter-spacing: 0 !important;
     }
 
@@ -425,24 +369,15 @@
     }
 
 
-    /* =====================================================
-       DECAP CARDS
-    ====================================================== */
-
     [class*="card"],
     [class*="Card"] {
       border-color: var(--border) !important;
-
       border-radius: 2px !important;
 
       box-shadow:
         0 1px 2px rgba(16,44,58,.04) !important;
     }
 
-
-    /* =====================================================
-       ENTRY LIST
-    ====================================================== */
 
     [class*="EntryCard"] {
       margin: 0 !important;
@@ -462,23 +397,13 @@
     }
 
 
-    /* =====================================================
-       BUTTONS
-    ====================================================== */
-
     button,
     a[class*="Button"] {
       border-radius: 3px !important;
-
       font-family: "Vazirmatn", sans-serif !important;
-
       box-shadow: none !important;
     }
 
-
-    /* =====================================================
-       INPUTS
-    ====================================================== */
 
     input,
     textarea,
@@ -490,7 +415,6 @@
     textarea {
       direction: rtl !important;
       text-align: right !important;
-
       line-height: 2 !important;
     }
 
@@ -499,7 +423,6 @@
     textarea:focus,
     select:focus {
       outline: none !important;
-
       border-color: var(--red) !important;
 
       box-shadow:
@@ -507,14 +430,9 @@
     }
 
 
-    /* =====================================================
-       MODALS / MENUS
-    ====================================================== */
-
     [role="dialog"],
     [role="menu"] {
       border-radius: 3px !important;
-
       font-family: "Vazirmatn", sans-serif !important;
     }
 
@@ -524,6 +442,58 @@
 
       box-shadow:
         0 8px 28px rgba(16,44,58,.12) !important;
+    }
+
+
+    /* =====================================================
+       WORDPRESS-STYLE PREVIEW BUTTON
+    ====================================================== */
+
+    #gl-site-preview-button {
+      position: fixed;
+
+      z-index: 999998;
+
+      top: 17px;
+      left: 22px;
+
+      display: none;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 38px;
+
+      padding: 0 17px;
+
+      border: 1px solid #A34D45;
+      border-radius: 3px;
+
+      background: #FFFFFF;
+
+      color: #A34D45;
+
+      font-family: "Vazirmatn", sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+
+      cursor: pointer;
+
+      box-shadow: 0 2px 8px rgba(16,44,58,.08);
+
+      transition:
+        background .15s ease,
+        color .15s ease;
+    }
+
+
+    #gl-site-preview-button:hover {
+      background: #A34D45;
+      color: #FFFFFF;
+    }
+
+
+    #gl-site-preview-button.visible {
+      display: inline-flex;
     }
 
 
@@ -544,7 +514,6 @@
 
     ::-webkit-scrollbar-thumb {
       background: #AAA7A0;
-
       border-radius: 10px;
     }
 
@@ -553,10 +522,6 @@
       background: var(--red);
     }
 
-
-    /* =====================================================
-       MOBILE
-    ====================================================== */
 
     @media (max-width: 800px) {
 
@@ -596,7 +561,6 @@
 
       .gl-nav-section {
         display: flex;
-
         margin: 0;
       }
 
@@ -611,8 +575,19 @@
 
       .gl-nav-item {
         min-width: max-content;
-
         padding: 0 18px;
+      }
+
+
+      #gl-site-preview-button {
+        position: fixed;
+
+        top: auto;
+        right: 15px;
+        left: 15px;
+        bottom: 15px;
+
+        width: auto;
       }
 
     }
@@ -625,14 +600,9 @@
 <body>
 
 
-  <!-- =====================================================
-       CUSTOM GENDERLAB SIDEBAR
-  ====================================================== -->
+  <!-- CUSTOM SIDEBAR -->
 
   <aside id="genderlab-admin-sidebar">
-
-
-    <!-- BRAND -->
 
     <div class="gl-admin-brand">
 
@@ -651,13 +621,8 @@
     </div>
 
 
-
-    <!-- NAV -->
-
     <nav class="gl-admin-nav">
 
-
-      <!-- DASHBOARD -->
 
       <div class="gl-nav-section">
 
@@ -668,32 +633,24 @@
         >
 
           <span class="gl-icon">
-
             <svg viewBox="0 0 24 24">
               <rect x="3" y="3" width="7" height="7"></rect>
               <rect x="14" y="3" width="7" height="7"></rect>
               <rect x="3" y="14" width="7" height="7"></rect>
               <rect x="14" y="14" width="7" height="7"></rect>
             </svg>
-
           </span>
 
-          <span>
-            پیشخوان
-          </span>
+          <span>پیشخوان</span>
 
         </a>
 
       </div>
 
 
-
-      <!-- CONTENT -->
-
       <div class="gl-nav-label">
         محتوا
       </div>
-
 
 
       <!-- ARTICLES -->
@@ -710,19 +667,15 @@
         >
 
           <span class="gl-icon">
-
             <svg viewBox="0 0 24 24">
               <path d="M5 3h10l4 4v14H5z"></path>
               <path d="M15 3v5h5"></path>
               <path d="M8 12h8"></path>
               <path d="M8 16h8"></path>
             </svg>
-
           </span>
 
-          <span>
-            مطالب مجله
-          </span>
+          <span>مطالب مجله</span>
 
         </a>
 
@@ -742,7 +695,6 @@
       </div>
 
 
-
       <!-- ISSUES -->
 
       <div
@@ -757,17 +709,13 @@
         >
 
           <span class="gl-icon">
-
             <svg viewBox="0 0 24 24">
               <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v17H6.5A2.5 2.5 0 0 0 4 22z"></path>
               <path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v17h4.5A2.5 2.5 0 0 1 20 22z"></path>
             </svg>
-
           </span>
 
-          <span>
-            شماره‌های مجله
-          </span>
+          <span>شماره‌های مجله</span>
 
         </a>
 
@@ -787,7 +735,6 @@
       </div>
 
 
-
       <!-- WORKFLOW -->
 
       <div
@@ -802,30 +749,22 @@
         >
 
           <span class="gl-icon">
-
             <svg viewBox="0 0 24 24">
               <path d="M3 12a9 9 0 1 0 3-6.7"></path>
               <path d="M3 4v6h6"></path>
               <path d="M12 7v5l3 2"></path>
             </svg>
-
           </span>
 
-          <span>
-            پیش‌نویس‌ها
-          </span>
+          <span>پیش‌نویس‌ها</span>
 
         </a>
 
       </div>
 
 
-
       <div class="gl-nav-divider"></div>
 
-
-
-      <!-- WEBSITE -->
 
       <div class="gl-nav-section">
 
@@ -836,18 +775,14 @@
         >
 
           <span class="gl-icon">
-
             <svg viewBox="0 0 24 24">
               <path d="M14 4h6v6"></path>
               <path d="M10 14L20 4"></path>
               <path d="M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"></path>
             </svg>
-
           </span>
 
-          <span>
-            نمایش سایت
-          </span>
+          <span>نمایش سایت</span>
 
         </a>
 
@@ -856,9 +791,6 @@
 
     </nav>
 
-
-
-    <!-- BOTTOM -->
 
     <div class="gl-admin-bottom">
 
@@ -869,30 +801,34 @@
       >
 
         <span class="gl-icon">
-
           <svg viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="3"></circle>
             <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.4.3.8.5 1.3.6h.3v4h-.3c-.5.1-.9.3-1.3.6z"></path>
           </svg>
-
         </span>
 
-        <span>
-          مخزن سایت
-        </span>
+        <span>مخزن سایت</span>
 
       </a>
 
     </div>
 
-
   </aside>
 
+
+  <!-- WORDPRESS-STYLE PREVIEW BUTTON -->
+
+  <button
+    type="button"
+    id="gl-site-preview-button"
+  >
+    پیش‌نمایش ↗
+  </button>
 
 
   <!-- =====================================================
        DECAP CMS
-       DO NOT CHANGE — WORKING WITH TURBO-GITHUB
+       KEEP THIS VERSION
   ====================================================== -->
 
   <script
@@ -900,677 +836,357 @@
   </script>
 
 
-
   <!-- =====================================================
-       GENDERLAB LIVE PREVIEW
+       GENDERLAB ADMIN LOGIC
   ====================================================== -->
 
   <script>
 
-    /*
-     * ARTICLE PREVIEW
-     */
+    const GL_PREVIEW_STORAGE_KEY =
+      "genderlab_live_preview";
 
-    const GenderLabArticlePreview = createClass({
 
-      render: function () {
+    /* =====================================================
+       ROUTE INFORMATION
+    ====================================================== */
 
-        const entry = this.props.entry;
+    function getGenderLabRoute() {
 
-        const title =
-          entry.getIn(["data", "title"]) || "عنوان مطلب";
+      const hash =
+        window.location.hash || "#/";
 
-        const excerpt =
-          entry.getIn(["data", "excerpt"]) || "";
+      let type = null;
 
-        const author =
-          entry.getIn(["data", "author"]) || "";
-
-        const category =
-          entry.getIn(["data", "category"]) || "";
-
-        const issue =
-          entry.getIn(["data", "issue"]) || "";
-
-        const imageValue =
-          entry.getIn(["data", "image"]);
-
-        const image =
-          imageValue
-            ? this.props.getAsset(imageValue).toString()
-            : null;
-
-
-        return h(
-
-          "div",
-
-          {
-            style: {
-              direction: "rtl",
-              background: "#F7F4EE",
-              color: "#172B36",
-              minHeight: "100vh",
-              fontFamily: "Vazirmatn, sans-serif"
-            }
-          },
-
-
-          /* HEADER */
-
-          h(
-
-            "header",
-
-            {
-              style: {
-                padding: "22px 45px",
-                borderBottom: "1px solid #D9D8D3",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center"
-              }
-            },
-
-
-            h(
-
-              "div",
-
-              {
-                style: {
-                  fontSize: "21px",
-                  fontWeight: "700",
-                  direction: "ltr",
-                  letterSpacing: ".05em"
-                }
-              },
-
-              "GENDERLAB"
-
-            ),
-
-
-            h(
-
-              "div",
-
-              {
-                style: {
-                  fontSize: "12px",
-                  color: "#778188"
-                }
-              },
-
-              "جندرلب"
-
-            )
-
-          ),
-
-
-
-          /* ARTICLE */
-
-          h(
-
-            "main",
-
-            {
-              style: {
-                maxWidth: "850px",
-                margin: "0 auto",
-                padding: "65px 45px 100px"
-              }
-            },
-
-
-            /* META */
-
-            h(
-
-              "div",
-
-              {
-                style: {
-                  color: "#A34D45",
-                  fontSize: "12px",
-                  fontWeight: "600",
-                  marginBottom: "22px"
-                }
-              },
-
-              category,
-
-              category && issue
-                ? "  /  "
-                : "",
-
-              issue
-                ? "شماره " + issue
-                : ""
-
-            ),
-
-
-
-            /* TITLE */
-
-            h(
-
-              "h1",
-
-              {
-                style: {
-                  margin: "0 0 25px",
-                  fontSize: "44px",
-                  lineHeight: "1.45",
-                  fontWeight: "700",
-                  color: "#172B36"
-                }
-              },
-
-              title
-
-            ),
-
-
-
-            /* EXCERPT */
-
-            excerpt && h(
-
-              "p",
-
-              {
-                style: {
-                  margin: "0 0 24px",
-                  maxWidth: "700px",
-                  color: "#56666E",
-                  fontSize: "18px",
-                  lineHeight: "2"
-                }
-              },
-
-              excerpt
-
-            ),
-
-
-
-            /* AUTHOR */
-
-            author && h(
-
-              "div",
-
-              {
-                style: {
-                  paddingTop: "17px",
-                  marginBottom: "40px",
-                  borderTop: "1px solid #D9D8D3",
-                  color: "#778188",
-                  fontSize: "12px"
-                }
-              },
-
-              "نویسنده: " + author
-
-            ),
-
-
-
-            /* IMAGE */
-
-            image && h(
-
-              "img",
-
-              {
-                src: image,
-
-                style: {
-                  display: "block",
-                  width: "100%",
-                  maxHeight: "520px",
-                  objectFit: "cover",
-                  marginBottom: "50px"
-                }
-              }
-
-            ),
-
-
-
-            /* BODY */
-
-            h(
-
-              "article",
-
-              {
-                style: {
-                  maxWidth: "680px",
-                  margin: "0 auto",
-                  fontSize: "17px",
-                  lineHeight: "2.25",
-                  color: "#243740"
-                }
-              },
-
-              this.props.widgetFor("body")
-
-            )
-
-          )
-
-        );
-
+      if (hash.includes("/collections/articles")) {
+        type = "article";
       }
 
-    });
-
-
-
-    /*
-     * ISSUE PREVIEW
-     */
-
-    const GenderLabIssuePreview = createClass({
-
-      render: function () {
-
-        const entry = this.props.entry;
-
-        const title =
-          entry.getIn(["data", "title"]) || "عنوان شماره";
-
-        const number =
-          entry.getIn(["data", "numberFa"]) ||
-          entry.getIn(["data", "number"]) ||
-          "";
-
-        const season =
-          entry.getIn(["data", "season"]) || "";
-
-        const description =
-          entry.getIn(["data", "description"]) || "";
-
-        const coverValue =
-          entry.getIn(["data", "cover"]);
-
-        const cover =
-          coverValue
-            ? this.props.getAsset(coverValue).toString()
-            : null;
-
-
-        return h(
-
-          "div",
-
-          {
-            style: {
-              direction: "rtl",
-              minHeight: "100vh",
-              background: "#F7F4EE",
-              color: "#172B36",
-              fontFamily: "Vazirmatn, sans-serif"
-            }
-          },
-
-
-          /* HEADER */
-
-          h(
-
-            "header",
-
-            {
-              style: {
-                padding: "22px 45px",
-                borderBottom: "1px solid #D9D8D3",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center"
-              }
-            },
-
-
-            h(
-
-              "div",
-
-              {
-                style: {
-                  direction: "ltr",
-                  fontSize: "21px",
-                  fontWeight: "700",
-                  letterSpacing: ".05em"
-                }
-              },
-
-              "GENDERLAB"
-
-            ),
-
-
-            h(
-
-              "div",
-
-              {
-                style: {
-                  color: "#778188",
-                  fontSize: "12px"
-                }
-              },
-
-              "جندرلب"
-
-            )
-
-          ),
-
-
-
-          /* HERO */
-
-          h(
-
-            "main",
-
-            {
-              style: {
-                maxWidth: "1050px",
-                margin: "0 auto",
-                padding: "65px 45px"
-              }
-            },
-
-
-            h(
-
-              "div",
-
-              {
-                style: {
-                  display: "grid",
-                  gridTemplateColumns: "minmax(240px, 380px) 1fr",
-                  gap: "65px",
-                  alignItems: "center"
-                }
-              },
-
-
-              /* COVER */
-
-              h(
-
-                "div",
-
-                null,
-
-                cover
-
-                  ? h(
-
-                      "img",
-
-                      {
-                        src: cover,
-
-                        style: {
-                          display: "block",
-                          width: "100%",
-                          boxShadow:
-                            "0 18px 45px rgba(16,44,58,.13)"
-                        }
-                      }
-
-                    )
-
-                  : h(
-
-                      "div",
-
-                      {
-                        style: {
-                          aspectRatio: "3 / 4",
-                          background: "#102C3A",
-                          color: "#FFFFFF",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontSize: "24px"
-                        }
-                      },
-
-                      "GENDERLAB"
-
-                    )
-
-              ),
-
-
-
-              /* TEXT */
-
-              h(
-
-                "div",
-
-                null,
-
-
-                h(
-
-                  "div",
-
-                  {
-                    style: {
-                      color: "#A34D45",
-                      fontSize: "12px",
-                      fontWeight: "600",
-                      marginBottom: "18px"
-                    }
-                  },
-
-                  number
-                    ? "شماره " + number
-                    : "شماره مجله"
-
-                ),
-
-
-                season && h(
-
-                  "div",
-
-                  {
-                    style: {
-                      color: "#778188",
-                      fontSize: "11px",
-                      marginBottom: "13px"
-                    }
-                  },
-
-                  season
-
-                ),
-
-
-                h(
-
-                  "h1",
-
-                  {
-                    style: {
-                      margin: "0 0 25px",
-                      color: "#172B36",
-                      fontSize: "48px",
-                      lineHeight: "1.4",
-                      fontWeight: "700"
-                    }
-                  },
-
-                  title
-
-                ),
-
-
-                description && h(
-
-                  "p",
-
-                  {
-                    style: {
-                      margin: "0",
-                      color: "#56666E",
-                      fontSize: "16px",
-                      lineHeight: "2"
-                    }
-                  },
-
-                  description
-
-                )
-
-              )
-
-            ),
-
-
-
-            /* BODY */
-
-            h(
-
-              "section",
-
-              {
-                style: {
-                  maxWidth: "700px",
-                  margin: "80px auto 0",
-                  paddingTop: "40px",
-                  borderTop: "1px solid #D9D8D3",
-                  fontSize: "16px",
-                  lineHeight: "2.2"
-                }
-              },
-
-
-              h(
-
-                "h2",
-
-                {
-                  style: {
-                    margin: "0 0 25px",
-                    color: "#172B36",
-                    fontSize: "25px"
-                  }
-                },
-
-                "درباره این شماره"
-
-              ),
-
-
-              this.props.widgetFor("body")
-
-            )
-
-          )
-
-        );
-
+      if (hash.includes("/collections/issues")) {
+        type = "issue";
       }
 
-    });
+
+      const editing =
+        type !== null &&
+        (
+          hash.includes("/entries/") ||
+          hash.includes("/new")
+        );
+
+
+      return {
+        hash,
+        type,
+        editing
+      };
+
+    }
 
 
 
     /* =====================================================
-       REGISTER PREVIEW TEMPLATES
+       READ CURRENT DECAP FORM
     ====================================================== */
 
-    CMS.registerPreviewTemplate(
-      "articles",
-      GenderLabArticlePreview
-    );
+    function findFieldByLabel(labelText) {
+
+      const labels =
+        Array.from(
+          document.querySelectorAll("label")
+        );
 
 
-    CMS.registerPreviewTemplate(
-      "issues",
-      GenderLabIssuePreview
-    );
+      const label =
+        labels.find(item =>
+          item.textContent
+            .trim()
+            .includes(labelText)
+        );
+
+
+      if (!label) {
+        return null;
+      }
+
+
+      const container =
+        label.closest(
+          '[class*="Control"], [class*="Field"], [class*="Widget"]'
+        ) ||
+        label.parentElement;
+
+
+      if (!container) {
+        return null;
+      }
+
+
+      return (
+        container.querySelector(
+          'input:not([type="hidden"]), textarea, select'
+        ) ||
+        null
+      );
+
+    }
+
+
+
+    function getFieldValue(label) {
+
+      const field =
+        findFieldByLabel(label);
+
+      if (!field) {
+        return "";
+      }
+
+
+      if (field.type === "checkbox") {
+        return field.checked;
+      }
+
+
+      return field.value || "";
+
+    }
 
 
 
     /* =====================================================
-       PREVIEW STYLE
+       BODY CONTENT
     ====================================================== */
 
-    CMS.registerPreviewStyle(
-      `
-        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+    function getEditorBody() {
 
-        html,
-        body {
-          margin: 0;
-          padding: 0;
-          background: #F7F4EE;
-          font-family: "Vazirmatn", sans-serif;
-        }
+      const bodyField =
+        findFieldByLabel("متن مطلب") ||
+        findFieldByLabel("درباره این شماره");
 
-        * {
-          box-sizing: border-box;
-        }
 
-        p {
-          margin-top: 0;
-          margin-bottom: 1.4em;
-        }
-
-        h2,
-        h3,
-        h4 {
-          color: #172B36;
-          line-height: 1.6;
-          margin-top: 2em;
-        }
-
-        blockquote {
-          margin: 2em 0;
-          padding: 10px 25px 10px 0;
-          border-right: 3px solid #A34D45;
-          color: #56666E;
-        }
-
-        img {
-          max-width: 100%;
-          height: auto;
-        }
-
-        a {
-          color: #A34D45;
-        }
-      `,
-      {
-        raw: true
+      if (bodyField) {
+        return bodyField.value || "";
       }
-    );
-
-  </script>
 
 
+      const contentEditable =
+        document.querySelector(
+          '[contenteditable="true"]'
+        );
 
-  <!-- =====================================================
-       SIDEBAR ROUTE STATE
-  ====================================================== -->
 
-  <script>
+      if (contentEditable) {
+        return contentEditable.innerHTML;
+      }
+
+
+      return "";
+
+    }
+
+
+
+    /* =====================================================
+       IMAGE
+    ====================================================== */
+
+    function getCurrentImage() {
+
+      const candidates =
+        Array.from(
+          document.querySelectorAll("img")
+        );
+
+
+      const image =
+        candidates.find(img => {
+
+          const src =
+            img.getAttribute("src") || "";
+
+          return (
+            src.includes("/assets/uploads/") ||
+            src.includes("blob:") ||
+            src.startsWith("data:")
+          );
+
+        });
+
+
+      return image
+        ? image.src
+        : "";
+
+    }
+
+
+
+    /* =====================================================
+       COLLECT PREVIEW DATA
+    ====================================================== */
+
+    function collectGenderLabPreviewData() {
+
+      const route =
+        getGenderLabRoute();
+
+
+      if (!route.editing || !route.type) {
+        return null;
+      }
+
+
+      if (route.type === "article") {
+
+        return {
+
+          type: "article",
+
+          title:
+            getFieldValue("عنوان مطلب"),
+
+          excerpt:
+            getFieldValue("خلاصه"),
+
+          author:
+            getFieldValue("نویسنده"),
+
+          issue:
+            getFieldValue("شماره مجله"),
+
+          category:
+            getFieldValue("نوع مطلب"),
+
+          date:
+            getFieldValue("تاریخ انتشار"),
+
+          body:
+            getEditorBody(),
+
+          image:
+            getCurrentImage()
+
+        };
+
+      }
+
+
+      return {
+
+        type: "issue",
+
+        title:
+          getFieldValue("عنوان شماره"),
+
+        number:
+          getFieldValue("شماره مجله"),
+
+        numberFa:
+          getFieldValue("شماره فارسی"),
+
+        season:
+          getFieldValue("فصل / تاریخ فارسی"),
+
+        seasonEn:
+          getFieldValue("فصل / تاریخ انگلیسی"),
+
+        description:
+          getFieldValue("معرفی کوتاه"),
+
+        body:
+          getEditorBody(),
+
+        cover:
+          getCurrentImage()
+
+      };
+
+    }
+
+
+
+    /* =====================================================
+       OPEN FULL PAGE PREVIEW
+    ====================================================== */
+
+    function openGenderLabPreview() {
+
+      const data =
+        collectGenderLabPreviewData();
+
+
+      if (!data) {
+
+        alert(
+          "برای پیش‌نمایش ابتدا یک مطلب یا شماره مجله را باز کنید."
+        );
+
+        return;
+      }
+
+
+      try {
+
+        localStorage.setItem(
+          GL_PREVIEW_STORAGE_KEY,
+          JSON.stringify(data)
+        );
+
+
+        window.open(
+          "preview.html",
+          "_blank"
+        );
+
+      }
+
+      catch (error) {
+
+        console.error(error);
+
+        alert(
+          "امکان ساخت پیش‌نمایش وجود نداشت."
+        );
+
+      }
+
+    }
+
+
+
+    /* =====================================================
+       PREVIEW BUTTON VISIBILITY
+    ====================================================== */
+
+    function updatePreviewButton() {
+
+      const button =
+        document.getElementById(
+          "gl-site-preview-button"
+        );
+
+
+      if (!button) {
+        return;
+      }
+
+
+      const route =
+        getGenderLabRoute();
+
+
+      button.classList.toggle(
+        "visible",
+        route.editing
+      );
+
+    }
+
+
+
+    /* =====================================================
+       SIDEBAR
+    ====================================================== */
 
     function updateGenderLabSidebar() {
 
@@ -1588,8 +1204,6 @@
         );
 
 
-      /* RESET */
-
       items.forEach(item => {
         item.classList.remove("active");
       });
@@ -1600,8 +1214,6 @@
       });
 
 
-
-      /* WORKFLOW */
 
       if (hash.includes("/workflow")) {
 
@@ -1629,8 +1241,6 @@
 
 
 
-      /* ARTICLES */
-
       if (hash.includes("/collections/articles")) {
 
         const item =
@@ -1656,8 +1266,6 @@
       }
 
 
-
-      /* ISSUES */
 
       if (hash.includes("/collections/issues")) {
 
@@ -1685,12 +1293,11 @@
 
 
 
-      /* DASHBOARD */
-
       const dashboard =
         document.querySelector(
           '[data-route="dashboard"]'
         );
+
 
       if (dashboard) {
         dashboard.classList.add("active");
@@ -1701,7 +1308,7 @@
 
 
     /* =====================================================
-       COLLAPSIBLE GROUPS
+       MENU GROUPS
     ====================================================== */
 
     document
@@ -1715,9 +1322,15 @@
           function () {
 
             const group =
-              this.closest(".gl-menu-group");
+              this.closest(
+                ".gl-menu-group"
+              );
 
-            if (!group) return;
+
+            if (!group) {
+              return;
+            }
+
 
             group.classList.add("open");
 
@@ -1729,22 +1342,59 @@
 
 
     /* =====================================================
-       RUN
+       PREVIEW BUTTON
     ====================================================== */
+
+    document
+      .getElementById(
+        "gl-site-preview-button"
+      )
+      .addEventListener(
+        "click",
+        openGenderLabPreview
+      );
+
+
+
+    /* =====================================================
+       ROUTE CHANGE
+    ====================================================== */
+
+    function updateGenderLabAdmin() {
+
+      updateGenderLabSidebar();
+
+      /*
+       * Decap renders asynchronously,
+       * so give the editor a moment to appear.
+       */
+
+      setTimeout(
+        updatePreviewButton,
+        350
+      );
+
+      setTimeout(
+        updatePreviewButton,
+        900
+      );
+
+    }
+
 
     window.addEventListener(
       "hashchange",
-      updateGenderLabSidebar
+      updateGenderLabAdmin
     );
 
 
     window.addEventListener(
       "load",
-      updateGenderLabSidebar
+      updateGenderLabAdmin
     );
 
 
-    updateGenderLabSidebar();
+    updateGenderLabAdmin();
 
   </script>
 
