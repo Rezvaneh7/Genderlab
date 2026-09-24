@@ -1,0 +1,705 @@
+---
+layout: null
+permalink: /search/
+---
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>جست‌وجو | GenderLab</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #F7F4EE;
+      color: #101E28;
+      font-family: "Vazirmatn", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      width: 100%;
+      padding: 28px 55px 0;
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: 285px 1fr 180px;
+      gap: 38px;
+
+      direction: ltr;
+      align-items: start;
+    }
+
+    .brand {
+      text-align: left;
+      direction: ltr;
+    }
+
+    .brand-en {
+      font-size: 38px;
+      line-height: .9;
+      font-weight: 700;
+      letter-spacing: -2px;
+    }
+
+    .brand-fa {
+      margin-top: 8px;
+      direction: rtl;
+      text-align: left;
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .brand-description {
+      margin-top: 17px;
+      font-size: 8px;
+      line-height: 1.55;
+      font-weight: 500;
+      letter-spacing: 2.6px;
+      color: #667077;
+    }
+
+    .main-nav {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      direction: rtl;
+      min-height: 50px;
+    }
+
+    .main-nav a {
+      padding: 11px 25px 17px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .main-nav a:hover {
+      opacity: .55;
+    }
+
+    .header-tools {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      direction: ltr;
+      gap: 24px;
+      padding-top: 8px;
+    }
+
+    .language {
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .language span {
+      margin: 0 7px;
+      opacity: .35;
+    }
+
+    .search-icon {
+      position: relative;
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid #101E28;
+      border-radius: 50%;
+    }
+
+    .search-icon::after {
+      content: "";
+      position: absolute;
+      width: 7px;
+      height: 1.5px;
+      left: -5px;
+      bottom: -3px;
+      background: #101E28;
+      transform: rotate(-45deg);
+    }
+
+    .header-line {
+      max-width: 1400px;
+      height: 1px;
+      margin: 20px auto 0;
+      background: rgba(16,30,40,.12);
+    }
+
+    /* SEARCH */
+
+    .search-page {
+      max-width: 920px;
+      min-height: 65vh;
+      margin: 0 auto;
+      padding: 85px 40px 120px;
+    }
+
+    .search-eyebrow {
+      margin-bottom: 13px;
+      color: #A34D45;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      direction: ltr;
+      text-align: right;
+    }
+
+    .search-page h1 {
+      margin: 0 0 15px;
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.25;
+    }
+
+    .search-intro {
+      margin: 0 0 42px;
+      color: #667077;
+      font-size: 14px;
+    }
+
+    .search-box {
+      position: relative;
+      width: 100%;
+      border-bottom: 2px solid #101E28;
+    }
+
+    #search-input {
+      width: 100%;
+      padding: 15px 0 18px 55px;
+
+      border: 0;
+      outline: 0;
+
+      background: transparent;
+      color: #101E28;
+
+      font-family: "Vazirmatn", sans-serif;
+      font-size: 25px;
+      font-weight: 500;
+    }
+
+    #search-input::placeholder {
+      color: #9AA0A3;
+      font-weight: 400;
+    }
+
+    .search-symbol {
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      font-size: 22px;
+      opacity: .55;
+    }
+
+    .search-status {
+      min-height: 24px;
+      margin-top: 18px;
+      font-size: 11px;
+      color: #788287;
+    }
+
+    /* RESULTS */
+
+    .results {
+      margin-top: 38px;
+      border-top: 1px solid rgba(16,30,40,.15);
+    }
+
+    .result {
+      display: block;
+      padding: 30px 0;
+
+      border-bottom: 1px solid rgba(16,30,40,.15);
+
+      transition: opacity .2s ease;
+    }
+
+    .result:hover {
+      opacity: .6;
+    }
+
+    .result-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px 12px;
+
+      margin-bottom: 8px;
+
+      color: #A34D45;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .result h2 {
+      margin: 0 0 8px;
+
+      font-size: 24px;
+      line-height: 1.6;
+      font-weight: 700;
+    }
+
+    .result p {
+      max-width: 700px;
+
+      margin: 0;
+
+      color: #56666D;
+
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .result-author {
+      margin-top: 11px;
+      color: #7A858A;
+      font-size: 10px;
+    }
+
+    .empty {
+      padding: 45px 0;
+      color: #667077;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      width: 100%;
+      background: #102C3A;
+      color: #F7F4EE;
+    }
+
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 35px 55px 25px;
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 60px;
+      padding-bottom: 28px;
+    }
+
+    .footer-brand {
+      direction: ltr;
+      text-align: left;
+    }
+
+    .footer-brand-en {
+      font-size: 31px;
+      font-weight: 700;
+    }
+
+    .footer-brand-fa {
+      margin-top: 3px;
+      direction: rtl;
+      text-align: left;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px 40px;
+      direction: rtl;
+    }
+
+    .footer-nav a {
+      font-size: 11px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+
+      padding-top: 18px;
+
+      border-top: 1px solid rgba(247,244,238,.35);
+
+      direction: ltr;
+
+      font-size: 9px;
+      letter-spacing: 1px;
+      opacity: .75;
+    }
+
+    @media (max-width: 760px) {
+      .site-header {
+        padding: 22px 20px 0;
+      }
+
+      .header-inner {
+        grid-template-columns: 1fr auto;
+        gap: 20px;
+      }
+
+      .brand-en {
+        font-size: 30px;
+      }
+
+      .brand-fa {
+        font-size: 21px;
+      }
+
+      .brand-description {
+        display: none;
+      }
+
+      .main-nav {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-content: flex-start;
+        overflow-x: auto;
+      }
+
+      .main-nav a {
+        padding: 15px 18px;
+      }
+
+      .search-page {
+        padding: 55px 20px 80px;
+      }
+
+      #search-input {
+        font-size: 20px;
+      }
+
+      .result h2 {
+        font-size: 20px;
+      }
+
+      .footer-inner {
+        padding: 32px 20px 22px;
+      }
+
+      .footer-main {
+        display: block;
+      }
+
+      .footer-nav {
+        margin-top: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+  <div class="header-inner">
+
+    <a href="{{ '/' | relative_url }}" class="brand">
+      <div class="brand-en">GENDERLAB</div>
+      <div class="brand-fa">جندرلب</div>
+
+      <div class="brand-description">
+        INDEPENDENT MAGAZINE<br>
+        ON GENDER, SOCIETY AND CULTURE
+      </div>
+    </a>
+
+    <nav class="main-nav">
+      <a href="{{ '/' | relative_url }}">خانه</a>
+      <a href="{{ '/articles/' | relative_url }}">مقالات</a>
+      <a href="{{ '/archive/' | relative_url }}">آرشیو مجلات</a>
+      <a href="#">درباره ما</a>
+      <a href="#">تماس</a>
+    </nav>
+
+    <div class="header-tools">
+      <div class="language">
+        FA <span>|</span> EN
+      </div>
+
+      <a
+        href="{{ '/search/' | relative_url }}"
+        class="search-icon"
+        aria-label="جست‌وجو"
+      ></a>
+    </div>
+
+  </div>
+
+  <div class="header-line"></div>
+
+</header>
+
+
+<main class="search-page">
+
+  <div class="search-eyebrow">
+    GENDERLAB / SEARCH
+  </div>
+
+  <h1>جست‌وجو</h1>
+
+  <p class="search-intro">
+    در مطالب جندرلب جست‌وجو کنید.
+  </p>
+
+
+  <div class="search-box">
+
+    <input
+      type="search"
+      id="search-input"
+      placeholder="چه چیزی می‌خواهید پیدا کنید؟"
+      autocomplete="off"
+      autofocus
+    >
+
+    <span class="search-symbol">⌕</span>
+
+  </div>
+
+
+  <div
+    id="search-status"
+    class="search-status"
+  >
+    یک کلمه یا عبارت بنویسید.
+  </div>
+
+
+  <div
+    id="search-results"
+    class="results"
+  ></div>
+
+</main>
+
+
+<footer class="site-footer">
+
+  <div class="footer-inner">
+
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <div class="footer-brand-en">GENDERLAB</div>
+        <div class="footer-brand-fa">جندرلب</div>
+      </div>
+
+      <nav class="footer-nav">
+        <a href="{{ '/' | relative_url }}">خانه</a>
+        <a href="{{ '/articles/' | relative_url }}">مقالات</a>
+        <a href="{{ '/archive/' | relative_url }}">آرشیو مجلات</a>
+        <a href="#">درباره ما</a>
+        <a href="#">تماس</a>
+      </nav>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© GENDERLAB</span>
+
+      <span dir="rtl">
+        مجله مستقل جنسیت، جامعه و فرهنگ
+      </span>
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+  const input = document.getElementById("search-input");
+  const resultsContainer = document.getElementById("search-results");
+  const status = document.getElementById("search-status");
+
+  let articles = [];
+
+  function normalize(text) {
+    return String(text || "")
+      .toLowerCase()
+      .replace(/ي/g, "ی")
+      .replace(/ك/g, "ک")
+      .replace(/\u200c/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  fetch("{{ '/search.json' | relative_url }}")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Search index could not be loaded.");
+      }
+
+      return response.json();
+    })
+    .then(data => {
+      articles = data;
+    })
+    .catch(error => {
+      console.error(error);
+      status.textContent = "جست‌وجو در حال حاضر در دسترس نیست.";
+    });
+
+
+  function escapeHTML(value) {
+    const div = document.createElement("div");
+    div.textContent = value || "";
+    return div.innerHTML;
+  }
+
+
+  function performSearch() {
+
+    const rawQuery = input.value.trim();
+    const query = normalize(rawQuery);
+
+    resultsContainer.innerHTML = "";
+
+    if (!query) {
+      status.textContent = "یک کلمه یا عبارت بنویسید.";
+      return;
+    }
+
+
+    const matches = articles.filter(article => {
+
+      const tags = Array.isArray(article.tags)
+        ? article.tags.join(" ")
+        : (article.tags || "");
+
+      const searchableText = normalize([
+        article.title,
+        article.excerpt,
+        article.author,
+        article.category,
+        tags,
+        article.content
+      ].join(" "));
+
+      return searchableText.includes(query);
+
+    });
+
+
+    if (matches.length === 0) {
+
+      status.textContent = "نتیجه‌ای پیدا نشد.";
+
+      resultsContainer.innerHTML =
+        '<div class="empty">مطلبی برای «' +
+        escapeHTML(rawQuery) +
+        '» پیدا نشد.</div>';
+
+      return;
+    }
+
+
+    status.textContent =
+      matches.length.toLocaleString("fa-IR") +
+      " نتیجه پیدا شد";
+
+
+    matches.forEach(article => {
+
+      const link = document.createElement("a");
+
+      link.className = "result";
+      link.href = article.url;
+
+
+      const metaParts = [];
+
+      if (article.category) {
+        metaParts.push(
+          "<span>" +
+          escapeHTML(article.category) +
+          "</span>"
+        );
+      }
+
+
+      if (
+        Array.isArray(article.tags) &&
+        article.tags.length
+      ) {
+
+        metaParts.push(
+          "<span>" +
+          escapeHTML(article.tags.slice(0, 3).join(" · ")) +
+          "</span>"
+        );
+
+      }
+
+
+      link.innerHTML = `
+        <div class="result-meta">
+          ${metaParts.join("")}
+        </div>
+
+        <h2>
+          ${escapeHTML(article.title)}
+        </h2>
+
+        ${
+          article.excerpt
+            ? `<p>${escapeHTML(article.excerpt)}</p>`
+            : ""
+        }
+
+        ${
+          article.author
+            ? `<div class="result-author">
+                 ${escapeHTML(article.author)}
+               </div>`
+            : ""
+        }
+      `;
+
+      resultsContainer.appendChild(link);
+
+    });
+
+  }
+
+
+  input.addEventListener("input", performSearch);
+</script>
+
+</body>
+</html>
