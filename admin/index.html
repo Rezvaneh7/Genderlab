@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
 
-  <title>GenderLab | Editorial CMS</title>
+  <title>GenderLab | مدیریت محتوا</title>
 
   <!-- =====================================================
        FONT
@@ -16,14 +16,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
 
   <!-- =====================================================
        DECAP CONFIG
-       DO NOT REMOVE
+       IMPORTANT — DO NOT REMOVE
   ====================================================== -->
 
   <link
@@ -36,48 +36,52 @@
   <style>
 
     /* =====================================================
-       GENDERLAB EDITORIAL CMS
+       GENDERLAB — WORDPRESS-STYLE CMS
     ====================================================== */
 
     :root {
 
-      /* Brand */
-      --gl-petroleum: #172B36;
-      --gl-petroleum-light: #223D4B;
+      --gl-sidebar: #102C3A;
+      --gl-sidebar-light: #173B4A;
 
       --gl-red: #A34D45;
       --gl-red-dark: #8C403A;
 
-      /* Backgrounds */
-      --gl-cream: #F8F7F3;
+      --gl-bg: #F5F4F0;
       --gl-paper: #FFFFFF;
       --gl-soft: #EEECE5;
 
-      /* Interface */
-      --gl-border: #DDDAD2;
-      --gl-text: #172B36;
-      --gl-muted: #758087;
+      --gl-border: #D9D8D3;
 
-      /* Sidebar */
-      --gl-sidebar-text: rgba(255,255,255,.78);
-      --gl-sidebar-muted: rgba(255,255,255,.48);
-      --gl-sidebar-border: rgba(255,255,255,.14);
-      --gl-sidebar-hover: rgba(255,255,255,.08);
+      --gl-text: #172B36;
+      --gl-muted: #6F7B81;
+
+      --gl-green: #DDEFE6;
+      --gl-green-text: #286B50;
+
+      --gl-yellow: #FFF0CC;
+      --gl-yellow-text: #956A16;
+
+      --gl-blue: #E3F0FB;
+      --gl-blue-text: #286C9D;
 
     }
 
 
     /* =====================================================
-       GLOBAL
+       RESET
     ====================================================== */
 
     html,
     body {
       margin: 0 !important;
+      padding: 0 !important;
+
       min-height: 100% !important;
 
-      background: var(--gl-cream) !important;
-      color: var(--gl-text);
+      background: var(--gl-bg) !important;
+
+      color: var(--gl-text) !important;
 
       font-family: "Vazirmatn", sans-serif !important;
     }
@@ -89,12 +93,18 @@
     textarea,
     select {
       font-family: "Vazirmatn", sans-serif !important;
+      box-sizing: border-box;
     }
 
 
-    /*
-      GenderLab accent line
-    */
+    a {
+      text-decoration: none;
+    }
+
+
+    /* =====================================================
+       TOP ACCENT
+    ====================================================== */
 
     body::before {
       content: "";
@@ -106,131 +116,137 @@
       right: 0;
       left: 0;
 
-      height: 5px;
+      height: 4px;
 
       background: var(--gl-red);
     }
 
 
     /* =====================================================
-       TYPOGRAPHY
+       MAIN DECAP PAGE
     ====================================================== */
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Vazirmatn", sans-serif !important;
-      letter-spacing: 0 !important;
-    }
+    #nc-root {
+      min-height: 100vh !important;
 
-
-    /* =====================================================
-       COLLECTION SIDEBAR
-       Decap 3.17
-    ====================================================== */
-
-    aside.css-1ff92bv-SidebarContainer-card-card {
-      min-width: 260px !important;
-
-      padding: 0 !important;
-
-      overflow: hidden !important;
-
-      background: var(--gl-petroleum) !important;
-
-      border: 0 !important;
-      border-radius: 8px !important;
-
-      box-shadow:
-        0 8px 24px rgba(23,43,54,.12) !important;
-    }
-
-
-    /* =====================================================
-       SIDEBAR HEADER
-    ====================================================== */
-
-    .css-148ci7f-SidebarHeading-cardTopHeading {
-      margin: 0 !important;
-      padding: 24px 22px 13px !important;
-
-      background: var(--gl-petroleum) !important;
-      color: #FFFFFF !important;
-
-      border: 0 !important;
-
-      font-size: 12px !important;
-      font-weight: 600 !important;
-      letter-spacing: .04em !important;
+      background: var(--gl-bg) !important;
     }
 
 
     /*
-      Brand
+      Main Decap application background
     */
+
+    #nc-root > div {
+      background: var(--gl-bg) !important;
+    }
+
+
+    /* =====================================================
+       SIDEBAR
+       WordPress-style full-height panel
+    ====================================================== */
+
+    aside.css-1ff92bv-SidebarContainer-card-card {
+      position: relative !important;
+
+      width: 270px !important;
+      min-width: 270px !important;
+
+      min-height: calc(100vh - 40px) !important;
+
+      margin: 0 !important;
+      padding: 0 !important;
+
+      background: var(--gl-sidebar) !important;
+
+      border: 0 !important;
+      border-radius: 0 !important;
+
+      box-shadow: none !important;
+
+      overflow: hidden !important;
+    }
+
+
+    /* =====================================================
+       SIDEBAR BRAND
+    ====================================================== */
+
+    .css-148ci7f-SidebarHeading-cardTopHeading {
+      position: relative;
+
+      margin: 0 !important;
+      padding: 30px 25px 22px !important;
+
+      background: var(--gl-sidebar) !important;
+
+      color: rgba(255,255,255,.55) !important;
+
+      border: 0 !important;
+      border-bottom: 1px solid rgba(255,255,255,.09) !important;
+
+      font-size: 0 !important;
+    }
+
 
     .css-148ci7f-SidebarHeading-cardTopHeading::before {
       content: "GENDERLAB";
 
       display: block;
 
-      margin-bottom: 4px;
+      direction: ltr;
+      text-align: right;
 
       color: #FFFFFF;
 
-      direction: ltr;
-      text-align: right;
-
-      font-size: 18px;
+      font-size: 23px;
+      line-height: 1;
       font-weight: 700;
-      letter-spacing: .12em;
+
+      letter-spacing: .06em;
     }
 
 
-    /*
-      Editorial CMS label
-    */
-
     .css-148ci7f-SidebarHeading-cardTopHeading::after {
-      content: "EDITORIAL CMS";
+      content: "جندرلب  ·  مدیریت محتوا";
 
       display: block;
 
-      margin-top: 2px;
-      margin-bottom: 14px;
+      margin-top: 9px;
 
-      color: var(--gl-sidebar-muted);
-
-      direction: ltr;
+      direction: rtl;
       text-align: right;
 
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: .18em;
+      color: rgba(255,255,255,.58);
+
+      font-size: 11px;
+      font-weight: 400;
+
+      letter-spacing: 0;
     }
 
 
     /* =====================================================
-       SIDEBAR SEARCH
+       SEARCH IN SIDEBAR
     ====================================================== */
 
     .css-lk98m2-SearchContainer {
-      padding: 5px 16px 17px !important;
+      padding: 18px 15px 10px !important;
 
-      background: var(--gl-petroleum) !important;
+      background: var(--gl-sidebar) !important;
 
       border: 0 !important;
     }
 
 
     .css-1mpi08-InputContainer {
-      background: rgba(255,255,255,.08) !important;
+      height: 39px !important;
 
-      border: 1px solid var(--gl-sidebar-border) !important;
-      border-radius: 6px !important;
+      background: rgba(255,255,255,.07) !important;
+
+      border: 1px solid rgba(255,255,255,.13) !important;
+      border-radius: 3px !important;
 
       box-shadow: none !important;
     }
@@ -238,69 +254,75 @@
 
     .css-1fhcqx0-SearchInput {
       background: transparent !important;
-      color: #FFFFFF !important;
 
       border: 0 !important;
+
+      color: #FFFFFF !important;
 
       direction: rtl !important;
       text-align: right !important;
 
-      font-size: 12px !important;
+      font-size: 11px !important;
     }
 
 
     .css-1fhcqx0-SearchInput::placeholder {
-      color: var(--gl-sidebar-muted) !important;
+      color: rgba(255,255,255,.45) !important;
     }
 
 
     .css-1mpi08-InputContainer svg {
-      fill: rgba(255,255,255,.60) !important;
+      fill: rgba(255,255,255,.55) !important;
     }
 
 
     /* =====================================================
-       COLLECTION NAVIGATION
+       SIDEBAR NAVIGATION
     ====================================================== */
 
     .css-kxvohc-SidebarNavList {
       margin: 0 !important;
-      padding: 8px 10px 18px !important;
 
-      background: var(--gl-petroleum) !important;
+      padding: 12px 0 25px !important;
+
+      background: var(--gl-sidebar) !important;
 
       list-style: none !important;
     }
 
 
     .css-kxvohc-SidebarNavList li {
-      margin: 3px 0 !important;
+      margin: 0 !important;
       padding: 0 !important;
     }
 
 
     /*
-      Issues + Articles
+      Collection links
     */
 
     a[data-testid="issues"],
     a[data-testid="articles"] {
+      position: relative;
+
       display: flex !important;
       align-items: center !important;
 
-      gap: 10px !important;
+      width: 100% !important;
 
-      padding: 11px 12px !important;
+      gap: 12px !important;
+
+      margin: 0 !important;
+      padding: 14px 22px !important;
 
       background: transparent !important;
-      color: var(--gl-sidebar-text) !important;
 
-      border-radius: 5px !important;
+      color: rgba(255,255,255,.78) !important;
+
+      border-radius: 0 !important;
 
       font-size: 13px !important;
       font-weight: 500 !important;
-
-      text-decoration: none !important;
 
       transition:
         background .15s ease,
@@ -308,19 +330,16 @@
     }
 
 
-    /*
-      Hover
-    */
-
     a[data-testid="issues"]:hover,
     a[data-testid="articles"]:hover {
-      background: var(--gl-sidebar-hover) !important;
+      background: rgba(255,255,255,.06) !important;
+
       color: #FFFFFF !important;
     }
 
 
     /*
-      Active collection
+      Active
     */
 
     a[data-testid="issues"].sidebar-active,
@@ -328,6 +347,7 @@
     a[data-testid="issues"][aria-current="page"],
     a[data-testid="articles"][aria-current="page"] {
       background: var(--gl-red) !important;
+
       color: #FFFFFF !important;
 
       font-weight: 600 !important;
@@ -335,13 +355,31 @@
 
 
     /*
-      Collection icons
+      WordPress-style active stripe
     */
+
+    a[data-testid="issues"].sidebar-active::before,
+    a[data-testid="articles"].sidebar-active::before,
+    a[data-testid="issues"][aria-current="page"]::before,
+    a[data-testid="articles"][aria-current="page"]::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      width: 4px;
+
+      background: #FFFFFF;
+    }
+
 
     a[data-testid="issues"] svg,
     a[data-testid="articles"] svg {
-      width: 17px !important;
-      height: 17px !important;
+      width: 18px !important;
+      height: 18px !important;
 
       fill: currentColor !important;
 
@@ -350,36 +388,139 @@
 
 
     /* =====================================================
-       FORM FIELDS
+       WORKFLOW / DRAFT NAVIGATION
+
+       Decap's real editorial workflow remains intact.
     ====================================================== */
 
-    input,
-    textarea,
-    select {
-      border-radius: 5px !important;
+    a[href*="/workflow"] {
+      position: relative;
+
+      color: rgba(255,255,255,.80) !important;
+    }
+
+
+    a[href*="/workflow"]:hover {
+      color: #FFFFFF !important;
     }
 
 
     /*
-      Persian text fields
+      Give workflow/drafts a small red indicator
     */
 
-    textarea {
-      direction: rtl !important;
-      text-align: right !important;
+    a[href*="/workflow"]::after {
+      content: "پیش‌نویس‌ها";
 
-      line-height: 1.9 !important;
+      display: inline-block;
+
+      margin-right: 8px;
+      padding: 2px 7px;
+
+      background: rgba(163,77,69,.28);
+
+      color: #FFFFFF;
+
+      border-radius: 20px;
+
+      font-size: 8px;
+      font-weight: 500;
+    }
+
+
+    /* =====================================================
+       MAIN CONTENT AREA
+    ====================================================== */
+
+    main {
+      background: var(--gl-bg) !important;
     }
 
 
     /*
-      Focus
+      Generic Decap cards
     */
 
-    input:focus,
-    textarea:focus,
-    select:focus {
-      outline-color: var(--gl-red) !important;
+    [class*="Card"] {
+      border-color: var(--gl-border) !important;
+
+      box-shadow:
+        0 1px 2px rgba(23,43,54,.035) !important;
+    }
+
+
+    /* =====================================================
+       PAGE HEADINGS
+    ====================================================== */
+
+    h1 {
+      color: var(--gl-text) !important;
+
+      font-size: 29px !important;
+      line-height: 1.4 !important;
+
+      font-weight: 700 !important;
+
+      letter-spacing: 0 !important;
+    }
+
+
+    h2 {
+      color: var(--gl-text) !important;
+
+      letter-spacing: 0 !important;
+    }
+
+
+    /* =====================================================
+       COLLECTION / ENTRY LIST
+       Flatten cards to WordPress-style rows
+    ====================================================== */
+
+    [class*="EntriesCollection"] {
+      background: var(--gl-paper) !important;
+
+      border: 1px solid var(--gl-border) !important;
+      border-radius: 2px !important;
+
+      box-shadow: none !important;
+    }
+
+
+    /*
+      Entry cards
+    */
+
+    [class*="EntryCard"] {
+      margin: 0 !important;
+
+      background: #FFFFFF !important;
+
+      border: 0 !important;
+      border-bottom: 1px solid #E7E5E0 !important;
+      border-radius: 0 !important;
+
+      box-shadow: none !important;
+
+      transition: background .12s ease !important;
+    }
+
+
+    [class*="EntryCard"]:hover {
+      background: #FAF9F6 !important;
+    }
+
+
+    /*
+      Entry titles
+    */
+
+    [class*="EntryCard"] h2,
+    [class*="EntryCard"] h3,
+    [class*="EntryCard"] strong {
+      color: var(--gl-text) !important;
+
+      font-weight: 600 !important;
     }
 
 
@@ -388,7 +529,208 @@
     ====================================================== */
 
     button {
-      border-radius: 5px !important;
+      min-height: 36px;
+
+      border-radius: 3px !important;
+
+      font-size: 12px !important;
+
+      box-shadow: none !important;
+    }
+
+
+    /*
+      Primary / publish / new-entry buttons
+    */
+
+    button[class*="Button"],
+    a[class*="Button"] {
+      border-radius: 3px !important;
+
+      box-shadow: none !important;
+    }
+
+
+    /*
+      Make red buttons feel like WordPress Add New
+    */
+
+    button[style*="background"],
+    a[style*="background"] {
+      transition:
+        opacity .15s ease,
+        transform .15s ease !important;
+    }
+
+
+    button:hover,
+    a[class*="Button"]:hover {
+      opacity: .92;
+    }
+
+
+    /* =====================================================
+       FORM / EDITOR
+    ====================================================== */
+
+    input,
+    textarea,
+    select {
+      color: var(--gl-text) !important;
+
+      background: #FFFFFF;
+
+      border-radius: 3px !important;
+    }
+
+
+    input,
+    select {
+      min-height: 38px;
+    }
+
+
+    textarea {
+      min-height: 120px;
+
+      direction: rtl !important;
+      text-align: right !important;
+
+      line-height: 2 !important;
+    }
+
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none !important;
+
+      border-color: var(--gl-red) !important;
+
+      box-shadow:
+        0 0 0 1px var(--gl-red) !important;
+    }
+
+
+    /* =====================================================
+       EDITOR CARDS / PANELS
+    ====================================================== */
+
+    [class*="ControlPane"] {
+      background: var(--gl-bg) !important;
+    }
+
+
+    [class*="ControlPane"] > div {
+      border-radius: 2px !important;
+    }
+
+
+    /*
+      Field labels
+    */
+
+    label {
+      color: var(--gl-text) !important;
+
+      font-size: 12px !important;
+      font-weight: 600 !important;
+    }
+
+
+    /* =====================================================
+       WORKFLOW
+       Drafts remain visible in Decap editorial workflow
+    ====================================================== */
+
+    [class*="Workflow"] {
+      font-family: "Vazirmatn", sans-serif !important;
+    }
+
+
+    /*
+      Workflow cards
+    */
+
+    [class*="Workflow"] [class*="Card"] {
+      background: #FFFFFF !important;
+
+      border: 1px solid var(--gl-border) !important;
+      border-radius: 3px !important;
+
+      box-shadow: none !important;
+    }
+
+
+    /* =====================================================
+       STATUS VISUAL LANGUAGE
+    ====================================================== */
+
+    /*
+      These are deliberately broad because Decap generates
+      hashed class names.
+    */
+
+    [class*="published"],
+    [class*="Published"] {
+      color: var(--gl-green-text) !important;
+    }
+
+
+    [class*="draft"],
+    [class*="Draft"] {
+      color: var(--gl-yellow-text) !important;
+    }
+
+
+    [class*="review"],
+    [class*="Review"] {
+      color: var(--gl-blue-text) !important;
+    }
+
+
+    /* =====================================================
+       DROPDOWNS / MENUS
+    ====================================================== */
+
+    [role="menu"] {
+      background: #FFFFFF !important;
+
+      border: 1px solid var(--gl-border) !important;
+      border-radius: 3px !important;
+
+      box-shadow:
+        0 8px 25px rgba(23,43,54,.12) !important;
+    }
+
+
+    [role="menuitem"] {
+      font-size: 12px !important;
+    }
+
+
+    [role="menuitem"]:hover {
+      background: #F4F3EF !important;
+    }
+
+
+    /* =====================================================
+       MODALS
+    ====================================================== */
+
+    [role="dialog"] {
+      border-radius: 4px !important;
+
+      font-family: "Vazirmatn", sans-serif !important;
+    }
+
+
+    /* =====================================================
+       CHECKBOXES
+    ====================================================== */
+
+    input[type="checkbox"] {
+      accent-color: var(--gl-red);
     }
 
 
@@ -403,14 +745,14 @@
 
 
     ::-webkit-scrollbar-track {
-      background: var(--gl-soft);
+      background: #ECEAE5;
     }
 
 
     ::-webkit-scrollbar-thumb {
       background: #AAA7A0;
 
-      border-radius: 20px;
+      border-radius: 10px;
     }
 
 
@@ -428,6 +770,18 @@
       aside.css-1ff92bv-SidebarContainer-card-card {
         width: 100% !important;
         min-width: 0 !important;
+
+        min-height: auto !important;
+      }
+
+
+      .css-148ci7f-SidebarHeading-cardTopHeading {
+        padding: 20px !important;
+      }
+
+
+      .css-148ci7f-SidebarHeading-cardTopHeading::before {
+        font-size: 20px;
       }
 
     }
@@ -439,14 +793,19 @@
 
 <body>
 
+
   <!-- =====================================================
        DECAP CMS
-       Keep version pinned: required for turbo-github
+
+       IMPORTANT:
+       This exact beta version is intentional.
+       It is the version currently working with turbo-github.
   ====================================================== -->
 
   <script
     src="https://cdn.jsdelivr.net/npm/decap-cms@3.17.0-beta.0/dist/decap-cms.js">
   </script>
+
 
 </body>
 
