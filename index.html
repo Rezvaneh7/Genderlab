@@ -1,3 +1,7 @@
+---
+layout: null
+permalink: /
+---
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -1424,164 +1428,191 @@ button{
 </div>
 
 
+<!-- =====================================================
+     پرونده ویژه — HERO + STORY RAIL
+     Editors control this from the admin:
+       • «پرونده ویژه» page  → title, intro, image, on/off
+       • each نوشته          → «نمایش در پرونده ویژه» + «ترتیب در پرونده»
+====================================================== -->
+
+{% assign dossier = site.data.dossier %}
+
+{% assign featured_posts = site.articles | where: "dossier", true | sort: "dossier_order", "last" %}
+
+{% assign latest_posts = site.articles | sort: "date" | reverse %}
+
+{% if dossier.enabled and featured_posts.size > 0 %}
+    {% assign show_dossier = true %}
+    {% assign rail_posts = featured_posts %}
+{% else %}
+    {% assign show_dossier = false %}
+    {% assign rail_posts = latest_posts | slice: 1, 4 %}
+{% endif %}
+
+{% assign lead = featured_posts | first %}
+{% unless show_dossier %}
+    {% assign lead = latest_posts | first %}
+{% endunless %}
+
+
 <!-- HERO -->
+
+{% if lead %}
 
 <section class="hero">
 
     <div class="hero-copy">
 
         <span class="hero-number">
-            01 / FEATURE
+            {% if show_dossier %}DOSSIER{% else %}01 / FEATURE{% endif %}
         </span>
 
-        <span class="hero-kicker">
-            {{FEATURE_CATEGORY}}
-        </span>
+        {% if show_dossier %}
 
-        <h1 class="hero-title">
-            {{FEATURE_TITLE}}
-        </h1>
+            <span class="hero-kicker">
+                پرونده ویژه
+            </span>
 
-        <h2 class="hero-subtitle">
-            {{FEATURE_SUBTITLE}}
-        </h2>
+            <h1 class="hero-title">
+                {{ dossier.title }}
+            </h1>
 
-        <p class="hero-excerpt">
-            {{FEATURE_EXCERPT}}
-        </p>
+            {% if dossier.subtitle and dossier.subtitle != "" %}
+            <h2 class="hero-subtitle">
+                {{ dossier.subtitle }}
+            </h2>
+            {% endif %}
 
-        <a
-            href="{{FEATURE_URL}}"
-            class="read-link"
-        >
-            ادامه مطلب
-        </a>
+            {% if dossier.description and dossier.description != "" %}
+            <p class="hero-excerpt">
+                {{ dossier.description }}
+            </p>
+            {% endif %}
+
+            <a
+                href="{{ lead.url | relative_url }}"
+                class="read-link"
+            >
+                خواندن پرونده
+            </a>
+
+        {% else %}
+
+            <span class="hero-kicker">
+                {{ lead.category }}
+            </span>
+
+            <h1 class="hero-title">
+                {{ lead.title }}
+            </h1>
+
+            {% if lead.excerpt %}
+            <p class="hero-excerpt">
+                {{ lead.excerpt | strip_html | truncatewords: 40 }}
+            </p>
+            {% endif %}
+
+            <a
+                href="{{ lead.url | relative_url }}"
+                class="read-link"
+            >
+                ادامه مطلب
+            </a>
+
+        {% endif %}
 
     </div>
 
 
     <div class="hero-visual">
 
-        <div class="image-slot hero-image">
+        {% if show_dossier %}
+            {% assign hero_image = dossier.image %}
+            {% assign hero_caption = dossier.image_caption %}
+            {% assign hero_credit = dossier.image_credit %}
+        {% else %}
+            {% assign hero_image = lead.image %}
+            {% assign hero_caption = lead.title %}
+            {% assign hero_credit = "" %}
+        {% endif %}
 
-            <span class="slot-label">
-                HERO IMAGE · 1600 × 1000
-            </span>
+        {% if hero_image and hero_image != "" %}
 
-        </div>
+            <img
+                class="hero-image"
+                src="{{ hero_image }}"
+                alt="{{ hero_caption | default: '' | escape }}"
+                style="width:100%;height:100%;object-fit:cover;"
+            >
 
+        {% else %}
+
+            <div class="image-slot hero-image">
+                <span class="slot-label">
+                    HERO IMAGE · 1600 × 1000
+                </span>
+            </div>
+
+        {% endif %}
+
+        {% if hero_caption and hero_caption != "" %}
         <div class="hero-caption">
 
-            {{FEATURE_IMAGE_CAPTION}}
+            {{ hero_caption }}
 
+            {% if hero_credit and hero_credit != "" %}
             <small>
-                {{FEATURE_IMAGE_CREDIT}}
+                {{ hero_credit }}
             </small>
+            {% endif %}
 
         </div>
+        {% endif %}
 
     </div>
 
 </section>
 
+{% endif %}
 
-<!-- STORY RAIL -->
+
+<!-- STORY RAIL — the dossier's articles (or latest, if no dossier) -->
+
+{% if rail_posts.size > 0 %}
 
 <section class="story-rail">
 
-    <a href="{{RAIL_1_URL}}" class="rail-story">
+    {% for post in rail_posts limit: 4 %}
 
-        <span class="rail-number">01</span>
+    <a href="{{ post.url | relative_url }}" class="rail-story">
+
+        <span class="rail-number">{{ forloop.index | prepend: "0" }}</span>
 
         <div>
 
             <span class="rail-category">
-                {{RAIL_1_CATEGORY}}
+                {{ post.category }}
             </span>
 
             <h3 class="rail-title">
-                {{RAIL_1_TITLE}}
+                {{ post.title }}
             </h3>
 
-            <time class="rail-date">
-                {{RAIL_1_DATE}}
+            {% if post.date %}
+            <time class="rail-date" datetime="{{ post.date | date_to_xmlschema }}">
+                {{ post.date | date: "%Y/%m/%d" }}
             </time>
+            {% endif %}
 
         </div>
 
     </a>
 
-
-    <a href="{{RAIL_2_URL}}" class="rail-story">
-
-        <span class="rail-number">02</span>
-
-        <div>
-
-            <span class="rail-category">
-                {{RAIL_2_CATEGORY}}
-            </span>
-
-            <h3 class="rail-title">
-                {{RAIL_2_TITLE}}
-            </h3>
-
-            <time class="rail-date">
-                {{RAIL_2_DATE}}
-            </time>
-
-        </div>
-
-    </a>
-
-
-    <a href="{{RAIL_3_URL}}" class="rail-story">
-
-        <span class="rail-number">03</span>
-
-        <div>
-
-            <span class="rail-category">
-                {{RAIL_3_CATEGORY}}
-            </span>
-
-            <h3 class="rail-title">
-                {{RAIL_3_TITLE}}
-            </h3>
-
-            <time class="rail-date">
-                {{RAIL_3_DATE}}
-            </time>
-
-        </div>
-
-    </a>
-
-
-    <a href="{{RAIL_4_URL}}" class="rail-story">
-
-        <span class="rail-number">04</span>
-
-        <div>
-
-            <span class="rail-category">
-                {{RAIL_4_CATEGORY}}
-            </span>
-
-            <h3 class="rail-title">
-                {{RAIL_4_TITLE}}
-            </h3>
-
-            <time class="rail-date">
-                {{RAIL_4_DATE}}
-            </time>
-
-        </div>
-
-    </a>
+    {% endfor %}
 
 </section>
 
+{% endif %}
 
 <!-- CATEGORIES -->
 
