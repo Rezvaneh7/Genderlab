@@ -1,120 +1,340 @@
-# =========================================================
-#  GENDERLAB — «پرونده ویژه» additions for admin/config.yml
-#  This is NOT a complete config. Merge the three parts below
-#  into your existing admin/config.yml.
-# =========================================================
+backend:
+  name: turbo-github
+  turbo_site_id: 20aff52d-5b0e-497c-bb0b-feef5e3194c7
+  branch: main
 
+media_folder: "assets/uploads"
+public_folder: "/Genderlab/assets/uploads"
 
-# ---------------------------------------------------------
-# 1) In the "articles" collection → under `fields:`
-#    add these two fields (anywhere in the list; after
-#    «تاریخ انتشار» is a good spot).
-# ---------------------------------------------------------
+locale: "en"
 
-      - label: "نمایش در پرونده ویژه"
-        name: "featured"
-        widget: "boolean"
-        default: false
+publish_mode: editorial_workflow
+
+collections:
+
+  - name: "issues"
+    label: "شماره‌های مجله"
+    label_singular: "شماره مجله"
+    folder: "_issues"
+    create: true
+    slug: "{{fields.number}}"
+    identifier_field: "title"
+    summary: "شماره {{number}} — {{title}}"
+
+    editor:
+      preview: false
+
+    fields:
+      - label: "عنوان شماره"
+        name: "title"
+        widget: "string"
+        hint: "عنوان اصلی این شماره از مجله"
+
+      - label: "شماره مجله"
+        name: "number"
+        widget: "string"
+        hint: "مثلاً 01"
+
+      - label: "شماره فارسی"
+        name: "numberFa"
+        widget: "string"
+        hint: "مثلاً ۰۱"
+
+      - label: "تاریخ انتشار"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+
+      - label: "فصل / تاریخ فارسی"
+        name: "season"
+        widget: "string"
+        hint: "مثلاً پاییز ۱۴۰۵"
+
+      - label: "فصل / تاریخ انگلیسی"
+        name: "seasonEn"
+        widget: "string"
+        hint: "مثلاً AUTUMN 2026"
+
+      - label: "معرفی کوتاه"
+        name: "description"
+        widget: "text"
+        hint: "معرفی کوتاه شماره برای صفحه اصلی و آرشیو."
+
+      - label: "جلد شماره"
+        name: "cover"
+        widget: "image"
+        hint: "تصویر اصلی جلد این شماره"
+
+      - label: "نسخه PDF"
+        name: "pdf"
+        widget: "file"
         required: false
-        hint: "روشن کنید تا این نوشته بالای صفحهٔ اصلی، در پرونده ویژه، نمایش داده شود."
+        hint: "فایل کامل PDF شماره، در صورت وجود."
 
-      - label: "ترتیب در پرونده"
-        name: "featured_order"
-        widget: "number"
-        value_type: "int"
-        min: 1
+      - label: "درباره این شماره"
+        name: "body"
+        widget: "richtext"
         required: false
-        hint: "۱ = مطلب اصلی (بزرگ، بالای صفحه). عددهای بعدی زیر آن می‌آیند."
+        hint: "معرفی کامل این شماره."
 
 
-# ---------------------------------------------------------
-# 2) In the "articles" collection itself (same level as
-#    `name:`, `label:`, `fields:`), add a filter and sort
-#    options — like WordPress's "Sticky" view.
-# ---------------------------------------------------------
+  # =======================================================
+  #  مطالب مجله — همهٔ مطالب (مقاله، جستار، گفت‌وگو، ...)
+  # =======================================================
+
+  - name: "articles"
+    label: "مطالب مجله"
+    label_singular: "مطلب"
+    folder: "_articles"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: "title"
+    summary: "{{title}} — {{author}} · {{category}}"
+
+    editor:
+      preview: false
+
+    sortable_fields: ["date", "title", "category", "dossier_order"]
 
     view_filters:
       - label: "فقط پرونده ویژه"
-        field: featured
+        field: dossier
         pattern: true
+      - label: "مقاله"
+        field: category
+        pattern: "مقاله"
+      - label: "جستار"
+        field: category
+        pattern: "جستار"
+      - label: "گفت‌وگو"
+        field: category
+        pattern: "گفت‌وگو"
+      - label: "گزارش"
+        field: category
+        pattern: "گزارش"
+      - label: "یادداشت"
+        field: category
+        pattern: "یادداشت"
+      - label: "نقد"
+        field: category
+        pattern: "نقد"
 
-    sortable_fields: ["date", "title", "featured_order"]
-
-
-# ---------------------------------------------------------
-# 4) «مصاحبه‌ها» — its own collection (like a WordPress post
-#    type). Add it to `collections:`, right after "articles".
-#    Interviews are saved in the _interviews/ folder.
-#    If your media settings differ, copy media_folder /
-#    public_folder from your "articles" collection.
-# ---------------------------------------------------------
-
-  - name: "interviews"
-    label: "مصاحبه‌ها"
-    label_singular: "مصاحبه"
-    folder: "_interviews"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    sortable_fields: ["date", "title"]
     fields:
       - label: "عنوان مطلب"
         name: "title"
         widget: "string"
+        hint: "عنوان اصلی مطلب"
 
-      - label: "گفت‌وگو با"
-        name: "interviewee"
-        widget: "string"
-        hint: "نام و معرفی کوتاه مصاحبه‌شونده"
-
-      - label: "مصاحبه‌کننده"
-        name: "author"
-        widget: "string"
-        required: false
+      - label: "متن مطلب"
+        name: "body"
+        widget: "richtext"
+        hint: "متن کامل مقاله را اینجا بنویسید."
 
       - label: "خلاصه"
         name: "excerpt"
         widget: "text"
+        hint: "معرفی کوتاه مطلب برای صفحه اصلی و فهرست مطالب."
+
+      - label: "تصویر اصلی"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "تصویر شاخص مطلب"
+
+      - label: "نویسنده"
+        name: "author"
+        widget: "string"
+        hint: "نام نویسنده یا نویسندگان"
+
+      - label: "شماره مجله"
+        name: "issue"
+        widget: "relation"
+        collection: "issues"
+        search_fields:
+          - "title"
+          - "number"
+        value_field: "number"
+        display_fields:
+          - "number"
+          - "title"
+        hint: "شماره‌ای که این مطلب در آن منتشر شده است."
+
+      - label: "نوع مطلب"
+        name: "category"
+        widget: "select"
+        options:
+          - "مقاله"
+          - "جستار"
+          - "گفت‌وگو"
+          - "گزارش"
+          - "یادداشت"
+          - "نقد"
+        hint: "نوع محتوای مطلب"
+
+      - label: "تگ‌ها"
+        name: "tags"
+        widget: "list"
+        required: false
+        allow_add: true
+        hint: "موضوعات مرتبط با مطلب را اضافه کنید؛ مثلاً فمینیسم، بدن، حقوق LGBTQI+."
+
+      - label: "نمایش در کاروسل صفحه اصلی"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "برای نمایش این مطلب در کاروسل منتخب صفحه اصلی فعال کنید."
+
+      - label: "نمایش در پرونده ویژه"
+        name: "dossier"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "روشن کنید تا این مطلب بالای صفحهٔ اصلی، در پرونده ویژه، نمایش داده شود."
+
+      - label: "ترتیب در پرونده"
+        name: "dossier_order"
+        widget: "number"
+        value_type: "int"
+        min: 1
+        required: false
+        hint: "۱ = مطلب اول پرونده. عددهای بعدی زیر آن می‌آیند."
+
+      - label: "تاریخ انتشار"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        hint: "تاریخ انتشار مطلب"
+
+
+  # =======================================================
+  #  مصاحبه‌ها — همان پوشهٔ _articles، فقط مطالب «گفت‌وگو»
+  #  گفت‌وگوهای قبلی خودکار این‌جا دیده می‌شوند.
+  #  مصاحبهٔ تازه خودش «گفت‌وگو» ثبت می‌شود.
+  # =======================================================
+
+  - name: "interviews"
+    label: "مصاحبه‌ها"
+    label_singular: "مصاحبه"
+    folder: "_articles"
+    filter:
+      field: "category"
+      value: "گفت‌وگو"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: "title"
+    summary: "{{title}} — {{interviewee}}"
+
+    editor:
+      preview: false
+
+    sortable_fields: ["date", "title"]
+
+    fields:
+      - label: "عنوان مطلب"
+        name: "title"
+        widget: "string"
+        hint: "عنوان اصلی مصاحبه"
+
+      - label: "گفت‌وگو با"
+        name: "interviewee"
+        widget: "string"
+        required: false
+        hint: "نام و معرفی کوتاه مصاحبه‌شونده"
+
+      - label: "متن مطلب"
+        name: "body"
+        widget: "richtext"
+        hint: "متن کامل مصاحبه را اینجا بنویسید."
+
+      - label: "خلاصه"
+        name: "excerpt"
+        widget: "text"
+        hint: "معرفی کوتاه مصاحبه برای صفحه اصلی و فهرست مطالب."
+
+      - label: "تصویر اصلی"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "تصویر شاخص مصاحبه"
+
+      - label: "نویسنده"
+        name: "author"
+        widget: "string"
+        hint: "نام مصاحبه‌کننده یا مصاحبه‌کنندگان"
+
+      - label: "شماره مجله"
+        name: "issue"
+        widget: "relation"
+        collection: "issues"
+        search_fields:
+          - "title"
+          - "number"
+        value_field: "number"
+        display_fields:
+          - "number"
+          - "title"
+        required: false
+        hint: "شماره‌ای که این مصاحبه در آن منتشر شده است."
+
+      - label: "نوع مطلب"
+        name: "category"
+        widget: "hidden"
+        default: "گفت‌وگو"
+
+      - label: "تگ‌ها"
+        name: "tags"
+        widget: "list"
+        required: false
+        allow_add: true
+
+      - label: "نمایش در کاروسل صفحه اصلی"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        required: false
+
+      - label: "نمایش در پرونده ویژه"
+        name: "dossier"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "روشن کنید تا این مصاحبه بالای صفحهٔ اصلی، در پرونده ویژه، نمایش داده شود."
+
+      - label: "ترتیب در پرونده"
+        name: "dossier_order"
+        widget: "number"
+        value_type: "int"
+        min: 1
         required: false
 
       - label: "تاریخ انتشار"
         name: "date"
         widget: "datetime"
-
-      - label: "تصویر"
-        name: "image"
-        widget: "image"
-        required: false
-
-      - label: "نوع مطلب"
-        name: "type"
-        widget: "hidden"
-        default: "مصاحبه"
-
-      - label: "متن مطلب"
-        name: "body"
-        widget: "markdown"
+        date_format: "YYYY-MM-DD"
+        time_format: false
 
 
-# ---------------------------------------------------------
-# 3) A new collection at the END of `collections:`.
-#    This is the «پرونده ویژه» settings page in the sidebar.
-#    It writes to _data/featured.yml.
-# ---------------------------------------------------------
+  # =======================================================
+  #  تنظیمات — صفحهٔ «پرونده ویژه» (فایل _data/dossier.yml)
+  # =======================================================
 
   - name: "settings"
     label: "تنظیمات"
     editor:
       preview: false
     files:
-      - name: "featured"
+      - name: "dossier"
         label: "پرونده ویژه صفحهٔ اصلی"
-        file: "_data/featured.yml"
+        file: "_data/dossier.yml"
         fields:
           - label: "پرونده ویژه روشن باشد"
             name: "enabled"
             widget: "boolean"
             default: true
-            hint: "اگر خاموش باشد، بالای صفحهٔ اصلی تازه‌ترین نوشته‌ها نمایش داده می‌شوند."
+            hint: "اگر خاموش باشد، بالای صفحهٔ اصلی تازه‌ترین مطالب نمایش داده می‌شوند."
 
           - label: "عنوان پرونده"
             name: "title"
