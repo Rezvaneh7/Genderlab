@@ -12,30 +12,20 @@
 
 <style>
 
-/* =========================================================
-   GENDERLAB — EDITORIAL HOMEPAGE
-========================================================= */
-
 :root{
     --bg:#f3efe7;
     --paper:#fbf9f4;
     --white:#ffffff;
-
     --ink:#17201e;
     --muted:#747a75;
-
     --wine:#6d2638;
     --wine-dark:#431724;
     --wine-light:#eadde0;
-
     --sage:#8e9b7d;
     --sage-light:#dde1d6;
-
     --yellow:#e0aa3e;
     --yellow-light:#f2e5c4;
-
     --line:#d7d2c8;
-
     --max:1440px;
 }
 
@@ -76,9 +66,7 @@ button{
 }
 
 
-/* =========================================================
-   IMAGE PLACEHOLDERS
-========================================================= */
+/* IMAGE PLACEHOLDERS */
 
 .image-slot{
     position:relative;
@@ -88,7 +76,12 @@ button{
     justify-content:center;
 
     background:
-        linear-gradient(135deg,#ded9cf 0%,#f0ece4 50%,#d7d2c9 100%);
+        linear-gradient(
+            135deg,
+            #ded9cf 0%,
+            #f0ece4 50%,
+            #d7d2c9 100%
+        );
 
     color:#88827a;
 }
@@ -115,32 +108,23 @@ button{
     position:absolute;
     bottom:10px;
     left:10px;
-
     z-index:2;
-
     background:rgba(251,249,244,.9);
     color:#77716a;
-
     padding:2px 7px;
-
     font-size:8px;
     letter-spacing:.5px;
-
     direction:ltr;
 }
 
 
-/* =========================================================
-   UTILITY
-========================================================= */
+/* UTILITY */
 
 .eyebrow{
     display:flex;
     align-items:center;
     gap:9px;
-
     color:var(--wine);
-
     font-size:11px;
     font-weight:700;
 }
@@ -156,10 +140,8 @@ button{
     display:flex;
     align-items:end;
     justify-content:space-between;
-
     margin-bottom:24px;
     padding-bottom:12px;
-
     border-bottom:1px solid var(--ink);
 }
 
@@ -175,9 +157,7 @@ button{
 }
 
 
-/* =========================================================
-   TOP STRIP
-========================================================= */
+/* TOP STRIP */
 
 .top-strip{
     background:var(--wine-dark);
@@ -186,11 +166,9 @@ button{
 
 .top-strip-inner{
     min-height:34px;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     font-size:10px;
 }
 
@@ -208,9 +186,7 @@ button{
 }
 
 
-/* =========================================================
-   HEADER
-========================================================= */
+/* HEADER */
 
 .site-header{
     background:var(--paper);
@@ -222,62 +198,46 @@ button{
 
 .header-inner{
     min-height:116px;
-
     display:grid;
     grid-template-columns:1fr auto 1fr;
-
     align-items:center;
-
     direction:ltr;
 }
 
-
-/* HEADER LEFT */
-
 .header-left{
     justify-self:start;
-
     display:flex;
     align-items:center;
-
     gap:20px;
 }
 
 .header-search{
     width:200px;
     height:39px;
-
     display:flex;
     align-items:center;
-
     border-bottom:1px solid var(--ink);
 }
 
 .header-search input{
     flex:1;
     min-width:0;
-
     border:0;
     outline:0;
-
     background:transparent;
-
     direction:rtl;
-
     font-size:11px;
 }
 
 .header-search button{
     border:0;
     background:none;
-
     font-size:19px;
 }
 
 .socials{
     display:flex;
     gap:13px;
-
     font-size:12px;
     font-weight:700;
 }
@@ -288,18 +248,14 @@ button{
 .brand{
     justify-self:center;
     text-align:center;
-
     direction:ltr;
 }
 
 .brand-name{
     font-family:"Playfair Display",Georgia,serif;
-
     font-size:59px;
     line-height:.9;
-
     letter-spacing:-3px;
-
     color:var(--ink);
 }
 
@@ -309,12 +265,9 @@ button{
 
 .brand-subtitle{
     display:block;
-
     margin-top:13px;
-
     font-size:7px;
     letter-spacing:5px;
-
     color:#62665f;
 }
 
@@ -323,12 +276,9 @@ button{
 
 .header-right{
     justify-self:end;
-
     display:flex;
     align-items:center;
-
     gap:20px;
-
     direction:rtl;
 }
 
@@ -339,27 +289,21 @@ button{
 
 .menu-toggle{
     width:31px;
-
     border:0;
     background:none;
-
     display:flex;
     flex-direction:column;
-
     gap:6px;
 }
 
 .menu-toggle span{
     width:100%;
     height:1.5px;
-
     background:var(--ink);
 }
 
 
-/* =========================================================
-   NAV
-========================================================= */
+/* NAV */
 
 .main-nav{
     background:var(--paper);
@@ -368,22 +312,17 @@ button{
 
 .nav-inner{
     min-height:51px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     gap:45px;
-
     white-space:nowrap;
 }
 
 .nav-inner a{
     font-size:12px;
     font-weight:600;
-
     padding:15px 0;
-
     position:relative;
 }
 
@@ -393,21 +332,16 @@ button{
 
 .nav-inner a.active::after{
     content:"";
-
     position:absolute;
     right:0;
     left:0;
     bottom:-1px;
-
     height:3px;
-
     background:var(--wine);
 }
 
 
-/* =========================================================
-   EDITION BAR
-========================================================= */
+/* EDITION BAR */
 
 .edition-bar{
     padding:14px 0;
@@ -417,7 +351,6 @@ button{
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     font-size:10px;
     color:var(--muted);
 }
@@ -428,116 +361,85 @@ button{
 }
 
 
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO */
 
 .hero{
     display:grid;
-
     grid-template-columns:
         minmax(230px,.62fr)
         minmax(0,1.7fr);
 
     min-height:550px;
-
     background:var(--paper);
-
     border-top:1px solid var(--ink);
     border-bottom:1px solid var(--ink);
 }
 
-
-/* HERO CONTENT */
-
 .hero-copy{
     padding:55px 45px;
-
     display:flex;
     flex-direction:column;
     justify-content:center;
-
     position:relative;
 }
 
 .hero-number{
     position:absolute;
-
     top:18px;
     left:22px;
-
     direction:ltr;
-
     font-family:"Playfair Display",serif;
     font-size:12px;
-
     color:#8a8d87;
 }
 
 .hero-kicker{
     color:var(--wine);
-
     font-size:11px;
     font-weight:700;
-
     margin-bottom:17px;
 }
 
 .hero-title{
     font-size:51px;
     line-height:1.35;
-
     font-weight:800;
-
     letter-spacing:-1.5px;
-
     margin-bottom:13px;
 }
 
 .hero-subtitle{
     font-size:20px;
     font-weight:600;
-
     margin-bottom:17px;
 }
 
 .hero-excerpt{
     max-width:480px;
-
     font-size:13px;
     color:var(--muted);
-
     line-height:2.1;
-
     margin-bottom:26px;
 }
 
 .read-link{
     display:inline-flex;
     align-items:center;
-
     gap:15px;
-
     width:max-content;
-
     color:var(--wine);
-
     font-size:12px;
     font-weight:700;
 }
 
 .read-link::after{
     content:"←";
-
     width:34px;
     height:34px;
-
     border:1px solid var(--wine);
     border-radius:50%;
-
     display:grid;
     place-items:center;
-
     transition:.2s;
 }
 
@@ -545,9 +447,6 @@ button{
     background:var(--wine);
     color:white;
 }
-
-
-/* HERO IMAGE */
 
 .hero-visual{
     position:relative;
@@ -565,64 +464,43 @@ button{
     bottom:auto;
 }
 
-
-/* HERO IMAGE CAPTION */
-
 .hero-caption{
     position:absolute;
-
     left:0;
     bottom:0;
-
     width:270px;
-
     background:var(--wine);
     color:white;
-
     padding:19px 22px;
-
     z-index:4;
-
     font-size:11px;
     line-height:1.8;
 }
 
 .hero-caption small{
     display:block;
-
     opacity:.65;
-
     font-size:8px;
-
     margin-top:4px;
 }
 
 
-/* =========================================================
-   STORY RAIL
-========================================================= */
+/* STORY RAIL */
 
 .story-rail{
     background:var(--paper);
-
     display:grid;
     grid-template-columns:repeat(4,1fr);
-
     border-bottom:1px solid var(--line);
 }
 
 .rail-story{
     min-height:145px;
-
     padding:22px;
-
     border-left:1px solid var(--line);
-
     display:grid;
     grid-template-columns:52px 1fr;
-
     gap:13px;
-
     align-items:start;
 }
 
@@ -632,40 +510,32 @@ button{
 
 .rail-number{
     font-family:"Playfair Display",serif;
-
     font-size:36px;
     line-height:1;
-
     color:var(--wine-light);
 }
 
 .rail-category{
     color:var(--wine);
-
     font-size:9px;
     font-weight:700;
 }
 
 .rail-title{
     margin-top:5px;
-
     font-size:13px;
     line-height:1.8;
 }
 
 .rail-date{
     display:block;
-
     margin-top:7px;
-
     font-size:8px;
     color:#94958f;
 }
 
 
-/* =========================================================
-   CATEGORIES
-========================================================= */
+/* CATEGORIES */
 
 .category-section{
     padding:60px 0 55px;
@@ -674,38 +544,29 @@ button{
 .category-list{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-
     border-top:1px solid var(--line);
 }
 
 .category-link{
     min-height:90px;
-
     display:flex;
     align-items:center;
-
     gap:17px;
-
     border-bottom:1px solid var(--line);
-
     padding:12px 8px;
-
     transition:.2s;
 }
 
 .category-link:nth-child(3n+2){
     padding-right:25px;
     padding-left:25px;
-
     border-right:1px solid var(--line);
     border-left:1px solid var(--line);
 }
 
 .category-index{
     font-family:"Playfair Display",serif;
-
     font-size:14px;
-
     color:var(--wine);
 }
 
@@ -716,42 +577,32 @@ button{
 
 .category-description{
     margin-right:auto;
-
     color:var(--muted);
-
     font-size:9px;
 }
 
 .category-arrow{
     font-size:21px;
-
     color:var(--wine);
 }
 
 
-/* =========================================================
-   MAGAZINE FEATURE
-========================================================= */
+/* MAGAZINE FEATURE */
 
 .magazine-feature{
     background:var(--wine-dark);
     color:white;
-
     min-height:400px;
-
     display:grid;
     grid-template-columns:1fr 1.3fr;
-
     margin-bottom:65px;
 }
 
 .magazine-cover-area{
     position:relative;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     padding:38px;
 
     background:
@@ -764,17 +615,13 @@ button{
 
 .magazine-cover{
     width:215px;
-
     aspect-ratio:.71;
-
     box-shadow:18px 18px 0 rgba(0,0,0,.15);
-
     background:#ded5ca;
 }
 
 .magazine-info{
     padding:55px 60px;
-
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -782,62 +629,47 @@ button{
 
 .magazine-label{
     color:#d8ad6a;
-
     font-size:10px;
     font-weight:700;
-
     margin-bottom:15px;
 }
 
 .magazine-info h2{
     font-size:37px;
-
     line-height:1.45;
-
     margin-bottom:12px;
 }
 
 .magazine-info p{
     max-width:560px;
-
     color:#d8cbce;
-
     font-size:13px;
     line-height:2;
-
     margin-bottom:23px;
 }
 
 .magazine-links{
     display:flex;
     align-items:center;
-
     gap:15px;
 }
 
 .magazine-button{
     background:var(--yellow);
-
     color:#241a12;
-
     padding:8px 21px;
-
     font-size:11px;
     font-weight:700;
 }
 
 .archive-link{
     border-bottom:1px solid rgba(255,255,255,.5);
-
     padding:7px 0;
-
     font-size:10px;
 }
 
 
-/* =========================================================
-   EDITORIAL ARTICLES
-========================================================= */
+/* EDITORIAL */
 
 .editorial{
     margin-bottom:65px;
@@ -845,23 +677,16 @@ button{
 
 .editorial-grid{
     display:grid;
-
     grid-template-columns:
         minmax(0,1.45fr)
         minmax(220px,.72fr)
         minmax(220px,.72fr);
-
     gap:18px;
 }
 
-
-/* BIG STORY */
-
 .big-story{
     grid-row:span 2;
-
     background:var(--paper);
-
     border-bottom:3px solid var(--wine);
 }
 
@@ -875,44 +700,33 @@ button{
 
 .story-category{
     color:var(--wine);
-
     font-size:9px;
     font-weight:700;
 }
 
 .big-story h3{
     margin-top:7px;
-
     font-size:25px;
     line-height:1.55;
 }
 
 .big-story p{
     margin-top:8px;
-
     color:var(--muted);
-
     font-size:11px;
     line-height:1.9;
 }
 
 .story-meta{
     margin-top:17px;
-
     display:flex;
     justify-content:space-between;
-
     color:#969791;
-
     font-size:8px;
 }
 
-
-/* SMALL STORY */
-
 .small-story{
     background:var(--paper);
-
     border-bottom:1px solid var(--line);
 }
 
@@ -926,28 +740,22 @@ button{
 
 .small-story h3{
     margin-top:5px;
-
     font-size:14px;
     line-height:1.75;
 }
 
 
-/* =========================================================
-   POPULAR + NEWSLETTER
-========================================================= */
+/* POPULAR + NEWSLETTER */
 
 .bottom-layout{
     display:grid;
-
-    grid-template-columns:minmax(0,1.6fr) minmax(300px,.65fr);
+    grid-template-columns:
+        minmax(0,1.6fr)
+        minmax(300px,.65fr);
 
     gap:45px;
-
     margin-bottom:70px;
 }
-
-
-/* POPULAR */
 
 .popular-list{
     border-top:1px solid var(--ink);
@@ -955,36 +763,27 @@ button{
 
 .popular-row{
     display:grid;
-
     grid-template-columns:55px 1fr 120px;
-
     gap:20px;
-
     align-items:center;
-
     padding:17px 0;
-
     border-bottom:1px solid var(--line);
 }
 
 .popular-number{
     font-family:"Playfair Display",serif;
-
     font-size:31px;
-
     color:var(--wine-light);
 }
 
 .popular-category{
     color:var(--wine);
-
     font-size:8px;
     font-weight:700;
 }
 
 .popular-title{
     margin-top:3px;
-
     font-size:15px;
     line-height:1.7;
 }
@@ -994,164 +793,115 @@ button{
     height:74px;
 }
 
-
-/* NEWSLETTER */
-
 .newsletter{
     position:sticky;
     top:20px;
-
     background:var(--sage-light);
-
     padding:39px 32px;
-
     border-top:6px solid var(--sage);
 }
 
 .newsletter-mark{
     width:40px;
     height:40px;
-
     border-radius:50%;
-
     background:var(--wine);
-
     color:white;
-
     display:grid;
     place-items:center;
-
     margin-bottom:25px;
-
     font-family:"Playfair Display",serif;
-
     font-size:22px;
 }
 
 .newsletter h2{
     font-size:27px;
-
     margin-bottom:9px;
 }
 
 .newsletter p{
     color:#626b61;
-
     font-size:11px;
     line-height:2;
-
     margin-bottom:23px;
 }
 
 .newsletter input{
     width:100%;
     height:45px;
-
     background:var(--paper);
-
     border:1px solid #bdc4b5;
     outline:0;
-
     padding:0 13px;
-
     margin-bottom:9px;
 }
 
 .newsletter button{
     width:100%;
     height:45px;
-
     border:0;
-
     background:var(--wine);
     color:white;
-
     font-weight:700;
-
     font-size:11px;
 }
 
 .newsletter-note{
     display:block;
-
     margin-top:10px;
-
     color:#80867c;
-
     font-size:8px;
 }
 
 
-/* =========================================================
-   QUOTE
-========================================================= */
+/* MANIFESTO */
 
 .manifesto{
     border-top:1px solid var(--ink);
     border-bottom:1px solid var(--ink);
-
     padding:55px 30px;
-
     margin-bottom:65px;
-
     text-align:center;
-
     position:relative;
 }
 
 .manifesto::before{
     content:"“";
-
     display:block;
-
     font-family:Georgia,serif;
-
     font-size:75px;
     line-height:.7;
-
     color:var(--wine-light);
 }
 
 .manifesto p{
     max-width:850px;
-
     margin:auto;
-
     font-size:27px;
     font-weight:700;
-
     line-height:1.8;
 }
 
 
-/* =========================================================
-   FOOTER
-========================================================= */
+/* FOOTER */
 
 .footer{
     background:var(--ink);
     color:white;
-
     padding:55px 0 25px;
 }
 
 .footer-main{
     display:grid;
-
     grid-template-columns:1.3fr .7fr .7fr;
-
     gap:70px;
-
     padding-bottom:45px;
 }
 
 .footer-logo{
     font-family:"Playfair Display",Georgia,serif;
-
     font-size:39px;
-
     direction:ltr;
-
     margin-bottom:15px;
 }
 
@@ -1161,50 +911,36 @@ button{
 
 .footer-about{
     max-width:420px;
-
     color:#aeb7b2;
-
     font-size:10px;
     line-height:2;
 }
 
 .footer-column h3{
     font-size:11px;
-
     color:#d6b1b9;
-
     margin-bottom:13px;
 }
 
 .footer-column a{
     display:block;
-
     width:max-content;
-
     margin-bottom:7px;
-
     color:#c0c7c3;
-
     font-size:10px;
 }
 
 .footer-bottom{
     border-top:1px solid #38413e;
-
     padding-top:20px;
-
     display:flex;
     justify-content:space-between;
-
     color:#818b86;
-
     font-size:8px;
 }
 
 
-/* =========================================================
-   TABLET
-========================================================= */
+/* TABLET */
 
 @media(max-width:1050px){
 
@@ -1241,13 +977,10 @@ button{
     .category-link:nth-child(odd){
         border-left:1px solid var(--line);
     }
-
 }
 
 
-/* =========================================================
-   MOBILE NAV / TABLET
-========================================================= */
+/* MOBILE / TABLET */
 
 @media(max-width:800px){
 
@@ -1261,7 +994,6 @@ button{
 
     .header-inner{
         min-height:78px;
-
         grid-template-columns:1fr auto;
     }
 
@@ -1286,16 +1018,17 @@ button{
     }
 
     .main-nav{
-        overflow:hidden;
+        display:none;
+    }
+
+    .main-nav.mobile-open{
+        display:block;
     }
 
     .nav-inner{
         justify-content:flex-start;
-
         overflow-x:auto;
-
         padding:0 15px;
-
         gap:28px;
     }
 
@@ -1360,13 +1093,10 @@ button{
     .footer-brand-column{
         grid-column:1 / -1;
     }
-
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
+/* MOBILE */
 
 @media(max-width:560px){
 
@@ -1393,7 +1123,6 @@ button{
     .hero-caption{
         width:190px;
         padding:12px 15px;
-
         font-size:9px;
     }
 
@@ -1415,7 +1144,6 @@ button{
 
     .rail-story{
         min-height:auto;
-
         border-left:0;
         border-bottom:1px solid var(--line);
     }
@@ -1470,7 +1198,6 @@ button{
 
     .popular-row{
         grid-template-columns:35px 1fr 80px;
-
         gap:10px;
     }
 
@@ -1489,7 +1216,6 @@ button{
 
     .footer-main{
         grid-template-columns:1fr;
-
         gap:30px;
     }
 
@@ -1499,22 +1225,17 @@ button{
 
     .footer-bottom{
         flex-direction:column;
-
         gap:8px;
     }
-
 }
 
 </style>
 </head>
 
-
 <body>
 
 
-<!-- ======================================================
-     TOP STRIP
-======================================================= -->
+<!-- TOP STRIP -->
 
 <div class="top-strip">
 
@@ -1525,9 +1246,19 @@ button{
         </span>
 
         <div class="top-strip-links">
-            <a href="#">همکاری با ما</a>
-            <a href="#">خبرنامه</a>
-            <a href="#">FA / EN</a>
+
+            <a href="#">
+                همکاری با ما
+            </a>
+
+            <a href="#">
+                خبرنامه
+            </a>
+
+            <a href="#">
+                FA / EN
+            </a>
+
         </div>
 
     </div>
@@ -1535,10 +1266,7 @@ button{
 </div>
 
 
-
-<!-- ======================================================
-     HEADER
-======================================================= -->
+<!-- HEADER -->
 
 <header class="site-header">
 
@@ -1549,34 +1277,57 @@ button{
 
             <div class="header-left">
 
-                <div class="header-search">
+
+                <!-- SEARCH NOW LINKS TO /search/ -->
+
+                <form
+                    class="header-search"
+                    action="{{ '/search/' | relative_url }}"
+                    method="get"
+                >
 
                     <input
                         type="search"
+                        name="q"
                         placeholder="جستجو..."
+                        aria-label="جستجو"
                     >
 
                     <button
-                        type="button"
+                        type="submit"
                         aria-label="جستجو"
                     >
                         ⌕
                     </button>
 
-                </div>
+                </form>
 
 
                 <div class="socials">
-                    <a href="#">IG</a>
-                    <a href="#">TG</a>
-                    <a href="#">X</a>
+
+                    <a href="#">
+                        IG
+                    </a>
+
+                    <a href="#">
+                        TG
+                    </a>
+
+                    <a href="#">
+                        X
+                    </a>
+
                 </div>
 
             </div>
 
 
+            <!-- LOGO LINKS HOME -->
 
-            <a href="/" class="brand">
+            <a
+                href="{{ '/' | relative_url }}"
+                class="brand"
+            >
 
                 <div class="brand-name">
                     Gender<span>Lab</span>
@@ -1589,7 +1340,6 @@ button{
             </a>
 
 
-
             <div class="header-right">
 
                 <a href="#" class="login">
@@ -1600,10 +1350,13 @@ button{
                     class="menu-toggle"
                     type="button"
                     aria-label="منو"
+                    aria-expanded="false"
                 >
+
                     <span></span>
                     <span></span>
                     <span></span>
+
                 </button>
 
             </div>
@@ -1613,30 +1366,54 @@ button{
     </div>
 
 
+    <!-- MAIN NAV -->
 
     <nav class="main-nav">
 
         <div class="container nav-inner">
 
-            <a href="#" class="active">خانه</a>
+            <a
+                href="{{ '/' | relative_url }}"
+                class="active"
+            >
+                خانه
+            </a>
 
-            <a href="#">مقالات</a>
+            <a href="{{ '/articles/' | relative_url }}">
+                مقالات
+            </a>
 
-            <a href="#">جنسیت</a>
+            <a href="#">
+                جنسیت
+            </a>
 
-            <a href="#">جامعه</a>
+            <a href="#">
+                جامعه
+            </a>
 
-            <a href="#">حقوق</a>
+            <a href="#">
+                حقوق
+            </a>
 
-            <a href="#">فرهنگ و هنر</a>
+            <a href="#">
+                فرهنگ و هنر
+            </a>
 
-            <a href="#">زندگی</a>
+            <a href="#">
+                زندگی
+            </a>
 
-            <a href="#">مصاحبه</a>
+            <a href="#">
+                مصاحبه
+            </a>
 
-            <a href="#">مجله</a>
+            <a href="{{ '/archive/' | relative_url }}">
+                مجله
+            </a>
 
-            <a href="#">درباره ما</a>
+            <a href="#">
+                درباره ما
+            </a>
 
         </div>
 
@@ -1645,13 +1422,10 @@ button{
 </header>
 
 
-
 <main class="container">
 
 
-<!-- ======================================================
-     EDITION BAR
-======================================================= -->
+<!-- EDITION BAR -->
 
 <div class="edition-bar">
 
@@ -1670,13 +1444,9 @@ button{
 </div>
 
 
-
-<!-- ======================================================
-     HERO
-======================================================= -->
+<!-- HERO -->
 
 <section class="hero">
-
 
     <div class="hero-copy">
 
@@ -1684,26 +1454,21 @@ button{
             01 / FEATURE
         </span>
 
-
         <span class="hero-kicker">
             {{FEATURE_CATEGORY}}
         </span>
-
 
         <h1 class="hero-title">
             {{FEATURE_TITLE}}
         </h1>
 
-
         <h2 class="hero-subtitle">
             {{FEATURE_SUBTITLE}}
         </h2>
 
-
         <p class="hero-excerpt">
             {{FEATURE_EXCERPT}}
         </p>
-
 
         <a
             href="{{FEATURE_URL}}"
@@ -1715,25 +1480,7 @@ button{
     </div>
 
 
-
     <div class="hero-visual">
-
-
-        <!--
-        HERO IMAGE
-
-        Replace this div with:
-
-        <img
-            class="hero-image"
-            src="..."
-            alt="..."
-        >
-
-        Recommended:
-        1600 × 1000
-        -->
-
 
         <div class="image-slot hero-image">
 
@@ -1742,7 +1489,6 @@ button{
             </span>
 
         </div>
-
 
         <div class="hero-caption">
 
@@ -1756,17 +1502,12 @@ button{
 
     </div>
 
-
 </section>
 
 
-
-<!-- ======================================================
-     STORY RAIL
-======================================================= -->
+<!-- STORY RAIL -->
 
 <section class="story-rail">
-
 
     <a href="{{RAIL_1_URL}}" class="rail-story">
 
@@ -1789,7 +1530,6 @@ button{
         </div>
 
     </a>
-
 
 
     <a href="{{RAIL_2_URL}}" class="rail-story">
@@ -1815,7 +1555,6 @@ button{
     </a>
 
 
-
     <a href="{{RAIL_3_URL}}" class="rail-story">
 
         <span class="rail-number">03</span>
@@ -1837,7 +1576,6 @@ button{
         </div>
 
     </a>
-
 
 
     <a href="{{RAIL_4_URL}}" class="rail-story">
@@ -1862,17 +1600,12 @@ button{
 
     </a>
 
-
 </section>
 
 
-
-<!-- ======================================================
-     CATEGORIES
-======================================================= -->
+<!-- CATEGORIES -->
 
 <section class="category-section">
-
 
     <div class="section-top">
 
@@ -1895,7 +1628,6 @@ button{
     </div>
 
 
-
     <div class="category-list">
 
 
@@ -1911,10 +1643,11 @@ button{
                 هویت، برابری، بدن
             </span>
 
-            <span class="category-arrow">←</span>
+            <span class="category-arrow">
+                ←
+            </span>
 
         </a>
-
 
 
         <a href="{{CATEGORY_2_URL}}" class="category-link">
@@ -1929,10 +1662,11 @@ button{
                 قانون، سیاست، عدالت
             </span>
 
-            <span class="category-arrow">←</span>
+            <span class="category-arrow">
+                ←
+            </span>
 
         </a>
-
 
 
         <a href="{{CATEGORY_3_URL}}" class="category-link">
@@ -1947,10 +1681,11 @@ button{
                 روایت و زندگی اجتماعی
             </span>
 
-            <span class="category-arrow">←</span>
+            <span class="category-arrow">
+                ←
+            </span>
 
         </a>
-
 
 
         <a href="{{CATEGORY_4_URL}}" class="category-link">
@@ -1965,10 +1700,11 @@ button{
                 ادبیات، هنر، رسانه
             </span>
 
-            <span class="category-arrow">←</span>
+            <span class="category-arrow">
+                ←
+            </span>
 
         </a>
-
 
 
         <a href="{{CATEGORY_5_URL}}" class="category-link">
@@ -1983,10 +1719,11 @@ button{
                 بدن و سلامت روان
             </span>
 
-            <span class="category-arrow">←</span>
+            <span class="category-arrow">
+                ←
+            </span>
 
         </a>
-
 
 
         <a href="{{CATEGORY_6_URL}}" class="category-link">
@@ -2001,33 +1738,22 @@ button{
                 تجربه، کار، رابطه
             </span>
 
-            <span class="category-arrow">←</span>
+            <span class="category-arrow">
+                ←
+            </span>
 
         </a>
-
 
     </div>
 
 </section>
 
 
-
-<!-- ======================================================
-     MAGAZINE
-======================================================= -->
+<!-- MAGAZINE -->
 
 <section class="magazine-feature">
 
-
     <div class="magazine-cover-area">
-
-
-        <!--
-        MAGAZINE COVER IMAGE
-
-        Replace with actual cover image.
-        -->
-
 
         <div class="image-slot magazine-cover">
 
@@ -2040,23 +1766,19 @@ button{
     </div>
 
 
-
     <div class="magazine-info">
 
         <span class="magazine-label">
             آخرین شماره / {{MAGAZINE_ISSUE}}
         </span>
 
-
         <h2>
             {{MAGAZINE_TITLE}}
         </h2>
 
-
         <p>
             {{MAGAZINE_DESCRIPTION}}
         </p>
-
 
         <div class="magazine-links">
 
@@ -2067,9 +1789,10 @@ button{
                 مشاهده شماره
             </a>
 
+            <!-- REAL ARCHIVE PAGE -->
 
             <a
-                href="{{MAGAZINE_ARCHIVE_URL}}"
+                href="{{ '/archive/' | relative_url }}"
                 class="archive-link"
             >
                 آرشیو مجله ←
@@ -2079,17 +1802,12 @@ button{
 
     </div>
 
-
 </section>
 
 
-
-<!-- ======================================================
-     LATEST EDITORIAL
-======================================================= -->
+<!-- LATEST EDITORIAL -->
 
 <section class="editorial">
-
 
     <div class="section-top">
 
@@ -2105,22 +1823,19 @@ button{
 
         </div>
 
+        <!-- REAL ARTICLES ARCHIVE -->
 
-        <a href="{{ALL_ARTICLES_URL}}">
+        <a href="{{ '/articles/' | relative_url }}">
             همه مقالات ←
         </a>
 
     </div>
 
 
-
     <div class="editorial-grid">
 
 
-        <!-- BIG STORY -->
-
         <article class="big-story">
-
 
             <a href="{{ARTICLE_1_URL}}">
 
@@ -2141,18 +1856,17 @@ button{
                     {{ARTICLE_1_CATEGORY}}
                 </span>
 
-
                 <h3>
+
                     <a href="{{ARTICLE_1_URL}}">
                         {{ARTICLE_1_TITLE}}
                     </a>
-                </h3>
 
+                </h3>
 
                 <p>
                     {{ARTICLE_1_EXCERPT}}
                 </p>
-
 
                 <div class="story-meta">
 
@@ -2171,9 +1885,6 @@ button{
         </article>
 
 
-
-        <!-- ARTICLE 2 -->
-
         <article class="small-story">
 
             <a href="{{ARTICLE_2_URL}}">
@@ -2188,7 +1899,6 @@ button{
 
             </a>
 
-
             <div class="small-story-content">
 
                 <span class="story-category">
@@ -2196,18 +1906,17 @@ button{
                 </span>
 
                 <h3>
+
                     <a href="{{ARTICLE_2_URL}}">
                         {{ARTICLE_2_TITLE}}
                     </a>
+
                 </h3>
 
             </div>
 
         </article>
 
-
-
-        <!-- ARTICLE 3 -->
 
         <article class="small-story">
 
@@ -2223,7 +1932,6 @@ button{
 
             </a>
 
-
             <div class="small-story-content">
 
                 <span class="story-category">
@@ -2231,18 +1939,17 @@ button{
                 </span>
 
                 <h3>
+
                     <a href="{{ARTICLE_3_URL}}">
                         {{ARTICLE_3_TITLE}}
                     </a>
+
                 </h3>
 
             </div>
 
         </article>
 
-
-
-        <!-- ARTICLE 4 -->
 
         <article class="small-story">
 
@@ -2258,7 +1965,6 @@ button{
 
             </a>
 
-
             <div class="small-story-content">
 
                 <span class="story-category">
@@ -2266,18 +1972,17 @@ button{
                 </span>
 
                 <h3>
+
                     <a href="{{ARTICLE_4_URL}}">
                         {{ARTICLE_4_TITLE}}
                     </a>
+
                 </h3>
 
             </div>
 
         </article>
 
-
-
-        <!-- ARTICLE 5 -->
 
         <article class="small-story">
 
@@ -2293,7 +1998,6 @@ button{
 
             </a>
 
-
             <div class="small-story-content">
 
                 <span class="story-category">
@@ -2301,33 +2005,27 @@ button{
                 </span>
 
                 <h3>
+
                     <a href="{{ARTICLE_5_URL}}">
                         {{ARTICLE_5_TITLE}}
                     </a>
+
                 </h3>
 
             </div>
 
         </article>
 
-
     </div>
 
 </section>
 
 
-
-<!-- ======================================================
-     POPULAR + NEWSLETTER
-======================================================= -->
+<!-- POPULAR + NEWSLETTER -->
 
 <section class="bottom-layout">
 
-
-    <!-- POPULAR -->
-
     <div>
-
 
         <div class="section-top">
 
@@ -2344,7 +2042,6 @@ button{
             </div>
 
         </div>
-
 
 
         <div class="popular-list">
@@ -2368,7 +2065,6 @@ button{
 
                 </div>
 
-
                 <div class="image-slot popular-thumb">
 
                     <span class="slot-label">
@@ -2378,7 +2074,6 @@ button{
                 </div>
 
             </a>
-
 
 
             <a href="{{POPULAR_2_URL}}" class="popular-row">
@@ -2399,7 +2094,6 @@ button{
 
                 </div>
 
-
                 <div class="image-slot popular-thumb">
 
                     <span class="slot-label">
@@ -2409,7 +2103,6 @@ button{
                 </div>
 
             </a>
-
 
 
             <a href="{{POPULAR_3_URL}}" class="popular-row">
@@ -2430,7 +2123,6 @@ button{
 
                 </div>
 
-
                 <div class="image-slot popular-thumb">
 
                     <span class="slot-label">
@@ -2440,7 +2132,6 @@ button{
                 </div>
 
             </a>
-
 
 
             <a href="{{POPULAR_4_URL}}" class="popular-row">
@@ -2461,7 +2152,6 @@ button{
 
                 </div>
 
-
                 <div class="image-slot popular-thumb">
 
                     <span class="slot-label">
@@ -2472,14 +2162,10 @@ button{
 
             </a>
 
-
         </div>
 
     </div>
 
-
-
-    <!-- NEWSLETTER -->
 
     <aside class="newsletter">
 
@@ -2487,23 +2173,19 @@ button{
             G
         </div>
 
-
         <span class="eyebrow">
             NEWSLETTER
         </span>
 
-
         <h2>
             هفته را با ما شروع کنید.
         </h2>
-
 
         <p>
             گزیده‌ای از تازه‌ترین مقاله‌ها، روایت‌ها و
             مطالب GenderLab را مستقیم در ایمیل خود
             دریافت کنید.
         </p>
-
 
         <form class="newsletter-form">
 
@@ -2514,13 +2196,11 @@ button{
                 required
             >
 
-
             <button type="submit">
                 عضویت در خبرنامه
             </button>
 
         </form>
-
 
         <small class="newsletter-note">
             بدون اسپم. هر زمان بخواهید می‌توانید لغو عضویت کنید.
@@ -2528,14 +2208,10 @@ button{
 
     </aside>
 
-
 </section>
 
 
-
-<!-- ======================================================
-     MANIFESTO
-======================================================= -->
+<!-- MANIFESTO -->
 
 <section class="manifesto">
 
@@ -2550,25 +2226,23 @@ button{
 </main>
 
 
-
-<!-- ======================================================
-     FOOTER
-======================================================= -->
+<!-- FOOTER -->
 
 <footer class="footer">
 
     <div class="container">
-
 
         <div class="footer-main">
 
 
             <div class="footer-brand-column">
 
-                <div class="footer-logo">
+                <a
+                    href="{{ '/' | relative_url }}"
+                    class="footer-logo"
+                >
                     Gender<span>Lab</span>
-                </div>
-
+                </a>
 
                 <p class="footer-about">
                     مجله‌ای مستقل برای روایت، پژوهش و گفت‌وگو
@@ -2578,20 +2252,41 @@ button{
             </div>
 
 
-
             <div class="footer-column">
 
                 <h3>
                     GenderLab
                 </h3>
 
-                <a href="#">درباره ما</a>
-                <a href="#">تماس با ما</a>
-                <a href="#">همکاری با ما</a>
-                <a href="#">خبرنامه</a>
+                <a href="#">
+                    درباره ما
+                </a>
+
+                <a href="#">
+                    تماس با ما
+                </a>
+
+                <a href="#">
+                    همکاری با ما
+                </a>
+
+                <a href="#">
+                    خبرنامه
+                </a>
+
+                <a href="{{ '/articles/' | relative_url }}">
+                    همه مقالات
+                </a>
+
+                <a href="{{ '/archive/' | relative_url }}">
+                    آرشیو مجله
+                </a>
+
+                <a href="{{ '/search/' | relative_url }}">
+                    جست‌وجو
+                </a>
 
             </div>
-
 
 
             <div class="footer-column">
@@ -2600,16 +2295,25 @@ button{
                     دنبال کنید
                 </h3>
 
-                <a href="#">Instagram</a>
-                <a href="#">Telegram</a>
-                <a href="#">X / Twitter</a>
-                <a href="#">YouTube</a>
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    Telegram
+                </a>
+
+                <a href="#">
+                    X / Twitter
+                </a>
+
+                <a href="#">
+                    YouTube
+                </a>
 
             </div>
 
-
         </div>
-
 
 
         <div class="footer-bottom">
@@ -2624,64 +2328,73 @@ button{
 
         </div>
 
-
     </div>
 
 </footer>
 
 
-
 <script>
 
-/* =========================================================
-   MOBILE MENU
-========================================================= */
+/* MOBILE MENU */
 
-const menuButton = document.querySelector(".menu-toggle");
-const navigation = document.querySelector(".main-nav");
+const menuButton =
+    document.querySelector(
+        ".menu-toggle"
+    );
 
-menuButton.addEventListener("click", () => {
+const navigation =
+    document.querySelector(
+        ".main-nav"
+    );
 
-    if(window.innerWidth <= 800){
+if(menuButton && navigation){
 
-        navigation.style.display =
-            navigation.style.display === "none"
-            ? "block"
-            : "none";
+    menuButton.addEventListener(
+        "click",
+        () => {
 
-    }
+            const isOpen =
+                navigation.classList.toggle(
+                    "mobile-open"
+                );
 
-});
+            menuButton.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+        }
+    );
+
+}
 
 
-window.addEventListener("resize", () => {
-
-    if(window.innerWidth > 800){
-        navigation.style.display = "block";
-    }
-
-});
-
-
-/* =========================================================
-   NEWSLETTER PLACEHOLDER
-========================================================= */
+/* NEWSLETTER PLACEHOLDER */
 
 const newsletterForm =
-    document.querySelector(".newsletter-form");
+    document.querySelector(
+        ".newsletter-form"
+    );
 
-newsletterForm.addEventListener("submit", event => {
+if(newsletterForm){
 
-    event.preventDefault();
+    newsletterForm.addEventListener(
+        "submit",
+        event => {
 
-    /*
-       MailerLite/API integration goes here later.
-    */
+            event.preventDefault();
 
-});
+            /*
+              MailerLite/API integration
+              goes here later.
+            */
+
+        }
+    );
+
+}
 
 </script>
-
 
 </body>
 </html>
