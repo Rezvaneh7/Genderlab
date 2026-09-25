@@ -8,35 +8,35 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================================================
-   GENDERLAB — HOMEPAGE TEMPLATE
-   ========================================================= */
+   GENDERLAB — EDITORIAL HOMEPAGE
+========================================================= */
 
 :root{
-    --bg:#f7f3ec;
-    --paper:#fffdf9;
-    --paper-alt:#f1ebe1;
+    --bg:#f3efe7;
+    --paper:#fbf9f4;
+    --white:#ffffff;
 
-    --petrol:#083f40;
-    --petrol-dark:#062f30;
-    --petrol-light:#dbe8e4;
+    --ink:#17201e;
+    --muted:#747a75;
 
-    --orange:#d95420;
-    --orange-soft:#e97848;
-    --orange-pale:#f3ddd1;
+    --wine:#6d2638;
+    --wine-dark:#431724;
+    --wine-light:#eadde0;
 
-    --text:#123132;
-    --muted:#6e7874;
+    --sage:#8e9b7d;
+    --sage-light:#dde1d6;
 
-    --border:#ded9d0;
+    --yellow:#e0aa3e;
+    --yellow-light:#f2e5c4;
 
-    --radius:6px;
+    --line:#d7d2c8;
 
-    --max-width:1480px;
+    --max:1440px;
 }
 
 *{
@@ -51,7 +51,7 @@ html{
 
 body{
     background:var(--bg);
-    color:var(--text);
+    color:var(--ink);
     font-family:"Vazirmatn",Tahoma,Arial,sans-serif;
     line-height:1.8;
 }
@@ -70,105 +70,158 @@ button{
     cursor:pointer;
 }
 
-img{
-    display:block;
-    max-width:100%;
-}
-
 .container{
-    width:min(calc(100% - 44px),var(--max-width));
+    width:min(calc(100% - 48px),var(--max));
     margin-inline:auto;
 }
 
 
 /* =========================================================
    IMAGE PLACEHOLDERS
-   ========================================================= */
+========================================================= */
 
 .image-slot{
     position:relative;
     overflow:hidden;
-
     display:flex;
     align-items:center;
     justify-content:center;
 
     background:
-        linear-gradient(
-            135deg,
-            #ebe4da 0%,
-            #f5f0e8 50%,
-            #e2ddd4 100%
-        );
+        linear-gradient(135deg,#ded9cf 0%,#f0ece4 50%,#d7d2c9 100%);
 
-    border:1px dashed #aaa399;
-
-    color:#807b74;
+    color:#88827a;
 }
 
 .image-slot::before{
     content:"";
+    width:38px;
+    height:30px;
+    border:1px solid rgba(70,70,65,.35);
     position:absolute;
-
-    width:34px;
-    height:26px;
-
-    border:1.5px solid currentColor;
-    border-radius:3px;
-
-    opacity:.45;
 }
 
 .image-slot::after{
     content:"";
-    position:absolute;
-
     width:10px;
     height:10px;
-
+    border:1px solid rgba(70,70,65,.35);
     border-radius:50%;
-
-    border:1.5px solid currentColor;
-
-    transform:translate(7px,-5px);
-
-    opacity:.45;
+    position:absolute;
+    transform:translate(8px,-6px);
 }
 
-.image-slot-label{
+.slot-label{
     position:absolute;
-    bottom:12px;
-    left:12px;
-
-    padding:3px 8px;
-
-    background:rgba(255,255,255,.82);
-
-    border-radius:3px;
-
-    font-size:9px;
-    letter-spacing:.3px;
-
-    direction:ltr;
+    bottom:10px;
+    left:10px;
 
     z-index:2;
+
+    background:rgba(251,249,244,.9);
+    color:#77716a;
+
+    padding:2px 7px;
+
+    font-size:8px;
+    letter-spacing:.5px;
+
+    direction:ltr;
 }
 
 
 /* =========================================================
-   TOP HEADER
-   ========================================================= */
+   UTILITY
+========================================================= */
+
+.eyebrow{
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    color:var(--wine);
+
+    font-size:11px;
+    font-weight:700;
+}
+
+.eyebrow::before{
+    content:"";
+    width:22px;
+    height:2px;
+    background:var(--wine);
+}
+
+.section-top{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+
+    margin-bottom:24px;
+    padding-bottom:12px;
+
+    border-bottom:1px solid var(--ink);
+}
+
+.section-top h2{
+    font-size:30px;
+    line-height:1.3;
+}
+
+.section-top a{
+    color:var(--wine);
+    font-size:12px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   TOP STRIP
+========================================================= */
+
+.top-strip{
+    background:var(--wine-dark);
+    color:white;
+}
+
+.top-strip-inner{
+    min-height:34px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    font-size:10px;
+}
+
+.top-strip-links{
+    display:flex;
+    gap:18px;
+}
+
+.top-strip a{
+    opacity:.85;
+}
+
+.top-strip a:hover{
+    opacity:1;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 .site-header{
     background:var(--paper);
 }
 
-.header-top{
-    border-bottom:1px solid var(--border);
+.header-main{
+    border-bottom:1px solid var(--line);
 }
 
-.header-top-inner{
-    min-height:92px;
+.header-inner{
+    min-height:116px;
 
     display:grid;
     grid-template-columns:1fr auto 1fr;
@@ -179,97 +232,61 @@ img{
 }
 
 
-/* SEARCH + SOCIAL */
+/* HEADER LEFT */
 
-.header-tools{
-    display:flex;
-    align-items:center;
-
-    gap:17px;
-
+.header-left{
     justify-self:start;
-}
-
-.search{
-    width:220px;
-    height:41px;
-
-    border:1px solid var(--border);
-
-    background:white;
-
-    border-radius:5px;
 
     display:flex;
     align-items:center;
 
-    overflow:hidden;
+    gap:20px;
 }
 
-.search-button{
-    width:42px;
-    height:100%;
+.header-search{
+    width:200px;
+    height:39px;
 
-    border:0;
-    background:transparent;
+    display:flex;
+    align-items:center;
 
-    display:grid;
-    place-items:center;
-
-    color:var(--text);
-
-    font-size:22px;
+    border-bottom:1px solid var(--ink);
 }
 
-.search input{
+.header-search input{
     flex:1;
-
     min-width:0;
-
-    height:100%;
 
     border:0;
     outline:0;
 
     background:transparent;
 
-    padding:0 12px;
-
     direction:rtl;
 
-    font-size:12px;
+    font-size:11px;
 }
 
-.social-links{
+.header-search button{
+    border:0;
+    background:none;
+
+    font-size:19px;
+}
+
+.socials{
     display:flex;
-    gap:11px;
+    gap:13px;
 
-    align-items:center;
-}
-
-.social-links a{
-    width:27px;
-    height:27px;
-
-    display:grid;
-    place-items:center;
-
-    font-size:14px;
+    font-size:12px;
     font-weight:700;
-
-    transition:.2s;
-}
-
-.social-links a:hover{
-    color:var(--orange);
 }
 
 
-/* LOGO */
+/* BRAND */
 
 .brand{
     justify-self:center;
-
     text-align:center;
 
     direction:ltr;
@@ -278,1160 +295,977 @@ img{
 .brand-name{
     font-family:"Playfair Display",Georgia,serif;
 
-    font-size:51px;
-    line-height:1;
+    font-size:59px;
+    line-height:.9;
 
-    letter-spacing:-2px;
+    letter-spacing:-3px;
 
-    color:var(--petrol-dark);
+    color:var(--ink);
 }
 
 .brand-name span{
-    color:var(--orange);
+    color:var(--wine);
 }
 
-.brand-tagline{
+.brand-subtitle{
     display:block;
 
-    margin-top:8px;
+    margin-top:13px;
 
-    font-size:8px;
+    font-size:7px;
+    letter-spacing:5px;
 
-    letter-spacing:4.5px;
-
-    color:#384c4b;
+    color:#62665f;
 }
 
 
-/* LOGIN */
+/* HEADER RIGHT */
 
-.header-account{
+.header-right{
     justify-self:end;
-
-    direction:rtl;
 
     display:flex;
     align-items:center;
 
-    gap:24px;
+    gap:20px;
+
+    direction:rtl;
 }
 
-.login-link{
-    font-size:13px;
-    font-weight:500;
+.login{
+    font-size:11px;
+    font-weight:600;
 }
 
-.menu-button{
-    width:30px;
+.menu-toggle{
+    width:31px;
+
+    border:0;
+    background:none;
 
     display:flex;
     flex-direction:column;
 
     gap:6px;
-
-    border:0;
-
-    background:none;
 }
 
-.menu-button span{
-    display:block;
-
+.menu-toggle span{
     width:100%;
-    height:2px;
+    height:1.5px;
 
-    background:var(--petrol-dark);
+    background:var(--ink);
 }
 
 
 /* =========================================================
-   NAVIGATION
-   ========================================================= */
+   NAV
+========================================================= */
 
 .main-nav{
     background:var(--paper);
-
-    border-bottom:1px solid var(--border);
+    border-bottom:1px solid var(--line);
 }
 
 .nav-inner{
-    min-height:57px;
+    min-height:51px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    gap:52px;
+    gap:45px;
 
     white-space:nowrap;
 }
 
 .nav-inner a{
-    position:relative;
-
-    padding:17px 0 15px;
-
-    font-size:14px;
+    font-size:12px;
     font-weight:600;
 
-    transition:.2s;
+    padding:15px 0;
+
+    position:relative;
 }
 
-.nav-inner a:hover,
-.nav-inner a.active{
-    color:var(--orange);
+.nav-inner a:hover{
+    color:var(--wine);
 }
 
 .nav-inner a.active::after{
     content:"";
 
     position:absolute;
-
     right:0;
-    bottom:0;
+    left:0;
+    bottom:-1px;
 
-    width:100%;
     height:3px;
 
-    background:var(--orange);
+    background:var(--wine);
 }
 
 
 /* =========================================================
-   HERO GRID
-   ========================================================= */
+   EDITION BAR
+========================================================= */
 
-.hero-layout{
-    margin-top:18px;
+.edition-bar{
+    padding:14px 0;
+}
 
+.edition-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    font-size:10px;
+    color:var(--muted);
+}
+
+.edition-title{
+    color:var(--wine);
+    font-weight:700;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
     display:grid;
 
     grid-template-columns:
-        minmax(0,1.65fr)
-        minmax(270px,.70fr)
-        minmax(260px,.60fr);
+        minmax(230px,.62fr)
+        minmax(0,1.7fr);
 
-    gap:16px;
+    min-height:550px;
 
-    direction:ltr;
-}
+    background:var(--paper);
 
-
-/* =========================================================
-   FEATURED HERO
-   ========================================================= */
-
-.featured{
-    min-height:430px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:var(--radius);
-
-    background:var(--paper-alt);
-
-    direction:rtl;
-}
-
-
-/* HERO IMAGE SLOT */
-
-.featured-image{
-    position:absolute;
-
-    inset:0;
-
-    border:0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(247,236,219,.98) 0%,
-            rgba(247,236,219,.92) 35%,
-            rgba(247,236,219,.48) 53%,
-            rgba(247,236,219,.05) 75%
-        ),
-        linear-gradient(
-            135deg,
-            #d8d2c9,
-            #eee7dc
-        );
-}
-
-.featured-image .image-slot-label{
-    top:16px;
-    left:16px;
-    bottom:auto;
-}
-
-
-/* decorative shapes */
-
-.hero-shape{
-    position:absolute;
-
-    border-radius:50%;
-
-    pointer-events:none;
-}
-
-.hero-shape.one{
-    width:280px;
-    height:280px;
-
-    background:var(--orange);
-
-    top:-170px;
-    left:180px;
-
-    opacity:.85;
-}
-
-.hero-shape.two{
-    width:200px;
-    height:200px;
-
-    background:var(--petrol);
-
-    top:-115px;
-    left:360px;
-
-    opacity:.93;
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
 }
 
 
 /* HERO CONTENT */
 
-.featured-content{
+.hero-copy{
+    padding:55px 45px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
     position:relative;
-
-    z-index:4;
-
-    width:57%;
-
-    padding:62px 48px;
 }
 
-.content-type{
-    display:inline-block;
+.hero-number{
+    position:absolute;
 
-    background:var(--orange);
+    top:18px;
+    left:22px;
 
-    color:white;
+    direction:ltr;
 
-    border-radius:3px;
+    font-family:"Playfair Display",serif;
+    font-size:12px;
 
-    padding:4px 12px;
+    color:#8a8d87;
+}
+
+.hero-kicker{
+    color:var(--wine);
 
     font-size:11px;
+    font-weight:700;
+
+    margin-bottom:17px;
+}
+
+.hero-title{
+    font-size:51px;
+    line-height:1.35;
+
+    font-weight:800;
+
+    letter-spacing:-1.5px;
+
+    margin-bottom:13px;
+}
+
+.hero-subtitle{
+    font-size:20px;
     font-weight:600;
 
     margin-bottom:17px;
 }
 
-.featured-title{
-    font-size:47px;
+.hero-excerpt{
+    max-width:480px;
 
-    line-height:1.42;
+    font-size:13px;
+    color:var(--muted);
 
-    letter-spacing:-1px;
-
-    font-weight:800;
-
-    margin-bottom:6px;
-}
-
-.featured-subtitle{
-    font-size:21px;
-
-    font-weight:600;
-
-    margin-bottom:13px;
-}
-
-.featured-excerpt{
-    max-width:540px;
-
-    color:#40504d;
-
-    font-size:15px;
-
-    line-height:2;
+    line-height:2.1;
 
     margin-bottom:26px;
 }
 
-.button-primary{
+.read-link{
     display:inline-flex;
-
     align-items:center;
 
-    gap:12px;
-
-    background:var(--orange);
-
-    color:white;
-
-    padding:9px 22px;
-
-    border-radius:25px;
-
-    font-size:13px;
-    font-weight:600;
-
-    transition:.2s;
-}
-
-.button-primary:hover{
-    background:var(--petrol);
-}
-
-.hero-dots{
-    position:absolute;
-
-    z-index:5;
-
-    right:45px;
-    bottom:20px;
-
-    display:flex;
-
-    gap:8px;
-}
-
-.hero-dot{
-    width:8px;
-    height:8px;
-
-    border-radius:50%;
-
-    background:rgba(8,63,64,.3);
-}
-
-.hero-dot.active{
-    background:var(--orange);
-}
-
-
-/* =========================================================
-   HERO — LATEST ARTICLES
-   ========================================================= */
-
-.latest-panel{
-    background:var(--paper);
-
-    border:1px solid var(--border);
-
-    border-radius:var(--radius);
-
-    padding:17px;
-
-    direction:rtl;
-}
-
-.panel-heading{
-    font-size:20px;
-
-    font-weight:800;
-
-    padding-bottom:7px;
-}
-
-.latest-item{
-    display:grid;
-
-    grid-template-columns:118px 1fr;
-
-    gap:14px;
-
-    align-items:center;
-
-    padding:13px 0;
-
-    border-bottom:1px solid var(--border);
-}
-
-.latest-item:last-child{
-    border-bottom:0;
-}
-
-.latest-thumb{
-    width:118px;
-    height:88px;
-}
-
-.latest-info{
-    min-width:0;
-}
-
-.category-label{
-    display:inline-block;
-
-    background:var(--petrol);
-
-    color:white;
-
-    padding:1px 8px;
-
-    border-radius:2px;
-
-    font-size:9px;
-
-    margin-bottom:5px;
-}
-
-.latest-title{
-    font-size:14px;
-
-    line-height:1.7;
-
-    font-weight:700;
-}
-
-.date{
-    display:block;
-
-    margin-top:4px;
-
-    color:#8b8d89;
-
-    font-size:9px;
-}
-
-
-/* =========================================================
-   LATEST MAGAZINE
-   ========================================================= */
-
-.magazine-panel{
-    position:relative;
-
-    overflow:hidden;
-
-    background:var(--petrol);
-
-    color:white;
-
-    padding:25px 26px;
-
-    border-radius:var(--radius);
-
-    direction:rtl;
-}
-
-.magazine-panel::before{
-    content:"";
-
-    position:absolute;
-
-    width:230px;
-    height:230px;
-
-    border-radius:50%;
-
-    top:-140px;
-    left:-100px;
-
-    background:#195d5a;
-
-    opacity:.7;
-}
-
-.magazine-heading{
-    position:relative;
-
-    z-index:2;
-
-    font-size:17px;
-
-    margin-bottom:16px;
-}
-
-
-/* COVER SLOT */
-
-.magazine-cover{
-    position:relative;
-
-    z-index:2;
-
-    width:70%;
-
-    max-width:190px;
-
-    aspect-ratio:0.72;
-
-    margin:0 auto 17px;
-
-    background:#f0e8dc;
-
-    border:0;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.18);
-
-    color:#6d716c;
-}
-
-.magazine-cover .image-slot-label{
-    left:50%;
-    bottom:10px;
-
-    transform:translateX(-50%);
-
-    white-space:nowrap;
-}
-
-.magazine-title{
-    position:relative;
-
-    z-index:2;
-
-    text-align:center;
-
-    font-size:20px;
-    font-weight:700;
-
-    margin-bottom:4px;
-}
-
-.magazine-description{
-    position:relative;
-
-    z-index:2;
-
-    text-align:center;
-
-    font-size:11px;
-
-    color:#d4e1de;
-
-    margin-bottom:14px;
-}
-
-.magazine-button{
-    position:relative;
-
-    z-index:2;
-
-    display:block;
+    gap:15px;
 
     width:max-content;
 
-    margin:auto;
-
-    padding:6px 20px;
-
-    background:white;
-
-    color:var(--petrol);
-
-    border-radius:3px;
-
-    font-size:11px;
-    font-weight:600;
-}
-
-
-/* =========================================================
-   CATEGORY STRIP
-   ========================================================= */
-
-.category-strip{
-    margin-top:17px;
-
-    display:grid;
-
-    grid-template-columns:repeat(6,1fr);
-
-    background:var(--paper);
-
-    border:1px solid var(--border);
-
-    direction:rtl;
-}
-
-.category-box{
-    min-height:86px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-    padding:12px 17px;
-
-    border-left:1px solid var(--border);
-
-    transition:.2s;
-}
-
-.category-box:last-child{
-    border-left:0;
-}
-
-.category-box:hover{
-    background:var(--paper-alt);
-}
-
-.category-image{
-    width:66px;
-    height:57px;
-
-    flex:0 0 66px;
-}
-
-.category-name{
-    font-size:14px;
-
-    font-weight:700;
-}
-
-.category-arrow{
-    margin-right:auto;
-
-    color:#77807c;
-
-    font-size:20px;
-}
-
-
-/* =========================================================
-   LOWER CONTENT GRID
-   ========================================================= */
-
-.home-content{
-    margin-top:22px;
-
-    display:grid;
-
-    grid-template-columns:
-        minmax(230px,270px)
-        minmax(0,1fr)
-        minmax(260px,300px);
-
-    gap:20px;
-
-    align-items:start;
-
-    direction:ltr;
-}
-
-
-/* =========================================================
-   NEWSLETTER
-   ========================================================= */
-
-.newsletter{
-    min-height:326px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    padding:43px 28px;
-
-    background:var(--petrol);
-
-    color:white;
-
-    border-radius:var(--radius);
-
-    direction:rtl;
-}
-
-.newsletter::before{
-    content:"";
-
-    position:absolute;
-
-    width:180px;
-    height:180px;
-
-    border:1px solid rgba(232,120,72,.4);
-
-    border-radius:50%;
-
-    bottom:-100px;
-    left:-90px;
-}
-
-.newsletter-title{
-    position:relative;
-
-    z-index:2;
-
-    font-size:23px;
-
-    margin-bottom:10px;
-}
-
-.newsletter-text{
-    position:relative;
-
-    z-index:2;
-
-    color:#d5e1dd;
+    color:var(--wine);
 
     font-size:12px;
-
-    line-height:2;
-
-    margin-bottom:20px;
-}
-
-.newsletter-form{
-    position:relative;
-
-    z-index:2;
-}
-
-.newsletter-input{
-    width:100%;
-    height:43px;
-
-    border:0;
-    outline:0;
-
-    padding:0 13px;
-
-    background:white;
-
-    border-radius:3px;
-
-    margin-bottom:10px;
-}
-
-.newsletter-button{
-    width:100%;
-    height:43px;
-
-    border:0;
-
-    background:var(--orange);
-
-    color:white;
-
-    border-radius:3px;
-
-    font-weight:600;
-}
-
-
-/* =========================================================
-   ARTICLE SECTION
-   ========================================================= */
-
-.article-section{
-    background:var(--paper);
-
-    border:1px solid var(--border);
-
-    border-radius:var(--radius);
-
-    padding:18px;
-
-    direction:rtl;
-}
-
-.section-header{
-    display:flex;
-
-    justify-content:space-between;
-    align-items:center;
-
-    border-bottom:1px solid var(--border);
-
-    margin-bottom:18px;
-}
-
-.section-title{
-    position:relative;
-
-    padding-bottom:8px;
-
-    font-size:23px;
-}
-
-.section-title::after{
-    content:"";
-
-    position:absolute;
-
-    bottom:-1px;
-    right:0;
-
-    width:38px;
-    height:3px;
-
-    background:var(--orange);
-}
-
-.section-link{
-    color:var(--orange);
-
-    font-size:11px;
-
-    font-weight:600;
-}
-
-.article-grid{
-    display:grid;
-
-    grid-template-columns:repeat(3,minmax(0,1fr));
-
-    gap:15px;
-}
-
-.article-card{
-    overflow:hidden;
-
-    background:white;
-
-    border:1px solid var(--border);
-
-    transition:.2s;
-}
-
-.article-card:hover{
-    transform:translateY(-3px);
-
-    box-shadow:0 7px 20px rgba(8,63,64,.07);
-}
-
-.article-image-wrap{
-    position:relative;
-}
-
-.article-image{
-    width:100%;
-
-    aspect-ratio:1.6;
-}
-
-.article-category{
-    position:absolute;
-
-    right:0;
-    bottom:0;
-
-    padding:3px 10px;
-
-    background:var(--orange);
-
-    color:white;
-
-    font-size:9px;
-}
-
-.article-content{
-    padding:13px 14px;
-}
-
-.article-title{
-    font-size:14px;
-
-    line-height:1.8;
-
     font-weight:700;
-
-    margin-bottom:4px;
 }
 
-.article-excerpt{
-    color:var(--muted);
+.read-link::after{
+    content:"←";
 
-    font-size:11px;
+    width:34px;
+    height:34px;
 
-    line-height:1.9;
-
-    min-height:42px;
-}
-
-.article-footer{
-    display:flex;
-
-    justify-content:space-between;
-    align-items:center;
-
-    margin-top:14px;
-
-    font-size:9px;
-
-    color:#92938f;
-}
-
-.read-arrow{
-    color:var(--orange);
-
-    font-size:19px;
-}
-
-
-/* =========================================================
-   POPULAR
-   ========================================================= */
-
-.popular{
-    background:var(--paper);
-
-    border:1px solid var(--border);
-
-    border-radius:var(--radius);
-
-    padding:15px;
-
-    direction:rtl;
-}
-
-.popular-heading{
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    padding-bottom:10px;
-
-    border-bottom:1px solid var(--border);
-
-    font-size:18px;
-}
-
-.popular-icon{
-    color:var(--orange);
-}
-
-.popular-item{
-    display:grid;
-
-    grid-template-columns:29px 1fr 64px;
-
-    gap:9px;
-
-    align-items:center;
-
-    padding:10px 0;
-
-    border-bottom:1px solid #eee9e1;
-}
-
-.popular-item:last-child{
-    border-bottom:0;
-}
-
-.popular-number{
-    width:24px;
-    height:24px;
+    border:1px solid var(--wine);
+    border-radius:50%;
 
     display:grid;
     place-items:center;
 
-    border-radius:50%;
-
-    background:var(--orange-pale);
-
-    color:var(--orange);
-
-    font-size:10px;
-    font-weight:700;
+    transition:.2s;
 }
 
-.popular-title{
-    font-size:10px;
-
-    line-height:1.65;
+.read-link:hover::after{
+    background:var(--wine);
+    color:white;
 }
 
-.popular-date{
-    color:#969792;
+
+/* HERO IMAGE */
+
+.hero-visual{
+    position:relative;
+    min-height:550px;
+}
+
+.hero-image{
+    position:absolute;
+    inset:0;
+}
+
+.hero-image .slot-label{
+    top:15px;
+    left:15px;
+    bottom:auto;
+}
+
+
+/* HERO IMAGE CAPTION */
+
+.hero-caption{
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:270px;
+
+    background:var(--wine);
+    color:white;
+
+    padding:19px 22px;
+
+    z-index:4;
+
+    font-size:11px;
+    line-height:1.8;
+}
+
+.hero-caption small{
+    display:block;
+
+    opacity:.65;
 
     font-size:8px;
-}
 
-.popular-image{
-    width:64px;
-    height:48px;
+    margin-top:4px;
 }
 
 
 /* =========================================================
-   FEATURE STRIP
-   ========================================================= */
+   STORY RAIL
+========================================================= */
 
-.statement{
-    margin-top:25px;
+.story-rail{
+    background:var(--paper);
 
-    min-height:120px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
 
-    background:var(--orange);
+    border-bottom:1px solid var(--line);
+}
 
-    color:white;
+.rail-story{
+    min-height:145px;
+
+    padding:22px;
+
+    border-left:1px solid var(--line);
+
+    display:grid;
+    grid-template-columns:52px 1fr;
+
+    gap:13px;
+
+    align-items:start;
+}
+
+.rail-story:last-child{
+    border-left:0;
+}
+
+.rail-number{
+    font-family:"Playfair Display",serif;
+
+    font-size:36px;
+    line-height:1;
+
+    color:var(--wine-light);
+}
+
+.rail-category{
+    color:var(--wine);
+
+    font-size:9px;
+    font-weight:700;
+}
+
+.rail-title{
+    margin-top:5px;
+
+    font-size:13px;
+    line-height:1.8;
+}
+
+.rail-date{
+    display:block;
+
+    margin-top:7px;
+
+    font-size:8px;
+    color:#94958f;
+}
+
+
+/* =========================================================
+   CATEGORIES
+========================================================= */
+
+.category-section{
+    padding:60px 0 55px;
+}
+
+.category-list{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    border-top:1px solid var(--line);
+}
+
+.category-link{
+    min-height:90px;
 
     display:flex;
+    align-items:center;
 
+    gap:17px;
+
+    border-bottom:1px solid var(--line);
+
+    padding:12px 8px;
+
+    transition:.2s;
+}
+
+.category-link:nth-child(3n+2){
+    padding-right:25px;
+    padding-left:25px;
+
+    border-right:1px solid var(--line);
+    border-left:1px solid var(--line);
+}
+
+.category-index{
+    font-family:"Playfair Display",serif;
+
+    font-size:14px;
+
+    color:var(--wine);
+}
+
+.category-name{
+    font-size:21px;
+    font-weight:700;
+}
+
+.category-description{
+    margin-right:auto;
+
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+.category-arrow{
+    font-size:21px;
+
+    color:var(--wine);
+}
+
+
+/* =========================================================
+   MAGAZINE FEATURE
+========================================================= */
+
+.magazine-feature{
+    background:var(--wine-dark);
+    color:white;
+
+    min-height:400px;
+
+    display:grid;
+    grid-template-columns:1fr 1.3fr;
+
+    margin-bottom:65px;
+}
+
+.magazine-cover-area{
+    position:relative;
+
+    display:flex;
     align-items:center;
     justify-content:center;
 
-    text-align:center;
+    padding:38px;
 
-    padding:30px;
-
-    position:relative;
-
-    overflow:hidden;
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            rgba(255,255,255,.08),
+            transparent 40%
+        );
 }
 
-.statement::before,
-.statement::after{
-    content:"";
+.magazine-cover{
+    width:215px;
 
-    position:absolute;
+    aspect-ratio:.71;
 
-    width:220px;
-    height:220px;
+    box-shadow:18px 18px 0 rgba(0,0,0,.15);
+
+    background:#ded5ca;
+}
+
+.magazine-info{
+    padding:55px 60px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.magazine-label{
+    color:#d8ad6a;
+
+    font-size:10px;
+    font-weight:700;
+
+    margin-bottom:15px;
+}
+
+.magazine-info h2{
+    font-size:37px;
+
+    line-height:1.45;
+
+    margin-bottom:12px;
+}
+
+.magazine-info p{
+    max-width:560px;
+
+    color:#d8cbce;
+
+    font-size:13px;
+    line-height:2;
+
+    margin-bottom:23px;
+}
+
+.magazine-links{
+    display:flex;
+    align-items:center;
+
+    gap:15px;
+}
+
+.magazine-button{
+    background:var(--yellow);
+
+    color:#241a12;
+
+    padding:8px 21px;
+
+    font-size:11px;
+    font-weight:700;
+}
+
+.archive-link{
+    border-bottom:1px solid rgba(255,255,255,.5);
+
+    padding:7px 0;
+
+    font-size:10px;
+}
+
+
+/* =========================================================
+   EDITORIAL ARTICLES
+========================================================= */
+
+.editorial{
+    margin-bottom:65px;
+}
+
+.editorial-grid{
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1.45fr)
+        minmax(220px,.72fr)
+        minmax(220px,.72fr);
+
+    gap:18px;
+}
+
+
+/* BIG STORY */
+
+.big-story{
+    grid-row:span 2;
+
+    background:var(--paper);
+
+    border-bottom:3px solid var(--wine);
+}
+
+.big-story-image{
+    aspect-ratio:1.5;
+}
+
+.big-story-content{
+    padding:23px 25px 26px;
+}
+
+.story-category{
+    color:var(--wine);
+
+    font-size:9px;
+    font-weight:700;
+}
+
+.big-story h3{
+    margin-top:7px;
+
+    font-size:25px;
+    line-height:1.55;
+}
+
+.big-story p{
+    margin-top:8px;
+
+    color:var(--muted);
+
+    font-size:11px;
+    line-height:1.9;
+}
+
+.story-meta{
+    margin-top:17px;
+
+    display:flex;
+    justify-content:space-between;
+
+    color:#969791;
+
+    font-size:8px;
+}
+
+
+/* SMALL STORY */
+
+.small-story{
+    background:var(--paper);
+
+    border-bottom:1px solid var(--line);
+}
+
+.small-story-image{
+    aspect-ratio:1.65;
+}
+
+.small-story-content{
+    padding:15px;
+}
+
+.small-story h3{
+    margin-top:5px;
+
+    font-size:14px;
+    line-height:1.75;
+}
+
+
+/* =========================================================
+   POPULAR + NEWSLETTER
+========================================================= */
+
+.bottom-layout{
+    display:grid;
+
+    grid-template-columns:minmax(0,1.6fr) minmax(300px,.65fr);
+
+    gap:45px;
+
+    margin-bottom:70px;
+}
+
+
+/* POPULAR */
+
+.popular-list{
+    border-top:1px solid var(--ink);
+}
+
+.popular-row{
+    display:grid;
+
+    grid-template-columns:55px 1fr 120px;
+
+    gap:20px;
+
+    align-items:center;
+
+    padding:17px 0;
+
+    border-bottom:1px solid var(--line);
+}
+
+.popular-number{
+    font-family:"Playfair Display",serif;
+
+    font-size:31px;
+
+    color:var(--wine-light);
+}
+
+.popular-category{
+    color:var(--wine);
+
+    font-size:8px;
+    font-weight:700;
+}
+
+.popular-title{
+    margin-top:3px;
+
+    font-size:15px;
+    line-height:1.7;
+}
+
+.popular-thumb{
+    width:120px;
+    height:74px;
+}
+
+
+/* NEWSLETTER */
+
+.newsletter{
+    position:sticky;
+    top:20px;
+
+    background:var(--sage-light);
+
+    padding:39px 32px;
+
+    border-top:6px solid var(--sage);
+}
+
+.newsletter-mark{
+    width:40px;
+    height:40px;
 
     border-radius:50%;
 
-    border:1px solid rgba(255,255,255,.2);
+    background:var(--wine);
+
+    color:white;
+
+    display:grid;
+    place-items:center;
+
+    margin-bottom:25px;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:22px;
 }
 
-.statement::before{
-    right:-100px;
-    top:-100px;
+.newsletter h2{
+    font-size:27px;
+
+    margin-bottom:9px;
 }
 
-.statement::after{
-    left:-110px;
-    bottom:-130px;
+.newsletter p{
+    color:#626b61;
+
+    font-size:11px;
+    line-height:2;
+
+    margin-bottom:23px;
 }
 
-.statement p{
-    position:relative;
+.newsletter input{
+    width:100%;
+    height:45px;
 
-    z-index:2;
+    background:var(--paper);
 
-    font-size:25px;
+    border:1px solid #bdc4b5;
+    outline:0;
+
+    padding:0 13px;
+
+    margin-bottom:9px;
+}
+
+.newsletter button{
+    width:100%;
+    height:45px;
+
+    border:0;
+
+    background:var(--wine);
+    color:white;
 
     font-weight:700;
+
+    font-size:11px;
+}
+
+.newsletter-note{
+    display:block;
+
+    margin-top:10px;
+
+    color:#80867c;
+
+    font-size:8px;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.manifesto{
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+
+    padding:55px 30px;
+
+    margin-bottom:65px;
+
+    text-align:center;
+
+    position:relative;
+}
+
+.manifesto::before{
+    content:"“";
+
+    display:block;
+
+    font-family:Georgia,serif;
+
+    font-size:75px;
+    line-height:.7;
+
+    color:var(--wine-light);
+}
+
+.manifesto p{
+    max-width:850px;
+
+    margin:auto;
+
+    font-size:27px;
+    font-weight:700;
+
+    line-height:1.8;
 }
 
 
 /* =========================================================
    FOOTER
-   ========================================================= */
+========================================================= */
 
-.site-footer{
-    margin-top:45px;
-
-    padding:45px 0;
-
-    background:var(--petrol-dark);
-
+.footer{
+    background:var(--ink);
     color:white;
+
+    padding:55px 0 25px;
 }
 
-.footer-inner{
+.footer-main{
     display:grid;
 
-    grid-template-columns:1fr auto 1fr;
+    grid-template-columns:1.3fr .7fr .7fr;
 
-    align-items:center;
+    gap:70px;
 
-    gap:30px;
+    padding-bottom:45px;
 }
 
-.footer-description{
-    max-width:400px;
+.footer-logo{
+    font-family:"Playfair Display",Georgia,serif;
 
-    color:#bacac5;
-
-    font-size:11px;
-}
-
-.footer-brand{
-    text-align:center;
+    font-size:39px;
 
     direction:ltr;
 
-    font-family:"Playfair Display",Georgia,serif;
-
-    font-size:31px;
+    margin-bottom:15px;
 }
 
-.footer-brand span{
-    color:var(--orange);
+.footer-logo span{
+    color:#c56a7d;
 }
 
-.footer-links{
-    justify-self:end;
+.footer-about{
+    max-width:420px;
+
+    color:#aeb7b2;
+
+    font-size:10px;
+    line-height:2;
+}
+
+.footer-column h3{
+    font-size:11px;
+
+    color:#d6b1b9;
+
+    margin-bottom:13px;
+}
+
+.footer-column a{
+    display:block;
+
+    width:max-content;
+
+    margin-bottom:7px;
+
+    color:#c0c7c3;
+
+    font-size:10px;
+}
+
+.footer-bottom{
+    border-top:1px solid #38413e;
+
+    padding-top:20px;
 
     display:flex;
+    justify-content:space-between;
 
-    gap:20px;
+    color:#818b86;
 
-    color:#c6d3cf;
-
-    font-size:11px;
+    font-size:8px;
 }
 
 
 /* =========================================================
    TABLET
-   ========================================================= */
+========================================================= */
 
-@media(max-width:1150px){
+@media(max-width:1050px){
 
-    .hero-layout{
-        grid-template-columns:minmax(0,1.5fr) minmax(260px,.75fr);
+    .hero{
+        grid-template-columns:.8fr 1.2fr;
     }
 
-    .magazine-panel{
-        grid-column:1 / -1;
+    .hero-title{
+        font-size:40px;
     }
 
-    .magazine-cover{
-        width:150px;
+    .story-rail{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .category-strip{
-        grid-template-columns:repeat(3,1fr);
+    .editorial-grid{
+        grid-template-columns:1.3fr 1fr;
     }
 
-    .category-box:nth-child(3){
+    .big-story{
+        grid-row:span 4;
+    }
+
+    .category-list{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .category-link:nth-child(3n+2){
+        padding:12px 8px;
+        border-right:0;
         border-left:0;
     }
 
-    .home-content{
-        grid-template-columns:240px minmax(0,1fr);
-    }
-
-    .popular{
-        grid-column:1 / -1;
+    .category-link:nth-child(odd){
+        border-left:1px solid var(--line);
     }
 
 }
 
 
 /* =========================================================
-   SMALL TABLET
-   ========================================================= */
+   MOBILE NAV / TABLET
+========================================================= */
 
-@media(max-width:850px){
+@media(max-width:800px){
 
     .container{
-        width:min(calc(100% - 28px),var(--max-width));
+        width:calc(100% - 28px);
     }
 
-    .header-top-inner{
-        min-height:75px;
+    .top-strip{
+        display:none;
+    }
+
+    .header-inner{
+        min-height:78px;
 
         grid-template-columns:1fr auto;
     }
 
-    .header-tools{
+    .header-left{
         display:none;
     }
 
@@ -1443,8 +1277,12 @@ img{
         font-size:38px;
     }
 
-    .brand-tagline{
-        letter-spacing:2px;
+    .brand-subtitle{
+        display:none;
+    }
+
+    .login{
+        display:none;
     }
 
     .main-nav{
@@ -1452,64 +1290,75 @@ img{
     }
 
     .nav-inner{
-        overflow-x:auto;
-
         justify-content:flex-start;
 
+        overflow-x:auto;
+
+        padding:0 15px;
+
         gap:28px;
-
-        padding:0 20px;
     }
 
-    .hero-layout{
-        display:block;
+    .hero{
+        display:flex;
+        flex-direction:column-reverse;
     }
 
-    .featured,
-    .latest-panel,
-    .magazine-panel{
-        margin-bottom:15px;
+    .hero-visual{
+        min-height:390px;
     }
 
-    .featured-content{
-        width:72%;
+    .hero-copy{
+        padding:38px 28px 45px;
     }
 
-    .featured-title{
-        font-size:38px;
+    .hero-title{
+        font-size:37px;
     }
 
-    .latest-item{
-        grid-template-columns:140px 1fr;
+    .hero-number{
+        display:none;
     }
 
-    .latest-thumb{
-        width:140px;
-        height:95px;
+    .hero-caption{
+        width:230px;
     }
 
-    .category-strip{
+    .magazine-feature{
+        grid-template-columns:.75fr 1.25fr;
+    }
+
+    .magazine-info{
+        padding:40px 30px;
+    }
+
+    .magazine-info h2{
+        font-size:29px;
+    }
+
+    .editorial-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .category-box:nth-child(3){
-        border-left:1px solid var(--border);
+    .big-story{
+        grid-column:1 / -1;
+        grid-row:auto;
     }
 
-    .category-box:nth-child(even){
-        border-left:0;
+    .bottom-layout{
+        grid-template-columns:1fr;
     }
 
-    .home-content{
-        display:flex;
-
-        flex-direction:column;
+    .newsletter{
+        position:static;
     }
 
-    .newsletter,
-    .article-section,
-    .popular{
-        width:100%;
+    .footer-main{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-brand-column{
+        grid-column:1 / -1;
     }
 
 }
@@ -1517,113 +1366,141 @@ img{
 
 /* =========================================================
    MOBILE
-   ========================================================= */
+========================================================= */
 
-@media(max-width:600px){
+@media(max-width:560px){
 
     .container{
-        width:calc(100% - 22px);
+        width:calc(100% - 20px);
     }
 
     .brand-name{
-        font-size:30px;
-    }
-
-    .brand-tagline{
-        font-size:5px;
-        letter-spacing:1.5px;
-    }
-
-    .login-link{
-        display:none;
-    }
-
-    .featured{
-        min-height:550px;
-    }
-
-    .featured-image{
-        background:
-            linear-gradient(
-                0deg,
-                rgba(247,236,219,1) 0%,
-                rgba(247,236,219,.96) 47%,
-                rgba(247,236,219,.1) 78%
-            ),
-            linear-gradient(
-                135deg,
-                #d8d2c9,
-                #eee7dc
-            );
-    }
-
-    .featured-content{
-        width:100%;
-
-        padding:250px 23px 45px;
-    }
-
-    .featured-title{
         font-size:31px;
     }
 
-    .featured-subtitle{
-        font-size:17px;
-    }
-
-    .featured-excerpt{
-        font-size:13px;
-    }
-
-    .hero-shape{
+    .edition-inner span:last-child{
         display:none;
     }
 
-    .latest-item{
-        grid-template-columns:100px 1fr;
+    .hero{
+        border-top:0;
     }
 
-    .latest-thumb{
-        width:100px;
-        height:76px;
+    .hero-visual{
+        min-height:300px;
     }
 
-    .category-strip{
+    .hero-caption{
+        width:190px;
+        padding:12px 15px;
+
+        font-size:9px;
+    }
+
+    .hero-copy{
+        padding:31px 20px 38px;
+    }
+
+    .hero-title{
+        font-size:31px;
+    }
+
+    .hero-subtitle{
+        font-size:16px;
+    }
+
+    .story-rail{
         grid-template-columns:1fr;
     }
 
-    .category-box,
-    .category-box:nth-child(3),
-    .category-box:nth-child(even){
+    .rail-story{
+        min-height:auto;
+
         border-left:0;
-
-        border-bottom:1px solid var(--border);
+        border-bottom:1px solid var(--line);
     }
 
-    .article-grid{
+    .category-section{
+        padding:40px 0;
+    }
+
+    .category-list{
         grid-template-columns:1fr;
     }
 
-    .article-image{
-        aspect-ratio:1.7;
+    .category-link:nth-child(odd){
+        border-left:0;
     }
 
-    .statement p{
-        font-size:19px;
+    .category-description{
+        display:none;
     }
 
-    .footer-inner{
+    .magazine-feature{
+        display:block;
+    }
+
+    .magazine-cover-area{
+        padding:35px;
+    }
+
+    .magazine-cover{
+        width:175px;
+    }
+
+    .magazine-info{
+        padding:35px 25px;
+    }
+
+    .magazine-info h2{
+        font-size:27px;
+    }
+
+    .editorial-grid{
+        grid-template-columns:1fr;
+    }
+
+    .big-story{
+        grid-column:auto;
+    }
+
+    .section-top h2{
+        font-size:24px;
+    }
+
+    .popular-row{
+        grid-template-columns:35px 1fr 80px;
+
+        gap:10px;
+    }
+
+    .popular-thumb{
+        width:80px;
+        height:60px;
+    }
+
+    .manifesto{
+        padding:40px 18px;
+    }
+
+    .manifesto p{
+        font-size:20px;
+    }
+
+    .footer-main{
         grid-template-columns:1fr;
 
-        text-align:center;
+        gap:30px;
     }
 
-    .footer-description{
-        margin:auto;
+    .footer-brand-column{
+        grid-column:auto;
     }
 
-    .footer-links{
-        justify-self:center;
+    .footer-bottom{
+        flex-direction:column;
+
+        gap:8px;
     }
 
 }
@@ -1636,52 +1513,68 @@ img{
 
 
 <!-- ======================================================
+     TOP STRIP
+======================================================= -->
+
+<div class="top-strip">
+
+    <div class="container top-strip-inner">
+
+        <span>
+            مجله مستقل جنسیت، جامعه و برابری
+        </span>
+
+        <div class="top-strip-links">
+            <a href="#">همکاری با ما</a>
+            <a href="#">خبرنامه</a>
+            <a href="#">FA / EN</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================================================
      HEADER
 ======================================================= -->
 
 <header class="site-header">
 
-    <div class="header-top">
+    <div class="header-main">
 
-        <div class="container header-top-inner">
+        <div class="container header-inner">
 
 
-            <!-- SEARCH / SOCIAL -->
+            <div class="header-left">
 
-            <div class="header-tools">
-
-                <div class="search">
-
-                    <button class="search-button"
-                            type="button"
-                            aria-label="جستجو">
-                        ⌕
-                    </button>
+                <div class="header-search">
 
                     <input
                         type="search"
-                        placeholder="جستجو در مجله..."
+                        placeholder="جستجو..."
                     >
+
+                    <button
+                        type="button"
+                        aria-label="جستجو"
+                    >
+                        ⌕
+                    </button>
 
                 </div>
 
 
-                <div class="social-links">
-
-                    <a href="#" aria-label="Instagram">◎</a>
-
-                    <a href="#" aria-label="Telegram">✦</a>
-
-                    <a href="#" aria-label="YouTube">▶</a>
-
-                    <a href="#" aria-label="X">𝕏</a>
-
+                <div class="socials">
+                    <a href="#">IG</a>
+                    <a href="#">TG</a>
+                    <a href="#">X</a>
                 </div>
 
             </div>
 
 
-            <!-- LOGO -->
 
             <a href="/" class="brand">
 
@@ -1689,29 +1582,28 @@ img{
                     Gender<span>Lab</span>
                 </div>
 
-                <small class="brand-tagline">
-                    MAGAZINE FOR A MORE EQUAL WORLD
+                <small class="brand-subtitle">
+                    JOURNAL OF GENDER · CULTURE · SOCIETY
                 </small>
 
             </a>
 
 
-            <!-- ACCOUNT -->
 
-            <div class="header-account">
+            <div class="header-right">
 
-                <a href="#" class="login-link">
+                <a href="#" class="login">
                     ورود / ثبت‌نام
                 </a>
 
-                <button class="menu-button"
-                        type="button"
-                        aria-label="باز کردن منو">
-
+                <button
+                    class="menu-toggle"
+                    type="button"
+                    aria-label="منو"
+                >
                     <span></span>
                     <span></span>
                     <span></span>
-
                 </button>
 
             </div>
@@ -1721,39 +1613,30 @@ img{
     </div>
 
 
-    <!-- MAIN NAVIGATION -->
 
     <nav class="main-nav">
 
         <div class="container nav-inner">
 
-            <a href="#" class="active">
-                خانه
-            </a>
+            <a href="#" class="active">خانه</a>
 
-            <a href="#">
-                مقالات
-            </a>
+            <a href="#">مقالات</a>
 
-            <a href="#">
-                موضوعات⌄
-            </a>
+            <a href="#">جنسیت</a>
 
-            <a href="#">
-                فرهنگ و هنر⌄
-            </a>
+            <a href="#">جامعه</a>
 
-            <a href="#">
-                جامعه⌄
-            </a>
+            <a href="#">حقوق</a>
 
-            <a href="#">
-                مصاحبه‌ها⌄
-            </a>
+            <a href="#">فرهنگ و هنر</a>
 
-            <a href="#">
-                درباره ما
-            </a>
+            <a href="#">زندگی</a>
+
+            <a href="#">مصاحبه</a>
+
+            <a href="#">مجله</a>
+
+            <a href="#">درباره ما</a>
 
         </div>
 
@@ -1763,262 +1646,221 @@ img{
 
 
 
+<main class="container">
+
+
 <!-- ======================================================
-     MAIN
+     EDITION BAR
 ======================================================= -->
 
-<main class="container">
+<div class="edition-bar">
+
+    <div class="edition-inner">
+
+        <span class="edition-title">
+            GENDERLAB / امروز
+        </span>
+
+        <span>
+            {{TODAY_DATE}}
+        </span>
+
+    </div>
+
+</div>
+
 
 
 <!-- ======================================================
      HERO
 ======================================================= -->
 
-<section class="hero-layout">
+<section class="hero">
 
 
-    <!-- FEATURED CONTENT -->
+    <div class="hero-copy">
 
-    <article class="featured">
-
-
-        <!--
-        ==================================================
-        HERO IMAGE SLOT
-
-        Replace this div later with:
-
-        <img
-            class="featured-image"
-            src="YOUR-IMAGE.jpg"
-            alt=""
-        >
-
-        Recommended image:
-        1600 × 900
-        ==================================================
-        -->
-
-        <div class="image-slot featured-image">
-
-            <span class="image-slot-label">
-                HERO IMAGE · 1600 × 900
-            </span>
-
-        </div>
+        <span class="hero-number">
+            01 / FEATURE
+        </span>
 
 
-        <div class="hero-shape one"></div>
-        <div class="hero-shape two"></div>
+        <span class="hero-kicker">
+            {{FEATURE_CATEGORY}}
+        </span>
 
 
-        <div class="featured-content">
-
-            <span class="content-type">
-                {{FEATURE_LABEL}}
-            </span>
-
-            <h1 class="featured-title">
-                {{FEATURE_TITLE}}
-            </h1>
-
-            <h2 class="featured-subtitle">
-                {{FEATURE_SUBTITLE}}
-            </h2>
-
-            <p class="featured-excerpt">
-                {{FEATURE_EXCERPT}}
-            </p>
-
-            <a
-                href="{{FEATURE_URL}}"
-                class="button-primary"
-            >
-                مطالعه مطلب
-                <span>←</span>
-            </a>
-
-        </div>
+        <h1 class="hero-title">
+            {{FEATURE_TITLE}}
+        </h1>
 
 
-        <div class="hero-dots">
-
-            <span class="hero-dot active"></span>
-
-            <span class="hero-dot"></span>
-
-            <span class="hero-dot"></span>
-
-        </div>
-
-    </article>
-
-
-
-    <!-- ==================================================
-         LATEST ARTICLES
-    =================================================== -->
-
-    <aside class="latest-panel">
-
-        <h2 class="panel-heading">
-            آخرین مقالات
+        <h2 class="hero-subtitle">
+            {{FEATURE_SUBTITLE}}
         </h2>
 
 
-        <!-- ARTICLE 1 -->
-
-        <a
-            href="{{ARTICLE_1_URL}}"
-            class="latest-item"
-        >
-
-            <div class="image-slot latest-thumb">
-
-                <span class="image-slot-label">
-                    600 × 400
-                </span>
-
-            </div>
-
-
-            <div class="latest-info">
-
-                <span class="category-label">
-                    {{ARTICLE_1_CATEGORY}}
-                </span>
-
-                <h3 class="latest-title">
-                    {{ARTICLE_1_TITLE}}
-                </h3>
-
-                <time class="date">
-                    {{ARTICLE_1_DATE}}
-                </time>
-
-            </div>
-
-        </a>
-
-
-
-        <!-- ARTICLE 2 -->
-
-        <a
-            href="{{ARTICLE_2_URL}}"
-            class="latest-item"
-        >
-
-            <div class="image-slot latest-thumb">
-
-                <span class="image-slot-label">
-                    600 × 400
-                </span>
-
-            </div>
-
-
-            <div class="latest-info">
-
-                <span class="category-label">
-                    {{ARTICLE_2_CATEGORY}}
-                </span>
-
-                <h3 class="latest-title">
-                    {{ARTICLE_2_TITLE}}
-                </h3>
-
-                <time class="date">
-                    {{ARTICLE_2_DATE}}
-                </time>
-
-            </div>
-
-        </a>
-
-
-
-        <!-- ARTICLE 3 -->
-
-        <a
-            href="{{ARTICLE_3_URL}}"
-            class="latest-item"
-        >
-
-            <div class="image-slot latest-thumb">
-
-                <span class="image-slot-label">
-                    600 × 400
-                </span>
-
-            </div>
-
-
-            <div class="latest-info">
-
-                <span class="category-label">
-                    {{ARTICLE_3_CATEGORY}}
-                </span>
-
-                <h3 class="latest-title">
-                    {{ARTICLE_3_TITLE}}
-                </h3>
-
-                <time class="date">
-                    {{ARTICLE_3_DATE}}
-                </time>
-
-            </div>
-
-        </a>
-
-    </aside>
-
-
-
-    <!-- ==================================================
-         LATEST MAGAZINE
-    =================================================== -->
-
-    <aside class="magazine-panel">
-
-        <h2 class="magazine-heading">
-            آخرین شماره مجله
-        </h2>
-
-
-        <!--
-        MAGAZINE COVER
-        Recommended ratio: A4 / portrait
-        -->
-
-        <div class="image-slot magazine-cover">
-
-            <span class="image-slot-label">
-                MAGAZINE COVER
-            </span>
-
-        </div>
-
-
-        <h3 class="magazine-title">
-            {{MAGAZINE_TITLE}}
-        </h3>
-
-
-        <p class="magazine-description">
-            {{MAGAZINE_DESCRIPTION}}
+        <p class="hero-excerpt">
+            {{FEATURE_EXCERPT}}
         </p>
 
 
         <a
-            href="{{MAGAZINE_URL}}"
-            class="magazine-button"
+            href="{{FEATURE_URL}}"
+            class="read-link"
         >
-            مشاهده و دانلود
+            ادامه مطلب
         </a>
 
-    </aside>
+    </div>
+
+
+
+    <div class="hero-visual">
+
+
+        <!--
+        HERO IMAGE
+
+        Replace this div with:
+
+        <img
+            class="hero-image"
+            src="..."
+            alt="..."
+        >
+
+        Recommended:
+        1600 × 1000
+        -->
+
+
+        <div class="image-slot hero-image">
+
+            <span class="slot-label">
+                HERO IMAGE · 1600 × 1000
+            </span>
+
+        </div>
+
+
+        <div class="hero-caption">
+
+            {{FEATURE_IMAGE_CAPTION}}
+
+            <small>
+                {{FEATURE_IMAGE_CREDIT}}
+            </small>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     STORY RAIL
+======================================================= -->
+
+<section class="story-rail">
+
+
+    <a href="{{RAIL_1_URL}}" class="rail-story">
+
+        <span class="rail-number">01</span>
+
+        <div>
+
+            <span class="rail-category">
+                {{RAIL_1_CATEGORY}}
+            </span>
+
+            <h3 class="rail-title">
+                {{RAIL_1_TITLE}}
+            </h3>
+
+            <time class="rail-date">
+                {{RAIL_1_DATE}}
+            </time>
+
+        </div>
+
+    </a>
+
+
+
+    <a href="{{RAIL_2_URL}}" class="rail-story">
+
+        <span class="rail-number">02</span>
+
+        <div>
+
+            <span class="rail-category">
+                {{RAIL_2_CATEGORY}}
+            </span>
+
+            <h3 class="rail-title">
+                {{RAIL_2_TITLE}}
+            </h3>
+
+            <time class="rail-date">
+                {{RAIL_2_DATE}}
+            </time>
+
+        </div>
+
+    </a>
+
+
+
+    <a href="{{RAIL_3_URL}}" class="rail-story">
+
+        <span class="rail-number">03</span>
+
+        <div>
+
+            <span class="rail-category">
+                {{RAIL_3_CATEGORY}}
+            </span>
+
+            <h3 class="rail-title">
+                {{RAIL_3_TITLE}}
+            </h3>
+
+            <time class="rail-date">
+                {{RAIL_3_DATE}}
+            </time>
+
+        </div>
+
+    </a>
+
+
+
+    <a href="{{RAIL_4_URL}}" class="rail-story">
+
+        <span class="rail-number">04</span>
+
+        <div>
+
+            <span class="rail-category">
+                {{RAIL_4_CATEGORY}}
+            </span>
+
+            <h3 class="rail-title">
+                {{RAIL_4_TITLE}}
+            </h3>
+
+            <time class="rail-date">
+                {{RAIL_4_DATE}}
+            </time>
+
+        </div>
+
+    </a>
 
 
 </section>
@@ -2029,168 +1871,213 @@ img{
      CATEGORIES
 ======================================================= -->
 
-<section class="category-strip">
+<section class="category-section">
 
 
-    <!-- CATEGORY 1 -->
+    <div class="section-top">
 
-    <a
-        href="{{CATEGORY_1_URL}}"
-        class="category-box"
-    >
+        <div>
 
-        <div class="image-slot category-image">
+            <span class="eyebrow">
+                EXPLORE
+            </span>
 
-            <span class="image-slot-label">
-                IMG
+            <h2>
+                موضوعات
+            </h2>
+
+        </div>
+
+        <a href="{{ALL_CATEGORIES_URL}}">
+            مشاهده همه
+        </a>
+
+    </div>
+
+
+
+    <div class="category-list">
+
+
+        <a href="{{CATEGORY_1_URL}}" class="category-link">
+
+            <span class="category-index">01</span>
+
+            <strong class="category-name">
+                جنسیت
+            </strong>
+
+            <span class="category-description">
+                هویت، برابری، بدن
+            </span>
+
+            <span class="category-arrow">←</span>
+
+        </a>
+
+
+
+        <a href="{{CATEGORY_2_URL}}" class="category-link">
+
+            <span class="category-index">02</span>
+
+            <strong class="category-name">
+                حقوق
+            </strong>
+
+            <span class="category-description">
+                قانون، سیاست، عدالت
+            </span>
+
+            <span class="category-arrow">←</span>
+
+        </a>
+
+
+
+        <a href="{{CATEGORY_3_URL}}" class="category-link">
+
+            <span class="category-index">03</span>
+
+            <strong class="category-name">
+                جامعه
+            </strong>
+
+            <span class="category-description">
+                روایت و زندگی اجتماعی
+            </span>
+
+            <span class="category-arrow">←</span>
+
+        </a>
+
+
+
+        <a href="{{CATEGORY_4_URL}}" class="category-link">
+
+            <span class="category-index">04</span>
+
+            <strong class="category-name">
+                فرهنگ و هنر
+            </strong>
+
+            <span class="category-description">
+                ادبیات، هنر، رسانه
+            </span>
+
+            <span class="category-arrow">←</span>
+
+        </a>
+
+
+
+        <a href="{{CATEGORY_5_URL}}" class="category-link">
+
+            <span class="category-index">05</span>
+
+            <strong class="category-name">
+                سلامت
+            </strong>
+
+            <span class="category-description">
+                بدن و سلامت روان
+            </span>
+
+            <span class="category-arrow">←</span>
+
+        </a>
+
+
+
+        <a href="{{CATEGORY_6_URL}}" class="category-link">
+
+            <span class="category-index">06</span>
+
+            <strong class="category-name">
+                زندگی
+            </strong>
+
+            <span class="category-description">
+                تجربه، کار، رابطه
+            </span>
+
+            <span class="category-arrow">←</span>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================================
+     MAGAZINE
+======================================================= -->
+
+<section class="magazine-feature">
+
+
+    <div class="magazine-cover-area">
+
+
+        <!--
+        MAGAZINE COVER IMAGE
+
+        Replace with actual cover image.
+        -->
+
+
+        <div class="image-slot magazine-cover">
+
+            <span class="slot-label">
+                MAGAZINE COVER
             </span>
 
         </div>
 
-        <span class="category-name">
-            {{CATEGORY_1}}
+    </div>
+
+
+
+    <div class="magazine-info">
+
+        <span class="magazine-label">
+            آخرین شماره / {{MAGAZINE_ISSUE}}
         </span>
 
-        <span class="category-arrow">
-            ‹
-        </span>
 
-    </a>
-
+        <h2>
+            {{MAGAZINE_TITLE}}
+        </h2>
 
 
-    <!-- CATEGORY 2 -->
+        <p>
+            {{MAGAZINE_DESCRIPTION}}
+        </p>
 
-    <a
-        href="{{CATEGORY_2_URL}}"
-        class="category-box"
-    >
 
-        <div class="image-slot category-image">
+        <div class="magazine-links">
 
-            <span class="image-slot-label">
-                IMG
-            </span>
+            <a
+                href="{{MAGAZINE_URL}}"
+                class="magazine-button"
+            >
+                مشاهده شماره
+            </a>
+
+
+            <a
+                href="{{MAGAZINE_ARCHIVE_URL}}"
+                class="archive-link"
+            >
+                آرشیو مجله ←
+            </a>
 
         </div>
 
-        <span class="category-name">
-            {{CATEGORY_2}}
-        </span>
-
-        <span class="category-arrow">
-            ‹
-        </span>
-
-    </a>
-
-
-
-    <!-- CATEGORY 3 -->
-
-    <a
-        href="{{CATEGORY_3_URL}}"
-        class="category-box"
-    >
-
-        <div class="image-slot category-image">
-
-            <span class="image-slot-label">
-                IMG
-            </span>
-
-        </div>
-
-        <span class="category-name">
-            {{CATEGORY_3}}
-        </span>
-
-        <span class="category-arrow">
-            ‹
-        </span>
-
-    </a>
-
-
-
-    <!-- CATEGORY 4 -->
-
-    <a
-        href="{{CATEGORY_4_URL}}"
-        class="category-box"
-    >
-
-        <div class="image-slot category-image">
-
-            <span class="image-slot-label">
-                IMG
-            </span>
-
-        </div>
-
-        <span class="category-name">
-            {{CATEGORY_4}}
-        </span>
-
-        <span class="category-arrow">
-            ‹
-        </span>
-
-    </a>
-
-
-
-    <!-- CATEGORY 5 -->
-
-    <a
-        href="{{CATEGORY_5_URL}}"
-        class="category-box"
-    >
-
-        <div class="image-slot category-image">
-
-            <span class="image-slot-label">
-                IMG
-            </span>
-
-        </div>
-
-        <span class="category-name">
-            {{CATEGORY_5}}
-        </span>
-
-        <span class="category-arrow">
-            ‹
-        </span>
-
-    </a>
-
-
-
-    <!-- CATEGORY 6 -->
-
-    <a
-        href="{{CATEGORY_6_URL}}"
-        class="category-box"
-    >
-
-        <div class="image-slot category-image">
-
-            <span class="image-slot-label">
-                IMG
-            </span>
-
-        </div>
-
-        <span class="category-name">
-            {{CATEGORY_6}}
-        </span>
-
-        <span class="category-arrow">
-            ‹
-        </span>
-
-    </a>
+    </div>
 
 
 </section>
@@ -2198,132 +2085,84 @@ img{
 
 
 <!-- ======================================================
-     LOWER CONTENT
+     LATEST EDITORIAL
 ======================================================= -->
 
-<section class="home-content">
+<section class="editorial">
 
 
-<!-- ======================================================
-     NEWSLETTER
-======================================================= -->
+    <div class="section-top">
 
-<aside class="newsletter">
+        <div>
 
-    <h2 class="newsletter-title">
-        در خبر بمانید
-    </h2>
+            <span class="eyebrow">
+                NEW STORIES
+            </span>
 
-    <p class="newsletter-text">
-        جدیدترین مقالات، ویژه‌نامه‌ها و خبرهای مهم
-        GenderLab را در ایمیل خود دریافت کنید.
-    </p>
+            <h2>
+                تازه در GenderLab
+            </h2>
 
-
-    <form class="newsletter-form">
-
-        <input
-            type="email"
-            class="newsletter-input"
-            placeholder="ایمیل شما..."
-        >
-
-        <button
-            type="submit"
-            class="newsletter-button"
-        >
-            عضویت
-        </button>
-
-    </form>
-
-</aside>
+        </div>
 
 
-
-<!-- ======================================================
-     LATEST ARTICLE CARDS
-======================================================= -->
-
-<section class="article-section">
-
-
-    <header class="section-header">
-
-        <h2 class="section-title">
-            جدیدترین مقالات
-        </h2>
-
-        <a
-            href="{{ALL_ARTICLES_URL}}"
-            class="section-link"
-        >
-            مشاهده همه ←
+        <a href="{{ALL_ARTICLES_URL}}">
+            همه مقالات ←
         </a>
 
-    </header>
+    </div>
 
 
 
-    <div class="article-grid">
+    <div class="editorial-grid">
 
 
-        <!-- ===============================================
-             ARTICLE CARD 1
-        ================================================ -->
+        <!-- BIG STORY -->
 
-        <article class="article-card">
-
-            <div class="article-image-wrap">
-
-                <a href="{{CARD_1_URL}}">
-
-                    <div class="image-slot article-image">
-
-                        <span class="image-slot-label">
-                            ARTICLE IMAGE · 800 × 500
-                        </span>
-
-                    </div>
-
-                </a>
+        <article class="big-story">
 
 
-                <span class="article-category">
-                    {{CARD_1_CATEGORY}}
+            <a href="{{ARTICLE_1_URL}}">
+
+                <div class="image-slot big-story-image">
+
+                    <span class="slot-label">
+                        FEATURED ARTICLE · 1200 × 800
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <div class="big-story-content">
+
+                <span class="story-category">
+                    {{ARTICLE_1_CATEGORY}}
                 </span>
 
-            </div>
 
-
-            <div class="article-content">
-
-                <h3 class="article-title">
-
-                    <a href="{{CARD_1_URL}}">
-                        {{CARD_1_TITLE}}
+                <h3>
+                    <a href="{{ARTICLE_1_URL}}">
+                        {{ARTICLE_1_TITLE}}
                     </a>
-
                 </h3>
 
 
-                <p class="article-excerpt">
-                    {{CARD_1_EXCERPT}}
+                <p>
+                    {{ARTICLE_1_EXCERPT}}
                 </p>
 
 
-                <div class="article-footer">
+                <div class="story-meta">
 
                     <time>
-                        {{CARD_1_DATE}}
+                        {{ARTICLE_1_DATE}}
                     </time>
 
-                    <a
-                        href="{{CARD_1_URL}}"
-                        class="read-arrow"
-                    >
-                        ←
-                    </a>
+                    <span>
+                        {{ARTICLE_1_READ_TIME}} دقیقه مطالعه
+                    </span>
 
                 </div>
 
@@ -2333,64 +2172,34 @@ img{
 
 
 
-        <!-- ===============================================
-             ARTICLE CARD 2
-        ================================================ -->
+        <!-- ARTICLE 2 -->
 
-        <article class="article-card">
+        <article class="small-story">
 
-            <div class="article-image-wrap">
+            <a href="{{ARTICLE_2_URL}}">
 
-                <a href="{{CARD_2_URL}}">
+                <div class="image-slot small-story-image">
 
-                    <div class="image-slot article-image">
-
-                        <span class="image-slot-label">
-                            ARTICLE IMAGE · 800 × 500
-                        </span>
-
-                    </div>
-
-                </a>
-
-
-                <span class="article-category">
-                    {{CARD_2_CATEGORY}}
-                </span>
-
-            </div>
-
-
-            <div class="article-content">
-
-                <h3 class="article-title">
-
-                    <a href="{{CARD_2_URL}}">
-                        {{CARD_2_TITLE}}
-                    </a>
-
-                </h3>
-
-
-                <p class="article-excerpt">
-                    {{CARD_2_EXCERPT}}
-                </p>
-
-
-                <div class="article-footer">
-
-                    <time>
-                        {{CARD_2_DATE}}
-                    </time>
-
-                    <a
-                        href="{{CARD_2_URL}}"
-                        class="read-arrow"
-                    >
-                        ←
-                    </a>
+                    <span class="slot-label">
+                        800 × 500
+                    </span>
 
                 </div>
+
+            </a>
+
+
+            <div class="small-story-content">
+
+                <span class="story-category">
+                    {{ARTICLE_2_CATEGORY}}
+                </span>
+
+                <h3>
+                    <a href="{{ARTICLE_2_URL}}">
+                        {{ARTICLE_2_TITLE}}
+                    </a>
+                </h3>
 
             </div>
 
@@ -2398,64 +2207,104 @@ img{
 
 
 
-        <!-- ===============================================
-             ARTICLE CARD 3
-        ================================================ -->
+        <!-- ARTICLE 3 -->
 
-        <article class="article-card">
+        <article class="small-story">
 
-            <div class="article-image-wrap">
+            <a href="{{ARTICLE_3_URL}}">
 
-                <a href="{{CARD_3_URL}}">
+                <div class="image-slot small-story-image">
 
-                    <div class="image-slot article-image">
+                    <span class="slot-label">
+                        800 × 500
+                    </span>
 
-                        <span class="image-slot-label">
-                            ARTICLE IMAGE · 800 × 500
-                        </span>
+                </div>
 
-                    </div>
-
-                </a>
+            </a>
 
 
-                <span class="article-category">
-                    {{CARD_3_CATEGORY}}
+            <div class="small-story-content">
+
+                <span class="story-category">
+                    {{ARTICLE_3_CATEGORY}}
                 </span>
+
+                <h3>
+                    <a href="{{ARTICLE_3_URL}}">
+                        {{ARTICLE_3_TITLE}}
+                    </a>
+                </h3>
 
             </div>
 
-
-            <div class="article-content">
-
-                <h3 class="article-title">
-
-                    <a href="{{CARD_3_URL}}">
-                        {{CARD_3_TITLE}}
-                    </a>
-
-                </h3>
+        </article>
 
 
-                <p class="article-excerpt">
-                    {{CARD_3_EXCERPT}}
-                </p>
 
+        <!-- ARTICLE 4 -->
 
-                <div class="article-footer">
+        <article class="small-story">
 
-                    <time>
-                        {{CARD_3_DATE}}
-                    </time>
+            <a href="{{ARTICLE_4_URL}}">
 
-                    <a
-                        href="{{CARD_3_URL}}"
-                        class="read-arrow"
-                    >
-                        ←
-                    </a>
+                <div class="image-slot small-story-image">
+
+                    <span class="slot-label">
+                        800 × 500
+                    </span>
 
                 </div>
+
+            </a>
+
+
+            <div class="small-story-content">
+
+                <span class="story-category">
+                    {{ARTICLE_4_CATEGORY}}
+                </span>
+
+                <h3>
+                    <a href="{{ARTICLE_4_URL}}">
+                        {{ARTICLE_4_TITLE}}
+                    </a>
+                </h3>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ARTICLE 5 -->
+
+        <article class="small-story">
+
+            <a href="{{ARTICLE_5_URL}}">
+
+                <div class="image-slot small-story-image">
+
+                    <span class="slot-label">
+                        800 × 500
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <div class="small-story-content">
+
+                <span class="story-category">
+                    {{ARTICLE_5_CATEGORY}}
+                </span>
+
+                <h3>
+                    <a href="{{ARTICLE_5_URL}}">
+                        {{ARTICLE_5_TITLE}}
+                    </a>
+                </h3>
 
             </div>
 
@@ -2469,209 +2318,215 @@ img{
 
 
 <!-- ======================================================
-     POPULAR ARTICLES
+     POPULAR + NEWSLETTER
 ======================================================= -->
 
-<aside class="popular">
+<section class="bottom-layout">
 
 
-    <h2 class="popular-heading">
+    <!-- POPULAR -->
 
-        <span class="popular-icon">
-            ●
-        </span>
-
-        پربازدیدترین مقالات
-
-    </h2>
+    <div>
 
 
+        <div class="section-top">
 
-    <!-- POPULAR 1 -->
+            <div>
 
-    <a
-        href="{{POPULAR_1_URL}}"
-        class="popular-item"
-    >
+                <span class="eyebrow">
+                    MOST READ
+                </span>
 
-        <span class="popular-number">
-            ۱
-        </span>
+                <h2>
+                    پربازدیدترین‌ها
+                </h2>
 
-
-        <div>
-
-            <h3 class="popular-title">
-                {{POPULAR_1_TITLE}}
-            </h3>
-
-            <time class="popular-date">
-                {{POPULAR_1_DATE}}
-            </time>
+            </div>
 
         </div>
 
 
-        <div class="image-slot popular-image">
 
-            <span class="image-slot-label">
-                IMG
-            </span>
+        <div class="popular-list">
+
+
+            <a href="{{POPULAR_1_URL}}" class="popular-row">
+
+                <span class="popular-number">
+                    01
+                </span>
+
+                <div>
+
+                    <span class="popular-category">
+                        {{POPULAR_1_CATEGORY}}
+                    </span>
+
+                    <h3 class="popular-title">
+                        {{POPULAR_1_TITLE}}
+                    </h3>
+
+                </div>
+
+
+                <div class="image-slot popular-thumb">
+
+                    <span class="slot-label">
+                        IMG
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <a href="{{POPULAR_2_URL}}" class="popular-row">
+
+                <span class="popular-number">
+                    02
+                </span>
+
+                <div>
+
+                    <span class="popular-category">
+                        {{POPULAR_2_CATEGORY}}
+                    </span>
+
+                    <h3 class="popular-title">
+                        {{POPULAR_2_TITLE}}
+                    </h3>
+
+                </div>
+
+
+                <div class="image-slot popular-thumb">
+
+                    <span class="slot-label">
+                        IMG
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <a href="{{POPULAR_3_URL}}" class="popular-row">
+
+                <span class="popular-number">
+                    03
+                </span>
+
+                <div>
+
+                    <span class="popular-category">
+                        {{POPULAR_3_CATEGORY}}
+                    </span>
+
+                    <h3 class="popular-title">
+                        {{POPULAR_3_TITLE}}
+                    </h3>
+
+                </div>
+
+
+                <div class="image-slot popular-thumb">
+
+                    <span class="slot-label">
+                        IMG
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <a href="{{POPULAR_4_URL}}" class="popular-row">
+
+                <span class="popular-number">
+                    04
+                </span>
+
+                <div>
+
+                    <span class="popular-category">
+                        {{POPULAR_4_CATEGORY}}
+                    </span>
+
+                    <h3 class="popular-title">
+                        {{POPULAR_4_TITLE}}
+                    </h3>
+
+                </div>
+
+
+                <div class="image-slot popular-thumb">
+
+                    <span class="slot-label">
+                        IMG
+                    </span>
+
+                </div>
+
+            </a>
+
 
         </div>
 
-    </a>
+    </div>
 
 
 
-    <!-- POPULAR 2 -->
+    <!-- NEWSLETTER -->
 
-    <a
-        href="{{POPULAR_2_URL}}"
-        class="popular-item"
-    >
+    <aside class="newsletter">
 
-        <span class="popular-number">
-            ۲
-        </span>
-
-
-        <div>
-
-            <h3 class="popular-title">
-                {{POPULAR_2_TITLE}}
-            </h3>
-
-            <time class="popular-date">
-                {{POPULAR_2_DATE}}
-            </time>
-
+        <div class="newsletter-mark">
+            G
         </div>
 
 
-        <div class="image-slot popular-image">
-
-            <span class="image-slot-label">
-                IMG
-            </span>
-
-        </div>
-
-    </a>
-
-
-
-    <!-- POPULAR 3 -->
-
-    <a
-        href="{{POPULAR_3_URL}}"
-        class="popular-item"
-    >
-
-        <span class="popular-number">
-            ۳
-        </span>
-
-
-        <div>
-
-            <h3 class="popular-title">
-                {{POPULAR_3_TITLE}}
-            </h3>
-
-            <time class="popular-date">
-                {{POPULAR_3_DATE}}
-            </time>
-
-        </div>
-
-
-        <div class="image-slot popular-image">
-
-            <span class="image-slot-label">
-                IMG
-            </span>
-
-        </div>
-
-    </a>
-
-
-
-    <!-- POPULAR 4 -->
-
-    <a
-        href="{{POPULAR_4_URL}}"
-        class="popular-item"
-    >
-
-        <span class="popular-number">
-            ۴
-        </span>
-
-
-        <div>
-
-            <h3 class="popular-title">
-                {{POPULAR_4_TITLE}}
-            </h3>
-
-            <time class="popular-date">
-                {{POPULAR_4_DATE}}
-            </time>
-
-        </div>
-
-
-        <div class="image-slot popular-image">
-
-            <span class="image-slot-label">
-                IMG
-            </span>
-
-        </div>
-
-    </a>
-
-
-
-    <!-- POPULAR 5 -->
-
-    <a
-        href="{{POPULAR_5_URL}}"
-        class="popular-item"
-    >
-
-        <span class="popular-number">
-            ۵
+        <span class="eyebrow">
+            NEWSLETTER
         </span>
 
 
-        <div>
-
-            <h3 class="popular-title">
-                {{POPULAR_5_TITLE}}
-            </h3>
-
-            <time class="popular-date">
-                {{POPULAR_5_DATE}}
-            </time>
-
-        </div>
+        <h2>
+            هفته را با ما شروع کنید.
+        </h2>
 
 
-        <div class="image-slot popular-image">
-
-            <span class="image-slot-label">
-                IMG
-            </span>
-
-        </div>
-
-    </a>
+        <p>
+            گزیده‌ای از تازه‌ترین مقاله‌ها، روایت‌ها و
+            مطالب GenderLab را مستقیم در ایمیل خود
+            دریافت کنید.
+        </p>
 
 
-</aside>
+        <form class="newsletter-form">
+
+            <input
+                type="email"
+                placeholder="ایمیل شما"
+                aria-label="ایمیل"
+                required
+            >
+
+
+            <button type="submit">
+                عضویت در خبرنامه
+            </button>
+
+        </form>
+
+
+        <small class="newsletter-note">
+            بدون اسپم. هر زمان بخواهید می‌توانید لغو عضویت کنید.
+        </small>
+
+    </aside>
 
 
 </section>
@@ -2679,13 +2534,14 @@ img{
 
 
 <!-- ======================================================
-     STATEMENT
+     MANIFESTO
 ======================================================= -->
 
-<section class="statement">
+<section class="manifesto">
 
     <p>
-        «با هم، جهانی برابرتر می‌سازیم.»
+        GenderLab جایی برای دیدن جهان از زاویه‌هایی است
+        که اغلب از قاب بیرون مانده‌اند.
     </p>
 
 </section>
@@ -2699,35 +2555,72 @@ img{
      FOOTER
 ======================================================= -->
 
-<footer class="site-footer">
+<footer class="footer">
 
-    <div class="container footer-inner">
-
-
-        <p class="footer-description">
-            GenderLab فضایی مستقل برای روایت، تحلیل و گفت‌وگو
-            درباره جنسیت، برابری، جامعه و زندگی است.
-        </p>
+    <div class="container">
 
 
-        <div class="footer-brand">
-            Gender<span>Lab</span>
+        <div class="footer-main">
+
+
+            <div class="footer-brand-column">
+
+                <div class="footer-logo">
+                    Gender<span>Lab</span>
+                </div>
+
+
+                <p class="footer-about">
+                    مجله‌ای مستقل برای روایت، پژوهش و گفت‌وگو
+                    درباره جنسیت، برابری، جامعه، فرهنگ و زندگی.
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>
+                    GenderLab
+                </h3>
+
+                <a href="#">درباره ما</a>
+                <a href="#">تماس با ما</a>
+                <a href="#">همکاری با ما</a>
+                <a href="#">خبرنامه</a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>
+                    دنبال کنید
+                </h3>
+
+                <a href="#">Instagram</a>
+                <a href="#">Telegram</a>
+                <a href="#">X / Twitter</a>
+                <a href="#">YouTube</a>
+
+            </div>
+
+
         </div>
 
 
-        <div class="footer-links">
 
-            <a href="#">
-                درباره ما
-            </a>
+        <div class="footer-bottom">
 
-            <a href="#">
-                تماس
-            </a>
+            <span>
+                © GenderLab — تمامی حقوق محفوظ است.
+            </span>
 
-            <a href="#">
-                همکاری
-            </a>
+            <span>
+                MAGAZINE FOR A MORE EQUAL WORLD
+            </span>
 
         </div>
 
@@ -2742,47 +2635,48 @@ img{
 
 /* =========================================================
    MOBILE MENU
-   ========================================================= */
+========================================================= */
 
-const menuButton = document.querySelector(".menu-button");
-const mainNav = document.querySelector(".main-nav");
+const menuButton = document.querySelector(".menu-toggle");
+const navigation = document.querySelector(".main-nav");
 
-menuButton.addEventListener("click", function(){
+menuButton.addEventListener("click", () => {
 
-    if(window.innerWidth <= 850){
+    if(window.innerWidth <= 800){
 
-        const isHidden =
-            mainNav.style.display === "none";
-
-        mainNav.style.display =
-            isHidden ? "block" : "none";
+        navigation.style.display =
+            navigation.style.display === "none"
+            ? "block"
+            : "none";
 
     }
 
 });
 
 
-window.addEventListener("resize", function(){
+window.addEventListener("resize", () => {
 
-    if(window.innerWidth > 850){
-        mainNav.style.display = "block";
+    if(window.innerWidth > 800){
+        navigation.style.display = "block";
     }
 
 });
 
 
 /* =========================================================
-   NEWSLETTER DEMO
-
-   Replace this later with MailerLite / API action.
-   ========================================================= */
+   NEWSLETTER PLACEHOLDER
+========================================================= */
 
 const newsletterForm =
     document.querySelector(".newsletter-form");
 
-newsletterForm.addEventListener("submit", function(event){
+newsletterForm.addEventListener("submit", event => {
 
     event.preventDefault();
+
+    /*
+       MailerLite/API integration goes here later.
+    */
 
 });
 
