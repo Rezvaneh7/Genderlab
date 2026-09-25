@@ -2013,9 +2013,7 @@ button{
 
 
 
-<!-- ======================================================
-     TOP STRIP
-======================================================= -->
+<!-- TOP STRIP -->
 
 <div class="top-strip">
 
@@ -2024,7 +2022,6 @@ button{
         <span>
             مجله مستقل جنسیت، جامعه و برابری
         </span>
-
 
         <div class="top-strip-links">
 
@@ -2047,39 +2044,41 @@ button{
 </div>
 
 
-
-<!-- ======================================================
-     HEADER
-======================================================= -->
+<!-- HEADER -->
 
 <header class="site-header">
-
 
     <div class="header-main">
 
         <div class="container header-inner">
 
 
-            <!-- LEFT -->
-
             <div class="header-left">
 
 
-                <div class="header-search">
+                <!-- SEARCH NOW LINKS TO /search/ -->
+
+                <form
+                    class="header-search"
+                    action="https://rezvaneh7.github.io/Genderlab/search/"
+                    method="get"
+                >
 
                     <input
                         type="search"
+                        name="q"
                         placeholder="جستجو..."
+                        aria-label="جستجو"
                     >
 
                     <button
-                        type="button"
+                        type="submit"
                         aria-label="جستجو"
                     >
                         ⌕
                     </button>
 
-                </div>
+                </form>
 
 
                 <div class="socials">
@@ -2098,15 +2097,13 @@ button{
 
                 </div>
 
-
             </div>
 
 
-
-            <!-- LOGO -->
+            <!-- LOGO LINKS HOME -->
 
             <a
-                href="{{ '/' | relative_url }}"
+                href="https://rezvaneh7.github.io/Genderlab/"
                 class="brand"
             >
 
@@ -2121,23 +2118,17 @@ button{
             </a>
 
 
-
-            <!-- RIGHT -->
-
             <div class="header-right">
 
-                <a
-                    href="#"
-                    class="login"
-                >
+                <a href="#" class="login">
                     ورود / ثبت‌نام
                 </a>
-
 
                 <button
                     class="menu-toggle"
                     type="button"
                     aria-label="منو"
+                    aria-expanded="false"
                 >
 
                     <span></span>
@@ -2148,63 +2139,40 @@ button{
 
             </div>
 
-
         </div>
 
     </div>
 
 
-
-    <!-- NAV -->
+    <!-- MAIN NAV -->
 
     <nav class="main-nav">
 
         <div class="container nav-inner">
 
-            <a href="{{ '/' | relative_url }}">
+            <a href="https://rezvaneh7.github.io/Genderlab/">
                 خانه
             </a>
 
-            <a href="{{ '/articles.html' | relative_url }}">
+            <a href="https://rezvaneh7.github.io/Genderlab/articles/">
                 مقالات
-            </a>
-
-            <a href="#">
-                جنسیت
-            </a>
-
-            <a href="#">
-                جامعه
-            </a>
-
-            <a href="#">
-                حقوق
-            </a>
-
-            <a href="#">
-                فرهنگ و هنر
-            </a>
-
-            <a href="#">
-                زندگی
             </a>
 
             <a href="#">
                 مصاحبه
             </a>
 
-            <a href="{{ '/archive.html' | relative_url }}">
-                مجله
+            <a href="https://rezvaneh7.github.io/Genderlab/archive/">
+                آرشیو مجلات
             </a>
 
-            <a href="#">
+            <a href="https://rezvaneh7.github.io/Genderlab/about/">
                 درباره ما
             </a>
 
         </div>
 
     </nav>
-
 
 </header>
 
@@ -2229,7 +2197,7 @@ button{
             aria-label="مسیر صفحه"
         >
 
-            <a href="{{ '/' | relative_url }}">
+            <a href="https://rezvaneh7.github.io/Genderlab/">
                 خانه
             </a>
 
@@ -2237,7 +2205,7 @@ button{
                 /
             </span>
 
-            <a href="{{ '/articles.html' | relative_url }}">
+            <a href="https://rezvaneh7.github.io/Genderlab/articles/">
                 مقالات
             </a>
 
@@ -2654,7 +2622,7 @@ button{
 
 
             <a
-                href="{{ '/articles.html' | relative_url }}"
+                href="https://rezvaneh7.github.io/Genderlab/articles/"
                 class="section-link"
             >
                 همه مقالات ←
@@ -2842,7 +2810,7 @@ button{
                     GenderLab
                 </h3>
 
-                <a href="#">
+                <a href="https://rezvaneh7.github.io/Genderlab/about/">
                     درباره ما
                 </a>
 
