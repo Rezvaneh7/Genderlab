@@ -1670,6 +1670,43 @@
     }
 
 
+    /* =====================================================
+       LIVE PREVIEW SYNC
+       While the editor is open, push the draft to the
+       preview tab every second — only when it changed.
+    ====================================================== */
+
+    let glLastPreviewJSON = "";
+
+    setInterval(function () {
+
+      if (!getGenderLabRoute().editing) {
+        return;
+      }
+
+      const data = collectGenderLabPreviewData();
+
+      if (!data) {
+        return;
+      }
+
+      const json = JSON.stringify(data);
+
+      if (json === glLastPreviewJSON) {
+        return;
+      }
+
+      glLastPreviewJSON = json;
+
+      try {
+        localStorage.setItem(GL_PREVIEW_STORAGE_KEY, json);
+      } catch (error) {
+        /* storage full or blocked — preview simply won't update */
+      }
+
+    }, 1000);
+
+
     window.addEventListener("hashchange", updateGenderLabAdmin);
 
     window.addEventListener("load", updateGenderLabAdmin);
