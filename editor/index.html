@@ -1,584 +1,2402 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>GenderLab Editorial</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>GenderLab Editorial</title>
 
-  <style>
-    * { box-sizing: border-box; }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    :root {
-      --petroleum: #172B36;
-      --petroleum-light: #213B49;
-      --red: #A34D45;
-      --red-dark: #8C403A;
-      --cream: #F7F5F0;
-      --paper: #FFFFFF;
-      --border: #E2DFD7;
-      --text: #172B36;
-      --muted: #7B858A;
-      --draft: #B18443;
-      --published: #557364;
+<link
+  href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* =========================================================
+   GENDERLAB — EDITORIAL CMS
+========================================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#f3efe7;
+    --paper:#fbf9f4;
+    --white:#ffffff;
+
+    --ink:#17201e;
+    --muted:#747a75;
+
+    --wine:#6d2638;
+    --wine-dark:#431724;
+    --wine-soft:#eadde0;
+
+    --sage:#8e9b7d;
+    --sage-soft:#dde1d6;
+
+    --yellow:#e0aa3e;
+
+    --line:#d7d2c8;
+
+    --draft:#a9792f;
+    --published:#557364;
+
+    --sidebar:260px;
+}
+
+
+html,
+body{
+
+    margin:0;
+
+    min-height:100%;
+
+    background:var(--bg);
+
+    color:var(--ink);
+
+    font-family:
+        "Vazirmatn",
+        sans-serif;
+
+}
+
+
+button,
+input{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+    right:0;
+    bottom:0;
+
+    z-index:100;
+
+    width:var(--sidebar);
+
+    display:flex;
+    flex-direction:column;
+
+    background:var(--wine-dark);
+
+    color:white;
+
+}
+
+
+/* BRAND */
+
+.brand{
+
+    padding:
+        31px
+        28px
+        27px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.1);
+
+}
+
+
+.brand-name{
+
+    direction:ltr;
+
+    text-align:right;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:28px;
+
+    line-height:1;
+
+    letter-spacing:-1px;
+
+}
+
+
+.brand-name span{
+    color:#d58b99;
+}
+
+
+.brand-sub{
+
+    margin-top:9px;
+
+    direction:ltr;
+
+    text-align:right;
+
+    color:
+        rgba(255,255,255,.38);
+
+    font-size:7px;
+
+    letter-spacing:3px;
+
+}
+
+
+/* NAV */
+
+.sidebar-nav{
+
+    flex:1;
+
+    padding:
+        28px
+        15px;
+
+}
+
+
+.nav-section{
+
+    margin-bottom:30px;
+
+}
+
+
+.nav-title{
+
+    padding:
+        0
+        14px
+        10px;
+
+    color:
+        rgba(255,255,255,.35);
+
+    font-size:8px;
+
+    font-weight:600;
+
+}
+
+
+.nav-item{
+
+    position:relative;
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    margin-bottom:4px;
+
+    padding:
+        11px
+        13px;
+
+    border:0;
+
+    background:transparent;
+
+    color:
+        rgba(255,255,255,.67);
+
+    text-align:right;
+
+    cursor:pointer;
+
+    font-size:11px;
+
+    transition:.18s;
+
+}
+
+
+.nav-item:hover{
+
+    background:
+        rgba(255,255,255,.06);
+
+    color:white;
+
+}
+
+
+.nav-item.active{
+
+    background:
+        rgba(255,255,255,.1);
+
+    color:white;
+
+    font-weight:600;
+
+}
+
+
+.nav-item.active::before{
+
+    content:"";
+
+    position:absolute;
+
+    right:-15px;
+
+    top:0;
+    bottom:0;
+
+    width:3px;
+
+    background:#d58b99;
+
+}
+
+
+.nav-icon{
+
+    width:19px;
+
+    color:
+        rgba(255,255,255,.42);
+
+    text-align:center;
+
+    font-size:10px;
+
+}
+
+
+.nav-item.active .nav-icon{
+    color:#e6b0ba;
+}
+
+
+/* NEW CONTENT */
+
+.sidebar-create{
+
+    margin:
+        0
+        15px
+        20px;
+
+    padding:
+        14px
+        15px;
+
+    background:var(--wine);
+
+    border:0;
+
+    color:white;
+
+    cursor:pointer;
+
+    text-align:center;
+
+    font-size:10px;
+
+    font-weight:700;
+
+}
+
+
+.sidebar-create:hover{
+    background:#7d3044;
+}
+
+
+/* SIDEBAR FOOTER */
+
+.sidebar-bottom{
+
+    padding:
+        19px
+        28px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.09);
+
+    color:
+        rgba(255,255,255,.32);
+
+    font-size:7px;
+
+    letter-spacing:1.5px;
+
+    direction:ltr;
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main{
+
+    margin-right:var(--sidebar);
+
+    min-height:100vh;
+
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar{
+
+    height:67px;
+
+    padding:
+        0
+        45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    background:
+        rgba(251,249,244,.94);
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+
+.topbar-context{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+}
+
+
+.topbar-mark{
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--wine);
+
+}
+
+
+.topbar-name{
+
+    font-size:11px;
+
+    font-weight:600;
+
+}
+
+
+.topbar-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+.site-link{
+
+    color:var(--muted);
+
+    font-size:9px;
+
+    text-decoration:none;
+
+}
+
+
+.site-link:hover{
+    color:var(--wine);
+}
+
+
+.editor-user{
+
+    width:30px;
+    height:30px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:var(--wine-soft);
+
+    color:var(--wine);
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:11px;
+
+    font-weight:700;
+
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content{
+
+    max-width:1420px;
+
+    margin:auto;
+
+    padding:
+        48px
+        50px
+        80px;
+
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-head{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-between;
+
+    gap:40px;
+
+    margin-bottom:35px;
+
+}
+
+
+.eyebrow{
+
+    margin-bottom:7px;
+
+    color:var(--wine);
+
+    direction:ltr;
+
+    text-align:right;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+
+h1{
+
+    margin:0;
+
+    font-size:34px;
+
+    line-height:1.3;
+
+    font-weight:700;
+
+}
+
+
+.description{
+
+    margin-top:8px;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+}
+
+
+.actions{
+
+    display:flex;
+
+    gap:8px;
+
+}
+
+
+.btn{
+
+    min-height:39px;
+
+    padding:
+        0
+        16px;
+
+    border:
+        1px solid
+        var(--line);
+
+    background:var(--paper);
+
+    color:var(--ink);
+
+    cursor:pointer;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    transition:.18s;
+
+}
+
+
+.btn:hover{
+
+    border-color:#b6afa4;
+
+    background:white;
+
+}
+
+
+.btn.primary{
+
+    border-color:var(--wine);
+
+    background:var(--wine);
+
+    color:white;
+
+}
+
+
+.btn.primary:hover{
+    background:var(--wine-dark);
+}
+
+
+/* =========================================================
+   DASHBOARD STATS
+========================================================= */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    margin-bottom:28px;
+
+    border:
+        1px solid
+        var(--line);
+
+    background:var(--paper);
+
+}
+
+
+.stat{
+
+    position:relative;
+
+    min-height:105px;
+
+    padding:
+        20px
+        23px;
+
+    border-left:
+        1px solid
+        var(--line);
+
+}
+
+
+.stat:last-child{
+    border-left:0;
+}
+
+
+.stat-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+.stat-number{
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:30px;
+
+    line-height:1;
+
+}
+
+
+.stat-index{
+
+    color:#b5b0a8;
+
+    font-size:7px;
+
+    direction:ltr;
+
+}
+
+
+.stat-label{
+
+    margin-top:12px;
+
+    color:var(--muted);
+
+    font-size:9px;
+
+}
+
+
+.stat-bar{
+
+    position:absolute;
+
+    right:0;
+    bottom:0;
+
+    width:35px;
+    height:3px;
+
+    background:var(--wine);
+
+}
+
+
+.stat:nth-child(2) .stat-bar{
+    background:var(--yellow);
+}
+
+
+.stat:nth-child(3) .stat-bar{
+    background:var(--sage);
+}
+
+
+.stat:nth-child(4) .stat-bar{
+    background:#a8848c;
+}
+
+
+/* =========================================================
+   WORKSPACE
+========================================================= */
+
+.workspace{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        260px;
+
+    gap:25px;
+
+}
+
+
+/* =========================================================
+   LIBRARY
+========================================================= */
+
+.library{
+
+    min-width:0;
+
+    background:var(--paper);
+
+    border:
+        1px solid
+        var(--line);
+
+}
+
+
+.library-heading{
+
+    padding:
+        18px
+        21px
+        14px;
+
+    display:flex;
+
+    align-items:end;
+
+    justify-content:space-between;
+
+    border-bottom:
+        1px solid
+        var(--line);
+
+}
+
+
+.library-eyebrow{
+
+    color:var(--wine);
+
+    font-size:7px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    direction:ltr;
+
+}
+
+
+.library-heading h2{
+
+    margin:
+        2px
+        0
+        0;
+
+    font-size:16px;
+
+}
+
+
+.library-count{
+
+    color:var(--muted);
+
+    font-size:8px;
+
+}
+
+
+.library-tools{
+
+    padding:
+        13px
+        18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    border-bottom:
+        1px solid
+        var(--line);
+
+}
+
+
+.filters{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:3px;
+
+    overflow-x:auto;
+
+}
+
+
+.filter{
+
+    flex-shrink:0;
+
+    border:0;
+
+    background:transparent;
+
+    padding:
+        6px
+        10px;
+
+    color:var(--muted);
+
+    cursor:pointer;
+
+    font-size:9px;
+
+}
+
+
+.filter:hover{
+    color:var(--ink);
+}
+
+
+.filter.active{
+
+    background:var(--wine-soft);
+
+    color:var(--wine);
+
+    font-weight:700;
+
+}
+
+
+.search-wrap{
+
+    position:relative;
+
+    flex-shrink:0;
+
+}
+
+
+.search{
+
+    width:235px;
+
+    padding:
+        8px
+        12px;
+
+    border:
+        1px solid
+        var(--line);
+
+    outline:0;
+
+    background:#f7f4ee;
+
+    direction:rtl;
+
+    font-size:9px;
+
+}
+
+
+.search:focus{
+
+    border-color:var(--wine);
+
+    background:white;
+
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+th{
+
+    padding:
+        11px
+        17px;
+
+    border-bottom:
+        1px solid
+        var(--line);
+
+    background:#f7f4ee;
+
+    color:#8e8d87;
+
+    text-align:right;
+
+    white-space:nowrap;
+
+    font-size:8px;
+
+    font-weight:500;
+
+}
+
+
+td{
+
+    padding:
+        16px
+        17px;
+
+    border-bottom:
+        1px solid
+        var(--line);
+
+    vertical-align:middle;
+
+    font-size:10px;
+
+}
+
+
+tbody tr:last-child td{
+    border-bottom:0;
+}
+
+
+tbody tr:hover{
+    background:#faf8f3;
+}
+
+
+.content-cell{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    min-width:260px;
+
+}
+
+
+.content-thumb{
+
+    width:45px;
+    height:45px;
+
+    flex-shrink:0;
+
+    display:grid;
+
+    place-items:center;
+
+    background:#e6e0d7;
+
+    color:#9c968d;
+
+    font-size:6px;
+
+    direction:ltr;
+
+}
+
+
+.item-title{
+
+    margin-bottom:3px;
+
+    font-size:11px;
+
+    font-weight:600;
+
+}
+
+
+.item-meta{
+
+    color:var(--muted);
+
+    font-size:8px;
+
+}
+
+
+.type{
+
+    color:var(--muted);
+
+    white-space:nowrap;
+
+}
+
+
+.status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    direction:ltr;
+
+    white-space:nowrap;
+
+    font-size:8px;
+
+    font-weight:600;
+
+}
+
+
+.status::before{
+
+    content:"";
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+}
+
+
+.status.draft{
+    color:var(--draft);
+}
+
+
+.status.draft::before{
+    background:var(--draft);
+}
+
+
+.status.published{
+    color:var(--published);
+}
+
+
+.status.published::before{
+    background:var(--published);
+}
+
+
+.edit{
+
+    color:var(--wine);
+
+    text-decoration:none;
+
+    white-space:nowrap;
+
+    font-size:9px;
+
+    font-weight:600;
+
+}
+
+
+.edit:hover{
+    text-decoration:underline;
+}
+
+
+.empty{
+
+    padding:
+        65px
+        20px;
+
+    text-align:center;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+}
+
+
+.empty strong{
+
+    display:block;
+
+    margin-bottom:5px;
+
+    color:var(--ink);
+
+    font-size:12px;
+
+}
+
+
+/* =========================================================
+   SIDE PANEL
+========================================================= */
+
+.editorial-side{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+.side-card{
+
+    background:var(--paper);
+
+    border:
+        1px solid
+        var(--line);
+
+    padding:20px;
+
+}
+
+
+.side-label{
+
+    color:var(--wine);
+
+    font-size:7px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    direction:ltr;
+
+}
+
+
+.side-card h3{
+
+    margin:
+        5px
+        0
+        13px;
+
+    font-size:14px;
+
+}
+
+
+.quick-action{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:
+        11px
+        0;
+
+    border:0;
+    border-bottom:
+        1px solid
+        var(--line);
+
+    background:transparent;
+
+    color:var(--ink);
+
+    cursor:pointer;
+
+    text-align:right;
+
+    font-size:9px;
+
+}
+
+
+.quick-action:last-child{
+    border-bottom:0;
+}
+
+
+.quick-action:hover{
+    color:var(--wine);
+}
+
+
+.quick-arrow{
+
+    color:#aaa59c;
+
+    direction:ltr;
+
+}
+
+
+/* EDITORIAL NOTE */
+
+.editorial-note{
+
+    background:var(--sage-soft);
+
+    border:0;
+
+}
+
+
+.note-number{
+
+    color:var(--sage);
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:42px;
+
+    line-height:1;
+
+}
+
+
+.editorial-note p{
+
+    margin:
+        18px
+        0
+        0;
+
+    color:#5f695c;
+
+    font-size:10px;
+
+    line-height:1.9;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+.mobile-header{
+    display:none;
+}
+
+
+@media(max-width:1050px){
+
+    .workspace{
+
+        grid-template-columns:1fr;
+
     }
 
-    html, body {
-      margin: 0;
-      min-height: 100%;
-      background: var(--cream);
-      color: var(--text);
-      font-family: "Vazirmatn", sans-serif;
+    .editorial-side{
+
+        display:grid;
+
+        grid-template-columns:
+            1fr
+            1fr;
+
     }
 
-    button, input {
-      font-family: inherit;
+}
+
+
+@media(max-width:800px){
+
+    .sidebar{
+        display:none;
     }
 
-    /* SIDEBAR */
-
-    .sidebar {
-      position: fixed;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: 245px;
-      background: var(--petroleum);
-      color: white;
-      display: flex;
-      flex-direction: column;
+    .main{
+        margin-right:0;
     }
 
-    .brand {
-      padding: 34px 27px 27px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
+    .topbar{
+
+        height:60px;
+
+        padding:
+            0
+            20px;
+
     }
 
-    .brand-title {
-      direction: ltr;
-      text-align: right;
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: .13em;
+    .mobile-header{
+
+        display:block;
+
+        font-family:
+            "Playfair Display",
+            serif;
+
+        direction:ltr;
+
+        font-size:20px;
+
     }
 
-    .brand-sub {
-      direction: ltr;
-      text-align: right;
-      font-size: 9px;
-      letter-spacing: .19em;
-      color: rgba(255,255,255,.4);
-      margin-top: 4px;
+    .topbar-context{
+        display:none;
     }
 
-    nav {
-      padding: 20px 13px;
-      flex: 1;
+    .content{
+
+        padding:
+            30px
+            20px
+            60px;
+
     }
 
-    .nav-title {
-      padding: 0 14px 10px;
-      color: rgba(255,255,255,.35);
-      font-size: 10px;
+    .page-head{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+        gap:20px;
+
     }
 
-    .nav-item {
-      width: 100%;
-      border: 0;
-      padding: 12px 14px;
-      margin-bottom: 3px;
-      border-radius: 5px;
-      background: transparent;
-      color: rgba(255,255,255,.7);
-      text-align: right;
-      cursor: pointer;
-      font-size: 13px;
+    .stats{
+
+        grid-template-columns:
+            1fr
+            1fr;
+
     }
 
-    .nav-item:hover {
-      background: rgba(255,255,255,.07);
-      color: white;
+    .stat:nth-child(2){
+        border-left:0;
     }
 
-    .nav-item.active {
-      background: var(--red);
-      color: white;
-      font-weight: 600;
+    .stat:nth-child(-n+2){
+        border-bottom:
+            1px solid
+            var(--line);
     }
 
-    .sidebar-bottom {
-      padding: 20px 27px;
-      border-top: 1px solid rgba(255,255,255,.08);
-      color: rgba(255,255,255,.35);
-      font-size: 9px;
-      direction: ltr;
+    .library-tools{
+
+        align-items:stretch;
+
+        flex-direction:column;
+
     }
 
-    /* MAIN */
-
-    .main {
-      margin-right: 245px;
-      min-height: 100vh;
+    .filters{
+        width:100%;
     }
 
-    .topbar {
-      height: 68px;
-      background: rgba(255,255,255,.88);
-      border-bottom: 1px solid var(--border);
-      padding: 0 45px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .search-wrap,
+    .search{
+        width:100%;
     }
 
-    .topbar-name {
-      font-size: 12px;
-      font-weight: 600;
+}
+
+
+@media(max-width:560px){
+
+    .content{
+
+        padding:
+            25px
+            12px
+            50px;
+
     }
 
-    .site-link {
-      font-size: 11px;
-      text-decoration: none;
-      color: var(--muted);
+    h1{
+        font-size:27px;
     }
 
-    .site-link:hover {
-      color: var(--red);
+    .actions{
+
+        width:100%;
+
     }
 
-    .content {
-      max-width: 1400px;
-      margin: auto;
-      padding: 46px 50px 80px;
+    .actions .btn{
+
+        flex:1;
+
     }
 
-    /* PAGE HEADER */
+    .stats{
 
-    .page-head {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      margin-bottom: 32px;
+        grid-template-columns:
+            1fr
+            1fr;
+
     }
 
-    .eyebrow {
-      direction: ltr;
-      text-align: right;
-      color: var(--red);
-      font-size: 9px;
-      letter-spacing: .2em;
-      font-weight: 700;
-      margin-bottom: 7px;
+    .stat{
+
+        min-height:90px;
+
+        padding:
+            16px;
+
     }
 
-    h1 {
-      margin: 0;
-      font-size: 28px;
-      font-weight: 600;
+    .stat-number{
+        font-size:25px;
     }
 
-    .description {
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 7px;
+    .library-heading{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+        gap:6px;
+
     }
 
-    .actions {
-      display: flex;
-      gap: 8px;
+    th:nth-child(2),
+    td:nth-child(2){
+
+        display:none;
+
     }
 
-    .btn {
-      border: 1px solid var(--border);
-      background: white;
-      color: var(--text);
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 11px;
-      font-weight: 600;
+    .editorial-side{
+
+        grid-template-columns:1fr;
+
     }
 
-    .btn.primary {
-      border-color: var(--red);
-      background: var(--red);
-      color: white;
-    }
+}
 
-    .btn.primary:hover {
-      background: var(--red-dark);
-    }
+</style>
 
-    /* STATS */
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      background: white;
-      border: 1px solid var(--border);
-      margin-bottom: 26px;
-    }
-
-    .stat {
-      padding: 20px 22px;
-      border-left: 1px solid var(--border);
-    }
-
-    .stat:last-child {
-      border-left: 0;
-    }
-
-    .stat-number {
-      font-size: 22px;
-      font-weight: 600;
-    }
-
-    .stat-label {
-      color: var(--muted);
-      font-size: 10px;
-      margin-top: 3px;
-    }
-
-    /* LIBRARY */
-
-    .library {
-      background: white;
-      border: 1px solid var(--border);
-    }
-
-    .library-top {
-      padding: 18px 20px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .filters {
-      display: flex;
-      gap: 4px;
-    }
-
-    .filter {
-      border: 0;
-      background: transparent;
-      padding: 7px 11px;
-      color: var(--muted);
-      font-size: 11px;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    .filter.active {
-      background: #F0EEE8;
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .search {
-      width: 260px;
-      border: 1px solid var(--border);
-      background: #FAF9F6;
-      border-radius: 4px;
-      padding: 8px 11px;
-      outline: none;
-      direction: rtl;
-      font-size: 11px;
-    }
-
-    .search:focus {
-      border-color: var(--red);
-    }
-
-    /* TABLE */
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th {
-      padding: 12px 18px;
-      text-align: right;
-      color: var(--muted);
-      font-size: 9px;
-      font-weight: 500;
-      background: #FAF9F6;
-      border-bottom: 1px solid var(--border);
-    }
-
-    td {
-      padding: 16px 18px;
-      border-bottom: 1px solid var(--border);
-      font-size: 11px;
-      vertical-align: middle;
-    }
-
-    tr:last-child td {
-      border-bottom: 0;
-    }
-
-    tbody tr:hover {
-      background: #FCFBF8;
-    }
-
-    .item-title {
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 3px;
-    }
-
-    .item-meta {
-      color: var(--muted);
-      font-size: 9px;
-    }
-
-    .type {
-      color: var(--muted);
-    }
-
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      direction: ltr;
-      font-size: 10px;
-      font-weight: 600;
-    }
-
-    .status::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-    }
-
-    .status.draft {
-      color: var(--draft);
-    }
-
-    .status.draft::before {
-      background: var(--draft);
-    }
-
-    .status.published {
-      color: var(--published);
-    }
-
-    .status.published::before {
-      background: var(--published);
-    }
-
-    .edit {
-      color: var(--red);
-      text-decoration: none;
-      font-size: 10px;
-    }
-
-    .empty {
-      padding: 55px 20px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    @media (max-width: 800px) {
-      .sidebar {
-        display: none;
-      }
-
-      .main {
-        margin-right: 0;
-      }
-
-      .content {
-        padding: 30px 20px;
-      }
-
-      .stats {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .page-head {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .library-top {
-        align-items: stretch;
-        flex-direction: column;
-      }
-
-      .search {
-        width: 100%;
-      }
-    }
-  </style>
 </head>
+
 
 <body>
 
-  <aside class="sidebar">
+
+<!-- ======================================================
+     SIDEBAR
+======================================================= -->
+
+<aside class="sidebar">
+
 
     <div class="brand">
-      <div class="brand-title">GENDERLAB</div>
-      <div class="brand-sub">EDITORIAL CMS</div>
+
+        <div class="brand-name">
+            Gender<span>Lab</span>
+        </div>
+
+        <div class="brand-sub">
+            EDITORIAL CMS
+        </div>
+
     </div>
 
-    <nav>
-      <div class="nav-title">مدیریت محتوا</div>
 
-      <button class="nav-item active">
-        همه محتوا
-      </button>
 
-      <button class="nav-item">
-        مطالب
-      </button>
+    <nav class="sidebar-nav">
 
-      <button class="nav-item">
-        شماره‌های مجله
-      </button>
 
-      <button class="nav-item">
-        رسانه‌ها
-      </button>
+        <div class="nav-section">
+
+            <div class="nav-title">
+                مدیریت محتوا
+            </div>
+
+
+            <button
+                class="nav-item active"
+                data-section="all"
+            >
+                <span class="nav-icon">01</span>
+                همه محتوا
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-section="articles"
+            >
+                <span class="nav-icon">02</span>
+                مطالب
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-section="issues"
+            >
+                <span class="nav-icon">03</span>
+                شماره‌های مجله
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-section="media"
+            >
+                <span class="nav-icon">04</span>
+                رسانه‌ها
+            </button>
+
+        </div>
+
+
+
+        <div class="nav-section">
+
+            <div class="nav-title">
+                تحریریه
+            </div>
+
+
+            <button class="nav-item">
+
+                <span class="nav-icon">05</span>
+
+                پیش‌نویس‌ها
+
+            </button>
+
+
+            <button class="nav-item">
+
+                <span class="nav-icon">06</span>
+
+                منتشرشده‌ها
+
+            </button>
+
+        </div>
+
+
     </nav>
 
+
+
+    <button class="sidebar-create">
+        + مطلب جدید
+    </button>
+
+
+
     <div class="sidebar-bottom">
-      GENDERLAB / EDITORIAL
+        GENDERLAB / EDITORIAL
     </div>
 
-  </aside>
+
+</aside>
 
 
-  <main class="main">
 
-    <header class="topbar">
+<!-- ======================================================
+     MAIN
+======================================================= -->
 
-      <div class="topbar-name">
-        تحریریه جندرلب
-      </div>
+<main class="main">
 
-      <a href="/Genderlab/" target="_blank" class="site-link">
-        مشاهده سایت ↗
-      </a>
+
+<!-- ======================================================
+     TOPBAR
+======================================================= -->
+
+<header class="topbar">
+
+
+    <div class="topbar-context">
+
+        <span class="topbar-mark"></span>
+
+        <span class="topbar-name">
+            تحریریه جندرلب
+        </span>
+
+    </div>
+
+
+    <div class="mobile-header">
+        GenderLab
+    </div>
+
+
+
+    <div class="topbar-actions">
+
+
+        <a
+            href="/Genderlab/"
+            target="_blank"
+            class="site-link"
+        >
+            مشاهده سایت ↗
+        </a>
+
+
+        <div class="editor-user">
+            GL
+        </div>
+
+
+    </div>
+
+
+</header>
+
+
+
+<!-- ======================================================
+     CONTENT
+======================================================= -->
+
+<div class="content">
+
+
+<!-- ======================================================
+     PAGE HEADER
+======================================================= -->
+
+<section class="page-head">
+
+
+    <div>
+
+        <div class="eyebrow">
+            EDITORIAL WORKSPACE
+        </div>
+
+        <h1>
+            محتوا
+        </h1>
+
+        <div class="description">
+            مدیریت مطالب، شماره‌های مجله و پیش‌نویس‌های GenderLab
+        </div>
+
+    </div>
+
+
+
+    <div class="actions">
+
+        <button
+            class="btn"
+            id="newIssue"
+        >
+            + شماره جدید
+        </button>
+
+        <button
+            class="btn primary"
+            id="newArticle"
+        >
+            + مطلب جدید
+        </button>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     STATS
+======================================================= -->
+
+<section class="stats">
+
+
+    <div class="stat">
+
+        <div class="stat-top">
+
+            <div
+                class="stat-number"
+                id="allCount"
+            >
+                —
+            </div>
+
+            <span class="stat-index">
+                01
+            </span>
+
+        </div>
+
+        <div class="stat-label">
+            همه محتوا
+        </div>
+
+        <span class="stat-bar"></span>
+
+    </div>
+
+
+
+    <div class="stat">
+
+        <div class="stat-top">
+
+            <div
+                class="stat-number"
+                id="draftCount"
+            >
+                —
+            </div>
+
+            <span class="stat-index">
+                02
+            </span>
+
+        </div>
+
+        <div class="stat-label">
+            پیش‌نویس
+        </div>
+
+        <span class="stat-bar"></span>
+
+    </div>
+
+
+
+    <div class="stat">
+
+        <div class="stat-top">
+
+            <div
+                class="stat-number"
+                id="publishedCount"
+            >
+                —
+            </div>
+
+            <span class="stat-index">
+                03
+            </span>
+
+        </div>
+
+        <div class="stat-label">
+            منتشرشده
+        </div>
+
+        <span class="stat-bar"></span>
+
+    </div>
+
+
+
+    <div class="stat">
+
+        <div class="stat-top">
+
+            <div
+                class="stat-number"
+                id="issueCount"
+            >
+                —
+            </div>
+
+            <span class="stat-index">
+                04
+            </span>
+
+        </div>
+
+        <div class="stat-label">
+            شماره‌های مجله
+        </div>
+
+        <span class="stat-bar"></span>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     WORKSPACE
+======================================================= -->
+
+<div class="workspace">
+
+
+<!-- ======================================================
+     LIBRARY
+======================================================= -->
+
+<section class="library">
+
+
+    <header class="library-heading">
+
+
+        <div>
+
+            <div class="library-eyebrow">
+                CONTENT LIBRARY
+            </div>
+
+            <h2>
+                کتابخانه محتوا
+            </h2>
+
+        </div>
+
+
+        <span
+            class="library-count"
+            id="libraryCount"
+        >
+            همه محتوا
+        </span>
+
 
     </header>
 
 
-    <div class="content">
 
-      <section class="page-head">
-
-        <div>
-          <div class="eyebrow">CONTENT LIBRARY</div>
-
-          <h1>محتوا</h1>
-
-          <div class="description">
-            مطالب و شماره‌های منتشرشده و پیش‌نویس‌ها
-          </div>
-        </div>
-
-        <div class="actions">
-
-          <button class="btn">
-            + شماره جدید
-          </button>
-
-          <button class="btn primary">
-            + مطلب جدید
-          </button>
-
-        </div>
-
-      </section>
+    <div class="library-tools">
 
 
-      <section class="stats">
+        <div class="filters">
 
-        <div class="stat">
-          <div class="stat-number" id="allCount">—</div>
-          <div class="stat-label">همه محتوا</div>
-        </div>
+            <button
+                class="filter active"
+                data-filter="all"
+            >
+                همه
+            </button>
 
-        <div class="stat">
-          <div class="stat-number" id="draftCount">—</div>
-          <div class="stat-label">پیش‌نویس</div>
-        </div>
+            <button
+                class="filter"
+                data-filter="draft"
+            >
+                پیش‌نویس‌ها
+            </button>
 
-        <div class="stat">
-          <div class="stat-number" id="publishedCount">—</div>
-          <div class="stat-label">منتشرشده</div>
-        </div>
+            <button
+                class="filter"
+                data-filter="published"
+            >
+                منتشرشده
+            </button>
 
-        <div class="stat">
-          <div class="stat-number" id="issueCount">—</div>
-          <div class="stat-label">شماره‌های مجله</div>
-        </div>
+            <button
+                class="filter"
+                data-filter="article"
+            >
+                مطالب
+            </button>
 
-      </section>
-
-
-      <section class="library">
-
-        <div class="library-top">
-
-          <div class="filters">
-            <button class="filter active">همه</button>
-            <button class="filter">پیش‌نویس‌ها</button>
-            <button class="filter">منتشرشده</button>
-            <button class="filter">مطالب</button>
-            <button class="filter">شماره‌ها</button>
-          </div>
-
-          <input
-            class="search"
-            type="search"
-            placeholder="جستجو در محتوا..."
-          >
+            <button
+                class="filter"
+                data-filter="issue"
+            >
+                شماره‌ها
+            </button>
 
         </div>
 
 
-        <table>
 
-          <thead>
-            <tr>
-              <th>عنوان</th>
-              <th>نوع</th>
-              <th>وضعیت</th>
-              <th>تاریخ</th>
-              <th></th>
-            </tr>
-          </thead>
+        <div class="search-wrap">
 
-          <tbody id="contentList">
+            <input
+                id="contentSearch"
+                class="search"
+                type="search"
+                placeholder="جستجو در محتوا..."
+            >
 
-            <tr>
-              <td colspan="5">
-                <div class="empty">
-                  در حال حاضر محتوای GitHub به این پنل متصل نشده است.
-                </div>
-              </td>
-            </tr>
+        </div>
 
-          </tbody>
-
-        </table>
-
-      </section>
 
     </div>
 
-  </main>
+
+
+    <div class="table-wrap">
+
+        <table>
+
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        عنوان
+                    </th>
+
+                    <th>
+                        نوع
+                    </th>
+
+                    <th>
+                        وضعیت
+                    </th>
+
+                    <th>
+                        تاریخ
+                    </th>
+
+                    <th></th>
+
+                </tr>
+
+            </thead>
+
+
+
+            <tbody id="contentList">
+
+
+                <!--
+                =================================================
+                GitHub content will eventually be inserted here.
+
+                Example row:
+
+                <tr
+                    data-type="article"
+                    data-status="published"
+                >
+
+                    <td>
+
+                        <div class="content-cell">
+
+                            <div class="content-thumb">
+                                IMG
+                            </div>
+
+                            <div>
+
+                                <div class="item-title">
+                                    عنوان مقاله
+                                </div>
+
+                                <div class="item-meta">
+                                    جامعه · ۸ دقیقه مطالعه
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td class="type">
+                        مطلب
+                    </td>
+
+                    <td>
+
+                        <span class="status published">
+                            منتشرشده
+                        </span>
+
+                    </td>
+
+                    <td>
+                        ۱۴۰۵/۰۷/۰۳
+                    </td>
+
+                    <td>
+
+                        <a
+                            href="#"
+                            class="edit"
+                        >
+                            ویرایش ←
+                        </a>
+
+                    </td>
+
+                </tr>
+                =================================================
+                -->
+
+
+                <tr class="empty-row">
+
+                    <td colspan="5">
+
+                        <div class="empty">
+
+                            <strong>
+                                هنوز محتوایی به پنل متصل نیست.
+                            </strong>
+
+                            محتوای GitHub پس از اتصال
+                            در این بخش نمایش داده می‌شود.
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+
+            </tbody>
+
+
+        </table>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     EDITORIAL SIDE
+======================================================= -->
+
+<aside class="editorial-side">
+
+
+    <section class="side-card">
+
+        <span class="side-label">
+            QUICK ACTIONS
+        </span>
+
+        <h3>
+            ایجاد محتوا
+        </h3>
+
+
+        <button class="quick-action">
+
+            <span>
+                مطلب جدید
+            </span>
+
+            <span class="quick-arrow">
+                +
+            </span>
+
+        </button>
+
+
+        <button class="quick-action">
+
+            <span>
+                شماره جدید مجله
+            </span>
+
+            <span class="quick-arrow">
+                +
+            </span>
+
+        </button>
+
+
+        <button class="quick-action">
+
+            <span>
+                بارگذاری رسانه
+            </span>
+
+            <span class="quick-arrow">
+                +
+            </span>
+
+        </button>
+
+
+        <button class="quick-action">
+
+            <span>
+                مشاهده پیش‌نویس‌ها
+            </span>
+
+            <span class="quick-arrow">
+                ←
+            </span>
+
+        </button>
+
+
+    </section>
+
+
+
+    <section class="side-card editorial-note">
+
+        <div class="note-number">
+            GL
+        </div>
+
+        <p>
+            فضای تحریریه GenderLab برای ساخت،
+            ویرایش و مدیریت مقاله‌ها و شماره‌های
+            مجله.
+        </p>
+
+    </section>
+
+
+</aside>
+
+
+</div>
+
+
+</div>
+
+
+</main>
+
+
+
+<script>
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+const filters =
+    document.querySelectorAll(".filter");
+
+const searchInput =
+    document.getElementById("contentSearch");
+
+
+function filterContent(){
+
+    const activeFilter =
+        document.querySelector(".filter.active")
+        ?.dataset.filter || "all";
+
+    const query =
+        searchInput.value
+        .trim()
+        .toLowerCase();
+
+    const rows =
+        document.querySelectorAll(
+            "#contentList tr:not(.empty-row)"
+        );
+
+
+    rows.forEach(row => {
+
+        const type =
+            row.dataset.type;
+
+        const status =
+            row.dataset.status;
+
+        const text =
+            row.textContent
+            .toLowerCase();
+
+
+        let matchesFilter = true;
+
+
+        if(activeFilter === "draft"){
+
+            matchesFilter =
+                status === "draft";
+
+        }
+
+        else if(activeFilter === "published"){
+
+            matchesFilter =
+                status === "published";
+
+        }
+
+        else if(activeFilter === "article"){
+
+            matchesFilter =
+                type === "article";
+
+        }
+
+        else if(activeFilter === "issue"){
+
+            matchesFilter =
+                type === "issue";
+
+        }
+
+
+        const matchesSearch =
+            !query ||
+            text.includes(query);
+
+
+        row.style.display =
+            matchesFilter &&
+            matchesSearch
+                ? ""
+                : "none";
+
+    });
+
+}
+
+
+filters.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            filters.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            filterContent();
+
+        }
+    );
+
+});
+
+
+searchInput.addEventListener(
+    "input",
+    filterContent
+);
+
+
+
+/* =========================================================
+   SIDEBAR ACTIVE STATE
+========================================================= */
+
+const navItems =
+    document.querySelectorAll(
+        ".nav-item"
+    );
+
+
+navItems.forEach(item => {
+
+    item.addEventListener(
+        "click",
+        () => {
+
+            navItems.forEach(nav => {
+                nav.classList.remove("active");
+            });
+
+            item.classList.add("active");
+
+        }
+    );
+
+});
+
+
+
+/* =========================================================
+   FUTURE GITHUB INTEGRATION
+========================================================= */
+
+/*
+
+Eventually this page can fetch:
+
+_articles/
+_issues/
+
+from GitHub and render them automatically.
+
+Suggested data structure:
+
+{
+    title: "...",
+    type: "article",
+    status: "published",
+    date: "...",
+    category: "...",
+    url: "...",
+    editUrl: "..."
+}
+
+Then:
+
+- allCount
+- draftCount
+- publishedCount
+- issueCount
+
+can be calculated automatically.
+
+*/
+
+</script>
+
 
 </body>
 </html>
