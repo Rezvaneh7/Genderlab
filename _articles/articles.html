@@ -1,102 +1,107 @@
+---
+layout: null
+permalink: /articles/
+---
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+
 <title>مقالات | GenderLab</title>
- 
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- 
+
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
- 
+
 <style>
- 
+
 /* =========================================================
    GENDERLAB — ARTICLES ARCHIVE
 ========================================================= */
- 
+
 :root{
     --bg:#f3efe7;
     --paper:#fbf9f4;
     --white:#ffffff;
- 
+
     --ink:#17201e;
     --muted:#747a75;
- 
+
     --wine:#6d2638;
     --wine-dark:#431724;
     --wine-light:#eadde0;
- 
+
     --sage:#8e9b7d;
     --sage-light:#dde1d6;
- 
+
     --yellow:#e0aa3e;
- 
+
     --line:#d7d2c8;
- 
+
     --max:1440px;
 }
- 
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
- 
+
 html{
     scroll-behavior:smooth;
 }
- 
+
 body{
     background:var(--bg);
     color:var(--ink);
- 
+
     font-family:"Vazirmatn",Tahoma,Arial,sans-serif;
- 
+
     line-height:1.8;
 }
- 
+
 a{
     color:inherit;
     text-decoration:none;
 }
- 
+
 button,
 input,
 select{
     font:inherit;
 }
- 
+
 button{
     cursor:pointer;
 }
- 
+
 img{
     display:block;
     width:100%;
 }
- 
+
 .container{
     width:min(calc(100% - 48px),var(--max));
     margin-inline:auto;
 }
- 
- 
+
+
 /* =========================================================
    IMAGE PLACEHOLDER
 ========================================================= */
- 
+
 .image-slot{
     position:relative;
- 
+
     overflow:hidden;
- 
+
     display:flex;
     align-items:center;
     justify-content:center;
- 
+
     background:
         linear-gradient(
             135deg,
@@ -104,1358 +109,1358 @@ img{
             #f0ece4 50%,
             #d7d2c9
         );
- 
+
     color:#88827a;
 }
- 
+
 .image-slot::before{
     content:"";
- 
+
     position:absolute;
- 
+
     width:38px;
     height:30px;
- 
+
     border:1px solid rgba(70,70,65,.35);
 }
- 
+
 .image-slot::after{
     content:"";
- 
+
     position:absolute;
- 
+
     width:10px;
     height:10px;
- 
+
     border:1px solid rgba(70,70,65,.35);
- 
+
     border-radius:50%;
- 
+
     transform:translate(8px,-6px);
 }
- 
+
 .slot-label{
     position:absolute;
- 
+
     left:10px;
     bottom:10px;
- 
+
     z-index:2;
- 
+
     padding:2px 7px;
- 
+
     background:rgba(251,249,244,.9);
- 
+
     color:#77716a;
- 
+
     font-size:8px;
- 
+
     direction:ltr;
 }
- 
- 
+
+
 /* =========================================================
    TOP STRIP
 ========================================================= */
- 
+
 .top-strip{
     background:var(--wine-dark);
     color:white;
 }
- 
+
 .top-strip-inner{
     min-height:34px;
- 
+
     display:flex;
     align-items:center;
     justify-content:space-between;
- 
+
     font-size:10px;
 }
- 
+
 .top-strip-links{
     display:flex;
     gap:18px;
 }
- 
+
 .top-strip a{
     opacity:.82;
 }
- 
+
 .top-strip a:hover{
     opacity:1;
 }
- 
- 
+
+
 /* =========================================================
    HEADER
 ========================================================= */
- 
+
 .site-header{
     background:var(--paper);
 }
- 
+
 .header-main{
     border-bottom:1px solid var(--line);
 }
- 
+
 .header-inner{
     min-height:116px;
- 
+
     display:grid;
- 
+
     grid-template-columns:1fr auto 1fr;
- 
+
     align-items:center;
- 
+
     direction:ltr;
 }
- 
- 
+
+
 /* LEFT */
- 
+
 .header-left{
     justify-self:start;
- 
+
     display:flex;
     align-items:center;
- 
+
     gap:20px;
 }
- 
+
 .header-search{
     width:200px;
     height:39px;
- 
+
     display:flex;
     align-items:center;
- 
+
     border-bottom:1px solid var(--ink);
 }
- 
+
 .header-search input{
     flex:1;
- 
+
     min-width:0;
- 
+
     border:0;
     outline:0;
- 
+
     background:transparent;
- 
+
     direction:rtl;
- 
+
     font-size:11px;
 }
- 
+
 .header-search button{
     border:0;
     background:none;
- 
+
     font-size:19px;
 }
- 
+
 .socials{
     display:flex;
     gap:13px;
- 
+
     font-size:11px;
     font-weight:700;
 }
- 
- 
+
+
 /* LOGO */
- 
+
 .brand{
     justify-self:center;
- 
+
     text-align:center;
- 
+
     direction:ltr;
 }
- 
+
 .brand-name{
     font-family:"Playfair Display",Georgia,serif;
- 
+
     font-size:59px;
- 
+
     line-height:.9;
- 
+
     letter-spacing:-3px;
 }
- 
+
 .brand-name span{
     color:var(--wine);
 }
- 
+
 .brand-subtitle{
     display:block;
- 
+
     margin-top:13px;
- 
+
     font-size:7px;
- 
+
     letter-spacing:5px;
- 
+
     color:#62665f;
 }
- 
- 
+
+
 /* RIGHT */
- 
+
 .header-right{
     justify-self:end;
- 
+
     direction:rtl;
- 
+
     display:flex;
     align-items:center;
- 
+
     gap:20px;
 }
- 
+
 .login{
     font-size:11px;
     font-weight:600;
 }
- 
+
 .menu-toggle{
     width:31px;
- 
+
     border:0;
     background:none;
- 
+
     display:flex;
     flex-direction:column;
- 
+
     gap:6px;
 }
- 
+
 .menu-toggle span{
     display:block;
- 
+
     width:100%;
     height:1.5px;
- 
+
     background:var(--ink);
 }
- 
- 
+
+
 /* =========================================================
    NAVIGATION
 ========================================================= */
- 
+
 .main-nav{
     background:var(--paper);
- 
+
     border-bottom:1px solid var(--line);
 }
- 
+
 .nav-inner{
     min-height:51px;
- 
+
     display:flex;
     align-items:center;
     justify-content:center;
- 
+
     gap:45px;
- 
+
     white-space:nowrap;
 }
- 
+
 .nav-inner a{
     position:relative;
- 
+
     padding:15px 0;
- 
+
     font-size:12px;
     font-weight:600;
 }
- 
+
 .nav-inner a:hover{
     color:var(--wine);
 }
- 
+
 .nav-inner a.active{
     color:var(--wine);
 }
- 
+
 .nav-inner a.active::after{
     content:"";
- 
+
     position:absolute;
- 
+
     right:0;
     left:0;
     bottom:-1px;
- 
+
     height:3px;
- 
+
     background:var(--wine);
 }
- 
- 
+
+
 /* =========================================================
    ARCHIVE HERO
 ========================================================= */
- 
+
 .archive-hero{
     padding:66px 0 48px;
- 
+
     border-bottom:1px solid var(--ink);
 }
- 
+
 .archive-kicker{
     display:flex;
     align-items:center;
- 
+
     gap:10px;
- 
+
     margin-bottom:9px;
- 
+
     color:var(--wine);
- 
+
     font-size:10px;
     font-weight:700;
- 
+
     letter-spacing:1px;
 }
- 
+
 .archive-kicker::before{
     content:"";
- 
+
     width:26px;
     height:2px;
- 
+
     background:var(--wine);
 }
- 
+
 .archive-heading{
     display:grid;
- 
+
     grid-template-columns:1fr 1fr;
- 
+
     align-items:end;
- 
+
     gap:60px;
 }
- 
+
 .archive-heading h1{
     font-size:76px;
- 
+
     line-height:1;
- 
+
     font-weight:800;
- 
+
     letter-spacing:-3px;
 }
- 
+
 .archive-heading p{
     max-width:560px;
- 
+
     color:var(--muted);
- 
+
     font-size:13px;
- 
+
     line-height:2.1;
 }
- 
- 
+
+
 /* =========================================================
    FILTERS
 ========================================================= */
- 
+
 .filters{
     min-height:72px;
- 
+
     display:flex;
     align-items:center;
     justify-content:space-between;
- 
+
     gap:30px;
- 
+
     border-bottom:1px solid var(--line);
 }
- 
+
 .filter-list{
     display:flex;
     align-items:center;
- 
+
     gap:8px;
- 
+
     overflow-x:auto;
- 
+
     white-space:nowrap;
 }
- 
+
 .filter-button{
     border:1px solid var(--line);
- 
+
     background:transparent;
- 
+
     color:var(--ink);
- 
+
     padding:6px 15px;
- 
+
     font-size:10px;
- 
+
     border-radius:50px;
- 
+
     transition:.2s;
 }
- 
+
 .filter-button:hover,
 .filter-button.active{
     background:var(--wine);
- 
+
     border-color:var(--wine);
- 
+
     color:white;
 }
- 
+
 .filter-tools{
     display:flex;
- 
+
     align-items:center;
- 
+
     gap:16px;
- 
+
     white-space:nowrap;
 }
- 
+
 .result-count{
     color:var(--muted);
- 
+
     font-size:9px;
 }
- 
+
 .sort-select{
     border:0;
     border-bottom:1px solid var(--ink);
- 
+
     background:transparent;
- 
+
     padding:5px 2px;
- 
+
     outline:0;
- 
+
     color:var(--ink);
- 
+
     font-size:9px;
 }
- 
- 
+
+
 /* =========================================================
    FEATURED ARTICLE
 ========================================================= */
- 
+
 .featured-section{
     padding:45px 0 60px;
 }
- 
+
 .featured-article{
     display:grid;
- 
+
     grid-template-columns:1.35fr .75fr;
- 
+
     background:var(--paper);
- 
+
     min-height:430px;
 }
- 
+
 .featured-image{
     min-height:430px;
 }
- 
+
 .featured-copy{
     padding:48px 45px;
- 
+
     display:flex;
     flex-direction:column;
- 
+
     justify-content:center;
- 
+
     border-right:1px solid var(--line);
 }
- 
+
 .featured-label{
     color:var(--wine);
- 
+
     font-size:9px;
- 
+
     font-weight:700;
- 
+
     margin-bottom:14px;
 }
- 
+
 .featured-title{
     font-size:33px;
- 
+
     line-height:1.55;
- 
+
     margin-bottom:13px;
 }
- 
+
 .featured-excerpt{
     color:var(--muted);
- 
+
     font-size:12px;
- 
+
     line-height:2;
- 
+
     margin-bottom:23px;
 }
- 
+
 .article-meta{
     display:flex;
     align-items:center;
- 
+
     gap:15px;
- 
+
     color:#92938e;
- 
+
     font-size:8px;
 }
- 
+
 .article-meta span + span::before{
     content:"•";
- 
+
     margin-left:15px;
 }
- 
+
 .read-more{
     display:inline-flex;
- 
+
     align-items:center;
- 
+
     gap:12px;
- 
+
     width:max-content;
- 
+
     margin-top:25px;
- 
+
     color:var(--wine);
- 
+
     font-size:11px;
- 
+
     font-weight:700;
 }
- 
+
 .read-more::after{
     content:"←";
- 
+
     width:31px;
     height:31px;
- 
+
     display:grid;
     place-items:center;
- 
+
     border:1px solid var(--wine);
- 
+
     border-radius:50%;
- 
+
     transition:.2s;
 }
- 
+
 .read-more:hover::after{
     background:var(--wine);
     color:white;
 }
- 
- 
+
+
 /* =========================================================
    ARTICLES
 ========================================================= */
- 
+
 .articles-section{
     padding-bottom:70px;
 }
- 
+
 .section-heading{
     display:flex;
- 
+
     justify-content:space-between;
     align-items:end;
- 
+
     padding-bottom:12px;
- 
+
     margin-bottom:24px;
- 
+
     border-bottom:1px solid var(--ink);
 }
- 
+
 .section-heading-left span{
     display:block;
- 
+
     color:var(--wine);
- 
+
     font-size:9px;
     font-weight:700;
- 
+
     margin-bottom:3px;
 }
- 
+
 .section-heading h2{
     font-size:29px;
 }
- 
+
 .section-heading-number{
     color:#969791;
- 
+
     font-family:"Playfair Display",Georgia,serif;
- 
+
     font-size:12px;
- 
+
     direction:ltr;
 }
- 
- 
+
+
 /* =========================================================
    ARTICLE GRID
 ========================================================= */
- 
+
 .articles-grid{
     display:grid;
- 
+
     grid-template-columns:repeat(3,minmax(0,1fr));
- 
+
     column-gap:25px;
     row-gap:45px;
 }
- 
+
 .article-card{
     position:relative;
 }
- 
+
 .article-image{
     width:100%;
- 
+
     aspect-ratio:1.5;
- 
+
     margin-bottom:16px;
 }
- 
+
 .card-top{
     display:flex;
- 
+
     justify-content:space-between;
     align-items:center;
- 
+
     margin-bottom:7px;
 }
- 
+
 .article-category{
     color:var(--wine);
- 
+
     font-size:9px;
     font-weight:700;
 }
- 
+
 .article-number{
     color:#a7a69f;
- 
+
     font-family:"Playfair Display",serif;
- 
+
     font-size:10px;
- 
+
     direction:ltr;
 }
- 
+
 .article-title{
     font-size:18px;
- 
+
     line-height:1.75;
- 
+
     margin-bottom:8px;
- 
+
     transition:.2s;
 }
- 
+
 .article-card:hover .article-title{
     color:var(--wine);
 }
- 
+
 .article-excerpt{
     color:var(--muted);
- 
+
     font-size:10px;
- 
+
     line-height:1.95;
- 
+
     margin-bottom:13px;
 }
- 
+
 .card-meta{
     display:flex;
- 
+
     gap:13px;
- 
+
     color:#9a9a94;
- 
+
     font-size:8px;
 }
- 
- 
+
+
 /* =========================================================
    FEATURED WIDE ARTICLE
 ========================================================= */
- 
+
 .article-card.wide{
     grid-column:span 2;
- 
+
     display:grid;
- 
+
     grid-template-columns:1.25fr .75fr;
- 
+
     background:var(--wine-dark);
- 
+
     color:white;
 }
- 
+
 .article-card.wide .article-image{
     margin:0;
- 
+
     height:100%;
- 
+
     aspect-ratio:auto;
- 
+
     min-height:320px;
 }
- 
+
 .wide-content{
     padding:32px;
- 
+
     display:flex;
     flex-direction:column;
- 
+
     justify-content:center;
 }
- 
+
 .article-card.wide .article-category{
     color:#e0aa3e;
 }
- 
+
 .article-card.wide .article-title{
     font-size:23px;
 }
- 
+
 .article-card.wide .article-excerpt{
     color:#d7cbce;
 }
- 
+
 .article-card.wide .card-meta{
     color:#b7a9ad;
 }
- 
- 
+
+
 /* =========================================================
    QUOTE CARD
 ========================================================= */
- 
+
 .quote-card{
     background:var(--sage-light);
- 
+
     min-height:100%;
- 
+
     padding:36px 30px;
- 
+
     display:flex;
     flex-direction:column;
- 
+
     justify-content:space-between;
 }
- 
+
 .quote-mark{
     font-family:Georgia,serif;
- 
+
     font-size:75px;
- 
+
     line-height:.7;
- 
+
     color:var(--sage);
 }
- 
+
 .quote-card blockquote{
     font-size:20px;
- 
+
     line-height:1.9;
- 
+
     font-weight:700;
- 
+
     margin:20px 0;
 }
- 
+
 .quote-source{
     color:#70786d;
- 
+
     font-size:9px;
 }
- 
- 
+
+
 /* =========================================================
    LOAD MORE / PAGINATION
 ========================================================= */
- 
+
 .pagination-wrap{
     margin-top:60px;
- 
+
     padding-top:25px;
- 
+
     border-top:1px solid var(--line);
- 
+
     display:flex;
- 
+
     align-items:center;
     justify-content:center;
- 
+
     gap:7px;
 }
- 
+
 .page{
     width:35px;
     height:35px;
- 
+
     display:grid;
     place-items:center;
- 
+
     border:1px solid var(--line);
- 
+
     background:transparent;
- 
+
     font-size:10px;
 }
- 
+
 .page:hover,
 .page.active{
     background:var(--wine);
- 
+
     border-color:var(--wine);
- 
+
     color:white;
 }
- 
+
 .page-arrow{
     width:auto;
- 
+
     padding:0 14px;
 }
- 
- 
+
+
 /* =========================================================
    NEWSLETTER
 ========================================================= */
- 
+
 .newsletter{
     margin-bottom:65px;
- 
+
     display:grid;
- 
+
     grid-template-columns:1fr 1fr;
- 
+
     background:var(--sage-light);
 }
- 
+
 .newsletter-copy{
     padding:48px 55px;
 }
- 
+
 .newsletter-label{
     color:var(--wine);
- 
+
     font-size:9px;
- 
+
     font-weight:700;
 }
- 
+
 .newsletter h2{
     margin:7px 0 9px;
- 
+
     font-size:29px;
 }
- 
+
 .newsletter p{
     max-width:520px;
- 
+
     color:#667064;
- 
+
     font-size:11px;
- 
+
     line-height:2;
 }
- 
+
 .newsletter-form-wrap{
     padding:48px 55px;
- 
+
     display:flex;
     align-items:center;
- 
+
     background:var(--sage);
 }
- 
+
 .newsletter-form{
     width:100%;
- 
+
     display:flex;
 }
- 
+
 .newsletter-input{
     flex:1;
- 
+
     height:48px;
- 
+
     border:0;
     outline:0;
- 
+
     background:var(--paper);
- 
+
     padding:0 15px;
 }
- 
+
 .newsletter-button{
     width:130px;
- 
+
     border:0;
- 
+
     background:var(--wine);
- 
+
     color:white;
- 
+
     font-size:10px;
- 
+
     font-weight:700;
 }
- 
- 
+
+
 /* =========================================================
    FOOTER
 ========================================================= */
- 
+
 .footer{
     background:var(--ink);
- 
+
     color:white;
- 
+
     padding:55px 0 25px;
 }
- 
+
 .footer-main{
     display:grid;
- 
+
     grid-template-columns:1.3fr .7fr .7fr;
- 
+
     gap:70px;
- 
+
     padding-bottom:45px;
 }
- 
+
 .footer-logo{
     font-family:"Playfair Display",Georgia,serif;
- 
+
     font-size:39px;
- 
+
     direction:ltr;
- 
+
     margin-bottom:15px;
 }
- 
+
 .footer-logo span{
     color:#c56a7d;
 }
- 
+
 .footer-about{
     max-width:420px;
- 
+
     color:#aeb7b2;
- 
+
     font-size:10px;
- 
+
     line-height:2;
 }
- 
+
 .footer-column h3{
     color:#d6b1b9;
- 
+
     font-size:11px;
- 
+
     margin-bottom:13px;
 }
- 
+
 .footer-column a{
     display:block;
- 
+
     width:max-content;
- 
+
     margin-bottom:7px;
- 
+
     color:#c0c7c3;
- 
+
     font-size:10px;
 }
- 
+
 .footer-bottom{
     border-top:1px solid #38413e;
- 
+
     padding-top:20px;
- 
+
     display:flex;
- 
+
     justify-content:space-between;
- 
+
     color:#818b86;
- 
+
     font-size:8px;
 }
- 
- 
+
+
 /* =========================================================
    TABLET
 ========================================================= */
- 
+
 @media(max-width:1000px){
- 
+
     .archive-heading{
         grid-template-columns:1fr .8fr;
     }
- 
+
     .archive-heading h1{
         font-size:62px;
     }
- 
+
     .featured-article{
         grid-template-columns:1.1fr .9fr;
     }
- 
+
     .articles-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
     }
- 
+
     .article-card.wide{
         grid-column:span 2;
     }
- 
+
 }
- 
- 
+
+
 /* =========================================================
    MOBILE / TABLET
 ========================================================= */
- 
+
 @media(max-width:800px){
- 
+
     .container{
         width:calc(100% - 28px);
     }
- 
+
     .header-inner{
         min-height:78px;
- 
+
         grid-template-columns:1fr auto;
     }
- 
+
     .header-left{
         display:none;
     }
- 
+
     .brand{
         justify-self:start;
     }
- 
+
     .brand-name{
         font-size:38px;
     }
- 
+
     .brand-subtitle{
         display:none;
     }
- 
+
     .login{
         display:none;
     }
- 
+
     .main-nav{
         overflow:hidden;
     }
- 
+
     .nav-inner{
         overflow-x:auto;
- 
+
         justify-content:flex-start;
- 
+
         gap:28px;
- 
+
         padding:0 15px;
     }
- 
+
     .archive-heading{
         display:block;
     }
- 
+
     .archive-heading p{
         margin-top:22px;
     }
- 
+
     .filters{
         align-items:flex-start;
- 
+
         flex-direction:column;
- 
+
         padding:15px 0;
     }
- 
+
     .filter-list{
         width:100%;
     }
- 
+
     .featured-article{
         display:flex;
- 
+
         flex-direction:column;
     }
- 
+
     .featured-image{
         min-height:370px;
     }
- 
+
     .featured-copy{
         border-right:0;
- 
+
         padding:35px 30px;
     }
- 
+
     .newsletter{
         grid-template-columns:1fr;
     }
- 
+
     .footer-main{
         grid-template-columns:1fr 1fr;
     }
- 
+
     .footer-brand-column{
         grid-column:1 / -1;
     }
- 
+
 }
- 
- 
+
+
 /* =========================================================
    MOBILE
 ========================================================= */
- 
+
 @media(max-width:560px){
- 
+
     .container{
         width:calc(100% - 20px);
     }
- 
+
     .top-strip{
         display:none;
     }
- 
+
     .brand-name{
         font-size:31px;
     }
- 
+
     .archive-hero{
         padding:45px 0 32px;
     }
- 
+
     .archive-heading h1{
         font-size:47px;
     }
- 
+
     .archive-heading p{
         font-size:11px;
     }
- 
+
     .featured-image{
         min-height:270px;
     }
- 
+
     .featured-copy{
         padding:27px 20px;
     }
- 
+
     .featured-title{
         font-size:25px;
     }
- 
+
     .articles-grid{
         grid-template-columns:1fr;
     }
- 
+
     .article-card.wide{
         grid-column:auto;
- 
+
         display:block;
     }
- 
+
     .article-card.wide .article-image{
         min-height:240px;
     }
- 
+
     .wide-content{
         padding:24px 20px;
     }
- 
+
     .article-card.wide .article-title{
         font-size:20px;
     }
- 
+
     .quote-card{
         min-height:300px;
     }
- 
+
     .newsletter-copy,
     .newsletter-form-wrap{
         padding:30px 22px;
     }
- 
+
     .newsletter-form{
         display:block;
     }
- 
+
     .newsletter-input,
     .newsletter-button{
         width:100%;
     }
- 
+
     .newsletter-button{
         height:45px;
- 
+
         margin-top:8px;
     }
- 
+
     .footer-main{
         grid-template-columns:1fr;
- 
+
         gap:30px;
     }
- 
+
     .footer-brand-column{
         grid-column:auto;
     }
- 
+
     .footer-bottom{
         flex-direction:column;
- 
+
         gap:8px;
     }
- 
+
 }
- 
+
 </style>
 </head>
- 
- 
+
+
 <body>
- 
- 
+
+
 <!-- ======================================================
      TOP STRIP
 ======================================================= -->
- 
+
 <div class="top-strip">
- 
+
     <div class="container top-strip-inner">
- 
+
         <span>
             مجله مستقل جنسیت، جامعه و برابری
         </span>
- 
+
         <div class="top-strip-links">
- 
+
             <a href="#">
                 همکاری با ما
             </a>
- 
+
             <a href="#">
                 خبرنامه
             </a>
- 
+
             <a href="#">
                 FA / EN
             </a>
- 
+
         </div>
- 
+
     </div>
- 
+
 </div>
- 
- 
- 
+
+
+
 <!-- ======================================================
      HEADER
 ======================================================= -->
- 
+
 <header class="site-header">
- 
+
     <div class="header-main">
- 
+
         <div class="container header-inner">
- 
- 
+
+
             <div class="header-left">
- 
+
                 <div class="header-search">
- 
+
                     <input
                         id="siteSearch"
                         type="search"
                         placeholder="جستجو..."
                     >
- 
+
                     <button
                         type="button"
                         aria-label="جستجو"
                     >
                         ⌕
                     </button>
- 
+
                 </div>
- 
- 
+
+
                 <div class="socials">
- 
+
                     <a href="#">
                         IG
                     </a>
- 
+
                     <a href="#">
                         TG
                     </a>
- 
+
                     <a href="#">
                         X
                     </a>
- 
+
                 </div>
- 
+
             </div>
- 
- 
- 
-            <a href="index.html" class="brand">
- 
+
+
+
+            <a href="{{ '/' | relative_url }}" class="brand">
+
                 <div class="brand-name">
                     Gender<span>Lab</span>
                 </div>
- 
+
                 <small class="brand-subtitle">
                     JOURNAL OF GENDER · CULTURE · SOCIETY
                 </small>
- 
+
             </a>
- 
- 
- 
+
+
+
             <div class="header-right">
- 
+
                 <a href="#" class="login">
                     ورود / ثبت‌نام
                 </a>
- 
- 
+
+
                 <button
                     class="menu-toggle"
                     type="button"
@@ -1465,1075 +1470,1074 @@ img{
                     <span></span>
                     <span></span>
                 </button>
- 
+
             </div>
- 
+
         </div>
- 
+
     </div>
- 
- 
- 
+
+
+
     <!-- NAV -->
- 
+
     <nav class="main-nav">
- 
+
         <div class="container nav-inner">
- 
-            <a href="index.html">
+
+            <a href="{{ '/' | relative_url }}">
                 خانه
             </a>
- 
-            <a href="articles.html" class="active">
+
+            <a href="{{ '/articles/' | relative_url }}" class="active">
                 مقالات
             </a>
- 
+
             <a href="#">
                 مصاحبه
             </a>
- 
-            <a href="archive.html">
+
+            <a href="{{ '/archive/' | relative_url }}">
                 آرشیو مجلات
             </a>
- 
+
             <a href="#">
                 درباره ما
             </a>
- 
+
         </div>
- 
+
     </nav>
- 
+
 </header>
- 
- 
- 
+
+
+
 <main class="container">
- 
- 
+
+
 <!-- ======================================================
      ARCHIVE INTRO
 ======================================================= -->
- 
+
 <section class="archive-hero">
- 
+
     <span class="archive-kicker">
         GENDERLAB / ARCHIVE
     </span>
- 
- 
+
+
     <div class="archive-heading">
- 
+
         <h1>
             مقالات
         </h1>
- 
- 
+
+
         <p>
             مجموعه‌ی مقاله‌ها، تحلیل‌ها، روایت‌ها و گفت‌وگوهای
             GenderLab درباره جنسیت، جامعه، حقوق، فرهنگ،
             سلامت و تجربه‌های زیسته.
         </p>
- 
+
     </div>
- 
+
 </section>
- 
- 
- 
+
+
+
 <!-- ======================================================
      FILTERS
 ======================================================= -->
- 
+
 <section class="filters">
- 
- 
+
+
     <div class="filter-list">
- 
+
         <button
             class="filter-button active"
             data-filter="all"
         >
             همه
         </button>
- 
- 
+
+
         <button
             class="filter-button"
             data-filter="gender"
         >
             جنسیت
         </button>
- 
- 
+
+
         <button
             class="filter-button"
             data-filter="society"
         >
             جامعه
         </button>
- 
- 
+
+
         <button
             class="filter-button"
             data-filter="law"
         >
             حقوق
         </button>
- 
- 
+
+
         <button
             class="filter-button"
             data-filter="culture"
         >
             فرهنگ و هنر
         </button>
- 
- 
+
+
         <button
             class="filter-button"
             data-filter="health"
         >
             سلامت
         </button>
- 
- 
+
+
         <button
             class="filter-button"
             data-filter="life"
         >
             زندگی
         </button>
- 
+
     </div>
- 
- 
- 
+
+
+
     <div class="filter-tools">
- 
+
         <span class="result-count">
             {{TOTAL_ARTICLES}} مقاله
         </span>
- 
- 
+
+
         <select class="sort-select">
- 
+
             <option>
                 جدیدترین
             </option>
- 
+
             <option>
                 قدیمی‌ترین
             </option>
- 
+
             <option>
                 پربازدیدترین
             </option>
- 
+
         </select>
- 
+
     </div>
- 
- 
+
+
 </section>
- 
- 
- 
+
+
+
 <!-- ======================================================
      FEATURED ARTICLE
 ======================================================= -->
- 
+
 <section class="featured-section">
- 
+
     <article class="featured-article">
- 
- 
+
+
         <a href="{{FEATURED_URL}}">
- 
+
             <div class="image-slot featured-image">
- 
+
                 <span class="slot-label">
                     FEATURED IMAGE · 1400 × 900
                 </span>
- 
+
             </div>
- 
+
         </a>
- 
- 
- 
+
+
+
         <div class="featured-copy">
- 
+
             <span class="featured-label">
                 انتخاب سردبیر / {{FEATURED_CATEGORY}}
             </span>
- 
- 
+
+
             <h2 class="featured-title">
- 
+
                 <a href="{{FEATURED_URL}}">
                     {{FEATURED_TITLE}}
                 </a>
- 
+
             </h2>
- 
- 
+
+
             <p class="featured-excerpt">
                 {{FEATURED_EXCERPT}}
             </p>
- 
- 
+
+
             <div class="article-meta">
- 
+
                 <span>
                     {{FEATURED_DATE}}
                 </span>
- 
+
                 <span>
                     {{FEATURED_READ_TIME}} دقیقه مطالعه
                 </span>
- 
+
             </div>
- 
- 
+
+
             <a
                 href="{{FEATURED_URL}}"
                 class="read-more"
             >
                 ادامه مطلب
             </a>
- 
+
         </div>
- 
+
     </article>
- 
+
 </section>
- 
- 
- 
+
+
+
 <!-- ======================================================
      ALL ARTICLES
 ======================================================= -->
- 
+
 <section class="articles-section">
- 
- 
+
+
     <header class="section-heading">
- 
+
         <div class="section-heading-left">
- 
+
             <span>
                 ALL STORIES
             </span>
- 
+
             <h2>
                 تازه‌ترین مطالب
             </h2>
- 
+
         </div>
- 
- 
+
+
         <span class="section-heading-number">
             01 — ARCHIVE
         </span>
- 
+
     </header>
- 
- 
- 
+
+
+
     <div class="articles-grid" id="articlesGrid">
- 
- 
+
+
         <!-- =================================================
              ARTICLE 1
         ================================================== -->
- 
+
         <article
             class="article-card"
             data-category="gender"
         >
- 
+
             <a href="{{ARTICLE_1_URL}}">
- 
+
                 <div class="image-slot article-image">
- 
+
                     <span class="slot-label">
                         ARTICLE · 1000 × 670
                     </span>
- 
+
                 </div>
- 
+
             </a>
- 
- 
+
+
             <div class="card-top">
- 
+
                 <span class="article-category">
                     {{ARTICLE_1_CATEGORY}}
                 </span>
- 
+
                 <span class="article-number">
                     01
                 </span>
- 
+
             </div>
- 
- 
+
+
             <h3 class="article-title">
- 
+
                 <a href="{{ARTICLE_1_URL}}">
                     {{ARTICLE_1_TITLE}}
                 </a>
- 
+
             </h3>
- 
- 
+
+
             <p class="article-excerpt">
                 {{ARTICLE_1_EXCERPT}}
             </p>
- 
- 
+
+
             <div class="card-meta">
- 
+
                 <span>
                     {{ARTICLE_1_DATE}}
                 </span>
- 
+
                 <span>
                     {{ARTICLE_1_READ_TIME}} دقیقه
                 </span>
- 
+
             </div>
- 
+
         </article>
- 
- 
- 
+
+
+
         <!-- =================================================
              ARTICLE 2
         ================================================== -->
- 
+
         <article
             class="article-card"
             data-category="society"
         >
- 
+
             <a href="{{ARTICLE_2_URL}}">
- 
+
                 <div class="image-slot article-image">
- 
+
                     <span class="slot-label">
                         ARTICLE · 1000 × 670
                     </span>
- 
+
                 </div>
- 
+
             </a>
- 
- 
+
+
             <div class="card-top">
- 
+
                 <span class="article-category">
                     {{ARTICLE_2_CATEGORY}}
                 </span>
- 
+
                 <span class="article-number">
                     02
                 </span>
- 
+
             </div>
- 
- 
+
+
             <h3 class="article-title">
- 
+
                 <a href="{{ARTICLE_2_URL}}">
                     {{ARTICLE_2_TITLE}}
                 </a>
- 
+
             </h3>
- 
- 
+
+
             <p class="article-excerpt">
                 {{ARTICLE_2_EXCERPT}}
             </p>
- 
- 
+
+
             <div class="card-meta">
- 
+
                 <span>
                     {{ARTICLE_2_DATE}}
                 </span>
- 
+
                 <span>
                     {{ARTICLE_2_READ_TIME}} دقیقه
                 </span>
- 
+
             </div>
- 
+
         </article>
- 
- 
- 
+
+
+
         <!-- =================================================
              ARTICLE 3
         ================================================== -->
- 
+
         <article
             class="article-card"
             data-category="law"
         >
- 
+
             <a href="{{ARTICLE_3_URL}}">
- 
+
                 <div class="image-slot article-image">
- 
+
                     <span class="slot-label">
                         ARTICLE · 1000 × 670
                     </span>
- 
+
                 </div>
- 
+
             </a>
- 
- 
+
+
             <div class="card-top">
- 
+
                 <span class="article-category">
                     {{ARTICLE_3_CATEGORY}}
                 </span>
- 
+
                 <span class="article-number">
                     03
                 </span>
- 
+
             </div>
- 
- 
+
+
             <h3 class="article-title">
- 
+
                 <a href="{{ARTICLE_3_URL}}">
                     {{ARTICLE_3_TITLE}}
                 </a>
- 
+
             </h3>
- 
- 
+
+
             <p class="article-excerpt">
                 {{ARTICLE_3_EXCERPT}}
             </p>
- 
- 
+
+
             <div class="card-meta">
- 
+
                 <span>
                     {{ARTICLE_3_DATE}}
                 </span>
- 
+
                 <span>
                     {{ARTICLE_3_READ_TIME}} دقیقه
                 </span>
- 
+
             </div>
- 
+
         </article>
- 
- 
- 
+
+
+
         <!-- =================================================
              ARTICLE 4 — WIDE
         ================================================== -->
- 
+
         <article
             class="article-card wide"
             data-category="culture"
         >
- 
- 
+
+
             <a href="{{ARTICLE_4_URL}}">
- 
+
                 <div class="image-slot article-image">
- 
+
                     <span class="slot-label">
                         WIDE FEATURE · 1200 × 800
                     </span>
- 
+
                 </div>
- 
+
             </a>
- 
- 
- 
+
+
+
             <div class="wide-content">
- 
+
                 <span class="article-category">
                     {{ARTICLE_4_CATEGORY}}
                 </span>
- 
- 
+
+
                 <h3 class="article-title">
- 
+
                     <a href="{{ARTICLE_4_URL}}">
                         {{ARTICLE_4_TITLE}}
                     </a>
- 
+
                 </h3>
- 
- 
+
+
                 <p class="article-excerpt">
                     {{ARTICLE_4_EXCERPT}}
                 </p>
- 
- 
+
+
                 <div class="card-meta">
- 
+
                     <span>
                         {{ARTICLE_4_DATE}}
                     </span>
- 
+
                     <span>
                         {{ARTICLE_4_READ_TIME}} دقیقه مطالعه
                     </span>
- 
+
                 </div>
- 
+
             </div>
- 
+
         </article>
- 
- 
- 
+
+
+
         <!-- =================================================
              QUOTE / EDITORIAL BLOCK
         ================================================== -->
- 
+
         <aside class="quote-card">
- 
+
             <span class="quote-mark">
                 “
             </span>
- 
- 
+
+
             <blockquote>
                 جایی برای روایت‌هایی که
                 معمولاً از قاب بیرون می‌مانند.
             </blockquote>
- 
- 
+
+
             <span class="quote-source">
                 GENDERLAB / EDITORIAL
             </span>
- 
+
         </aside>
- 
- 
- 
+
+
+
         <!-- =================================================
              ARTICLE 5
         ================================================== -->
- 
+
         <article
             class="article-card"
             data-category="health"
         >
- 
+
             <a href="{{ARTICLE_5_URL}}">
- 
+
                 <div class="image-slot article-image">
- 
+
                     <span class="slot-label">
                         ARTICLE · 1000 × 670
                     </span>
- 
+
                 </div>
- 
+
             </a>
- 
- 
+
+
             <div class="card-top">
- 
+
                 <span class="article-category">
                     {{ARTICLE_5_CATEGORY}}
                 </span>
- 
+
                 <span class="article-number">
                     05
                 </span>
- 
+
             </div>
- 
- 
+
+
             <h3 class="article-title">
- 
+
                 <a href="{{ARTICLE_5_URL}}">
                     {{ARTICLE_5_TITLE}}
                 </a>
- 
+
             </h3>
- 
- 
+
+
             <p class="article-excerpt">
                 {{ARTICLE_5_EXCERPT}}
             </p>
- 
- 
+
+
             <div class="card-meta">
- 
+
                 <span>
                     {{ARTICLE_5_DATE}}
                 </span>
- 
+
                 <span>
                     {{ARTICLE_5_READ_TIME}} دقیقه
                 </span>
- 
+
             </div>
- 
+
         </article>
- 
- 
- 
+
+
+
         <!-- =================================================
              ARTICLE 6
         ================================================== -->
- 
+
         <article
             class="article-card"
             data-category="life"
         >
- 
+
             <a href="{{ARTICLE_6_URL}}">
- 
+
                 <div class="image-slot article-image">
- 
+
                     <span class="slot-label">
                         ARTICLE · 1000 × 670
                     </span>
- 
+
                 </div>
- 
+
             </a>
- 
- 
+
+
             <div class="card-top">
- 
+
                 <span class="article-category">
                     {{ARTICLE_6_CATEGORY}}
                 </span>
- 
+
                 <span class="article-number">
                     06
                 </span>
- 
+
             </div>
- 
- 
+
+
             <h3 class="article-title">
- 
+
                 <a href="{{ARTICLE_6_URL}}">
                     {{ARTICLE_6_TITLE}}
                 </a>
- 
+
             </h3>
- 
- 
+
+
             <p class="article-excerpt">
                 {{ARTICLE_6_EXCERPT}}
             </p>
- 
- 
+
+
             <div class="card-meta">
- 
+
                 <span>
                     {{ARTICLE_6_DATE}}
                 </span>
- 
+
                 <span>
                     {{ARTICLE_6_READ_TIME}} دقیقه
                 </span>
- 
+
             </div>
- 
+
         </article>
- 
- 
- 
+
+
+
         <!-- =================================================
              ARTICLE 7
         ================================================== -->
- 
+
         <article
             class="article-card"
             data-category="society"
         >
- 
+
             <a href="{{ARTICLE_7_URL}}">
- 
+
                 <div class="image-slot article-image">
- 
+
                     <span class="slot-label">
                         ARTICLE · 1000 × 670
                     </span>
- 
+
                 </div>
- 
+
             </a>
- 
- 
+
+
             <div class="card-top">
- 
+
                 <span class="article-category">
                     {{ARTICLE_7_CATEGORY}}
                 </span>
- 
+
                 <span class="article-number">
                     07
                 </span>
- 
+
             </div>
- 
- 
+
+
             <h3 class="article-title">
- 
+
                 <a href="{{ARTICLE_7_URL}}">
                     {{ARTICLE_7_TITLE}}
                 </a>
- 
+
             </h3>
- 
- 
+
+
             <p class="article-excerpt">
                 {{ARTICLE_7_EXCERPT}}
             </p>
- 
- 
+
+
             <div class="card-meta">
- 
+
                 <span>
                     {{ARTICLE_7_DATE}}
                 </span>
- 
+
                 <span>
                     {{ARTICLE_7_READ_TIME}} دقیقه
                 </span>
- 
+
             </div>
- 
+
         </article>
- 
- 
+
+
     </div>
- 
- 
- 
+
+
+
     <!-- =================================================
          PAGINATION
     ================================================== -->
- 
+
     <nav
         class="pagination-wrap"
         aria-label="صفحه‌بندی"
     >
- 
+
         <a href="#" class="page page-arrow">
             قبلی
         </a>
- 
+
         <a href="#" class="page active">
             ۱
         </a>
- 
+
         <a href="#" class="page">
             ۲
         </a>
- 
+
         <a href="#" class="page">
             ۳
         </a>
- 
+
         <a href="#" class="page">
             ۴
         </a>
- 
+
         <a href="#" class="page page-arrow">
             بعدی
         </a>
- 
+
     </nav>
- 
- 
+
+
 </section>
- 
- 
- 
+
+
+
 <!-- ======================================================
      NEWSLETTER
 ======================================================= -->
- 
+
 <section class="newsletter">
- 
- 
+
+
     <div class="newsletter-copy">
- 
+
         <span class="newsletter-label">
             GENDERLAB NEWSLETTER
         </span>
- 
- 
+
+
         <h2>
             بهترین مطالب را از دست ندهید.
         </h2>
- 
- 
+
+
         <p>
             گزیده‌ای از تازه‌ترین مقاله‌ها، روایت‌ها و
             گفت‌وگوهای GenderLab را مستقیم در ایمیل
             خود دریافت کنید.
         </p>
- 
+
     </div>
- 
- 
- 
+
+
+
     <div class="newsletter-form-wrap">
- 
+
         <form class="newsletter-form">
- 
+
             <input
                 class="newsletter-input"
                 type="email"
                 placeholder="ایمیل شما"
                 required
             >
- 
+
             <button
                 class="newsletter-button"
                 type="submit"
             >
                 عضویت
             </button>
- 
+
         </form>
- 
+
     </div>
- 
- 
+
+
 </section>
- 
- 
+
+
 </main>
- 
- 
- 
+
+
+
 <!-- ======================================================
      FOOTER
 ======================================================= -->
- 
+
 <footer class="footer">
- 
+
     <div class="container">
- 
- 
+
+
         <div class="footer-main">
- 
- 
+
+
             <div class="footer-brand-column">
- 
+
                 <div class="footer-logo">
                     Gender<span>Lab</span>
                 </div>
- 
- 
+
+
                 <p class="footer-about">
                     مجله‌ای مستقل برای روایت، پژوهش و گفت‌وگو
                     درباره جنسیت، برابری، جامعه، فرهنگ و زندگی.
                 </p>
- 
+
             </div>
- 
- 
- 
+
+
+
             <div class="footer-column">
- 
+
                 <h3>
                     GenderLab
                 </h3>
- 
+
                 <a href="#">
                     درباره ما
                 </a>
- 
+
                 <a href="#">
                     تماس با ما
                 </a>
- 
+
                 <a href="#">
                     همکاری با ما
                 </a>
- 
+
                 <a href="#">
                     خبرنامه
                 </a>
- 
+
             </div>
- 
- 
- 
+
+
+
             <div class="footer-column">
- 
+
                 <h3>
                     دنبال کنید
                 </h3>
- 
+
                 <a href="#">
                     Instagram
                 </a>
- 
+
                 <a href="#">
                     Telegram
                 </a>
- 
+
                 <a href="#">
                     X / Twitter
                 </a>
- 
+
                 <a href="#">
                     YouTube
                 </a>
- 
+
             </div>
- 
- 
+
+
         </div>
- 
- 
- 
+
+
+
         <div class="footer-bottom">
- 
+
             <span>
                 © GenderLab — تمامی حقوق محفوظ است.
             </span>
- 
+
             <span>
                 MAGAZINE FOR A MORE EQUAL WORLD
             </span>
- 
+
         </div>
- 
- 
+
+
     </div>
- 
+
 </footer>
- 
- 
- 
+
+
+
 <script>
- 
+
 /* =========================================================
    ARTICLE FILTERS
 ========================================================= */
- 
+
 const filterButtons =
     document.querySelectorAll(".filter-button");
- 
+
 const articles =
     document.querySelectorAll(
         ".article-card[data-category]"
     );
- 
- 
+
+
 filterButtons.forEach(button => {
- 
+
     button.addEventListener("click", () => {
- 
+
         filterButtons.forEach(btn => {
             btn.classList.remove("active");
         });
- 
+
         button.classList.add("active");
- 
+
         const filter =
             button.dataset.filter;
- 
- 
+
+
         articles.forEach(article => {
- 
+
             if(
                 filter === "all" ||
                 article.dataset.category === filter
             ){
                 article.style.display = "";
             }
- 
+
             else{
                 article.style.display = "none";
             }
- 
+
         });
- 
+
     });
- 
+
 });
- 
- 
+
+
 /* =========================================================
    MOBILE MENU
 ========================================================= */
- 
+
 const menuButton =
     document.querySelector(".menu-toggle");
- 
+
 const mainNav =
     document.querySelector(".main-nav");
- 
- 
+
+
 menuButton.addEventListener("click", () => {
- 
+
     if(window.innerWidth <= 800){
- 
+
         mainNav.style.display =
             mainNav.style.display === "none"
             ? "block"
             : "none";
- 
+
     }
- 
+
 });
- 
- 
+
+
 window.addEventListener("resize", () => {
- 
+
     if(window.innerWidth > 800){
         mainNav.style.display = "block";
     }
- 
+
 });
- 
- 
+
+
 /* =========================================================
    NEWSLETTER PLACEHOLDER
 ========================================================= */
- 
+
 const newsletterForm =
     document.querySelector(".newsletter-form");
- 
- 
+
+
 newsletterForm.addEventListener(
     "submit",
     event => {
- 
+
         event.preventDefault();
- 
+
         /*
         MailerLite integration
         will go here.
         */
- 
+
     }
 );
- 
+
 </script>
- 
- 
+
+
 </body>
 </html>
- 
